@@ -15,21 +15,52 @@ async function callOpenRouter(prompt, system = "You are an elite Google Business
   }
 
   if (!key) {
-    alert("Please enter your OpenRouter API Key in the Settings tab first.");
-    throw new Error("Missing OpenRouter API Key");
+    // Automatically switch to Settings tab
+    document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach((c) => c.classList.remove("active"));
+    const settingsBtn = document.querySelector('[data-tab="settings"]');
+    if (settingsBtn) settingsBtn.classList.add("active");
+    const settingsTab = document.getElementById("tab-settings");
+    if (settingsTab) settingsTab.classList.add("active");
+    const keyInput = document.getElementById("openrouter-key");
+    if (keyInput) {
+      keyInput.focus();
+      keyInput.style.border = "2px solid #f96535";
+    }
+    const msg = document.getElementById("settings-msg");
+    if (msg) {
+      msg.innerHTML = '<span style="color:#ef4444;font-weight:600;">⚠️ Please paste your API key below and click "Save Configuration". Get a free key at <a href="https://openrouter.ai/keys" target="_blank" style="color:#f96535;">openrouter.ai</a> or <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:#f96535;">Google AI Studio</a>.</span>';
+    }
+    throw new Error("Missing API Key. Switched to Settings tab.");
   }
 
+  // 1. Direct Google Gemini API Key support (starts with AIzaSy)
+  if (key.startsWith("AIzaSy")) {
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`;
+    const res = await fetch(geminiUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: `${system}\n\n${prompt}` }] }],
+        generationConfig: { maxOutputTokens: 1000 }
+      })
+    });
+    const json = await res.json();
+    return json.candidates?.[0]?.content?.parts?.[0]?.text || "No response from Gemini API.";
+  }
+
+  // 2. OpenRouter API
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${key}`,
       "Content-Type": "application/json",
-      "HTTP-Referer": "https://maprank-everywhere.local",
+      "HTTP-Referer": "https://github.com/G0than/ApexGMB",
       "X-Title": "ApexGMB Extension",
     },
     body: JSON.stringify({
-      model: model,
-      max_tokens: 800,
+      model: model || "google/gemini-3.8",
+      max_tokens: 1000,
       messages: [
         { role: "system", content: system },
         { role: "user", content: prompt },
@@ -38,6 +69,9 @@ async function callOpenRouter(prompt, system = "You are an elite Google Business
   });
 
   const json = await res.json();
+  if (json.error) {
+    throw new Error(json.error.message || "OpenRouter error");
+  }
   return json.choices?.[0]?.message?.content || "No response received from AI service.";
 }
 
@@ -140,7 +174,7 @@ Output:
       const result = await callOpenRouter(prompt);
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error running audit: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -168,7 +202,7 @@ Include:
       const result = await callOpenRouter(prompt);
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error drafting pitch: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -202,7 +236,7 @@ Provide:
       const result = await callOpenRouter(prompt);
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -230,7 +264,7 @@ For each week (Week 1 to Week 4), provide:
       const result = await callOpenRouter(prompt);
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -262,7 +296,7 @@ Make sure keywords appear in BOTH the question and the owner answer for conversa
       const result = await callOpenRouter(prompt);
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -288,7 +322,7 @@ Analyze:
       const result = await callOpenRouter(prompt);
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -315,7 +349,7 @@ Output:
       const result = await callOpenRouter(prompt);
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -340,7 +374,7 @@ Provide:
       const result = await callOpenRouter(prompt);
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -365,7 +399,7 @@ Grounds:
       const result = await callOpenRouter(prompt);
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -415,7 +449,7 @@ Write:
       const result = await callOpenRouter(prompt, "You are an elite 1-person agency cold outreach copywriter.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -438,7 +472,7 @@ Write:
       const result = await callOpenRouter(prompt, "You are an elite Upwork proposal specialist.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -460,7 +494,7 @@ Detail exact deliverables and expected business ROI for each.`;
       const result = await callOpenRouter(prompt, "You are an agency pricing and packaging architect.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -481,7 +515,7 @@ Detail exact deliverables and expected business ROI for each.`;
       const result = await callOpenRouter(prompt, "You are a master B2B sales closer.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -545,7 +579,7 @@ Perform the loop:
       const result = await callOpenRouter(prompt, "You are an autonomous AI Agent OS executing local business SOPs.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -576,7 +610,7 @@ This document serves as undeniable proof of competence to win high-ticket client
       const result = await callOpenRouter(prompt, "You are a growth engineer creating proof-of-work case studies.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -597,7 +631,7 @@ This document serves as undeniable proof of competence to win high-ticket client
       const result = await callOpenRouter(prompt, "You are an expert career and monetization mentor.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -625,7 +659,7 @@ Generate:
       const result = await callOpenRouter(prompt, "You are a master of Online Reputation Management (ORM) and Branded SEO.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -648,7 +682,7 @@ Generate:
       const result = await callOpenRouter(prompt, "You are an expert in customer feedback automation and reputation systems.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -673,7 +707,7 @@ Draft:
       const result = await callOpenRouter(prompt, "You are a crisis communication and reputation management expert.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -696,7 +730,7 @@ Analyze an aged domain acquisition and authority strategy for ${biz} (${niche}):
       const result = await callOpenRouter(prompt, "You are a master of aged domains and link architecture.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -722,7 +756,7 @@ Generate a Parasite SEO Market Probing Action Plan:
       const result = await callOpenRouter(prompt, "You are an elite parasite SEO and territory growth engineer.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -756,7 +790,7 @@ Deliver a full Site Explorer Decomposition:
       const result = await callOpenRouter(prompt, "You are an elite Ahrefs Site Explorer backlink and traffic intelligence analyst.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -785,7 +819,7 @@ Generate high-performance content intelligence:
       const result = await callOpenRouter(prompt, "You are an expert Ahrefs Content Explorer strategist.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -816,7 +850,7 @@ Generate a comprehensive Rank Tracking & SERP Visibility Report:
       const result = await callOpenRouter(prompt, "You are a master Rank Tracking and SERP visibility analyst.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -846,7 +880,7 @@ Analyze Brand Visibility & Citations Across the AI Search Landscape:
       const result = await callOpenRouter(prompt, "You are an elite AI Brand Tracking and Generative Engine Optimization (GEO/AEO) specialist.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -873,7 +907,7 @@ Perform a rigorous Competitor Backlink Gap Analysis:
       const result = await callOpenRouter(prompt, "You are an expert Ahrefs link builder and competitive intelligence specialist.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -901,7 +935,7 @@ Deliver:
       const result = await callOpenRouter(prompt, "You are a master of Ahrefs Content Gap analysis and competitive search intelligence.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -928,7 +962,7 @@ Deconstruct:
       const result = await callOpenRouter(prompt, "You are an elite SEO strategist specializing in competitive reverse-engineering.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -954,7 +988,7 @@ Provide:
       const result = await callOpenRouter(prompt, "You are an expert backlink strategist specializing in broken link reclamation and outreach.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -978,7 +1012,7 @@ Deliver:
       const result = await callOpenRouter(prompt, "You are a senior SEO penalty and backlink audit specialist.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -1003,7 +1037,7 @@ Deliver:
       const result = await callOpenRouter(prompt, "You are a master of Ahrefs Keyword Explorer and semantic search clustering.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -1028,7 +1062,7 @@ Generate an Actionable Technical SEO Health Checklist:
       const result = await callOpenRouter(prompt, "You are an elite technical SEO auditor and Core Web Vitals specialist.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -1057,7 +1091,7 @@ Output:
       const result = await callOpenRouter(prompt, "You are an expert in JSON-LD structured data and Google Rich Results.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -1082,7 +1116,7 @@ Provide:
       const result = await callOpenRouter(prompt, "You are an elite eCommerce conversion copywriter and SEO architect.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -1104,7 +1138,7 @@ Provide:
       const result = await callOpenRouter(prompt, "You are an elite eCommerce information architect.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -1137,7 +1171,7 @@ Deliver:
       const result = await callOpenRouter(prompt, "You are a master Local SEO auditor specializing in NAP consistency and data aggregators.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -1171,7 +1205,7 @@ Provide:
       const result = await callOpenRouter(prompt, "You are an elite Local SEO architect specializing in neighborhood siloing and geo-grid expansion.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -1204,7 +1238,7 @@ Provide:
       const result = await callOpenRouter(prompt, "You are a senior citation builder and local search data aggregator strategist.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 
@@ -1238,7 +1272,7 @@ Output:
       const result = await callOpenRouter(prompt, "You are an expert technical SEO and Schema.org structured data engineer.");
       resBox.innerText = result;
     } catch (e) {
-      resBox.innerText = "Error: " + e.message;
+      resBox.innerHTML = `<span style="color:#ef4444;font-weight:600;">⚠️ ${e.message}</span>`;
     }
   });
 });
