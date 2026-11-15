@@ -37,9 +37,10 @@ ApexGMB manages Google Business Profiles for local businesses and the agencies t
    * Multi-location post scheduling and Google Maps rank tracking.
    * Docker-ready self-hosted deployment.
 
-2. 🧩 **MapRank Everywhere Chrome Extension (`apps/extension`)**
+2. 🧩 **ApexGMB Chrome Extension (`apps/extension`)**
    * Live Google Maps audits, primary/secondary category inspector, and local SEO optimizations directly in your browser.
    * Teleport location coordinates for geo-grid visibility testing.
+   * 1-click execution for all 6 Ahrefs platforms, Local SEO Masterclass, ORM defense, and schema generators.
 
 3. 🧠 **Autonomous Agent Skills Suite (`skills/`)**
    * `ghulam-ali-local-seo-mastery`: Ghulam Ali's 5-Hour Local SEO Masterclass covering NAP consistency audits, geo-grid proximity expansion, neighborhood geo-silos, local citation matrix, and master `LocalBusiness` JSON-LD schema.
@@ -58,6 +59,19 @@ ApexGMB manages Google Business Profiles for local businesses and the agencies t
 
 5. ⚡ **Multi-LLM Native Support**
    * Integrated support for **Google Gemini 2.5 Flash / Pro**, **OpenAI GPT-4o / GPT-4o-mini**, and **Anthropic Claude**.
+
+---
+
+## 🌟 What ApexGMB Can Do (The Complete Superpower Matrix)
+
+| # | Superpower Suite | What It Does & Replaces | Key CLI Subcommands |
+|---|---|---|---|
+| **1** | **Free Ahrefs 6-in-1 Platform** | Replaces \$199–\$999/mo subscriptions with Site Explorer, Keywords Explorer, Site Audit, Content Explorer, Rank Tracker, and AI Brand Tracking | `site-explorer`, `keywords-explorer`, `site-audit`, `content-explorer`, `rank-tracker`, `ai-brand-tracker` |
+| **2** | **Local SEO & Maps 3-Pack Mastery** | End-to-end framework from Ghulam Ali's 5-Hour Masterclass: NAP consistency audits, geo-silos, neighborhood landing pages, and master `LocalBusiness` JSON-LD | `nap-audit`, `geo-silo`, `local-citation-matrix`, `local-schema`, `audit` |
+| **3** | **Online Reputation (ORM) & SERP Defense** | 10-asset branded SERP blanket, automated GoHighLevel-style review gating, and A.A.A. crisis de-escalation protocols | `orm`, `dispute`, `reply` |
+| **4** | **eCommerce & Package Architecture** | 3-click silo hierarchy, faceted navigation defense, category buying guides, and Product/Offer rich snippet stars schema | `ecom-architecture`, `product-schema`, `category-content` |
+| **5** | **Aged Domain Authority & Parasite SEO** | Zero-traffic link math, Harmonic Centrality for LLM Common Crawl ingestion, and 48-hr parasite SEO market probing | `domain-eval`, `parasite-probe` |
+| **6** | **1-Person AI Agency OS** | Turn local SEO skills into \$10k/mo retainers (4S framework: Select, Skill, Showcase, Scale) with automated client proposals | `agency`, `agentos`, `fours`, `proposal` |
 
 ---
 
