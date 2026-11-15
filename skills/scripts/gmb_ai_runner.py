@@ -412,6 +412,67 @@ Generate a comprehensive Technical SEO Audit & Health Checklist:
     print("="*50)
     print(result)
 
+def run_ecom_architecture(args):
+    prompt = f"""
+You are an expert eCommerce SEO Architect (applying Ghulam Ali's eCommerce SEO masterclass).
+Store / Brand Name: {args.store}
+Core Categories / Services: {args.categories}
+
+Design a Complete 3-Click Information Architecture & Silo Blueprint:
+1. 3-Click Category Hierarchy: Clean parent-to-child silo structure with breadcrumb trails.
+2. Faceted Navigation & Parameter Defense:
+   - Canonical normalization rules for filtering/sorting parameters
+   - Robots.txt disallow directives to prevent index bloat and crawl budget waste.
+3. Internal Silo Linking Strategy: How category pages pass PageRank down to high-margin products and packages.
+"""
+    result = call_llm(prompt, "You are a master of eCommerce SEO Information Architecture.")
+    print("\n" + "="*50)
+    print(f"🛍️ ECOMMERCE INFORMATION ARCHITECTURE & SILO BLUEPRINT: {args.store}")
+    print("="*50)
+    print(result)
+
+def run_product_schema(args):
+    prompt = f"""
+Generate 100% valid Google-compliant Schema.org JSON-LD for this Product / Service Package:
+Name: {args.name}
+Brand: {args.brand}
+Price: {args.price} {args.currency}
+Rating: {args.rating} ({args.reviews} reviews)
+
+Output:
+1. Pure JSON-LD snippet enclosed in <script type="application/ld+json"> including:
+   - @type: 'Product'
+   - name, description, brand
+   - offers: @type 'Offer', price, priceCurrency, availability ('https://schema.org/InStock'), priceValidUntil
+   - aggregateRating: @type 'AggregateRating', ratingValue, reviewCount
+2. Implementation Instructions: Where to place it on the product/package page to trigger gold stars in Google search results.
+"""
+    result = call_llm(prompt, "You are a JSON-LD structured data and rich snippets expert.")
+    print("\n" + "="*50)
+    print(f"🏷️ PRODUCT & OFFER RICH SNIPPET SCHEMA: {args.name}")
+    print("="*50)
+    print(result)
+
+def run_category_content(args):
+    prompt = f"""
+Write high-converting, SEO-optimized Category Page Content (Ghulam Ali formula) for:
+Category: {args.category}
+Niche: {args.niche}
+Location / Market: {args.city}
+
+Provide:
+1. Above-the-Fold Intro (80-120 words): Catchy H1, search intent fulfillment, trust signals, and subtle keyword integration before the product/package cards.
+2. Below-the-Grid Authoritative Buying Guide (600+ words):
+   - H2: How to choose the right package / product
+   - H2: Key features, inclusions, and deliverables comparison
+   - H2: Frequently Asked Questions (FAQ) ready for FAQPage Schema
+"""
+    result = call_llm(prompt, "You are an elite eCommerce conversion copywriter and SEO specialist.")
+    print("\n" + "="*50)
+    print(f"📝 ECOMMERCE CATEGORY PAGE CONTENT & BUYING GUIDE: {args.category}")
+    print("="*50)
+    print(result)
+
 def main():
     parser = argparse.ArgumentParser(description="GMB Automation Playbook CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -551,6 +612,29 @@ def main():
     p_sa.add_argument("--url", required=True, help="Website URL")
     p_sa.add_argument("--niche", required=True, help="Niche / Business category")
     p_sa.set_defaults(func=run_site_audit)
+
+    # ecom-architecture
+    p_ea = sub.add_parser("ecom-architecture", help="Ghulam Ali eCommerce 3-click silo & faceted navigation architecture")
+    p_ea.add_argument("--store", required=True, help="Store or Brand name")
+    p_ea.add_argument("--categories", required=True, help="Comma-separated categories or packages")
+    p_ea.set_defaults(func=run_ecom_architecture)
+
+    # product-schema
+    p_ps = sub.add_parser("product-schema", help="Generate Product, Offer, and AggregateRating JSON-LD schema")
+    p_ps.add_argument("--name", required=True, help="Product or Package name")
+    p_ps.add_argument("--price", required=True, help="Price amount")
+    p_ps.add_argument("--currency", default="INR", help="Currency code (e.g. INR, USD)")
+    p_ps.add_argument("--rating", default="4.9", help="Star rating")
+    p_ps.add_argument("--reviews", default="25", help="Review count")
+    p_ps.add_argument("--brand", default="Apex Media", help="Brand name")
+    p_ps.set_defaults(func=run_product_schema)
+
+    # category-content
+    p_cc = sub.add_parser("category-content", help="Generate eCommerce category page content (Above & Below the grid)")
+    p_cc.add_argument("--category", required=True, help="Category name")
+    p_cc.add_argument("--niche", required=True, help="Niche / Business type")
+    p_cc.add_argument("--city", default="Local Area", help="Target city")
+    p_cc.set_defaults(func=run_category_content)
 
     args = parser.parse_args()
     args.func(args)

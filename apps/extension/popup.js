@@ -793,4 +793,80 @@ Generate an Actionable Technical SEO Health Checklist:
       resBox.innerText = "Error: " + e.message;
     }
   });
+
+  // eCommerce & Package Listeners (Ghulam Ali Masterclass)
+  document.getElementById("btn-ecom-schema")?.addEventListener("click", async () => {
+    const name = document.getElementById("ecom-name").value.trim() || "Luxury Wedding Package";
+    const priceStr = document.getElementById("ecom-price").value.trim() || "75000 INR";
+    const resBox = document.getElementById("ecom-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = "Generating Google-Compliant Product & Offer Schema (JSON-LD)...";
+
+    const prompt = `Generate pure, validated Schema.org JSON-LD structured data for:
+Product / Package: ${name}
+Price & Currency: ${priceStr}
+
+Output:
+1. Valid <script type="application/ld+json"> snippet including:
+   - @type: "Product"
+   - name, description, brand ("Apex Media Studio")
+   - offers: @type "Offer", price, priceCurrency, availability ("https://schema.org/InStock"), priceValidUntil
+   - aggregateRating: @type "AggregateRating", ratingValue: "4.9", reviewCount: "85"
+2. Placement instructions to trigger rich snippet gold stars in Google search results.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an expert in JSON-LD structured data and Google Rich Results.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-ecom-content")?.addEventListener("click", async () => {
+    const category = document.getElementById("ecom-category").value.trim() || "Wedding Photography Packages";
+    const resBox = document.getElementById("ecom-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Writing High-Converting Category Content for '${category}'...`;
+
+    const prompt = `Write high-converting, SEO-optimized Category Page Copy (Ghulam Ali formula) for:
+Category: ${category}
+
+Provide:
+1. Above-the-Fold Intro (80-120 words): Catchy H1, immediate search intent fulfillment, trust badge, and localized keyword integration before the product/package grid.
+2. Below-the-Grid Buying Guide (600+ words):
+   - H2: Key Factors to Consider When Selecting a Package
+   - H2: Deliverables & Timeline Breakdown
+   - H2: Frequently Asked Questions (FAQ) marked up for FAQPage Schema.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an elite eCommerce conversion copywriter and SEO architect.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-ecom-silo")?.addEventListener("click", async () => {
+    const category = document.getElementById("ecom-category").value.trim() || "Wedding Services";
+    const resBox = document.getElementById("ecom-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = "Formulating 3-Click Silo & Parameter Defense Architecture...";
+
+    const prompt = `Design an eCommerce Information Architecture & Silo Structure for ${category}:
+1. The 3-Click Hierarchy: Clean breadcrumb mapping from Homepage -> Category Silo -> Sub-package.
+2. Faceted Navigation & Parameter Defense:
+   - Self-referencing canonical vs filter canonicalization rules (e.g. ?budget=, ?sort=)
+   - Robots.txt directives to block parameter index bloat.
+3. Internal Link Equity Distribution: Funneling PageRank from high-authority guides to commercial package checkout pages.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an elite eCommerce information architect.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
 });

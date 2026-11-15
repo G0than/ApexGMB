@@ -42,6 +42,7 @@ ApexGMB manages Google Business Profiles for local businesses and the agencies t
    * Teleport location coordinates for geo-grid visibility testing.
 
 3. 🧠 **Autonomous Agent Skills Suite (`skills/`)**
+   * `ecommerce-seo-architecture`: Ghulam Ali eCommerce 3-click silo architecture, faceted navigation defense, and Product/Offer rich snippets schema.
    * `ahrefs-competitive-intelligence`: Ahrefs Link Intersect gap analysis, Keyword Explorer intent clustering, and Technical Site Health Audits.
    * `pbn-aged-domain-authority`: Aged domain evaluation, Harmonic Centrality, Common Crawl AI training ingestion, and parasite SEO market probing.
    * `gmb-orm-brand-defense`: Online Reputation Management (ORM) & Branded SERP 10-asset blanket defense.
@@ -116,6 +117,29 @@ python3 skills/scripts/gmb_ai_runner.py keyword-explorer --keyword "wedding phot
 
 # Technical Site Health Audit
 python3 skills/scripts/gmb_ai_runner.py site-audit --url "https://yoursite.com" --niche "Local Studio"
+```
+
+---
+
+## 🛍️ eCommerce & Service Package SEO Architecture
+
+> Based on the comprehensive principles from **Ghulam Ali's eCommerce SEO Course**:
+
+* **3-Click Category Hierarchy**: Eliminates buried URLs and ensures every product or service retainer package is reachable within 3 clicks of the homepage.
+* **Faceted Navigation & Parameter Defense**: Prevents duplicate content and index bloat by enforcing self-referencing canonicals on clean category pages and parameter normalization on filter URLs (`?sort=`, `?price=`).
+* **Rich Snippets & Google Gold Stars**: Automatically generates Schema.org `Product`, `Offer`, and `AggregateRating` JSON-LD to display review ratings, pricing, and availability directly in Google SERPs for a 25–40% CTR boost.
+* **Category Page Copywriting Formula**: Structures pages with an 80–120 word search-intent hook above the product grid, and an authoritative 600+ word buying guide + FAQ with `FAQPage` schema below the grid.
+
+Run via CLI:
+```bash
+# 1. Design 3-Click Silo & Parameter Defense Architecture
+python3 skills/scripts/gmb_ai_runner.py ecom-architecture --store "Apex Studio Store" --categories "Pre-Wedding Shoots, Wedding Films, Portrait Packages"
+
+# 2. Generate Product & Offer Schema (JSON-LD)
+python3 skills/scripts/gmb_ai_runner.py product-schema --name "Luxury Wedding Package" --price "75000" --currency "INR" --rating "4.9" --reviews "85"
+
+# 3. Generate Category Page Copy (Above & Below the Grid)
+python3 skills/scripts/gmb_ai_runner.py category-content --category "Pre-Wedding Packages" --niche "Wedding Photography" --city "Delhi NCR"
 ```
 
 ---
