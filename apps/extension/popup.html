@@ -496,9 +496,15 @@
       </div>
     </div>
     <div class="form-group">
-      <label>AI Model Identifier</label>
-      <input type="text" id="ai-model" value="google/gemini-3.8-flash" placeholder="e.g. google/gemini-3.8">
-      <div class="hint">Active model: Google Gemini 3.8 (supports any OpenRouter/Gemini endpoint)</div>
+      <label>Active AI Model (OpenRouter)</label>
+      <select id="ai-model" style="width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid #d1d5db; background: #fff; font-size: 13px; font-weight: 500; margin-bottom: 4px;">
+        <option value="anthropic/claude-sonnet-4.6" selected>Claude Sonnet 4.6 (Elite Writing & Pitch Decks)</option>
+        <option value="anthropic/claude-haiku-5.5">Claude Haiku 5.5 (Ultra Fast & Low Token Cost)</option>
+        <option value="google/gemini-3.8-flash">Google Gemini 3.8 Flash (High Context Local SEO)</option>
+        <option value="custom">Custom Model Identifier...</option>
+      </select>
+      <input type="text" id="ai-model-custom" placeholder="e.g. anthropic/claude-opus-5.5" style="display:none; width: 100%; padding: 6px 10px; margin-top: 4px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 12px;">
+      <div class="hint">⚡ Auto-fallback: If Claude or Gemini runs into token or rate limits, the engine automatically falls back to the other!</div>
     </div>
     <div class="form-group">
       <label>Sync / Webhook Server URL (Optional)</label>

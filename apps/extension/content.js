@@ -6,7 +6,7 @@
 
   const PROCESSED_ATTR = "data-gmbe-processed";
   let OPENROUTER_KEY = "";
-  let AI_MODEL = "google/gemini-3.8";
+  let AI_MODEL = "anthropic/claude-sonnet-4.6";
   if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.sync) {
     chrome.storage.sync.get(["openrouterKey", "aiModel"], (data) => {
       if (data && data.openrouterKey) OPENROUTER_KEY = data.openrouterKey;
@@ -514,7 +514,7 @@ Include:
         },
         body: JSON.stringify({
           model: AI_MODEL || "google/gemini-3.8",
-          max_tokens: 650,
+          max_tokens: 500,
           messages: [
             { role: "system", content: "You are a professional local SEO agency director pitching a business owner." },
             { role: "user", content: prompt },
@@ -1072,7 +1072,7 @@ Provide:
         },
         body: JSON.stringify({
           model: AI_MODEL || "google/gemini-3.8",
-          max_tokens: 650,
+          max_tokens: 500,
           messages: [
             { role: "system", content: "You are a direct-response paid social ads specialist." },
             { role: "user", content: prompt },
@@ -1449,7 +1449,7 @@ Perform the loop:
         },
         body: JSON.stringify({
           model: AI_MODEL || "google/gemini-3.8",
-          max_tokens: 650,
+          max_tokens: 500,
           messages: [
             { role: "system", content: "You are an autonomous AI Agent operating system executing SOPs for local businesses." },
             { role: "user", content: prompt },
@@ -1530,7 +1530,7 @@ This document serves as undeniable proof of competence to win high-ticket client
         },
         body: JSON.stringify({
           model: AI_MODEL || "google/gemini-3.8",
-          max_tokens: 650,
+          max_tokens: 500,
           messages: [
             { role: "system", content: "You are a senior growth engineer and proof-of-work case study specialist." },
             { role: "user", content: prompt },

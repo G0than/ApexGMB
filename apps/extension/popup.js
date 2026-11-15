@@ -2,10 +2,36 @@
 
 const DEFAULT_KEY = "";
 
-// ApexGMB Extension - Universal AI Controller (OpenRouter Gemini 3.8 / Google Gemini / GitHub Models)
+// ApexGMB Extension - Universal AI Controller (Claude & Gemini 3.8 with Auto-Fallback)
 
 const FALLBACK_CONFIG_KEY = (typeof window !== "undefined" && window.APEXGMB_CONFIG?.OPENROUTER_KEY) || "";
-const DEFAULT_MODEL = (typeof window !== "undefined" && window.APEXGMB_CONFIG?.AI_MODEL) || "google/gemini-3.8-flash";
+const DEFAULT_MODEL = (typeof window !== "undefined" && window.APEXGMB_CONFIG?.AI_MODEL) || "anthropic/claude-sonnet-4.6";
+
+async function fetchFromOpenRouter(key, model, prompt, system, maxTokens = 500) {
+  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${key}`,
+      "Content-Type": "application/json",
+      "HTTP-Referer": "https://github.com/G0than/ApexGMB",
+      "X-Title": "ApexGMB Extension",
+    },
+    body: JSON.stringify({
+      model: model,
+      max_tokens: maxTokens,
+      messages: [
+        { role: "system", content: system },
+        { role: "user", content: prompt },
+      ],
+    }),
+  });
+
+  const json = await res.json();
+  if (json.error) {
+    throw new Error(json.error.message || `OpenRouter error (${model})`);
+  }
+  return json.choices?.[0]?.message?.content || "";
+}
 
 async function callOpenRouter(prompt, system = "You are an elite Google Business Profile Local SEO expert.") {
   let key = FALLBACK_CONFIG_KEY;
@@ -32,14 +58,9 @@ async function callOpenRouter(prompt, system = "You are an elite Google Business
     }
     const msg = document.getElementById("settings-msg");
     if (msg) {
-      msg.innerHTML = '<span style="color:#ef4444;font-weight:600;">⚠️ Paste your OpenRouter, Gemini, or GitHub Models API key below.</span>';
+      msg.innerHTML = '<span style="color:#ef4444;font-weight:600;">⚠️ Paste your OpenRouter API key below.</span>';
     }
     throw new Error("Missing API Key. Switched to Settings tab.");
-  }
-
-  // Normalize model identifier if user entered generic gemini-3.8
-  if (model === "google/gemini-3.8" || !model) {
-    model = "google/gemini-3.8-flash";
   }
 
   // 1. Direct Google Gemini API Key support (starts with AIzaSy)
@@ -78,30 +99,26 @@ async function callOpenRouter(prompt, system = "You are an elite Google Business
     return json.choices?.[0]?.message?.content || "No response from GitHub Models.";
   }
 
-  // 3. OpenRouter API (Default: Google Gemini 3.8 Flash)
-  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${key}`,
-      "Content-Type": "application/json",
-      "HTTP-Referer": "https://github.com/G0than/ApexGMB",
-      "X-Title": "ApexGMB Extension",
-    },
-    body: JSON.stringify({
-      model: model,
-      max_tokens: 500,
-      messages: [
-        { role: "system", content: system },
-        { role: "user", content: prompt },
-      ],
-    }),
-  });
+  // 3. OpenRouter API with Dual Claude / Gemini 3.8 Auto-Fallback
+  const primaryModel = model || "anthropic/claude-sonnet-4.6";
+  const fallbackModel = primaryModel.includes("claude") ? "google/gemini-3.8-flash" : "anthropic/claude-haiku-5.5";
 
-  const json = await res.json();
-  if (json.error) {
-    throw new Error(json.error.message || "OpenRouter error");
+  try {
+    const content = await fetchFromOpenRouter(key, primaryModel, prompt, system, 500);
+    if (content) return content;
+  } catch (primaryErr) {
+    console.warn(`Primary model (${primaryModel}) failed: ${primaryErr.message}. Attempting fallback to ${fallbackModel}...`);
+    try {
+      const fallbackContent = await fetchFromOpenRouter(key, fallbackModel, prompt, system, 500);
+      if (fallbackContent) {
+        return fallbackContent + `\n\n*(Generated via fallback engine: ${fallbackModel})*`;
+      }
+    } catch (fallbackErr) {
+      throw new Error(`AI request failed on both ${primaryModel} and ${fallbackModel}: ${primaryErr.message}`);
+    }
   }
-  return json.choices?.[0]?.message?.content || "No response received from AI service.";
+
+  return "No response received from AI service.";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -119,6 +136,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Model Selector Custom Input Toggle
+  const modelSelect = document.getElementById("ai-model");
+  const modelCustom = document.getElementById("ai-model-custom");
+  modelSelect?.addEventListener("change", () => {
+    if (modelSelect.value === "custom") {
+      modelCustom.style.display = "block";
+      modelCustom.focus();
+    } else {
+      modelCustom.style.display = "none";
+    }
+  });
+
+  function setModelDropdownValue(targetModel) {
+    if (!modelSelect) return;
+    const knownValues = ["anthropic/claude-sonnet-4.6", "anthropic/claude-haiku-5.5", "google/gemini-3.8-flash"];
+    if (knownValues.includes(targetModel)) {
+      modelSelect.value = targetModel;
+      if (modelCustom) modelCustom.style.display = "none";
+    } else if (targetModel) {
+      modelSelect.value = "custom";
+      if (modelCustom) {
+        modelCustom.style.display = "block";
+        modelCustom.value = targetModel;
+      }
+    }
+  }
+
   // Settings Load
   if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.sync) {
     chrome.storage.sync.get(["syncUrl", "syncToken", "openrouterKey", "aiModel"], (data) => {
@@ -127,8 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const effectiveKey = data.openrouterKey || FALLBACK_CONFIG_KEY;
       const effectiveModel = data.aiModel || DEFAULT_MODEL;
       document.getElementById("openrouter-key").value = effectiveKey;
-      document.getElementById("ai-model").value = effectiveModel;
-      // Auto-sync fallback key to storage for content scripts
+      setModelDropdownValue(effectiveModel);
       if (!data.openrouterKey && effectiveKey) {
         chrome.storage.sync.set({ openrouterKey: effectiveKey, aiModel: effectiveModel });
       }
@@ -137,7 +180,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("server-url").value = localStorage.getItem("syncUrl") || "http://localhost:8080";
     document.getElementById("api-token").value = localStorage.getItem("syncToken") || "";
     document.getElementById("openrouter-key").value = localStorage.getItem("openrouterKey") || FALLBACK_CONFIG_KEY;
-    document.getElementById("ai-model").value = localStorage.getItem("aiModel") || DEFAULT_MODEL;
+    const effectiveModel = localStorage.getItem("aiModel") || DEFAULT_MODEL;
+    setModelDropdownValue(effectiveModel);
   }
 
   // Save Settings
@@ -145,7 +189,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = document.getElementById("server-url").value.trim();
     const token = document.getElementById("api-token").value.trim();
     const openrouterKey = document.getElementById("openrouter-key").value.trim();
-    const aiModel = document.getElementById("ai-model")?.value.trim() || "google/gemini-3.8";
+    let aiModel = modelSelect?.value || DEFAULT_MODEL;
+    if (aiModel === "custom" && modelCustom?.value.trim()) {
+      aiModel = modelCustom.value.trim();
+    }
     const msg = document.getElementById("settings-msg");
 
     if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.sync) {

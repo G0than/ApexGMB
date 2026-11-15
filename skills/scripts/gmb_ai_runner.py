@@ -13,7 +13,7 @@ import urllib.error
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-DEFAULT_MODEL = os.environ.get("GEMINI_MODEL") or os.environ.get("OPENROUTER_MODEL") or "google/gemini-3.8"
+DEFAULT_MODEL = os.environ.get("AI_MODEL") or os.environ.get("OPENROUTER_MODEL") or "anthropic/claude-sonnet-4.6"
 
 def call_llm(prompt: str, system: str = "You are an elite Google Business Profile and Local SEO growth expert.", model: str = None) -> str:
     # 1. Direct Gemini API if GEMINI_API_KEY is present
