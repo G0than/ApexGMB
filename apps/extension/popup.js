@@ -4,11 +4,14 @@ const DEFAULT_KEY = "";
 
 async function callOpenRouter(prompt, system = "You are an elite Google Business Profile Local SEO expert.") {
   let key = DEFAULT_KEY;
+  let model = "google/gemini-3.8";
   if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.sync) {
-    const data = await chrome.storage.sync.get(["openrouterKey"]);
+    const data = await chrome.storage.sync.get(["openrouterKey", "aiModel"]);
     if (data.openrouterKey) key = data.openrouterKey;
+    if (data.aiModel) model = data.aiModel;
   } else {
     key = localStorage.getItem("openrouterKey") || DEFAULT_KEY;
+    model = localStorage.getItem("aiModel") || "google/gemini-3.8";
   }
 
   if (!key) {
@@ -25,7 +28,7 @@ async function callOpenRouter(prompt, system = "You are an elite Google Business
       "X-Title": "ApexGMB Extension",
     },
     body: JSON.stringify({
-      model: "google/gemini-2.5-flash",
+      model: model,
       max_tokens: 800,
       messages: [
         { role: "system", content: system },
@@ -55,15 +58,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Settings Load
   if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.sync) {
-    chrome.storage.sync.get(["syncUrl", "syncToken", "openrouterKey"], (data) => {
+    chrome.storage.sync.get(["syncUrl", "syncToken", "openrouterKey", "aiModel"], (data) => {
       if (data.syncUrl) document.getElementById("server-url").value = data.syncUrl;
       if (data.syncToken) document.getElementById("api-token").value = data.syncToken;
       document.getElementById("openrouter-key").value = data.openrouterKey || DEFAULT_KEY;
+      document.getElementById("ai-model").value = data.aiModel || "google/gemini-3.8";
     });
   } else {
     document.getElementById("server-url").value = localStorage.getItem("syncUrl") || "http://localhost:8080";
     document.getElementById("api-token").value = localStorage.getItem("syncToken") || "";
     document.getElementById("openrouter-key").value = localStorage.getItem("openrouterKey") || DEFAULT_KEY;
+    document.getElementById("ai-model").value = localStorage.getItem("aiModel") || "google/gemini-3.8";
   }
 
   // Save Settings
@@ -71,10 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = document.getElementById("server-url").value.trim();
     const token = document.getElementById("api-token").value.trim();
     const openrouterKey = document.getElementById("openrouter-key").value.trim();
+    const aiModel = document.getElementById("ai-model")?.value.trim() || "google/gemini-3.8";
     const msg = document.getElementById("settings-msg");
 
     if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.sync) {
-      chrome.storage.sync.set({ syncUrl: url, syncToken: token, openrouterKey }, () => {
+      chrome.storage.sync.set({ syncUrl: url, syncToken: token, openrouterKey, aiModel }, () => {
         msg.innerText = "Configuration saved successfully!";
         msg.style.color = "#137333";
         setTimeout(() => (msg.innerText = ""), 2500);
@@ -83,7 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("syncUrl", url);
       localStorage.setItem("syncToken", token);
       localStorage.setItem("openrouterKey", openrouterKey);
+      localStorage.setItem("aiModel", aiModel);
       msg.innerText = "Configuration saved successfully!";
+      msg.style.color = "#137333";
+      setTimeout(() => (msg.innerText = ""), 2500);
     }
   });
 

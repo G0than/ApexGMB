@@ -12,8 +12,9 @@ import urllib.request
 import urllib.error
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
+DEFAULT_MODEL = os.environ.get("GEMINI_MODEL") or os.environ.get("OPENROUTER_MODEL") or "google/gemini-3.8"
 
-def call_llm(prompt: str, system: str = "You are an elite Google Business Profile and Local SEO growth expert.") -> str:
+def call_llm(prompt: str, system: str = "You are an elite Google Business Profile and Local SEO growth expert.", model: str = None) -> str:
     if not OPENROUTER_API_KEY:
         raise ValueError("OPENROUTER_API_KEY environment variable is not set. Please export OPENROUTER_API_KEY='your-key'.")
     url = "https://openrouter.ai/api/v1/chat/completions"
@@ -21,10 +22,10 @@ def call_llm(prompt: str, system: str = "You are an elite Google Business Profil
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
         "HTTP-Referer": "https://maprank-everywhere.local",
-        "X-Title": "MapRank Everywhere Engine",
+        "X-Title": "ApexGMB Engine",
     }
     payload = {
-        "model": "google/gemini-2.5-flash",
+        "model": model or DEFAULT_MODEL,
         "max_tokens": 800,
         "messages": [
             {"role": "system", "content": system},

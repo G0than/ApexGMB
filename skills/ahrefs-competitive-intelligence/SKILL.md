@@ -10,7 +10,7 @@ tags: [ahrefs, site-explorer, keywords-explorer, site-audit, content-explorer, r
 
 > Based on the core SaaS product architecture of **Ahrefs** and **Ghulam Ali's Ahrefs Masterclass** (`https://youtu.be/WjEIx9kbVY8`).
 
-ApexGMB provides a 100% free, automated alternative to Ahrefs' \$199–\$999/month subscription suite. Powered by Gemini 2.5 Flash and autonomous scraping/parsing logic, it operationalizes all 6 core Ahrefs platforms directly on your desktop or via CLI.
+ApexGMB provides a 100% free, automated alternative to Ahrefs' \$199–\$999/month subscription suite. Powered by Gemini 3.8 and autonomous scraping/parsing logic, it operationalizes all 6 core Ahrefs platforms directly on your desktop or via CLI.
 
 ---
 

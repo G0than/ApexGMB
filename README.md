@@ -58,7 +58,7 @@ ApexGMB manages Google Business Profiles for local businesses and the agencies t
    * Directly interfaces with Claude, Cursor, Antigravity, and AI agents to automate GMB actions while keeping human approval controls.
 
 5. ⚡ **Multi-LLM Native Support**
-   * Integrated support for **Google Gemini 2.5 Flash / Pro**, **OpenAI GPT-4o / GPT-4o-mini**, and **Anthropic Claude**.
+   * Configured by default for **Google Gemini 3.8**, with native support for **Google Gemini 2.5 Flash / Pro**, **OpenAI GPT-4o**, and **Anthropic Claude**.
 
 ---
 

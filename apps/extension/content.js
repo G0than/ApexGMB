@@ -6,13 +6,16 @@
 
   const PROCESSED_ATTR = "data-gmbe-processed";
   let OPENROUTER_KEY = "";
+  let AI_MODEL = "google/gemini-3.8";
   if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.sync) {
-    chrome.storage.sync.get(["openrouterKey"], (data) => {
+    chrome.storage.sync.get(["openrouterKey", "aiModel"], (data) => {
       if (data && data.openrouterKey) OPENROUTER_KEY = data.openrouterKey;
+      if (data && data.aiModel) AI_MODEL = data.aiModel;
     });
     chrome.storage.onChanged?.addListener((changes, areaName) => {
-      if (areaName === "sync" && changes.openrouterKey) {
-        OPENROUTER_KEY = changes.openrouterKey.newValue || "";
+      if (areaName === "sync") {
+        if (changes.openrouterKey) OPENROUTER_KEY = changes.openrouterKey.newValue || "";
+        if (changes.aiModel) AI_MODEL = changes.aiModel.newValue || "google/gemini-3.8";
       }
     });
   }
@@ -510,7 +513,7 @@ Include:
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 650,
           messages: [
             { role: "system", content: "You are a professional local SEO agency director pitching a business owner." },
@@ -614,7 +617,7 @@ Provide:
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 600,
           messages: [
             { role: "system", content: "You are a customer experience and reputation management specialist." },
@@ -681,7 +684,7 @@ For Week 1 to Week 4, provide:
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 750,
           messages: [
             { role: "system", content: "You are a local business social and Google post strategist." },
@@ -751,7 +754,7 @@ For Week 1 to Week 4, provide:
         "x-title": "ApexGMB Extension",
       },
       body: JSON.stringify({
-        model: "google/gemini-2.5-flash",
+        model: AI_MODEL || "google/gemini-3.8",
         max_tokens: 450,
         messages: [
           {
@@ -852,7 +855,7 @@ Make sure keywords appear in BOTH the question and the owner answer.`;
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 750,
           messages: [
             { role: "system", content: "You are an expert in Google Q&A optimization for local SEO." },
@@ -896,7 +899,7 @@ Analyze:
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 500,
           messages: [
             { role: "system", content: "You are a Google Business Profile policy enforcement expert." },
@@ -936,7 +939,7 @@ Grounds: Google's Prohibited and Restricted Content Policy (Fake Engagement / Co
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 500,
           messages: [
             { role: "system", content: "You are a legal and policy specialist drafting appeals to Google Support." },
@@ -1025,7 +1028,7 @@ Output:
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 750,
           messages: [
             { role: "system", content: "You are an expert social media creator and viral short-form copywriter." },
@@ -1068,7 +1071,7 @@ Provide:
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 650,
           messages: [
             { role: "system", content: "You are a direct-response paid social ads specialist." },
@@ -1110,7 +1113,7 @@ List:
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 500,
           messages: [
             { role: "system", content: "You are a Voice of Customer (VOC) and audience researcher." },
@@ -1213,7 +1216,7 @@ Write:
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 500,
           messages: [
             { role: "system", content: "You are an elite 1-person agency cold email copywriter." },
@@ -1253,7 +1256,7 @@ Follow the proven winning proposal formula:
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 500,
           messages: [
             { role: "system", content: "You are an elite freelance strategist winning high-ticket Upwork contracts." },
@@ -1292,7 +1295,7 @@ For each tier, list exact deliverables and expected business ROI.`;
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 500,
           messages: [
             { role: "system", content: "You are an agency pricing and packaging architect." },
@@ -1330,7 +1333,7 @@ For each tier, list exact deliverables and expected business ROI.`;
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 500,
           messages: [
             { role: "system", content: "You are a master B2B sales closer." },
@@ -1445,7 +1448,7 @@ Perform the loop:
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 650,
           messages: [
             { role: "system", content: "You are an autonomous AI Agent operating system executing SOPs for local businesses." },
@@ -1526,7 +1529,7 @@ This document serves as undeniable proof of competence to win high-ticket client
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 650,
           messages: [
             { role: "system", content: "You are a senior growth engineer and proof-of-work case study specialist." },
@@ -1565,7 +1568,7 @@ This document serves as undeniable proof of competence to win high-ticket client
           "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash",
+          model: AI_MODEL || "google/gemini-3.8",
           max_tokens: 500,
           messages: [
             { role: "system", content: "You are an expert career and monetization mentor." },
