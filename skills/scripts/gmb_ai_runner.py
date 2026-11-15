@@ -351,6 +351,67 @@ Provide a Rapid Parasite SEO Probing Plan:
     print("="*50)
     print(result)
 
+def run_link_intersect(args):
+    prompt = f"""
+You are an expert Ahrefs Link Intersect and Backlink Gap Specialist.
+My Domain: {args.my_site}
+Competitor Domains: {args.competitors}
+Niche / Vertical: {args.niche}
+Target Market / City: {args.city}
+
+Perform a rigorous Competitor Backlink Gap Analysis:
+1. High-Probability Overlapping Link Sources: What local business directories, industry portals, press outlets, and vendor listings do these competitors have that my site is missing?
+2. Tiered Priority Action List (Tier 1: High-DA DoFollow citations; Tier 2: Niche vendor blogs; Tier 3: Local community sponsors).
+3. The Outreach Angle & Pitch Script: A customized, high-converting outreach email template to request inclusion or guest contribution.
+4. Anchor Text Strategy: Recommended anchor ratios to maintain a natural, penalty-free backlink profile.
+"""
+    result = call_llm(prompt, "You are a master of Ahrefs Link Intersect and competitor backlink analysis.")
+    print("\n" + "="*50)
+    print(f"🔗 AHREFS LINK INTERSECT GAP ANALYSIS: {args.my_site}")
+    print("="*50)
+    print(result)
+
+def run_keyword_explorer(args):
+    prompt = f"""
+You are an expert Ahrefs Keyword Explorer & Search Intent Architect.
+Seed Keyword: {args.keyword}
+Niche / Category: {args.niche}
+
+Perform a deep Ahrefs-Grade Keyword & Intent Decomposition:
+1. Search Intent Matrix:
+   - Transactional / 'Money' Keywords (High commercial buying intent + estimated CPC tier)
+   - Commercial Investigation Keywords (Comparisons, best-in-city)
+   - Informational & Question Queries ('How much does X cost', 'What to wear for Y')
+2. Keyword Difficulty (KD) & SERP Features Analysis:
+   - Estimated KD score (0-100) & estimated Referring Domains needed to crack Page 1
+   - Target SERP Features (Map Pack 3-Pack, Featured Snippet, Image Carousel, People Also Ask)
+3. 2026 Semantic Entity Clusters: Core secondary keywords and LSI entities to include in the content to capture Google's AI Overview.
+"""
+    result = call_llm(prompt, "You are a master of Ahrefs Keyword Explorer and semantic search clustering.")
+    print("\n" + "="*50)
+    print(f"🔍 AHREFS KEYWORD EXPLORER & INTENT MATRIX: {args.keyword}")
+    print("="*50)
+    print(result)
+
+def run_site_audit(args):
+    prompt = f"""
+You are an Ahrefs Technical Site Audit & Core Web Vitals Engineer.
+Website URL: {args.url}
+Niche: {args.niche}
+
+Generate a comprehensive Technical SEO Audit & Health Checklist:
+1. Crawlability & Architecture: Robots.txt rules, XML sitemap validation, canonical hygiene, internal linking silo structure.
+2. On-Page & Semantic Signals: Title tag optimization, H1/H2 hierarchy, meta description CTR hooks, image alt text keyword integration.
+3. Local Schema & Entity Anchor: LocalBusiness JSON-LD markup, GeoCoordinates, AggregateRating, openingHoursSpecification.
+4. Speed & Core Web Vitals (LCP, CLS, INP) Optimization: TTFB minimization, image compression (WebP), asset minification.
+5. The 7-Day Technical Action Roadmap: Prioritized fixes ranked by algorithmic ranking impact.
+"""
+    result = call_llm(prompt, "You are an elite technical SEO auditor and Core Web Vitals performance specialist.")
+    print("\n" + "="*50)
+    print(f"🏥 AHREFS TECHNICAL SITE AUDIT & HEALTH CHECKLIST: {args.url}")
+    print("="*50)
+    print(result)
+
 def main():
     parser = argparse.ArgumentParser(description="GMB Automation Playbook CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -470,6 +531,26 @@ def main():
     p_pp.add_argument("--keyword", required=True, help="Target search keyword")
     p_pp.add_argument("--niche", required=True, help="Niche / category")
     p_pp.set_defaults(func=run_parasite_probe)
+
+    # link-intersect
+    p_li = sub.add_parser("link-intersect", help="Ahrefs Link Intersect competitor backlink gap analysis")
+    p_li.add_argument("--my-site", required=True, help="Your website URL or domain")
+    p_li.add_argument("--competitors", required=True, help="Comma-separated competitor URLs")
+    p_li.add_argument("--niche", required=True, help="Business niche")
+    p_li.add_argument("--city", default="Local City", help="City / Region")
+    p_li.set_defaults(func=run_link_intersect)
+
+    # keyword-explorer
+    p_ke = sub.add_parser("keyword-explorer", help="Ahrefs Keyword Explorer intent clustering & KD estimator")
+    p_ke.add_argument("--keyword", required=True, help="Seed keyword")
+    p_ke.add_argument("--niche", required=True, help="Niche / Category")
+    p_ke.set_defaults(func=run_keyword_explorer)
+
+    # site-audit
+    p_sa = sub.add_parser("site-audit", help="Ahrefs Technical Site Audit and On-Page Health Check")
+    p_sa.add_argument("--url", required=True, help="Website URL")
+    p_sa.add_argument("--niche", required=True, help="Niche / Business category")
+    p_sa.set_defaults(func=run_site_audit)
 
     args = parser.parse_args()
     args.func(args)

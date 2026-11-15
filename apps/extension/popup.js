@@ -716,4 +716,81 @@ Generate a Parasite SEO Market Probing Action Plan:
       resBox.innerText = "Error: " + e.message;
     }
   });
+
+  // Ahrefs Intelligence Listeners
+  document.getElementById("btn-ahrefs-intersect")?.addEventListener("click", async () => {
+    const site = document.getElementById("ahrefs-site").value.trim() || "yoursite.com";
+    const comps = document.getElementById("ahrefs-comps").value.trim() || "competitors";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = "Running Ahrefs-Grade Competitor Link Intersect Gap Analysis...";
+
+    const prompt = `As an elite Ahrefs Link Intersect and backlink intelligence strategist:
+Target Domain: ${site}
+Competitor Domains: ${comps}
+
+Perform a rigorous Competitor Backlink Gap Analysis:
+1. High-Probability Overlapping Link Sources: What local directories, wedding portals, industry publications, and media sources link to these competitors that ${site} is missing?
+2. Tiered Priority Action List (Tier 1: High-DA DoFollow citations; Tier 2: Niche vendor blogs; Tier 3: Local community sponsors).
+3. The Outreach Pitch Script: A customized, high-converting email template requesting inclusion or guest contribution.
+4. Anchor Text Strategy: Recommended anchor ratios (Branded, Naked, Partial) to avoid algorithmic penalties.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an expert Ahrefs link builder and competitive intelligence specialist.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-ahrefs-explorer")?.addEventListener("click", async () => {
+    const keyword = document.getElementById("ahrefs-keyword").value.trim() || "wedding photographer";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Analyzing '${keyword}' via Ahrefs Keyword Explorer & Intent Matrix...`;
+
+    const prompt = `Perform an in-depth Ahrefs Keyword Explorer decomposition for the seed topic: "${keyword}":
+1. Search Intent Matrix:
+   - High Commercial / Transactional Buying Queries (with estimated CPC tier)
+   - Commercial Investigation Queries (comparisons, best-in-city)
+   - Informational & Question Queries ("How much does X cost", "What to wear for Y")
+2. Keyword Difficulty (KD) & SERP Features:
+   - Estimated KD score (0-100) & referring domains needed to rank in Top 10
+   - Target SERP Features (Local 3-Pack, Featured Snippets, Image Carousels, People Also Ask)
+3. 2026 Semantic Entity Clusters: Core secondary LSI keywords to optimize for Google's AI Overview.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are a master of Ahrefs Keyword Explorer and semantic search clustering.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-ahrefs-audit")?.addEventListener("click", async () => {
+    const site = document.getElementById("ahrefs-site").value.trim() || "https://bhardwajstudio.in";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Running Ahrefs Technical Site Health Audit for ${site}...`;
+
+    const prompt = `You are an Ahrefs Technical Site Audit and Core Web Vitals specialist.
+Audit Target: ${site}
+
+Generate an Actionable Technical SEO Health Checklist:
+1. Crawlability & Architecture: Robots.txt rules, XML sitemap validation, canonical tags, internal linking silo structure.
+2. On-Page & Semantic Signals: Title tag optimization, H1/H2 hierarchy, meta description CTR hooks, image alt text density.
+3. Local Schema & Entity Anchor: LocalBusiness JSON-LD markup, GeoCoordinates, AggregateRating, openingHoursSpecification.
+4. Speed & Core Web Vitals (LCP, CLS, INP) Optimization: TTFB minimization, WebP compression, asset minification.
+5. The 7-Day Technical Action Roadmap: Prioritized fixes ranked by algorithmic ranking impact.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an elite technical SEO auditor and Core Web Vitals specialist.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
 });

@@ -42,6 +42,7 @@ ApexGMB manages Google Business Profiles for local businesses and the agencies t
    * Teleport location coordinates for geo-grid visibility testing.
 
 3. 🧠 **Autonomous Agent Skills Suite (`skills/`)**
+   * `ahrefs-competitive-intelligence`: Ahrefs Link Intersect gap analysis, Keyword Explorer intent clustering, and Technical Site Health Audits.
    * `pbn-aged-domain-authority`: Aged domain evaluation, Harmonic Centrality, Common Crawl AI training ingestion, and parasite SEO market probing.
    * `gmb-orm-brand-defense`: Online Reputation Management (ORM) & Branded SERP 10-asset blanket defense.
    * `gmb-profile-audit`: Comprehensive SEO and health audit.
@@ -92,6 +93,29 @@ python3 skills/scripts/gmb_ai_runner.py domain-eval --domain "oldphotostudio.com
 
 # Plan a Parasite SEO Probing Campaign
 python3 skills/scripts/gmb_ai_runner.py parasite-probe --business "Apex Media Studio" --keyword "luxury wedding photographer Delhi" --niche "Wedding Photography"
+```
+
+---
+
+## 📊 Ahrefs-Grade Competitor & Search Intelligence
+
+> Based on the industry standard workflows from **Ahrefs** (Keyword Explorer, Site Explorer, Link Intersect, and Technical Site Audit):
+
+* **Link Intersect (Competitor Backlink Gap)**: Analyzes 2–3 competitor domains to reveal the high-authority local directories, vendor listings, and niche blogs linking to competitors that you are missing—generating a prioritized outreach checklist.
+* **Keyword Explorer & Intent Clustering**: Decomposes seed keywords into high-commercial "Money" transactional queries, commercial investigation topics, and informational question modifiers, with estimated Keyword Difficulty (KD) and target SERP features.
+* **Anchor Text Health & Penalty Shield**: Enforces safe backlink anchor distributions (50–60% Branded, 20–25% Naked URLs, max 10% Exact Match) to prevent algorithmic penalties.
+* **Technical Site Health Audit**: 1-click checklist covering robots.txt, XML sitemaps, canonical tags, heading hierarchy, image alt text, and Core Web Vitals (LCP/CLS/INP).
+
+Run via CLI:
+```bash
+# Competitor Link Intersect Gap Analysis
+python3 skills/scripts/gmb_ai_runner.py link-intersect --my-site "yoursite.com" --competitors "comp1.com, comp2.com" --niche "Wedding Photography"
+
+# Keyword Explorer & Search Intent Matrix
+python3 skills/scripts/gmb_ai_runner.py keyword-explorer --keyword "wedding photographer Delhi" --niche "Photography Studio"
+
+# Technical Site Health Audit
+python3 skills/scripts/gmb_ai_runner.py site-audit --url "https://yoursite.com" --niche "Local Studio"
 ```
 
 ---
