@@ -489,15 +489,15 @@
   <!-- Tab 5: Settings -->
   <div id="tab-settings" class="tab-content">
     <div class="form-group">
-      <label>AI API Key (OpenRouter or Google Gemini)</label>
-      <input type="password" id="openrouter-key" placeholder="sk-or-v1-... or AIzaSy...">
+      <label>AI API Key (OpenRouter, Google Gemini, or GitHub Token)</label>
+      <input type="password" id="openrouter-key" placeholder="sk-or-v1-..., AIzaSy..., or ghp_...">
       <div class="hint">
         ⚡ <b>Free Key</b>: Get an OpenRouter key at <a href="https://openrouter.ai/keys" target="_blank" style="color:#f96535;text-decoration:underline;">openrouter.ai/keys</a> or Google Gemini key at <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:#f96535;text-decoration:underline;">Google AI Studio</a>.
       </div>
     </div>
     <div class="form-group">
       <label>AI Model Identifier</label>
-      <input type="text" id="ai-model" value="google/gemini-3.8" placeholder="e.g. google/gemini-3.8">
+      <input type="text" id="ai-model" value="google/gemini-3.8-flash" placeholder="e.g. google/gemini-3.8">
       <div class="hint">Active model: Google Gemini 3.8 (supports any OpenRouter/Gemini endpoint)</div>
     </div>
     <div class="form-group">
@@ -514,6 +514,7 @@
     <div id="settings-msg" class="hint" style="margin-top: 8px;"></div>
   </div>
 
+  <script src="config.local.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

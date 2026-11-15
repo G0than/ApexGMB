@@ -2,26 +2,29 @@
 
 const DEFAULT_KEY = "";
 
+// ApexGMB Extension - Universal AI Controller (OpenRouter Gemini 3.8 / Google Gemini / GitHub Models)
+
+const FALLBACK_CONFIG_KEY = (typeof window !== "undefined" && window.APEXGMB_CONFIG?.OPENROUTER_KEY) || "";
+const DEFAULT_MODEL = (typeof window !== "undefined" && window.APEXGMB_CONFIG?.AI_MODEL) || "google/gemini-3.8-flash";
+
 async function callOpenRouter(prompt, system = "You are an elite Google Business Profile Local SEO expert.") {
-  let key = DEFAULT_KEY;
-  let model = "google/gemini-3.8";
+  let key = FALLBACK_CONFIG_KEY;
+  let model = DEFAULT_MODEL;
+
   if (typeof chrome !== "undefined" && chrome.storage && chrome.storage.sync) {
     const data = await chrome.storage.sync.get(["openrouterKey", "aiModel"]);
     if (data.openrouterKey) key = data.openrouterKey;
     if (data.aiModel) model = data.aiModel;
   } else {
-    key = localStorage.getItem("openrouterKey") || DEFAULT_KEY;
-    model = localStorage.getItem("aiModel") || "google/gemini-3.8";
+    key = localStorage.getItem("openrouterKey") || FALLBACK_CONFIG_KEY;
+    model = localStorage.getItem("aiModel") || DEFAULT_MODEL;
   }
 
   if (!key) {
-    // Automatically switch to Settings tab
     document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
     document.querySelectorAll(".tab-content").forEach((c) => c.classList.remove("active"));
-    const settingsBtn = document.querySelector('[data-tab="settings"]');
-    if (settingsBtn) settingsBtn.classList.add("active");
-    const settingsTab = document.getElementById("tab-settings");
-    if (settingsTab) settingsTab.classList.add("active");
+    document.querySelector('[data-tab="settings"]')?.classList.add("active");
+    document.getElementById("tab-settings")?.classList.add("active");
     const keyInput = document.getElementById("openrouter-key");
     if (keyInput) {
       keyInput.focus();
@@ -29,9 +32,14 @@ async function callOpenRouter(prompt, system = "You are an elite Google Business
     }
     const msg = document.getElementById("settings-msg");
     if (msg) {
-      msg.innerHTML = '<span style="color:#ef4444;font-weight:600;">⚠️ Please paste your API key below and click "Save Configuration". Get a free key at <a href="https://openrouter.ai/keys" target="_blank" style="color:#f96535;">openrouter.ai</a> or <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:#f96535;">Google AI Studio</a>.</span>';
+      msg.innerHTML = '<span style="color:#ef4444;font-weight:600;">⚠️ Paste your OpenRouter, Gemini, or GitHub Models API key below.</span>';
     }
     throw new Error("Missing API Key. Switched to Settings tab.");
+  }
+
+  // Normalize model identifier if user entered generic gemini-3.8
+  if (model === "google/gemini-3.8" || !model) {
+    model = "google/gemini-3.8-flash";
   }
 
   // 1. Direct Google Gemini API Key support (starts with AIzaSy)
@@ -42,14 +50,35 @@ async function callOpenRouter(prompt, system = "You are an elite Google Business
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         contents: [{ parts: [{ text: `${system}\n\n${prompt}` }] }],
-        generationConfig: { maxOutputTokens: 1000 }
+        generationConfig: { maxOutputTokens: 600 }
       })
     });
     const json = await res.json();
     return json.candidates?.[0]?.content?.parts?.[0]?.text || "No response from Gemini API.";
   }
 
-  // 2. OpenRouter API
+  // 2. GitHub Models API support (starts with ghp_ or github_pat_)
+  if (key.startsWith("ghp_") || key.startsWith("github_pat_")) {
+    const res = await fetch("https://models.inference.ai.azure.com/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${key}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        max_tokens: 600,
+        messages: [
+          { role: "system", content: system },
+          { role: "user", content: prompt }
+        ]
+      })
+    });
+    const json = await res.json();
+    return json.choices?.[0]?.message?.content || "No response from GitHub Models.";
+  }
+
+  // 3. OpenRouter API (Default: Google Gemini 3.8 Flash)
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -59,8 +88,8 @@ async function callOpenRouter(prompt, system = "You are an elite Google Business
       "X-Title": "ApexGMB Extension",
     },
     body: JSON.stringify({
-      model: model || "google/gemini-3.8",
-      max_tokens: 1000,
+      model: model,
+      max_tokens: 500,
       messages: [
         { role: "system", content: system },
         { role: "user", content: prompt },
@@ -95,14 +124,20 @@ document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.sync.get(["syncUrl", "syncToken", "openrouterKey", "aiModel"], (data) => {
       if (data.syncUrl) document.getElementById("server-url").value = data.syncUrl;
       if (data.syncToken) document.getElementById("api-token").value = data.syncToken;
-      document.getElementById("openrouter-key").value = data.openrouterKey || DEFAULT_KEY;
-      document.getElementById("ai-model").value = data.aiModel || "google/gemini-3.8";
+      const effectiveKey = data.openrouterKey || FALLBACK_CONFIG_KEY;
+      const effectiveModel = data.aiModel || DEFAULT_MODEL;
+      document.getElementById("openrouter-key").value = effectiveKey;
+      document.getElementById("ai-model").value = effectiveModel;
+      // Auto-sync fallback key to storage for content scripts
+      if (!data.openrouterKey && effectiveKey) {
+        chrome.storage.sync.set({ openrouterKey: effectiveKey, aiModel: effectiveModel });
+      }
     });
   } else {
     document.getElementById("server-url").value = localStorage.getItem("syncUrl") || "http://localhost:8080";
     document.getElementById("api-token").value = localStorage.getItem("syncToken") || "";
-    document.getElementById("openrouter-key").value = localStorage.getItem("openrouterKey") || DEFAULT_KEY;
-    document.getElementById("ai-model").value = localStorage.getItem("aiModel") || "google/gemini-3.8";
+    document.getElementById("openrouter-key").value = localStorage.getItem("openrouterKey") || FALLBACK_CONFIG_KEY;
+    document.getElementById("ai-model").value = localStorage.getItem("aiModel") || DEFAULT_MODEL;
   }
 
   // Save Settings

@@ -15,3 +15,4 @@ apps/web/playwright-report/
 .claude/worktrees/
 apps/web/scripts/scale/.state/
 apps/web/e2e-community/.state/
+apps/extension/config.local.js
