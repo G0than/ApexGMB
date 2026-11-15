@@ -473,6 +473,103 @@ Provide:
     print("="*50)
     print(result)
 
+def run_nap_audit(args):
+    prompt = f"""
+Perform a deep NAP (Name, Address, Phone) & Local Citation Consistency Audit based on Ghulam Ali's 5-Hour Local SEO Masterclass for:
+Business Name: {args.business}
+Street Address: {args.address}
+Phone Number: {args.phone}
+Website URL: {args.website}
+Target City / Service Area: {args.city}
+
+Deliver:
+1. Canonical NAP Master Profile: The exact standardized string formatting for website headers, GBP, and citations (preventing suite/road abbreviation conflicts).
+2. Data Aggregator & Inconsistency Risk Assessment: Where inconsistencies typically occur (postal standards, local directory formatting, tracking numbers vs primary line).
+3. Primary Citation Directories Audit Checklist: Top 10 Tier-1 data sources (Google, Apple Maps, Bing, Yelp, Facebook, YellowPages, Justdial/IndiaMART if regional) with field-by-field verification checklist.
+4. NAP Correction Action Plan: Step-by-step instructions to clean up duplicate listings, legacy phone numbers, or previous addresses.
+"""
+    result = call_llm(prompt, "You are a master Local SEO auditor specializing in NAP consistency, data aggregators, and Google Business Profile authority.")
+    print("\n" + "="*50)
+    print(f"📍 GHULAM ALI NAP & LOCAL CITATION AUDIT: {args.business}")
+    print("="*50)
+    print(result)
+
+def run_geo_silo(args):
+    prompt = f"""
+Design a hyper-local Geo-Silo & Neighborhood Landing Page Architecture (Ghulam Ali formula) for:
+Business: {args.business}
+Primary Service: {args.service}
+Target Neighborhood / Sub-locality: {args.neighborhood}
+City / Metro Area: {args.city}
+Key Local Landmarks / Arterials: {args.landmarks or 'Major metro station, central market, highway junction'}
+
+Provide:
+1. Page URL Structure & SEO Meta: Canonical URL slug, Meta Title (under 60 chars), Meta Description (under 155 chars).
+2. Content Blueprint:
+   - H1 Tag & Above-the-fold Hook
+   - Geo-Targeted Driving Directions section ('How to reach us from {args.landmarks}')
+   - Neighborhood proof points & local service area coverage
+   - Hyper-local FAQ with 3 questions addressing neighborhood residents
+3. Google Map Embed & CID Strategy: How to embed the localized Google Map and link to GBP Place ID without breaking mobile load speed.
+4. Internal Linking Mesh: Upward links to city parent hub, horizontal links to neighboring localities.
+"""
+    result = call_llm(prompt, "You are an elite Local SEO architect specializing in neighborhood siloing, map embeds, and geo-grid proximity expansion.")
+    print("\n" + "="*50)
+    print(f"🗺️ LOCAL GEO-SILO & NEIGHBORHOOD PAGE: {args.neighborhood}, {args.city}")
+    print("="*50)
+    print(result)
+
+def run_local_citation_matrix(args):
+    prompt = f"""
+Generate an authoritative Local Citation Building Matrix based on Ghulam Ali's Local SEO blueprint for:
+Business: {args.business}
+Category / Vertical: {args.category}
+City / Region: {args.city}
+Country: {args.country}
+
+Provide:
+1. Top Tier-1 Foundational Citations (Domain Authority 80+) applicable to {args.country}.
+2. Top Tier-2 Regional & Business Registries for {args.city}.
+3. Top 5 High-Relevance Niche / Industry Specific Citations for '{args.category}'.
+4. Exact Submission Data Matrix:
+   - Business Title (exact unbranded)
+   - Category mapping recommendations
+   - 250-character and 500-character description variations
+   - Target anchor text and website tracking parameters
+5. Aggregator Syndication Strategy (Data Axle, Neustar Localeze, Foursquare, etc.).
+"""
+    result = call_llm(prompt, "You are a senior citation builder and local search data aggregator strategist.")
+    print("\n" + "="*50)
+    print(f"🏛️ LOCAL CITATION MATRIX: {args.business} ({args.city})")
+    print("="*50)
+    print(result)
+
+def run_local_schema(args):
+    prompt = f"""
+Generate a complete, production-ready LocalBusiness JSON-LD Schema (Schema.org compliant) for:
+Business Name: {args.business}
+Business Type / Schema @type: {args.category} (e.g. PhotographyStudio, Dentist, LocalBusiness)
+Street Address: {args.address}
+City: {args.city}
+State / Region: {args.state}
+Postal Code: {args.zip}
+Country: {args.country}
+Phone Number: {args.phone}
+Website URL: {args.website}
+Coordinates: Latitude {args.lat}, Longitude {args.lng}
+
+Output:
+1. Complete JSON-LD enclosed in <script type="application/ld+json">:
+   - Must include: @context, @type, @id, name, url, telephone, address (PostalAddress), geo (GeoCoordinates), areaServed (Multiple administrative areas), openingHoursSpecification, priceRange.
+   - Must include an authoritative sameAs array linking to GBP, Facebook, Instagram, Yelp, and top local citations.
+2. Verification instructions for Google Rich Results Test and placement recommendation.
+"""
+    result = call_llm(prompt, "You are an expert technical SEO and Schema.org structured data engineer.")
+    print("\n" + "="*50)
+    print(f"🏷️ LOCALBUSINESS JSON-LD SCHEMA: {args.business}")
+    print("="*50)
+    print(result)
+
 def main():
     parser = argparse.ArgumentParser(description="GMB Automation Playbook CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -635,6 +732,47 @@ def main():
     p_cc.add_argument("--niche", required=True, help="Niche / Business type")
     p_cc.add_argument("--city", default="Local Area", help="Target city")
     p_cc.set_defaults(func=run_category_content)
+
+    # nap-audit
+    p_na = sub.add_parser("nap-audit", help="Ghulam Ali NAP & citation consistency audit")
+    p_na.add_argument("--business", required=True, help="Business name")
+    p_na.add_argument("--address", required=True, help="Full street address")
+    p_na.add_argument("--phone", required=True, help="Phone number")
+    p_na.add_argument("--website", required=True, help="Website URL")
+    p_na.add_argument("--city", default="Local Metro Area", help="City / Service area")
+    p_na.set_defaults(func=run_nap_audit)
+
+    # geo-silo
+    p_gs = sub.add_parser("geo-silo", help="Hyper-local neighborhood geo-silo landing page blueprint")
+    p_gs.add_argument("--business", required=True, help="Business name")
+    p_gs.add_argument("--service", required=True, help="Primary service")
+    p_gs.add_argument("--neighborhood", required=True, help="Target neighborhood / sub-locality")
+    p_gs.add_argument("--city", default="Metro City", help="City")
+    p_gs.add_argument("--landmarks", default="", help="Nearby landmarks, roads, or stations")
+    p_gs.set_defaults(func=run_geo_silo)
+
+    # local-citation-matrix
+    p_lcm = sub.add_parser("local-citation-matrix", help="High-impact Tier-1, Tier-2, and niche citation matrix")
+    p_lcm.add_argument("--business", required=True, help="Business name")
+    p_lcm.add_argument("--category", required=True, help="Business vertical / category")
+    p_lcm.add_argument("--city", default="Local City", help="City")
+    p_lcm.add_argument("--country", default="India", help="Country (India, USA, UK, etc.)")
+    p_lcm.set_defaults(func=run_local_citation_matrix)
+
+    # local-schema
+    p_ls = sub.add_parser("local-schema", help="Master Schema.org LocalBusiness JSON-LD generator")
+    p_ls.add_argument("--business", required=True, help="Business name")
+    p_ls.add_argument("--category", default="LocalBusiness", help="Schema subtype (e.g. PhotographyStudio, Dentist)")
+    p_ls.add_argument("--address", required=True, help="Street address")
+    p_ls.add_argument("--city", required=True, help="City")
+    p_ls.add_argument("--state", default="Delhi", help="State / Region")
+    p_ls.add_argument("--zip", required=True, help="Postal Code")
+    p_ls.add_argument("--country", default="IN", help="Country code (e.g. IN, US, GB)")
+    p_ls.add_argument("--phone", required=True, help="Phone number")
+    p_ls.add_argument("--website", required=True, help="Website URL")
+    p_ls.add_argument("--lat", default="28.6139", help="Latitude")
+    p_ls.add_argument("--lng", default="77.2090", help="Longitude")
+    p_ls.set_defaults(func=run_local_schema)
 
     args = parser.parse_args()
     args.func(args)

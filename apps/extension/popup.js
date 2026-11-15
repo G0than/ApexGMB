@@ -869,4 +869,138 @@ Provide:
       resBox.innerText = "Error: " + e.message;
     }
   });
+
+  // Local SEO Masterclass Handlers (Ghulam Ali Zero-to-Hero)
+  document.getElementById("btn-localseo-nap")?.addEventListener("click", async () => {
+    const biz = document.getElementById("localseo-biz").value.trim() || "Apex Media Studio";
+    const addr = document.getElementById("localseo-address").value.trim() || "Shop 12, Main Market, Sector 15";
+    const phone = document.getElementById("localseo-phone").value.trim() || "+91-9876543210";
+    const website = document.getElementById("localseo-website").value.trim() || "https://bhardwajstudio.in";
+    const city = document.getElementById("localseo-city").value.trim() || "Delhi NCR";
+    const resBox = document.getElementById("localseo-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Running Ghulam Ali NAP Consistency & Citation Audit for ${biz}...`;
+
+    const prompt = `Perform a deep NAP (Name, Address, Phone) & Local Citation Consistency Audit based on Ghulam Ali's 5-Hour Local SEO Masterclass:
+Business Name: ${biz}
+Address: ${addr}
+Phone: ${phone}
+Website: ${website}
+City / Area: ${city}
+
+Deliver:
+1. Canonical NAP Standard: The exact, immutable string standard to maintain across all directories (preventing abbreviation discrepancies like Rd vs Road, St vs Street).
+2. Risk Assessment: Where citations most commonly break (tracking numbers vs primary phone, address abbreviations, suite syntax).
+3. Tier-1 Directory Audit Checklist: 10 critical citation sources (Google, Apple Maps, Bing, Yelp, Facebook, YellowPages, Justdial/IndiaMART) with field-by-field verification checklist.
+4. NAP Cleaning & Duplicate Removal Action Plan: 3 immediate steps to claim or correct conflicting citations.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are a master Local SEO auditor specializing in NAP consistency and data aggregators.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-localseo-silo")?.addEventListener("click", async () => {
+    const biz = document.getElementById("localseo-biz").value.trim() || "Apex Media Studio";
+    const neighborhood = document.getElementById("localseo-neighborhood").value.trim() || "Connaught Place";
+    const city = document.getElementById("localseo-city").value.trim() || "Delhi";
+    const category = document.getElementById("localseo-category").value.trim() || "PhotographyStudio";
+    const resBox = document.getElementById("localseo-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Designing Geo-Silo & Neighborhood Landing Page for ${neighborhood}, ${city}...`;
+
+    const prompt = `Design a hyper-local Geo-Silo & Neighborhood Landing Page Architecture (Ghulam Ali formula) for:
+Business: ${biz}
+Category / Service: ${category}
+Target Neighborhood: ${neighborhood}
+City / Region: ${city}
+
+Provide:
+1. Page URL Structure & SEO Meta: Canonical URL slug, H1 tag, Meta Title, Meta Description (with CTR hooks).
+2. Localized Content Blueprint:
+   - Above-the-fold local hook targeting residents of ${neighborhood}
+   - Driving Directions & Landmarks section ("How to reach us from central stations/metro")
+   - Neighborhood project highlights & proof points
+   - Hyper-local FAQ with 3 localized questions
+3. Google Map Embed & CID Strategy: How to embed the localized Google Map iframe with CID/Place ID without degrading Core Web Vitals.
+4. Internal Linking Mesh: Upward parent link and horizontal links to adjacent neighborhoods.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an elite Local SEO architect specializing in neighborhood siloing and geo-grid expansion.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-localseo-citations")?.addEventListener("click", async () => {
+    const biz = document.getElementById("localseo-biz").value.trim() || "Apex Media Studio";
+    const category = document.getElementById("localseo-category").value.trim() || "Photography Studio";
+    const city = document.getElementById("localseo-city").value.trim() || "Delhi NCR";
+    const resBox = document.getElementById("localseo-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Generating High-Impact Local Citation Matrix for ${biz}...`;
+
+    const prompt = `Generate an authoritative Local Citation Building Matrix based on Ghulam Ali's Local SEO blueprint for:
+Business: ${biz}
+Category: ${category}
+City / Market: ${city}
+
+Provide:
+1. Top Tier-1 Foundational Citations (DA 80+ directory profiles).
+2. Top Tier-2 Regional & Business Registries for ${city}.
+3. Top 5 High-Relevance Niche / Vertical Directories for ${category}.
+4. Exact Submission Data Matrix:
+   - Business Title (exact unbranded)
+   - Category mapping recommendations
+   - 250-character and 500-character description variations
+   - Target anchor text and website tracking parameters.
+5. Aggregator Syndication Strategy (Data Axle, Neustar Localeze, Foursquare).`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are a senior citation builder and local search data aggregator strategist.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-localseo-schema")?.addEventListener("click", async () => {
+    const biz = document.getElementById("localseo-biz").value.trim() || "Apex Media Studio";
+    const addr = document.getElementById("localseo-address").value.trim() || "Shop 12, Main Market, Sector 15";
+    const phone = document.getElementById("localseo-phone").value.trim() || "+91-9876543210";
+    const website = document.getElementById("localseo-website").value.trim() || "https://bhardwajstudio.in";
+    const city = document.getElementById("localseo-city").value.trim() || "Delhi, 110001";
+    const category = document.getElementById("localseo-category").value.trim() || "PhotographyStudio";
+    const resBox = document.getElementById("localseo-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Generating Master LocalBusiness Schema for ${biz}...`;
+
+    const prompt = `Generate a complete, production-ready LocalBusiness JSON-LD Schema (Schema.org compliant) for:
+Business Name: ${biz}
+Schema @type: ${category}
+Street Address: ${addr}
+City & Region: ${city}
+Phone: ${phone}
+Website: ${website}
+
+Output:
+1. Complete JSON-LD enclosed in <script type="application/ld+json">:
+   - Must include: @context, @type, @id, name, url, telephone, address (PostalAddress), geo (GeoCoordinates), areaServed (Multiple administrative areas), openingHoursSpecification, priceRange.
+   - Must include an authoritative sameAs array linking to GBP, Facebook, Instagram, Yelp, and top local citations.
+2. Verification instructions for Google Rich Results Test and placement recommendation.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an expert technical SEO and Schema.org structured data engineer.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
 });

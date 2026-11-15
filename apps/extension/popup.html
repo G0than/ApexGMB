@@ -172,6 +172,7 @@
     <button class="tab-btn" data-tab="orm">🛡️ ORM & Brand Defense</button>
     <button class="tab-btn" data-tab="ahrefs">📊 Ahrefs Intelligence</button>
     <button class="tab-btn" data-tab="ecom">🛍️ eCommerce & Packages</button>
+    <button class="tab-btn" data-tab="localseo">📍 Local SEO Masterclass</button>
     <button class="tab-btn" data-tab="teleport">Teleport</button>
     <button class="tab-btn" data-tab="settings">Settings</button>
   </div>
@@ -416,6 +417,47 @@
     <button class="btn btn-purple" id="btn-ecom-content" style="margin-top:6px;">📝 Generate Category Page Content (Above & Below Grid)</button>
     <button class="btn btn-teal" id="btn-ecom-silo" style="margin-top:6px;">🏗️ Design 3-Click Silo & Parameter Defense</button>
     <div class="result-box" id="ecom-results" style="display:none;"></div>
+  </div>
+
+  <!-- Tab: Local SEO Masterclass (Ghulam Ali Zero-to-Hero) -->
+  <div id="tab-localseo" class="tab-content">
+    <div class="form-group">
+      <label>Business Name (Canonical)</label>
+      <input type="text" id="localseo-biz" value="Apex Media Studio" placeholder="e.g. Apex Media Studio">
+    </div>
+    <div class="form-group">
+      <label>Full Physical Street Address</label>
+      <input type="text" id="localseo-address" value="Shop 12, Main Market, Sector 15" placeholder="Building, Street, Suite/Shop #">
+    </div>
+    <div style="display:flex; gap:8px;">
+      <div class="form-group" style="flex:1;">
+        <label>Phone Number</label>
+        <input type="text" id="localseo-phone" value="+91-9876543210" placeholder="+91-...">
+      </div>
+      <div class="form-group" style="flex:1;">
+        <label>Category / Schema @type</label>
+        <input type="text" id="localseo-category" value="PhotographyStudio" placeholder="PhotographyStudio">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Website Canonical URL</label>
+      <input type="text" id="localseo-website" value="https://bhardwajstudio.in" placeholder="https://...">
+    </div>
+    <div style="display:flex; gap:8px;">
+      <div class="form-group" style="flex:1;">
+        <label>Neighborhood / Sub-locality</label>
+        <input type="text" id="localseo-neighborhood" value="Connaught Place" placeholder="e.g. Connaught Place">
+      </div>
+      <div class="form-group" style="flex:1;">
+        <label>City & PIN Code</label>
+        <input type="text" id="localseo-city" value="Delhi, 110001" placeholder="Delhi, 110001">
+      </div>
+    </div>
+    <button class="btn btn-primary" id="btn-localseo-nap">🔍 Run NAP & Citation Consistency Audit</button>
+    <button class="btn btn-purple" id="btn-localseo-silo" style="margin-top:6px;">🗺️ Generate Geo-Silo & Neighborhood Page Blueprint</button>
+    <button class="btn btn-teal" id="btn-localseo-citations" style="margin-top:6px;">🏛️ Generate High-Impact Citation Directory Matrix</button>
+    <button class="btn btn-secondary" id="btn-localseo-schema" style="margin-top:6px;">🏷️ Generate Master LocalBusiness JSON-LD Schema</button>
+    <div class="result-box" id="localseo-results" style="display:none;"></div>
   </div>
 
   <!-- Tab 4: Teleport -->

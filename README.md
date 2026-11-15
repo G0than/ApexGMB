@@ -42,6 +42,7 @@ ApexGMB manages Google Business Profiles for local businesses and the agencies t
    * Teleport location coordinates for geo-grid visibility testing.
 
 3. 🧠 **Autonomous Agent Skills Suite (`skills/`)**
+   * `ghulam-ali-local-seo-mastery`: Ghulam Ali's 5-Hour Local SEO Masterclass covering NAP consistency audits, geo-grid proximity expansion, neighborhood geo-silos, local citation matrix, and master `LocalBusiness` JSON-LD schema.
    * `ecommerce-seo-architecture`: Ghulam Ali eCommerce 3-click silo architecture, faceted navigation defense, and Product/Offer rich snippets schema.
    * `ahrefs-competitive-intelligence`: Ahrefs Link Intersect gap analysis, Keyword Explorer intent clustering, and Technical Site Health Audits.
    * `pbn-aged-domain-authority`: Aged domain evaluation, Harmonic Centrality, Common Crawl AI training ingestion, and parasite SEO market probing.
@@ -140,6 +141,58 @@ python3 skills/scripts/gmb_ai_runner.py product-schema --name "Luxury Wedding Pa
 
 # 3. Generate Category Page Copy (Above & Below the Grid)
 python3 skills/scripts/gmb_ai_runner.py category-content --category "Pre-Wedding Packages" --niche "Wedding Photography" --city "Delhi NCR"
+```
+
+---
+
+## 📍 Complete 5-Hour Local SEO Masterclass (Ghulam Ali Zero-to-Hero)
+
+> Encapsulates the end-to-end framework from **Ghulam Ali's 5-Hour Local SEO Masterclass** (`https://youtu.be/5S1c3YXNlJA`):
+
+* **NAP Consistency & Data Aggregator Engineering**: Audits and standardizes the exact canonical Name, Address, and Phone formatting across website headers/footers, GBP, and data aggregators to eliminate algorithmic ranking drag caused by abbreviation discrepancies (e.g. "Road" vs "Rd", suite variations).
+* **Geo-Grid Proximity Expansion & Geo-Silos**: Breaks businesses out of the 1–2 mile proximity bubble using hyper-local neighborhood landing pages (`/locations/[neighborhood-service]`), localized Google Map embeds with CID / Place ID binding, driving directions from key landmarks, and localized customer proof.
+* **High-Impact Citation Building Matrix**: Generates a tailored submission matrix covering Tier-1 foundational citations (DA 80+), regional registries, and industry-specific vertical directories with exact unbranded anchors and category mappings.
+* **Master `LocalBusiness` JSON-LD Schema**: Generates complete, Google Rich Results-compliant structured data with `GeoCoordinates`, `areaServed` multi-locality boundaries, `openingHoursSpecification`, and authoritative `sameAs` entity link clustering.
+* **GBP Verification & Re-instatement Protocol**: Video verification checklist (exterior signage, tools of trade, physical door unlock, lease/utility proof) and appeal templates to prevent or reverse sudden listing suspensions.
+
+Run via CLI:
+```bash
+# 1. Run NAP & Local Citation Consistency Audit
+python3 skills/scripts/gmb_ai_runner.py nap-audit \
+  --business "Apex Media Studio" \
+  --address "Shop 12, Main Market, Sector 15" \
+  --phone "+91-9876543210" \
+  --website "https://bhardwajstudio.in" \
+  --city "Delhi NCR"
+
+# 2. Design Geo-Silo & Neighborhood Landing Page Blueprint
+python3 skills/scripts/gmb_ai_runner.py geo-silo \
+  --business "Apex Media Studio" \
+  --service "Wedding Photography" \
+  --neighborhood "Connaught Place" \
+  --city "Delhi" \
+  --landmarks "CP Metro Gate 4, Janpath, Shivaji Stadium"
+
+# 3. Generate High-Impact Local Citation Directory Matrix
+python3 skills/scripts/gmb_ai_runner.py local-citation-matrix \
+  --business "Apex Media Studio" \
+  --category "Photography Studio" \
+  --city "Delhi NCR" \
+  --country "India"
+
+# 4. Generate Master Schema.org LocalBusiness JSON-LD
+python3 skills/scripts/gmb_ai_runner.py local-schema \
+  --business "Apex Media Studio" \
+  --category "PhotographyStudio" \
+  --address "Shop 12, Main Market, Sector 15" \
+  --city "Noida" \
+  --state "UP" \
+  --zip "201301" \
+  --country "IN" \
+  --phone "+91-9876543210" \
+  --website "https://bhardwajstudio.in" \
+  --lat "28.5800" \
+  --lng "77.3178"
 ```
 
 ---
