@@ -1,10 +1,9 @@
 {
   "name": "@apexgmb/extension",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "ApexGMB - Local SEO & Audit Engine Chrome Extension",
   "private": true,
   "scripts": {
     "lint": "eslint . --ext .js"
   }
 }
-

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "ApexGMB - Local SEO & Audit Engine",
-  "version": "3.0.0",
-  "description": "Professional Google Business Profile & Local SEO Engine: Category Inspector, Map Pack Audits, Review Analysis, Teleport, and AI Optimization directly on Google Maps.",
+  "version": "3.0.2",
+  "description": "ApexGMB - Autonomous Google Business Profile & Local Rank Engine with Gemini 3.8 and 6-in-1 Ahrefs SEO Suite.",
   "permissions": [
     "storage",
     "activeTab"
@@ -24,7 +24,9 @@
         "https://*.google.com/maps/*",
         "https://*.google.com/search*"
       ],
-      "js": ["injected.js"],
+      "js": [
+        "injected.js"
+      ],
       "world": "MAIN",
       "run_at": "document_start"
     },
@@ -33,8 +35,12 @@
         "https://*.google.com/maps/*",
         "https://*.google.com/search*"
       ],
-      "js": ["content.js"],
-      "css": ["styles.css"],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
       "run_at": "document_end"
     }
   ],
