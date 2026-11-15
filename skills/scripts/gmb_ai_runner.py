@@ -570,6 +570,84 @@ Output:
     print("="*50)
     print(result)
 
+def run_content_gap(args):
+    prompt = f"""
+Perform a deep Ahrefs Content Gap / Keyword Gap Analysis (Ghulam Ali framework) comparing:
+My Website: {args.my_site}
+Competitor Websites: {args.competitors}
+Business Niche / Category: {args.niche}
+Target Location: {args.city}
+
+Deliver:
+1. High-Opportunity Content Gap Matrix: Keywords where 2 or more competitors rank in the Top 10 on Google, but {args.my_site} is completely missing.
+2. Striking Distance Targets (Positions 11–20): Quick-win commercial keywords that can break into Page 1 with minor on-page optimizations or internal links.
+3. Missing Sub-Topics & Category Silos: Structural content sections competitors have built that our site is lacking.
+4. 3 Actionable Content Briefs: H1, target secondary keywords, search intent (Commercial vs Informational), and recommended word count to win each gap.
+"""
+    result = call_llm(prompt, "You are a master of Ahrefs Content Gap analysis and competitive search intelligence.")
+    print("\n" + "="*50)
+    print(f"🎯 AHREFS CONTENT GAP ANALYSIS: {args.my_site}")
+    print("="*50)
+    print(result)
+
+def run_top_pages_teardown(args):
+    prompt = f"""
+Reverse-engineer and teardown a competitor's top-performing organic page based on Ghulam Ali's Ahrefs Masterclass:
+Competitor Target URL: {args.competitor}
+Niche: {args.niche}
+
+Deconstruct:
+1. Traffic & Intent Estimation: What primary search queries and buyer intent make this page drive 80% of their organic inquiries.
+2. Structural Blueprint:
+   - Target H1 and H2/H3 outline
+   - Content format (Comparison table, gallery showcase, price calculator, or step-by-step guide)
+   - Estimated word count and visual asset density
+3. Semantic Entity & LSI Density: Key terminology and contextual entities Google associates with this page.
+4. The 10x Outranking Strategy: How to build a superior asset on our own domain that satisfies search intent better and captures the #1 ranking.
+"""
+    result = call_llm(prompt, "You are an elite SEO strategist specializing in competitive reverse-engineering and content optimization.")
+    print("\n" + "="*50)
+    print(f"🏆 COMPETITOR TOP PAGE TEARDOWN: {args.competitor}")
+    print("="*50)
+    print(result)
+
+def run_broken_link_builder(args):
+    prompt = f"""
+Create a Broken Link Building (Dead Link Steal) campaign based on Ghulam Ali's Ahrefs Masterclass for:
+Business: {args.business}
+Topic / Service Area: {args.topic}
+Niche: {args.niche}
+
+Provide:
+1. Competitor Dead Link Discovery Protocol: How to use Ahrefs Best by Links (filtered to 404 Not Found) to uncover high-authority dead links in this vertical.
+2. Replacement Asset Blueprint: What valuable, link-worthy resource or guide to publish to replace the dead competitor URL.
+3. High-Converting Webmaster Outreach Pitch: A personalized, non-spammy email template alerting the linking webmaster to their broken link and offering our new resource as a superior drop-in replacement.
+4. Conversion Optimization Tips: Follow-up cadence and value-add angles.
+"""
+    result = call_llm(prompt, "You are an expert backlink strategist specializing in broken link reclamation and outreach.")
+    print("\n" + "="*50)
+    print(f"⚡ BROKEN LINK BUILDING PLAYBOOK: {args.topic}")
+    print("="*50)
+    print(result)
+
+def run_toxic_link_audit(args):
+    prompt = f"""
+Perform a Backlink Profile Health & Toxic Link Audit based on Ghulam Ali's Ahrefs Masterclass for:
+Domain: {args.domain}
+Current Anchor Texts Sample: {args.anchors or 'Default branded and service anchors'}
+
+Deliver:
+1. Anchor Text Distribution Health Check: Evaluate against Google-safe ratios (Branded 50-60%, Naked URLs 20-25%, Generic 10-15%, Exact Match <10%).
+2. Toxic Link Risk Triggers: Identifying negative SEO attacks, foreign casino/poker anchor injections, automated scraper links, or bad PBN footprints.
+3. Formatted Google Disavow Rules: Exact syntax output ready for Google Search Console disavow.txt (domain-level and URL-level rules).
+4. Recovery Action Plan: Timeline and re-crawl acceleration strategies post-disavow submission.
+"""
+    result = call_llm(prompt, "You are a senior SEO penalty and backlink audit specialist.")
+    print("\n" + "="*50)
+    print(f"🛡️ TOXIC LINK AUDIT & DISAVOW RULES: {args.domain}")
+    print("="*50)
+    print(result)
+
 def main():
     parser = argparse.ArgumentParser(description="GMB Automation Playbook CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -773,6 +851,33 @@ def main():
     p_ls.add_argument("--lat", default="28.6139", help="Latitude")
     p_ls.add_argument("--lng", default="77.2090", help="Longitude")
     p_ls.set_defaults(func=run_local_schema)
+
+    # content-gap
+    p_cg = sub.add_parser("content-gap", help="Ahrefs Content Gap / Keyword Gap Analysis")
+    p_cg.add_argument("--my-site", required=True, help="Your website URL or domain")
+    p_cg.add_argument("--competitors", required=True, help="Comma-separated competitor URLs")
+    p_cg.add_argument("--niche", required=True, help="Business niche / vertical")
+    p_cg.add_argument("--city", default="Local Metro", help="Target city")
+    p_cg.set_defaults(func=run_content_gap)
+
+    # top-pages-teardown
+    p_tp = sub.add_parser("top-pages-teardown", help="Reverse-engineer competitor top-performing organic page")
+    p_tp.add_argument("--competitor", required=True, help="Competitor target URL")
+    p_tp.add_argument("--niche", required=True, help="Business niche")
+    p_tp.set_defaults(func=run_top_pages_teardown)
+
+    # broken-link-builder
+    p_bl = sub.add_parser("broken-link-builder", help="Broken Link Building (Dead Link Steal) campaign")
+    p_bl.add_argument("--business", required=True, help="Business name")
+    p_bl.add_argument("--topic", required=True, help="Topic or guide title")
+    p_bl.add_argument("--niche", required=True, help="Business vertical")
+    p_bl.set_defaults(func=run_broken_link_builder)
+
+    # toxic-link-audit
+    p_tl = sub.add_parser("toxic-link-audit", help="Backlink Profile Health, Toxic Link & Google Disavow Audit")
+    p_tl.add_argument("--domain", required=True, help="Domain name")
+    p_tl.add_argument("--anchors", default="", help="Sample backlink anchor texts")
+    p_tl.set_defaults(func=run_toxic_link_audit)
 
     args = parser.parse_args()
     args.func(args)

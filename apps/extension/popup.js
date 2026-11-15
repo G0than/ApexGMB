@@ -744,6 +744,111 @@ Perform a rigorous Competitor Backlink Gap Analysis:
     }
   });
 
+  document.getElementById("btn-ahrefs-gap")?.addEventListener("click", async () => {
+    const site = document.getElementById("ahrefs-site").value.trim() || "bhardwajstudio.in";
+    const comps = document.getElementById("ahrefs-comps").value.trim() || "competitors.com";
+    const topic = document.getElementById("ahrefs-keyword").value.trim() || "wedding photography";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Running Ahrefs Content Gap Analysis against ${comps}...`;
+
+    const prompt = `Perform a comprehensive Ahrefs Content Gap / Organic Keyword Gap Analysis (Ghulam Ali framework) comparing:
+My Website: ${site}
+Competitor Domains: ${comps}
+Seed Topic: ${topic}
+
+Deliver:
+1. High-Opportunity Content Gap Matrix: Keywords where 2 or more competitors rank in the Top 10 on Google, but ${site} is missing.
+2. Striking Distance Targets (Positions 11–20): Quick-win commercial keywords that can break into Page 1 with minor on-page optimizations or internal links.
+3. Missing Sub-Topics & Category Silos: Structural content sections competitors have built that our site lacks.
+4. 3 Actionable Content Briefs: H1, target secondary keywords, search intent (Commercial vs Informational), and recommended word count.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are a master of Ahrefs Content Gap analysis and competitive search intelligence.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-ahrefs-top")?.addEventListener("click", async () => {
+    const targetUrl = document.getElementById("ahrefs-keyword").value.trim() || "competitor.com/best-service";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Reverse-Engineering Top-Performing Page: ${targetUrl}...`;
+
+    const prompt = `Reverse-engineer and teardown a competitor's top-performing organic page based on Ghulam Ali's Ahrefs Masterclass:
+Target Competitor URL/Topic: ${targetUrl}
+
+Deconstruct:
+1. Traffic & Intent Estimation: What primary search queries and buyer intent make this page drive 80% of their organic inquiries.
+2. Structural Blueprint:
+   - Target H1 and H2/H3 outline
+   - Content format (Comparison table, gallery showcase, price calculator, or step-by-step guide)
+   - Estimated word count and visual asset density
+3. Semantic Entity & LSI Density: Key terminology and contextual entities Google associates with this page.
+4. The 10x Outranking Strategy: How to build a superior asset on our own domain that satisfies search intent better and captures the #1 ranking.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an elite SEO strategist specializing in competitive reverse-engineering.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-ahrefs-broken")?.addEventListener("click", async () => {
+    const site = document.getElementById("ahrefs-site").value.trim() || "bhardwajstudio.in";
+    const topic = document.getElementById("ahrefs-keyword").value.trim() || "Wedding Photography Guide";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Formulating Broken Link Steal Playbook for '${topic}'...`;
+
+    const prompt = `Create a Broken Link Building (Dead Link Steal) campaign based on Ghulam Ali's Ahrefs Masterclass for:
+Business / Domain: ${site}
+Topic: ${topic}
+
+Provide:
+1. Dead Link Discovery Protocol: How to use Ahrefs Best by Links (filtered to 404 Not Found) to uncover high-authority dead links in this vertical.
+2. Replacement Asset Blueprint: What valuable, link-worthy resource or guide to publish to replace the dead competitor URL.
+3. High-Converting Webmaster Outreach Pitch: A personalized, non-spammy email template alerting the linking webmaster to their broken link and offering our new resource as a superior drop-in replacement.
+4. Follow-up Cadence & Conversion Optimization.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an expert backlink strategist specializing in broken link reclamation and outreach.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-ahrefs-toxic")?.addEventListener("click", async () => {
+    const site = document.getElementById("ahrefs-site").value.trim() || "bhardwajstudio.in";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Auditing Backlink Profile & Generating Google Disavow Rules for ${site}...`;
+
+    const prompt = `Perform a Backlink Profile Health & Toxic Link Audit based on Ghulam Ali's Ahrefs Masterclass for:
+Domain: ${site}
+
+Deliver:
+1. Anchor Text Distribution Health Check: Evaluate against Google-safe ratios (Branded 50-60%, Naked URLs 20-25%, Generic 10-15%, Exact Match <10%).
+2. Toxic Link Risk Triggers: Identifying negative SEO attacks, foreign casino/poker anchor injections, automated scraper links, or bad PBN footprints.
+3. Formatted Google Disavow Rules: Exact syntax output ready for Google Search Console disavow.txt (domain-level and URL-level rules).
+4. Recovery Action Plan: Timeline and re-crawl acceleration strategies post-disavow submission.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are a senior SEO penalty and backlink audit specialist.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
   document.getElementById("btn-ahrefs-explorer")?.addEventListener("click", async () => {
     const keyword = document.getElementById("ahrefs-keyword").value.trim() || "wedding photographer";
     const resBox = document.getElementById("ahrefs-results");

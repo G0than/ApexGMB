@@ -99,25 +99,58 @@ python3 skills/scripts/gmb_ai_runner.py parasite-probe --business "Apex Media St
 
 ---
 
-## 📊 Ahrefs-Grade Competitor & Search Intelligence
+## 📊 Ahrefs Masterclass & Search Intelligence
 
-> Based on the industry standard workflows from **Ahrefs** (Keyword Explorer, Site Explorer, Link Intersect, and Technical Site Audit):
+> Based on **Ghulam Ali's Ahrefs Masterclass: Learn Complete SEO From This Tool** (`https://youtu.be/WjEIx9kbVY8`):
 
-* **Link Intersect (Competitor Backlink Gap)**: Analyzes 2–3 competitor domains to reveal the high-authority local directories, vendor listings, and niche blogs linking to competitors that you are missing—generating a prioritized outreach checklist.
+* **Content Gap / Organic Keyword Gap Analysis**: Uncovers high-converting commercial keywords where 2 or more competitors rank on Page 1 (Top 10), but your site does not rank or is trapped on Page 3+, generating immediate content briefs to steal market share.
+* **Competitor Top Pages Reverse-Engineering**: Deconstructs the 5–10 pages driving 80% of competitor search inquiries—analyzing their heading structure, semantic entity density, and lead capture mechanisms.
+* **Broken Link Building (The Dead Link Steal)**: Discovers broken 404 URLs on competitor domains that still receive high-authority backlinks, generating high-converting outreach emails to steal the backlink equity.
+* **Toxic Backlink Audit & Google Disavow Generator**: Detects negative SEO attacks, toxic scraper networks, automated PBN footprints, and foreign spam anchors—generating valid `disavow.txt` rules for Google Search Console.
+* **Link Intersect (Competitor Backlink Gap)**: Analyzes competitor domains to reveal the high-authority local directories, vendor listings, and niche blogs linking to competitors that you are missing.
 * **Keyword Explorer & Intent Clustering**: Decomposes seed keywords into high-commercial "Money" transactional queries, commercial investigation topics, and informational question modifiers, with estimated Keyword Difficulty (KD) and target SERP features.
-* **Anchor Text Health & Penalty Shield**: Enforces safe backlink anchor distributions (50–60% Branded, 20–25% Naked URLs, max 10% Exact Match) to prevent algorithmic penalties.
 * **Technical Site Health Audit**: 1-click checklist covering robots.txt, XML sitemaps, canonical tags, heading hierarchy, image alt text, and Core Web Vitals (LCP/CLS/INP).
 
 Run via CLI:
 ```bash
-# Competitor Link Intersect Gap Analysis
-python3 skills/scripts/gmb_ai_runner.py link-intersect --my-site "yoursite.com" --competitors "comp1.com, comp2.com" --niche "Wedding Photography"
+# 1. Content Gap / Keyword Gap Analysis
+python3 skills/scripts/gmb_ai_runner.py content-gap \
+  --my-site "bhardwajstudio.in" \
+  --competitors "weddingwire.in, shaadisaga.com, wedmegood.com" \
+  --niche "Wedding Photography" \
+  --city "Delhi NCR"
 
-# Keyword Explorer & Search Intent Matrix
-python3 skills/scripts/gmb_ai_runner.py keyword-explorer --keyword "wedding photographer Delhi" --niche "Photography Studio"
+# 2. Reverse-Engineer Competitor Top Performing Page
+python3 skills/scripts/gmb_ai_runner.py top-pages-teardown \
+  --competitor "competitorstudio.com/pre-wedding-shoot-delhi" \
+  --niche "Wedding Photography"
 
-# Technical Site Health Audit
-python3 skills/scripts/gmb_ai_runner.py site-audit --url "https://yoursite.com" --niche "Local Studio"
+# 3. Broken Link Steal Playbook & Outreach Pitch
+python3 skills/scripts/gmb_ai_runner.py broken-link-builder \
+  --business "Apex Media Studio" \
+  --topic "Ultimate Wedding Photography Checklist" \
+  --niche "Photography Studio"
+
+# 4. Toxic Link & Negative SEO Disavow Audit
+python3 skills/scripts/gmb_ai_runner.py toxic-link-audit \
+  --domain "bhardwajstudio.in" \
+  --anchors "cheap casino, buy followers, best wedding photographer"
+
+# 5. Competitor Link Intersect Gap Analysis
+python3 skills/scripts/gmb_ai_runner.py link-intersect \
+  --my-site "bhardwajstudio.in" \
+  --competitors "comp1.com, comp2.com" \
+  --niche "Wedding Photography"
+
+# 6. Keyword Explorer & Search Intent Matrix
+python3 skills/scripts/gmb_ai_runner.py keyword-explorer \
+  --keyword "wedding photographer Delhi" \
+  --niche "Photography Studio"
+
+# 7. Technical Site Health Audit
+python3 skills/scripts/gmb_ai_runner.py site-audit \
+  --url "https://bhardwajstudio.in" \
+  --niche "Local Studio"
 ```
 
 ---
