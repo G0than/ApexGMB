@@ -313,6 +313,44 @@ Generate a complete ORM & Branded SERP Protection Blueprint incorporating 2026 A
     print("="*50)
     print(result)
 
+def run_domain_eval(args):
+    prompt = f"""
+You are an expert domain evaluator and link architect (applying Kalin Karakehayov's 200k+ domain framework).
+Domain to Evaluate: {args.domain}
+Target Niche / Vertical: {args.niche}
+Known History / Metrics: {args.history or 'Not specified'}
+
+Analyze this domain for:
+1. Authority & Harmonic Centrality Potential: How strongly its link proximity can impact Google PageRank and Common Crawl AI search ingestion.
+2. The 5-Point Safety Filter: Wayback spam check, anchor text naturalness, toxic redirects, topical congruence.
+3. Recommended Deployment Strategy: 301 redirect vs Private Content Hub vs Money Site rebuild.
+4. Footprint Neutralization Guidelines: Hosting, WHOIS, and outbound link profile requirements.
+"""
+    result = call_llm(prompt, "You are a master of aged domains, link graphs, and private network architecture.")
+    print("\n" + "="*50)
+    print(f"🌐 AGED DOMAIN & HARMONIC CENTRALITY EVALUATION: {args.domain}")
+    print("="*50)
+    print(result)
+
+def run_parasite_probe(args):
+    prompt = f"""
+You are an aggressive SEO market strategist applying Parasite SEO and Territory Dominance (Charles Floate & David Quaid playbook).
+Business: {args.business}
+Target Keyword: {args.keyword}
+Niche: {args.niche}
+
+Provide a Rapid Parasite SEO Probing Plan:
+1. Top 3 Parasite Platforms for this search intent (LinkedIn Pulse, Medium, Substack, Reddit, Quora).
+2. The 48-Hour Ranking Content Outline: Hook, search intent fulfillment, schema/formatting, internal link anchors.
+3. Conversion & Money Funnel: How to siphon traffic from the parasite page into the primary Google Business Profile or booking funnel.
+4. Scale-to-Asset Decision Criteria: When to transition from parasite ranking to buying an Aged Domain or EMD.
+"""
+    result = call_llm(prompt, "You are an elite parasite SEO and digital territory growth engineer.")
+    print("\n" + "="*50)
+    print(f"⚡ PARASITE SEO PROBING BLUEPRINT: {args.keyword}")
+    print("="*50)
+    print(result)
+
 def main():
     parser = argparse.ArgumentParser(description="GMB Automation Playbook CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -418,6 +456,20 @@ def main():
     p_orm.add_argument("--city", default="Local City", help="City")
     p_orm.add_argument("--issue", default="", help="Specific negative keyword, review crisis, or competitor issue")
     p_orm.set_defaults(func=run_orm)
+
+    # domain-eval
+    p_de = sub.add_parser("domain-eval", help="Evaluate aged domain authority and Harmonic Centrality")
+    p_de.add_argument("--domain", required=True, help="Domain name")
+    p_de.add_argument("--niche", required=True, help="Target niche / vertical")
+    p_de.add_argument("--history", default="", help="Known history, RD count, or Wayback summary")
+    p_de.set_defaults(func=run_domain_eval)
+
+    # parasite-probe
+    p_pp = sub.add_parser("parasite-probe", help="Plan rapid parasite SEO market probing campaign")
+    p_pp.add_argument("--business", required=True, help="Business name")
+    p_pp.add_argument("--keyword", required=True, help="Target search keyword")
+    p_pp.add_argument("--niche", required=True, help="Niche / category")
+    p_pp.set_defaults(func=run_parasite_probe)
 
     args = parser.parse_args()
     args.func(args)

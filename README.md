@@ -42,6 +42,7 @@ ApexGMB manages Google Business Profiles for local businesses and the agencies t
    * Teleport location coordinates for geo-grid visibility testing.
 
 3. 🧠 **Autonomous Agent Skills Suite (`skills/`)**
+   * `pbn-aged-domain-authority`: Aged domain evaluation, Harmonic Centrality, Common Crawl AI training ingestion, and parasite SEO market probing.
    * `gmb-orm-brand-defense`: Online Reputation Management (ORM) & Branded SERP 10-asset blanket defense.
    * `gmb-profile-audit`: Comprehensive SEO and health audit.
    * `gmb-review-automation`: Sentiment-driven, contextual review response generator.
@@ -71,6 +72,26 @@ ApexGMB treats your search results as an impenetrable fortress:
 Run the ORM engine via CLI:
 ```bash
 python3 skills/scripts/gmb_ai_runner.py orm --business "Apex Media Studio" --category "Photography Studio" --city "Delhi NCR"
+```
+
+---
+
+## 🌐 Aged Domain Authority, Harmonic Centrality & Parasite SEO
+
+> Based on the 2026 search architectures by **Kalin Karakehayov** (200k+ domains), **Charles Floate**, and **David Quaid**:
+
+* **Zero-Traffic Link Math**: Contextual backlinks from clean aged domains with strong historical authority and referring domain diversity pass massive ranking power to Google Business Profiles and money sites—even if the aged domain gets 0 organic traffic.
+* **Harmonic Centrality & Common Crawl Ingestion**: Moving beyond simple PageRank to proximity in the global web graph. Domains with high Harmonic Centrality are prioritized by Common Crawl dumps, forcing brand entities into the foundational training corpora of LLMs (Gemini, ChatGPT, Claude, Perplexity).
+* **Parasite SEO Probing**: Rapidly test keyword commercial conversion in 48–72 hours using high-DA parasite assets (LinkedIn Pulse, Medium, Substack, Reddit) before investing in custom domains.
+* **PBN Footprint Neutralization**: Class-C subnet IP separation, registrar rotation, non-reciprocal link flow, and natural outbound reference profiles.
+
+Run via CLI:
+```bash
+# Evaluate an Aged Domain for Authority & Harmonic Centrality
+python3 skills/scripts/gmb_ai_runner.py domain-eval --domain "oldphotostudio.com" --niche "Photography Studio"
+
+# Plan a Parasite SEO Probing Campaign
+python3 skills/scripts/gmb_ai_runner.py parasite-probe --business "Apex Media Studio" --keyword "luxury wedding photographer Delhi" --niche "Wedding Photography"
 ```
 
 ---

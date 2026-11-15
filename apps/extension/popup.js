@@ -667,4 +667,53 @@ Draft:
       resBox.innerText = "Error: " + e.message;
     }
   });
+
+  document.getElementById("btn-orm-domain")?.addEventListener("click", async () => {
+    const biz = document.getElementById("orm-biz").value.trim() || "Apex Media Studio";
+    const niche = document.getElementById("orm-city").value.trim() || "Local Business";
+    const resBox = document.getElementById("orm-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = "Analyzing Aged Domain Authority & Harmonic Centrality (Kalin Karakehayov Framework)...";
+
+    const prompt = `As an elite link graph & aged domain architect (Kalin Karakehayov 200k domain framework):
+Analyze an aged domain acquisition and authority strategy for ${biz} (${niche}):
+1. Harmonic Centrality vs PageRank: How aged link proximity pushes the brand into Common Crawl and AI search model training.
+2. The 5-Point Safety Filter: Wayback checks, anchor text naturalness, toxic redirects, topical congruence.
+3. Zero-Traffic Link Value Math: Why aged domain equity passes massive rank power even with zero current traffic.
+4. Footprint Neutralization Protocol: Class-C IP distribution, registrar rotation, and natural outbound profile.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are a master of aged domains and link architecture.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-orm-parasite")?.addEventListener("click", async () => {
+    const biz = document.getElementById("orm-biz").value.trim() || "Apex Media Studio";
+    const niche = document.getElementById("orm-city").value.trim() || "Local Business";
+    const resBox = document.getElementById("orm-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = "Formulating 48-Hour Parasite SEO Probing Plan (Charles Floate Playbook)...";
+
+    const prompt = `You are a digital territory growth engineer (Charles Floate & David Quaid playbook).
+Business: ${biz}
+Vertical: ${niche}
+
+Generate a Parasite SEO Market Probing Action Plan:
+1. Top 3 Parasite Platforms for fast ranking (LinkedIn Pulse, Medium, Substack, Reddit, Quora).
+2. The 48-Hour Ranking Content Outline: Hook, search intent fulfillment, schema/formatting, internal link anchors.
+3. Siphoning Traffic: How to funnel parasite readers into the Google Business Profile and booking form.
+4. When to transition from Parasite ranking to acquiring an Exact-Match or Aged Domain.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an elite parasite SEO and territory growth engineer.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
 });
