@@ -288,6 +288,31 @@ Structure:
     print("="*50)
     print(result)
 
+def run_orm(args):
+    prompt = f"""
+You are an elite Online Reputation Management (ORM) & Branded SERP Dominance Strategist.
+Business: {args.business}
+Category / Niche: {args.category}
+Market: {args.city}
+Specific Issue or Context: {args.issue or 'General brand defense & review funnel automation'}
+
+Generate a complete ORM & Branded SERP Protection Blueprint incorporating 2026 AI SEO and Review Gating:
+1. Branded SERP Defense Strategy: Define 10 high-authority assets to blanket Page 1 Google results for "{args.business} reviews/complaints", pushing negative results to Page 2.
+2. Review Gating & Funnel Architecture (GoHighLevel style):
+   - SMS & Email trigger sequence (timing, copy, direct Google review short-link)
+   - Positive path (4-5 stars -> direct Google Maps review flow)
+   - Negative interception path (1-3 stars -> private manager feedback loop)
+3. 2026 AI SEO & Entity Shielding:
+   - Organization Schema `sameAs` entity cluster
+   - SGE / AI Overviews sentiment protection playbook
+4. Rapid Crisis De-escalation Protocol (A.A.A. framework for handling hostile reviews or public complaints without brand damage)
+"""
+    result = call_llm(prompt, "You are a master of Online Reputation Management (ORM) and Branded SERP SEO.")
+    print("\n" + "="*50)
+    print(f"🛡️ ORM & BRANDED SERP DEFENSE BLUEPRINT: {args.business}")
+    print("="*50)
+    print(result)
+
 def main():
     parser = argparse.ArgumentParser(description="GMB Automation Playbook CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -385,6 +410,14 @@ def main():
     p_fours.add_argument("--category", required=True, help="Category")
     p_fours.add_argument("--city", default="Local City", help="City")
     p_fours.set_defaults(func=run_fours)
+
+    # orm
+    p_orm = sub.add_parser("orm", help="Online Reputation Management (ORM) & Branded SERP Dominance")
+    p_orm.add_argument("--business", required=True, help="Business name")
+    p_orm.add_argument("--category", required=True, help="Category")
+    p_orm.add_argument("--city", default="Local City", help="City")
+    p_orm.add_argument("--issue", default="", help="Specific negative keyword, review crisis, or competitor issue")
+    p_orm.set_defaults(func=run_orm)
 
     args = parser.parse_args()
     args.func(args)

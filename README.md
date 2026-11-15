@@ -42,6 +42,7 @@ ApexGMB manages Google Business Profiles for local businesses and the agencies t
    * Teleport location coordinates for geo-grid visibility testing.
 
 3. 🧠 **Autonomous Agent Skills Suite (`skills/`)**
+   * `gmb-orm-brand-defense`: Online Reputation Management (ORM) & Branded SERP 10-asset blanket defense.
    * `gmb-profile-audit`: Comprehensive SEO and health audit.
    * `gmb-review-automation`: Sentiment-driven, contextual review response generator.
    * `gmb-weekly-post-engine`: Geo-targeted, keyword-dense weekly post creator.
@@ -53,6 +54,24 @@ ApexGMB manages Google Business Profiles for local businesses and the agencies t
 
 5. ⚡ **Multi-LLM Native Support**
    * Integrated support for **Google Gemini 2.5 Flash / Pro**, **OpenAI GPT-4o / GPT-4o-mini**, and **Anthropic Claude**.
+
+---
+
+## 🛡️ Online Reputation Management (ORM) & SEO Defense
+
+> **SEO is the engine inside ORM.**  
+> While traditional SEO targets discovery searches (*"wedding photographer"*), ORM controls **branded searches** (*"[Brand] reviews"*, *"[Brand] complaints"*, *"[Brand] scam"*).
+
+ApexGMB treats your search results as an impenetrable fortress:
+* **The 10-Asset SERP Blanket**: Pushes negative or defamatory links down to Page 2 (where less than 1% of users click) by ranking 10 high-authority owned properties (Website, GBP, LinkedIn, YouTube, Crunchbase, Trustpilot, Substack, Medium).
+* **Automated Review Gating (GoHighLevel Architecture)**: Automatically sends SMS/email review triggers 1 hour post-service. Happy customers (4–5 stars) are routed directly to Google Maps; dissatisfied customers (1–3 stars) are intercepted to a private manager feedback form.
+* **Entity & AI Overview Protection**: Uses JSON-LD schema `sameAs` entity clustering to anchor brand legitimacy in Google's Knowledge Graph and prevent AI hallucinations or negative summaries in Google SGE / AI Overviews.
+* **Crisis De-escalation (A.A.A. Protocol)**: Pre-built response blueprints for de-escalating customer complaints publicly without admitting legal liability while moving discussions offline.
+
+Run the ORM engine via CLI:
+```bash
+python3 skills/scripts/gmb_ai_runner.py orm --business "Apex Media Studio" --category "Photography Studio" --city "Delhi NCR"
+```
 
 ---
 

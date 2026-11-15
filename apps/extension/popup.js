@@ -591,4 +591,80 @@ This document serves as undeniable proof of competence to win high-ticket client
       resBox.innerText = "Error: " + e.message;
     }
   });
+
+  // ORM & Brand Defense Listeners
+  document.getElementById("btn-orm-serp")?.addEventListener("click", async () => {
+    const biz = document.getElementById("orm-biz").value.trim() || "Apex Media Studio";
+    const city = document.getElementById("orm-city").value.trim() || "Local Area";
+    const issue = document.getElementById("orm-issue").value.trim();
+    const resBox = document.getElementById("orm-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = "Formulating 10-Asset Branded SERP Blanket Defense...";
+
+    const prompt = `As an elite Online Reputation Management (ORM) & SEO strategist, design an aggressive Page 1 Google Branded Defense for:
+Brand: ${biz}
+Target Location: ${city}
+Context / Risk: ${issue || "Proactive brand equity defense"}
+
+Generate:
+1. The 10-Position SERP Blanket: Map out exact web properties (Website, GBP, LinkedIn, YouTube, Crunchbase, Trustpilot, Substack, Medium) to dominate slots 1 through 10 on Google for "${biz} reviews/complaints".
+2. Negative Link Suppression Strategy: How to push unfavorable links to Page 2 where searchers never look.
+3. Entity Knowledge Graph Shielding: JSON-LD schema 'sameAs' linking to anchor brand legitimacy.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are a master of Online Reputation Management (ORM) and Branded SEO.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-orm-gating")?.addEventListener("click", async () => {
+    const biz = document.getElementById("orm-biz").value.trim() || "Apex Media Studio";
+    const city = document.getElementById("orm-city").value.trim() || "Local Area";
+    const resBox = document.getElementById("orm-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = "Engineering GoHighLevel-Style Review Gating Architecture...";
+
+    const prompt = `Create an automated Review Gating & Review Request Funnel for ${biz} in ${city}:
+1. The 2-Touch SMS & Email Workflow (1 hour post-service, 24 hours follow-up) with high-converting short copy.
+2. The Gating Logic:
+   - 4-5 Stars Path: Seamless 1-tap redirect to Google Business Profile review screen.
+   - 1-3 Stars Path: Intercepted to a private internal manager feedback form (stopping public damage).
+3. In-Store NFC / Dynamic QR Code review acceleration script.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an expert in customer feedback automation and reputation systems.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-orm-crisis")?.addEventListener("click", async () => {
+    const biz = document.getElementById("orm-biz").value.trim() || "Apex Media Studio";
+    const issue = document.getElementById("orm-issue").value.trim() || "Customer complaint about service quality and communication delay";
+    const resBox = document.getElementById("orm-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = "Drafting Crisis De-escalation & Neutralization Response...";
+
+    const prompt = `You are a crisis PR and SEO reputation counselor.
+Brand: ${biz}
+Customer Issue / Review: "${issue}"
+
+Draft:
+1. Public Review Response (using the A.A.A. Protocol: Acknowledge, Apologize without admitting liability, Action offline with direct executive contact).
+2. Internal SOP to resolve the root grievance within 24 hours.
+3. Official Press / Social Clarification statement if the issue has potential for viral backlash.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are a crisis communication and reputation management expert.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
 });
