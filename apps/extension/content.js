@@ -1,5 +1,5 @@
-// MapRank Everywhere - Local SEO & Audit Engine
-// Provides MapRank Everywhere toolbar: Category Inspector, Basic Audit, Post Audit, Review Audit, Teleport, and AI Optimization.
+// ApexGMB - Local SEO & Audit Engine
+// Provides ApexGMB toolbar: Category Inspector, Basic Audit, Post Audit, Review Audit, Teleport, and AI Optimization.
 
 (function () {
   "use strict";
@@ -507,7 +507,7 @@ Include:
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -611,7 +611,7 @@ Provide:
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -678,7 +678,7 @@ For Week 1 to Week 4, provide:
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -748,7 +748,7 @@ For Week 1 to Week 4, provide:
         authorization: `Bearer ${OPENROUTER_KEY}`,
         "content-type": "application/json",
         "http-referer": "https://maprank-everywhere.local",
-        "x-title": "MapRank Everywhere Extension",
+        "x-title": "ApexGMB Extension",
       },
       body: JSON.stringify({
         model: "google/gemini-2.5-flash",
@@ -849,7 +849,7 @@ Make sure keywords appear in BOTH the question and the owner answer.`;
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -893,7 +893,7 @@ Analyze:
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -933,7 +933,7 @@ Grounds: Google's Prohibited and Restricted Content Policy (Fake Engagement / Co
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -1022,7 +1022,7 @@ Output:
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -1065,7 +1065,7 @@ Provide:
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -1107,7 +1107,7 @@ List:
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -1210,7 +1210,7 @@ Write:
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -1250,7 +1250,7 @@ Follow the proven winning proposal formula:
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -1289,7 +1289,7 @@ For each tier, list exact deliverables and expected business ROI.`;
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -1327,7 +1327,7 @@ For each tier, list exact deliverables and expected business ROI.`;
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -1442,7 +1442,7 @@ Perform the loop:
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -1523,7 +1523,7 @@ This document serves as undeniable proof of competence to win high-ticket client
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",
@@ -1562,7 +1562,7 @@ This document serves as undeniable proof of competence to win high-ticket client
           authorization: `Bearer ${OPENROUTER_KEY}`,
           "content-type": "application/json",
           "http-referer": "https://maprank-everywhere.local",
-          "x-title": "MapRank Everywhere Extension",
+          "x-title": "ApexGMB Extension",
         },
         body: JSON.stringify({
           model: "google/gemini-2.5-flash",

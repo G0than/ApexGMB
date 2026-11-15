@@ -1,4 +1,4 @@
-// MapRank Everywhere Extension - Popup Controller with AI Skills
+// ApexGMB Extension - Popup Controller with AI Skills
 
 const DEFAULT_KEY = "";
 
@@ -22,7 +22,7 @@ async function callOpenRouter(prompt, system = "You are an elite Google Business
       Authorization: `Bearer ${key}`,
       "Content-Type": "application/json",
       "HTTP-Referer": "https://maprank-everywhere.local",
-      "X-Title": "MapRank Everywhere Extension",
+      "X-Title": "ApexGMB Extension",
     },
     body: JSON.stringify({
       model: "google/gemini-2.5-flash",

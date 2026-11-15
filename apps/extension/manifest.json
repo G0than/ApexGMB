@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "MapRank Everywhere - Local SEO & Audit Engine",
+  "name": "ApexGMB - Local SEO & Audit Engine",
   "version": "2.0.0",
-  "description": "Professional Local SEO, Category Inspector, Map Pack Audits, Review Analysis, Teleport, and AI Optimization directly on Google Maps.",
+  "description": "Professional Google Business Profile & Local SEO Engine: Category Inspector, Map Pack Audits, Review Analysis, Teleport, and AI Optimization directly on Google Maps.",
   "permissions": [
     "storage",
     "activeTab"
@@ -16,7 +16,7 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "MapRank Everywhere - Local SEO & Audits"
+    "default_title": "ApexGMB - Local SEO & Audits"
   },
   "content_scripts": [
     {

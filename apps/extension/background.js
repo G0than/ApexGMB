@@ -1,7 +1,7 @@
-// MapRank Everywhere Extension - Background Service Worker
+// ApexGMB Extension - Background Service Worker
 
 chrome.runtime.onInstalled.addListener(() => {
-  console.log("MapRank Everywhere - Local SEO & Audit Engine installed.");
+  console.log("ApexGMB - Local SEO & Audit Engine installed.");
 });
 
 // Listener for messages from content scripts if needed

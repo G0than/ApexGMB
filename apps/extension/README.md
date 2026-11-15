@@ -1,4 +1,4 @@
-# MapRank Everywhere - Local SEO & Audit Engine
+# ApexGMB - Local SEO & Audit Engine
 
 An all-in-one browser extension for Chrome, Brave, and Edge that inspects Google Business Profile (GBP) categories directly on Google Maps, audits local competitors, performs deep local SEO analysis, and automates high-converting marketing workflows via AI.
 
@@ -35,4 +35,4 @@ An all-in-one browser extension for Chrome, Brave, and Edge that inspects Google
    apps/extension
    ```
 5. Click the extension icon in your browser toolbar, switch to the **⚙️ Settings** tab, and enter your **OpenRouter API Key** (e.g. `sk-or-v1-...`). Click **Save Settings**.
-6. Navigate to [Google Maps](https://www.google.com/maps) and search for any local business. The MapRank Everywhere badges, AI audit tools, and floating control panel will appear automatically.
+6. Navigate to [Google Maps](https://www.google.com/maps) and search for any local business. The ApexGMB badges, AI audit tools, and floating control panel will appear automatically.

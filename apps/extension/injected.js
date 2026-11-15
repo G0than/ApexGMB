@@ -1,4 +1,4 @@
-// MapRank Everywhere - In-page Network Interceptor (MAIN world)
+// ApexGMB - In-page Network Interceptor (MAIN world)
 // Intercepts Google Maps gRPC & JSON responses to capture secondary categories and deep metadata.
 
 (function () {

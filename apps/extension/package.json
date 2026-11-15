@@ -1,7 +1,7 @@
 {
-  "name": "@maprank/extension",
+  "name": "@apexgmb/extension",
   "version": "2.0.0",
-  "description": "MapRank Everywhere - Local SEO & Audit Engine Chrome Extension",
+  "description": "ApexGMB - Local SEO & Audit Engine Chrome Extension",
   "private": true,
   "scripts": {
     "lint": "eslint . --ext .js"
