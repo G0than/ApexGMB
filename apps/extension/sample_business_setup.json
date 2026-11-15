@@ -1,0 +1,53 @@
+{
+  "business": {
+    "name": "Apex Premier Media Studio",
+    "primaryCategory": "Wedding Photographer",
+    "secondaryCategories": [
+      "Photography Studio",
+      "Portrait Studio",
+      "Commercial Photographer",
+      "Video Production Service"
+    ],
+    "targetLocation": "Delhi NCR, India",
+    "coordinates": {
+      "latitude": 28.6139,
+      "longitude": 77.2090
+    },
+    "coreOfferings": [
+      "Luxury Candid Wedding Photography",
+      "Pre-Wedding Cinematic Shoots",
+      "Drone Aerial Cinematography",
+      "High-End Handcrafted Wedding Albums",
+      "Maternity & Baby Milestone Portraits"
+    ],
+    "brandTone": "Luxury, warm, emotional, timeless, authoritative",
+    "prohibitedPhrases": [
+      "cheap rates",
+      "passport photos",
+      "discount photography",
+      "budget studio"
+    ]
+  },
+  "seoStrategy": {
+    "targetKeywords": [
+      "best wedding photographer in Delhi NCR",
+      "candid wedding photography Delhi",
+      "pre-wedding shoot Delhi locations",
+      "cinematic wedding film teaser",
+      "luxury wedding photography studio"
+    ],
+    "geoSignals": [
+      "Central Delhi",
+      "South Delhi",
+      "Gurugram",
+      "Noida",
+      "Faridabad"
+    ],
+    "pricingRetainers": {
+      "foundation": "$500 / month (Review response velocity, 2 weekly posts, listing hygiene)",
+      "growth": "$1,500 / month (Geo-grid audit, citation sync, pre-seeded Q&A, competitor gap exploitation, social repurposing)",
+      "domination": "$3,000 / month (Map pack domination, on-page schema sync, dedicated review AI, weekly strategy calls)"
+    }
+  }
+}
+

@@ -1,0 +1,10 @@
+{
+  "name": "@maprank/extension",
+  "version": "2.0.0",
+  "description": "MapRank Everywhere - Local SEO & Audit Engine Chrome Extension",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --ext .js"
+  }
+}
+
