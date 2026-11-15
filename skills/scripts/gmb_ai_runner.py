@@ -12,34 +12,58 @@ import urllib.request
 import urllib.error
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 DEFAULT_MODEL = os.environ.get("GEMINI_MODEL") or os.environ.get("OPENROUTER_MODEL") or "google/gemini-3.8"
 
 def call_llm(prompt: str, system: str = "You are an elite Google Business Profile and Local SEO growth expert.", model: str = None) -> str:
-    if not OPENROUTER_API_KEY:
-        raise ValueError("OPENROUTER_API_KEY environment variable is not set. Please export OPENROUTER_API_KEY='your-key'.")
-    url = "https://openrouter.ai/api/v1/chat/completions"
-    headers = {
-        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://maprank-everywhere.local",
-        "X-Title": "ApexGMB Engine",
-    }
-    payload = {
-        "model": model or DEFAULT_MODEL,
-        "max_tokens": 800,
-        "messages": [
-            {"role": "system", "content": system},
-            {"role": "user", "content": prompt}
-        ]
-    }
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=data, headers=headers)
-    try:
-        with urllib.request.urlopen(req, timeout=45) as resp:
-            res_json = json.loads(resp.read().decode("utf-8"))
-            return res_json.get("choices", [{}])[0].get("message", {}).get("content", "")
-    except Exception as e:
-        return f"Error executing LLM call: {e}"
+    # 1. Direct Gemini API if GEMINI_API_KEY is present
+    if GEMINI_API_KEY:
+        gemini_model_name = "gemini-2.0-flash" if "flash" in (model or "").lower() else "gemini-1.5-pro"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{gemini_model_name}:generateContent?key={GEMINI_API_KEY}"
+        payload = {
+            "contents": [{"parts": [{"text": f"{system}\n\n{prompt}"}]}],
+            "generationConfig": {"maxOutputTokens": 1000}
+        }
+        data = json.dumps(payload).encode("utf-8")
+        req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=45) as resp:
+                res_json = json.loads(resp.read().decode("utf-8"))
+                return res_json["candidates"][0]["content"]["parts"][0]["text"]
+        except Exception as e:
+            return f"Error calling Google Gemini API: {e}"
+
+    # 2. OpenRouter API if OPENROUTER_API_KEY is present
+    if OPENROUTER_API_KEY:
+        url = "https://openrouter.ai/api/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://github.com/G0than/ApexGMB",
+            "X-Title": "ApexGMB Engine",
+        }
+        payload = {
+            "model": model or DEFAULT_MODEL,
+            "max_tokens": 1000,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": prompt}
+            ]
+        }
+        data = json.dumps(payload).encode("utf-8")
+        req = urllib.request.Request(url, data=data, headers=headers)
+        try:
+            with urllib.request.urlopen(req, timeout=45) as resp:
+                res_json = json.loads(resp.read().decode("utf-8"))
+                return res_json.get("choices", [{}])[0].get("message", {}).get("content", "")
+        except Exception as e:
+            return f"Error executing OpenRouter call: {e}"
+
+    raise ValueError(
+        "No AI API key found! Please set one of the following:\n"
+        "  export OPENROUTER_API_KEY='sk-or-v1-...'   (for Gemini 3.8 / OpenRouter)\n"
+        "  export GEMINI_API_KEY='AIzaSy...'          (for Google AI Studio)\n"
+    )
 
 def run_audit(args):
     prompt = f"""
