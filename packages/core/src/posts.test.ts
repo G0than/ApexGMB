@@ -16,7 +16,7 @@ import {
   workspaceReplySettings,
   workspaces,
   googleIdempotencyKeys,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { dayKey, zonedWallToUtc } from "./time";
 import { loadActor, type Actor } from "./actor";
 import { CoreError } from "./errors";

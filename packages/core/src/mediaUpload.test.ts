@@ -9,7 +9,7 @@ import {
   mcpProposals,
   mediaUploads,
   users,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor } from "./actor";
 import { createApiToken, verifyApiToken } from "./apiTokens";
 import { MEDIA_LIMITS } from "./config/media-limits";
@@ -394,7 +394,7 @@ describe("media.upload over MCP (base64, two-phase) and the UI action", () => {
     // Q33d: a photo goes to Google, so even a full-autonomy token cannot apply it; the owner does in the app.
     const refused = await executeToolCall(db, actor, "mcp.proposals.apply", { proposalId: p.proposalId }).catch((e) => e as Error);
     expect(refused).toBeInstanceOf(Error);
-    expect((refused as Error).message).toContain("A person must approve this in OpenGMB");
+    expect((refused as Error).message).toContain("A person must approve this in ApexGMB");
     expect((await jobsCount(loc))).toBe(0);
     const web = await loadActor(db, { userId: org.ownerId, surface: "ui", actorType: "user" });
     const applied = (await executeAction(db, web, "mcp.proposals.apply", {

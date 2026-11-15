@@ -33,7 +33,7 @@ beforeAll(async () => {
 afterAll(() => new Promise<void>((r) => server.close(() => r())));
 
 const post = (headers: Record<string, string> = {}, body = '{"jsonrpc":"2.0","id":1,"method":"tools/list"}') =>
-  new Request("https://opengmb.example.test/mcp", {
+  new Request("https://apexgmb.example.test/mcp", {
     method: "POST",
     headers: { authorization: "Bearer good", "content-type": "application/json", ...headers },
     body,
@@ -95,7 +95,7 @@ describe("proxyMcp", () => {
 
 describe("proxyMcp for the REST API", () => {
   const rest = (path: string, headers: Record<string, string> = {}) =>
-    new Request(`https://opengmb.example.test/api${path}`, {
+    new Request(`https://apexgmb.example.test/api${path}`, {
       method: "POST",
       headers: { authorization: "Bearer good", "content-type": "application/json", ...headers },
       body: "{}",

@@ -1,6 +1,6 @@
 import { sql } from "drizzle-orm";
 import { PgBoss, fromDrizzle } from "pg-boss";
-import type { Db, Tx } from "@opengmb/db";
+import type { Db, Tx } from "@apexgmb/db";
 import { isOrgBlocked, isOrgPurged } from "./account-state";
 
 /**

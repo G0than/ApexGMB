@@ -1,5 +1,5 @@
 import { and, eq } from "drizzle-orm";
-import { postImages, storedFiles, type Tx } from "@opengmb/db";
+import { postImages, storedFiles, type Tx } from "@apexgmb/db";
 import { AccessError, type Actor } from "../actor";
 import { requireWorkspace } from "./store";
 

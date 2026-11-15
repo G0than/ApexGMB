@@ -1,6 +1,6 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { generate } from "otplib";
-import { createDb } from "@opengmb/db";
+import { createDb } from "@apexgmb/db";
 import { BACKUP_CODE_COUNT, countBackupCodes, createAuth, type Auth } from "./auth";
 import { AuthError, requireAuthenticatedUser } from "./session";
 

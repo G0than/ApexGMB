@@ -1,8 +1,8 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
-import { auditLog, createDb, memberships, organizations, users, workspaces } from "@opengmb/db";
-import type { Db } from "@opengmb/db";
+import { auditLog, createDb, memberships, organizations, users, workspaces } from "@apexgmb/db";
+import type { Db } from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { CoreError } from "./errors";
 import { InvalidInputError, executeAction } from "./executor";

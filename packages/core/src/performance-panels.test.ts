@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { eq } from "drizzle-orm";
-import { locations, postTargets, posts, reviews } from "@opengmb/db";
+import { locations, postTargets, posts, reviews } from "@apexgmb/db";
 import type { Actor } from "./actor";
 import { executeAction } from "./executor";
 import { ROLE_PERMISSIONS } from "./permissions";

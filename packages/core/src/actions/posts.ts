@@ -1,7 +1,7 @@
 import { useAccountDaily } from "../limits/counters";
 import { and, asc, desc, eq, exists, ilike, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
-import { locations, postTargets, posts, users, workspaces, type Tx } from "@opengmb/db";
+import { locations, postTargets, posts, users, workspaces, type Tx } from "@apexgmb/db";
 import { narrowTo } from "../approval-queue";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { notifyApprovalRequested } from "../approvals";
@@ -890,7 +890,7 @@ const googleOnlyOut = z.object({
 export const postsList = defineAction({
   name: "posts.list",
   description:
-    "Posts the caller can see, newest first. Filters: workspaceId, status, topicType, q (case-insensitive text in the summary), locationId (posts that target it), from (inclusive) and to (exclusive) ISO datetimes applied to the scheduled time (or the creation time when unscheduled). sort oldest_submitted lists the earliest submission first (unsubmitted last) instead of newest first. limit 1-100 (default 50). Each post carries its per-location targets. Use status pending_approval for the approval queue. googleOnly lists posts that are live on Google but were made outside OpenGMB (same filters, except status: only with no status or published); an OpenGMB post that is also on Google appears in posts only.",
+    "Posts the caller can see, newest first. Filters: workspaceId, status, topicType, q (case-insensitive text in the summary), locationId (posts that target it), from (inclusive) and to (exclusive) ISO datetimes applied to the scheduled time (or the creation time when unscheduled). sort oldest_submitted lists the earliest submission first (unsubmitted last) instead of newest first. limit 1-100 (default 50). Each post carries its per-location targets. Use status pending_approval for the approval queue. googleOnly lists posts that are live on Google but were made outside ApexGMB (same filters, except status: only with no status or published); an ApexGMB post that is also on Google appears in posts only.",
   input: z.object({
     workspaceId: z.uuid().optional(),
     status: postOut.shape.status.optional(),
@@ -1001,7 +1001,7 @@ const calendarEntry = z.object({
 export const postsCalendar = defineAction({
   name: "posts.calendar",
   description:
-    "Calendar entries between from (inclusive) and to (exclusive), at most 366 days apart: scheduled sends, projected future occurrences of recurring posts (expanded only inside the window, respecting until/count), and past sends (published, failed or skipped, grouped per post and occurrence with per-status location counts), plus posts made outside OpenGMB that are live on Google (kind google, on their Google date). Optional workspaceId, and optional locationIds (up to 500) or groupId to keep only entries that touch those locations. Entry times are ISO instants. truncated is true if the entry cap (1000) was hit.",
+    "Calendar entries between from (inclusive) and to (exclusive), at most 366 days apart: scheduled sends, projected future occurrences of recurring posts (expanded only inside the window, respecting until/count), and past sends (published, failed or skipped, grouped per post and occurrence with per-status location counts), plus posts made outside ApexGMB that are live on Google (kind google, on their Google date). Optional workspaceId, and optional locationIds (up to 500) or groupId to keep only entries that touch those locations. Entry times are ISO instants. truncated is true if the entry cap (1000) was hit.",
   input: z.object({
     from: z.iso.datetime({ offset: true }),
     to: z.iso.datetime({ offset: true }),
@@ -1245,7 +1245,7 @@ export const postsGoogleList = defineAction({
 export const postsSyncGoogle = defineAction({
   name: "posts.syncGoogle",
   description:
-    "Refresh OpenGMB's copy of one location's Google posts now, so All posts, the Calendar, Home, Performance and the Overview include posts made outside OpenGMB without waiting for the review sync (every 2 hours). Reads the posts from Google and stores them (a cache: Google is not changed, nothing is audited). Returns how many Google listed (fetched), how many stored copies of posts no longer on Google were dropped (removed), and truncated when Google had more pages than we read. Calls Google, so it runs outside any database transaction.",
+    "Refresh ApexGMB's copy of one location's Google posts now, so All posts, the Calendar, Home, Performance and the Overview include posts made outside ApexGMB without waiting for the review sync (every 2 hours). Reads the posts from Google and stores them (a cache: Google is not changed, nothing is audited). Returns how many Google listed (fetched), how many stored copies of posts no longer on Google were dropped (removed), and truncated when Google had more pages than we read. Calls Google, so it runs outside any database transaction.",
   input: z.object({ locationId: z.uuid() }),
   output: z.object({ fetched: z.number().int(), removed: z.number().int(), truncated: z.boolean() }),
   permission: "location:read",

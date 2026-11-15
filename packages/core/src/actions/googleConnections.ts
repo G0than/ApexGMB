@@ -1,6 +1,6 @@
 import { and, desc, eq } from "drizzle-orm";
 import { z } from "zod";
-import { googleConnections, users } from "@opengmb/db";
+import { googleConnections, users } from "@apexgmb/db";
 import { AccessError } from "../actor";
 import {
   googleConnectionAuditView,
@@ -59,7 +59,7 @@ export const googleConnectionsList = defineAction({
 export const googleConnectionsConnect = defineAction({
   name: "googleConnections.connect",
   description:
-    "Start connecting a Google account. Returns an authUrl that must be opened in a browser where the SAME user is signed in to OpenGMB; it expires at expiresAt (10 minutes) and works once. The connection is created when Google redirects back to OpenGMB.",
+    "Start connecting a Google account. Returns an authUrl that must be opened in a browser where the SAME user is signed in to ApexGMB; it expires at expiresAt (10 minutes) and works once. The connection is created when Google redirects back to ApexGMB.",
   input: z.object({}),
   output: z.object({ authUrl: z.string(), expiresAt: z.string() }),
   permission: "google:manage",

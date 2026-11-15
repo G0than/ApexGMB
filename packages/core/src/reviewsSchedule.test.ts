@@ -11,7 +11,7 @@ import {
   reviewSyncs,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { seedMockGoogleConnection } from "./google/dev-seed";
 import {
   enqueueScheduledReviewSyncs,

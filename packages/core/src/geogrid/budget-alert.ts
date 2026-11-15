@@ -1,5 +1,5 @@
 import { and, eq, inArray, like } from "drizzle-orm";
-import { memberships, notifications, type Tx } from "@opengmb/db";
+import { memberships, notifications, type Tx } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { sendAlert } from "../monitoring/alert";
 import { pushToUsers } from "../push";

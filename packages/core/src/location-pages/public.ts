@@ -1,6 +1,6 @@
 // packages/core/src/location-pages/public.ts
 import { and, desc, eq, gte, isNotNull, ne, or, isNull, sql } from "drizzle-orm";
-import { googleMedia, googlePosts, locationPages, locations, profileSnapshots, reviewLinks, reviews, workspaceReplySettings, type Db } from "@opengmb/db";
+import { googleMedia, googlePosts, locationPages, locations, profileSnapshots, reviewLinks, reviews, workspaceReplySettings, type Db } from "@apexgmb/db";
 import { loadBranding } from "../branding";
 import { snapshotFromJson } from "../profile/fields";
 import { clip, shortName, SLUG_RE, WIDGET_MAX_TEXT } from "../review-links/pure";

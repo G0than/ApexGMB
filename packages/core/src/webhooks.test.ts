@@ -2,7 +2,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { eq } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
 import { z } from "zod";
-import { createDb, reviews, webhookDeliveries, webhookSubscriptions } from "@opengmb/db";
+import { createDb, reviews, webhookDeliveries, webhookSubscriptions } from "@apexgmb/db";
 import type { Actor } from "./actor";
 import { decryptSecret } from "./crypto";
 import { WEBHOOK_DELIVERY_RETENTION_DAYS, WEBHOOK_MAX_ACTIVE_PER_ORG, WEBHOOK_QUEUE } from "./config/webhooks";

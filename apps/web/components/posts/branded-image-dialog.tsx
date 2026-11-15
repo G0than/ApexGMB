@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { POST_IMAGE_LAYOUTS, POST_IMAGE_TEXT } from "@opengmb/core/post-image-templates";
+import { POST_IMAGE_LAYOUTS, POST_IMAGE_TEXT } from "@apexgmb/core/post-image-templates";
 import { postImages_renderBranded } from "../../app/_generated/actions";
 import { formProblem, initialForm, toActionInput, type BrandedForm } from "../../lib/branded-image";
 import type { LibraryImage } from "../../lib/post-images";

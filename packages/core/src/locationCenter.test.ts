@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, gridConfigs, locations, platformDfsSpend } from "@opengmb/db";
+import { createDb, gridConfigs, locations, platformDfsSpend } from "@apexgmb/db";
 import { setSharedMockGoogleClient } from "./google/factory";
 import { MockGoogleClient } from "./google/mock-client";
 import { makeKit, type Loc } from "./testkit";

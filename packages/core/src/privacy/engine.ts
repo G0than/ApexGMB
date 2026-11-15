@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import type { Tx } from "@opengmb/db";
+import type { Tx } from "@apexgmb/db";
 import { CoreError } from "../errors";
 import { scopeWhere } from "./scope";
 import { INCLUDED_TABLES, SECRET_COLUMN, type IncludedTable } from "./tables";
@@ -111,7 +111,7 @@ export async function buildExport(tx: Tx, workspaceId: string, exportedAt: Date)
     {
       exportedAt: exportedAt.toISOString(),
       workspaceId,
-      note: "Everything OpenGMB stores for this client. Secrets (Google tokens, API token hashes, passwords, two-factor secrets, invitation and share link token hashes) are never included. Content on Google itself is not part of this file.",
+      note: "Everything ApexGMB stores for this client. Secrets (Google tokens, API token hashes, passwords, two-factor secrets, invitation and share link token hashes) are never included. Content on Google itself is not part of this file.",
       counts: { ...counts, audit_log: audit.length },
       tables: { ...tables, audit_log: audit },
     },

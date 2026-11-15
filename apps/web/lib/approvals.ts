@@ -1,6 +1,6 @@
 // Pure logic for /approvals: tabs, item keys, the bulk rules, a sequential approve, key mapping,
 // value formatting and chip text. Client-safe: only a type comes from core (erased at build).
-import type { approvalsQueue } from "@opengmb/core";
+import type { approvalsQueue } from "@apexgmb/core";
 import { plainValue, profileFieldLabel } from "./labels";
 import type { TimeFormat } from "./time-format";
 

@@ -10,7 +10,7 @@ import {
   executeAction,
   loadActor,
   seedMockGoogleConnection,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import {
   createDb,
   locationWriteOps,
@@ -20,7 +20,7 @@ import {
   organizations,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { startServer } from "./http";
 
 const url = process.env.DATABASE_URL_TEST;
@@ -107,7 +107,7 @@ describe("media_upload through the real MCP HTTP transport", () => {
         arguments: { proposalId: p.proposalId },
       });
       expect(refused.isError).toBe(true);
-      expect(JSON.stringify(refused)).toMatch(/A person must approve this in OpenGMB/);
+      expect(JSON.stringify(refused)).toMatch(/A person must approve this in ApexGMB/);
       const web = await loadActor(db, { userId: id, surface: "ui", actorType: "user" });
       const result = (
         (await executeAction(db, web, "mcp.proposals.apply", { proposalId: p.proposalId })) as {

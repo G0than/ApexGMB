@@ -1,5 +1,5 @@
 // apps/web/lib/theme/brand.ts
-import type { Branding } from "@opengmb/core";
+import type { Branding } from "@apexgmb/core";
 import { buttonPair, contrast, ensureContrast, isHex, mix, WHITE } from "./color";
 import { DARK, LIGHT, themeCss, type Tokens } from "./tokens";
 
@@ -68,10 +68,10 @@ export type ShellBrand = { name: string; subline: string; mark: string; logoUrl:
  */
 export function shellBrand(b: Branding | null): ShellBrand {
   const branded = Boolean(b && (b.logoUrl || isHex(b.primaryColor) || isHex(b.accentColor)));
-  const name = branded && b ? b.agencyName.trim() || "OpenGMB" : "OpenGMB";
+  const name = branded && b ? b.agencyName.trim() || "ApexGMB" : "ApexGMB";
   return {
     name,
-    subline: branded ? "Powered by OpenGMB" : "by Synectus",
+    subline: branded ? "Powered by ApexGMB" : "by Synectus",
     mark: name.trim().charAt(0).toUpperCase() || "O",
     logoUrl: branded && b?.logoUrl ? b.logoUrl : null,
   };

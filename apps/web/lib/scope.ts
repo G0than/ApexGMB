@@ -2,7 +2,7 @@
 // Pure logic for the top-bar scope switcher (canvas 0, ShellOverlays). Client-safe: the cookie and
 // the list actions live in lib/scope-server.ts.
 
-import type { DateFormat } from "@opengmb/core/time";
+import type { DateFormat } from "@apexgmb/core/time";
 
 export const SCOPE_COOKIE = "syngmb_scope";
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;

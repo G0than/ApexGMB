@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import type { BetterAuthPlugin } from "better-auth";
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { eq } from "drizzle-orm";
-import { memberships, type Db } from "@opengmb/db";
+import { memberships, type Db } from "@apexgmb/db";
 import { writeAudit } from "./audit";
 import { emailFromForUser, originForUser } from "./custom-domains";
 import { emailConfigured, getEmailSender, renderBrandedEmail } from "./email";
@@ -103,7 +103,7 @@ export function sendPasswordResetEmail(
         console.log(`[email:mock] password reset link for ${user.email}: ${url}`);
       }
       const { html, text } = renderBrandedEmail(
-        { agencyName: "OpenGMB", logoUrl: null, primaryColor: null },
+        { agencyName: "ApexGMB", logoUrl: null, primaryColor: null },
         {
           heading: "Reset your password",
           paragraphs: [
@@ -116,7 +116,7 @@ export function sendPasswordResetEmail(
       await getEmailSender()({
         from: await emailFromForUser(db, user.id),
         to: user.email,
-        subject: "Reset your OpenGMB password",
+        subject: "Reset your ApexGMB password",
         html,
         text,
         idempotencyKey: `reset-password-${createHash("sha256").update(token).digest("hex").slice(0, 32)}`,

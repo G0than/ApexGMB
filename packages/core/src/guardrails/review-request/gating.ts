@@ -126,7 +126,7 @@ export const GATING_RULES: readonly GatingRule[] = [
     id: "GATE.stars",
     severity: "warn",
     description: "Asks for a specific star rating",
-    basis: "Not named in the policy lines above. A warning because it steers the answer, and OpenGMB's own review request wording check refuses it too.",
+    basis: "Not named in the policy lines above. A warning because it steers the answer, and ApexGMB's own review request wording check refuses it too.",
     message: "This asks for a specific rating, such as 5 stars. Ask for an honest review and let the customer choose the rating.",
     lexicon: [
       "(?:5|five) stars?",

@@ -13,7 +13,7 @@ import {
   reviews,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { executeAction } from "./executor";
 import { seedMockGoogleConnection } from "./google/dev-seed";

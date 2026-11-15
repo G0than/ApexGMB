@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-import type { geogridConfigsList, geogridRunsGet, geogridRunsList, workspacesList } from "@opengmb/core";
+import type { geogridConfigsList, geogridRunsGet, geogridRunsList, workspacesList } from "@apexgmb/core";
 import {
   geogrid_configs_list,
   geogrid_runs_get,

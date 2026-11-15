@@ -1,4 +1,4 @@
-import type { Db, Tx } from "@opengmb/db";
+import type { Db, Tx } from "@apexgmb/db";
 import { microOf, platformLimit } from "./platform-limits";
 
 /** The platform's monthly AI cap in micro-USD, read at use time (database, then AI_MONTHLY_BUDGET_USD, then the default). */

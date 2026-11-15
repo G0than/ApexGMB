@@ -2,11 +2,11 @@
 
 const { defaultBaseUrl } = require('./base-url');
 
-// The address of the OpenGMB server. SYNGMB_BASE_URL sets it (tests, staging, and every self-hosted server).
+// The address of the ApexGMB server. APEXGMB_BASE_URL sets it (tests, staging, and every self-hosted server).
 const baseUrl = () => {
-  const url = process.env.SYNGMB_BASE_URL || defaultBaseUrl();
+  const url = process.env.APEXGMB_BASE_URL || defaultBaseUrl();
   if (!url) {
-    throw new Error('SYNGMB_BASE_URL is not set. Set it to the address of your OpenGMB server, for example https://opengmb.example.com');
+    throw new Error('APEXGMB_BASE_URL is not set. Set it to the address of your ApexGMB server, for example https://apexgmb.example.com');
   }
   return url.replace(/\/+$/, '');
 };
@@ -24,7 +24,7 @@ const callAction = async (z, name, input = {}) => {
   if (response.status >= 400) {
     const err = response.data && response.data.error;
     throw new z.errors.Error(
-      (err && err.message) || `OpenGMB API returned HTTP ${response.status}`,
+      (err && err.message) || `ApexGMB API returned HTTP ${response.status}`,
       (err && err.code) || 'API_ERROR',
       response.status
     );

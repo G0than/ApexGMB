@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { NORMALISE, snapshotFromGoogle, type GoogleLocation } from "@opengmb/core";
+import { NORMALISE, snapshotFromGoogle, type GoogleLocation } from "@apexgmb/core";
 import {
   addPlace,
   addressProblem,

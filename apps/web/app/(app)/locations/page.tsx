@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { locationGroupsList, locationsList, locationsStats, workspacesList } from "@opengmb/core";
-import { CHECK_IDS, roleHasPermission } from "@opengmb/core";
+import type { locationGroupsList, locationsList, locationsStats, workspacesList } from "@apexgmb/core";
+import { CHECK_IDS, roleHasPermission } from "@apexgmb/core";
 import { GroupsPanel } from "../../../components/locations/groups-panel";
 import { LocationsHeader } from "../../../components/locations/locations-header";
 import { LocationsTable, type TableRow } from "../../../components/locations/locations-table";

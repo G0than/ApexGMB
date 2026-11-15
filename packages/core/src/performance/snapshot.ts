@@ -7,7 +7,7 @@ import {
   searchKeywordsMonthly,
   type Db,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { PERFORMANCE_CONFIG } from "../config/performance";
 import {

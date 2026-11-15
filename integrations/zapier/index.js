@@ -16,7 +16,7 @@ const addAuthHeader = (request, z, bundle) => {
 
 const handle401 = (response, z) => {
   if (response.status === 401) {
-    throw new z.errors.ExpiredAuthError('Your OpenGMB API token was rejected. Reconnect with a valid token.');
+    throw new z.errors.ExpiredAuthError('Your ApexGMB API token was rejected. Reconnect with a valid token.');
   }
   return response;
 };

@@ -1,5 +1,5 @@
 import { eq, sql } from "drizzle-orm";
-import { monitorState, type Db, type Tx } from "@opengmb/db";
+import { monitorState, type Db, type Tx } from "@apexgmb/db";
 import { MONITORING } from "../config/monitoring";
 import { sendAlert } from "./alert";
 import { recordError, sanitizeMessage } from "./errors";

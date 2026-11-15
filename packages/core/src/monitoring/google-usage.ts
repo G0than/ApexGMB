@@ -1,5 +1,5 @@
 import { desc, gte, sql } from "drizzle-orm";
-import { googleApiCalls, googleRateWindows, type Db, type Tx } from "@opengmb/db";
+import { googleApiCalls, googleRateWindows, type Db, type Tx } from "@apexgmb/db";
 import { GOOGLE_LIMITS } from "../config/google-limits";
 import { MONITORING } from "../config/monitoring";
 import { PROJECT_BUCKET } from "../google/throttler";

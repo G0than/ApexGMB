@@ -1,4 +1,4 @@
-import type { Db, Tx } from "@opengmb/db";
+import type { Db, Tx } from "@apexgmb/db";
 
 /** Community edition: the person signed in to a self-hosted server runs it, so there is no separate admin list. */
 export function platformAdminEmails(_env?: string): string[] {

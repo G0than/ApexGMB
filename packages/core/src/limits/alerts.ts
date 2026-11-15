@@ -1,4 +1,4 @@
-import { monitorState, type Db } from "@opengmb/db";
+import { monitorState, type Db } from "@apexgmb/db";
 import { LIMIT_ALERTS, eventAlertLimits } from "../config/platform-limits";
 import { sendAlert } from "../monitoring/alert";
 import { platformDayToDateUsd } from "../geogrid/cost";

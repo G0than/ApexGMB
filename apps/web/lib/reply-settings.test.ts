@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyProfileDefaults } from "@opengmb/core";
+import { applyProfileDefaults } from "@apexgmb/core";
 import {
   chooseAuto,
   formFromSettings,

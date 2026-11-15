@@ -2,7 +2,7 @@
 import { cache } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { localBusinessJsonLd, locationPageData, safeJsonLd } from "@opengmb/core";
+import { localBusinessJsonLd, locationPageData, safeJsonLd } from "@apexgmb/core";
 import { ShareFrame } from "../../../components/share/share-frame";
 import { getDb } from "../../../lib/auth";
 

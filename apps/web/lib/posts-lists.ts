@@ -1,8 +1,8 @@
 // Pure logic for the Posts views Approval queue, All posts, Calendar and On Google. Client-safe:
-// only types come from core (erased at build); the one runtime import is the pure @opengmb/core/time.
-import type { postsCalendar, postsGet, postsGoogleList } from "@opengmb/core";
+// only types come from core (erased at build); the one runtime import is the pure @apexgmb/core/time.
+import type { postsCalendar, postsGet, postsGoogleList } from "@apexgmb/core";
 import { enumLabel, statusWords } from "./labels";
-import { localParts, wallToUtc, zonedWallToUtc } from "@opengmb/core/time";
+import { localParts, wallToUtc, zonedWallToUtc } from "@apexgmb/core/time";
 import type { TimeFormat } from "./time-format";
 import { failureLabel } from "./failure-labels";
 

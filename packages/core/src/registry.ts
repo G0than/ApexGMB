@@ -1,5 +1,5 @@
 import type { z } from "zod";
-import type { Db, Tx } from "@opengmb/db";
+import type { Db, Tx } from "@apexgmb/db";
 import type { Actor } from "./actor";
 import type { AuditEntry } from "./audit";
 import type { GuardrailResult } from "./guardrails/types";

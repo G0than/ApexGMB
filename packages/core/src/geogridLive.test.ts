@@ -13,7 +13,7 @@ import {
   organizations,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor } from "./actor";
 import { CoreError } from "./errors";
 import { executeAction } from "./executor";

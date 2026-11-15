@@ -1,7 +1,7 @@
 // packages/core/src/reviewLinks.test.ts
 import { afterAll, describe, expect, it, vi } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, reviewLinkClicks, reviewLinks, reviews, workspaceReplySettings } from "@opengmb/db";
+import { createDb, reviewLinkClicks, reviewLinks, reviews, workspaceReplySettings } from "@apexgmb/db";
 import { MockGoogleClient } from "./google/mock-client";
 import { resolveReviewLink, widgetData } from "./review-links/public";
 import { codeOf, makeKit, uniq, type Loc, type Org } from "./testkit";

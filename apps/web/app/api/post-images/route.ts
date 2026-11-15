@@ -1,5 +1,5 @@
 import type { NextRequest } from "next/server";
-import { handlePostImageUpload } from "@opengmb/core";
+import { handlePostImageUpload } from "@apexgmb/core";
 import { getAuth, getDb, refuseWhileViewing } from "../../../lib/auth";
 
 /** Library upload from the browser (multipart: workspaceId, file). All checks are core's. */

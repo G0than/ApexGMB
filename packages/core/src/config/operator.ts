@@ -1,5 +1,5 @@
 /**
- * The company that operates OpenGMB, named in the footer of every review request email. Mirrors
+ * The company that operates ApexGMB, named in the footer of every review request email. Mirrors
  * OPERATOR in apps/web/lib/legal.ts (a test in apps/web/lib pins the two together).
  */
 export const OPERATOR_LEGAL_ENTITY = "Synectus Private Limited";

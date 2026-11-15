@@ -1,5 +1,5 @@
 import { and, eq } from "drizzle-orm";
-import { profileChangeSets, type Tx } from "@opengmb/db";
+import { profileChangeSets, type Tx } from "@apexgmb/db";
 import type { Actor } from "../actor";
 import { canonicalJson } from "../audit";
 import { CoreError } from "../errors";

@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { eq } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
-import { locationDataAccess, locations, reviewSyncs } from "@opengmb/db";
+import { locationDataAccess, locations, reviewSyncs } from "@apexgmb/db";
 import { GOOGLE_ACCESS_CONFIG, GOOGLE_RETRY } from "./config/google-retry";
 import {
   GoogleApiError,

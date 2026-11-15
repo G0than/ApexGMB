@@ -75,9 +75,9 @@ describe("previewStyle", () => {
 });
 
 describe("previewBrand", () => {
-  it("shows the default OpenGMB mark when nothing is set", () => {
+  it("shows the default ApexGMB mark when nothing is set", () => {
     expect(previewBrand({ agencyName: "Synectus", logoUrl: "", primaryColor: "", accentColor: "" })).toEqual({
-      name: "OpenGMB",
+      name: "ApexGMB",
       mark: "O",
       logoUrl: null,
       branded: false,

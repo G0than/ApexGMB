@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import type { geogridByoKeyGet, geogridSettingsGet, geogridUsage } from "@opengmb/core";
+import type { geogridByoKeyGet, geogridSettingsGet, geogridUsage } from "@apexgmb/core";
 import { geogrid_byoKey_get, geogrid_settings_get, geogrid_usage } from "../../app/_generated/actions";
 import { getTimeFormat } from "../../lib/time-format-server";
 import { usageRows } from "../../lib/tracker-setup";

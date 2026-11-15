@@ -8,7 +8,7 @@ import {
   users,
   workspaces,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError, type Actor } from "../actor";
 import { CoreError } from "../errors";
 import { isClientRole } from "../client-role";
@@ -200,7 +200,7 @@ async function resetTarget(tx: Tx, actor: Actor, membershipId: string) {
 export const membersResetTwoFactor = defineAction({
   name: "members.resetTwoFactor",
   description:
-    "Reset a member's two-factor authentication (owner only; never your own; not available to API tokens). Deletes their authenticator secret and backup codes and signs them out everywhere. Until they set up a new authenticator app at their next sign-in, their password (or Google) alone signs them in, and they cannot use OpenGMB until they do. CONFLICT when the member has not set up two-factor or also belongs to another organization.",
+    "Reset a member's two-factor authentication (owner only; never your own; not available to API tokens). Deletes their authenticator secret and backup codes and signs them out everywhere. Until they set up a new authenticator app at their next sign-in, their password (or Google) alone signs them in, and they cannot use ApexGMB until they do. CONFLICT when the member has not set up two-factor or also belongs to another organization.",
   input: z.object({ membershipId: z.uuid() }),
   output: z.object({ reset: z.literal(true), sessionsEnded: z.number().int().nonnegative() }),
   permission: "member:reset_two_factor",

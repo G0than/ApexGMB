@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-import { orgBranding } from "@opengmb/db";
+import { orgBranding } from "@apexgmb/db";
 import { hexColor, httpsUrl, loadBranding } from "../branding";
 import { authorize } from "../actor";
 import { defineAction } from "../registry";

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { apiTokensList } from "@opengmb/core";
+import type { apiTokensList } from "@apexgmb/core";
 import { CreateTokenForm } from "../../../../components/create-token-form";
 import { Pill, TableWrap, primaryLinkButtonClass, tdClass, thClass } from "../../../../components/page-parts";
 import { RevokeTokenButton } from "../../../../components/revoke-token-button";

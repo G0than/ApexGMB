@@ -1,5 +1,5 @@
 /** Community edition: no billing. Same names as the full module; every check allows and nothing is charged. */
-import type { Tx } from "@opengmb/db";
+import type { Tx } from "@apexgmb/db";
 import { AccessError, type Actor } from "../actor";
 import { CoreError } from "../errors";
 

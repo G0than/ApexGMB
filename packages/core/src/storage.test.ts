@@ -1,6 +1,6 @@
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, mediaUploads, reportDefinitions, reportRuns, storedFiles } from "@opengmb/db";
+import { createDb, mediaUploads, reportDefinitions, reportRuns, storedFiles } from "@apexgmb/db";
 import { MockGoogleClient } from "./google/mock-client";
 import { createPostImage } from "./postImages/store";
 import { eraseWorkspace } from "./privacy/engine";

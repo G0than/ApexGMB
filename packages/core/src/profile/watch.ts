@@ -7,7 +7,7 @@ import {
   profileSnapshots,
   type Db,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { canonicalJson } from "../audit";
 import { PROFILE_LIMITS } from "../config/profile-limits";
 import type { GoogleClient } from "../google/client";

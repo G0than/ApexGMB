@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { and, desc, eq, gt, lte, or, sql } from "drizzle-orm";
-import { apiTokens, mcpProposals, type Db } from "@opengmb/db";
+import { apiTokens, mcpProposals, type Db } from "@apexgmb/db";
 import { AccessError, authorizeAction, type Actor } from "./actor";
 import { effectiveScopes } from "./apiTokens";
 import { isExternalEffect, personMustApproveMessage } from "./external-effects";
@@ -204,7 +204,7 @@ export async function applyProposal(ctx: ActionContext, id: string) {
 
   const action = actions.find((a) => a.name === p.action);
   if (!action) throw new CoreError("NOT_FOUND", `Unknown action ${p.action}`);
-  // Q33d: a proposal that changes something outside OpenGMB is applied by a signed-in person, never
+  // Q33d: a proposal that changes something outside ApexGMB is applied by a signed-in person, never
   // by a token. The proposal stays pending (this is not a failure of the proposal).
   if (!viaWeb && isExternalEffect(p.action)) {
     throw new AccessError("FORBIDDEN", personMustApproveMessage("proposal", p.action));

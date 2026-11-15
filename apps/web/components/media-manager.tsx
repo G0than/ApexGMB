@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import type { mediaCustomerList, mediaList } from "@opengmb/core";
+import type { mediaCustomerList, mediaList } from "@apexgmb/core";
 import { media_add, media_batch, media_cancelScheduled, media_delete, media_list } from "../app/_generated/actions";
 import { failureLabel } from "../lib/failure-labels";
 import { isMissingTimestamp } from "../lib/labels";

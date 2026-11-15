@@ -1,6 +1,6 @@
 import { and, asc, desc, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
-import { locations, reviewReplies, reviews, workspaces, type Tx } from "@opengmb/db";
+import { locations, reviewReplies, reviews, workspaces, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { notifyApprovalRequested } from "../approvals";
 import { CoreError } from "../errors";

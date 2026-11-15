@@ -14,12 +14,12 @@
 </p>
 
 <p align="center">
-  <a href="https://opengmb.synectus.com"><b>Website</b></a> ·
-  <a href="https://opengmb.synectus.com/docs"><b>Docs</b></a> ·
+  <a href="https://github.com/G0than/ApexGMB"><b>GitHub</b></a> ·
+  <a href="SETUP.md"><b>Docs</b></a> ·
   <a href="SETUP.md"><b>Self-host guide</b></a> ·
-  <a href="https://opengmb.synectus.com/docs/mcp/tools"><b>MCP tools</b></a> ·
-  <a href="https://opengmb.synectus.com/roadmap"><b>Roadmap</b></a> ·
-  <a href="https://opengmb.synectus.com/pricing"><b>Hosted version</b></a>
+  <a href="https://github.com/G0than/ApexGMB/wiki/MCP-Tools"><b>MCP tools</b></a> ·
+  <a href="https://github.com/G0than/ApexGMB/issues"><b>Roadmap</b></a> ·
+  <a href="https://github.com/G0than/ApexGMB"><b>Free & Open Source</b></a>
 </p>
 
 # ApexGMB 🚀
@@ -341,8 +341,8 @@ The MCP server exposes around 250 tools, one for every action in the app: list r
 Create a token in **Settings → API tokens** (read only, or read and write), then add the server to your client. For Claude Code:
 
 ```sh
-claude mcp add --transport http opengmb https://your-mcp-host/mcp \
-  --header "Authorization: Bearer sgmb_your_token"
+claude mcp add --transport http apexgmb https://your-mcp-host/mcp \
+  --header "Authorization: Bearer apxgmb_your_token"
 ```
 
 Then ask in plain words:
@@ -353,7 +353,7 @@ Then ask in plain words:
 
 > Schedule a holiday hours post for all dental clients for Friday, and send it for approval.
 
-A human-in-the-loop token can draft and submit, but it cannot approve or publish. Every tool, with its inputs and the permission it needs, is listed at [opengmb.synectus.com/docs/mcp/tools](https://opengmb.synectus.com/docs/mcp/tools).
+A human-in-the-loop token can draft and submit, but it cannot approve or publish. Every tool, with its inputs and the permission it needs, is listed in the [MCP Tools wiki](https://github.com/G0than/ApexGMB/wiki/MCP-Tools).
 
 ## Nothing goes live without a person
 
@@ -372,8 +372,8 @@ The rules run again just before anything is sent to Google.
 You need Docker Engine 24 or newer with the Compose plugin, about 4 GB of free RAM while the images build, and a public HTTPS hostname if you want Google sign-in.
 
 ```sh
-git clone https://github.com/synectus/OpenGMB.git
-cd OpenGMB/deploy/selfhost
+git clone https://github.com/G0than/ApexGMB.git
+cd ApexGMB/deploy/selfhost
 cp .env.example .env     # set OWNER_EMAIL and OWNER_PASSWORD; the comments explain every value
 docker compose up -d --build
 ```
@@ -382,7 +382,7 @@ Open <http://localhost:8080> and sign in with the owner email and password. Two-
 
 The Google client starts in **mock mode**: under **Settings → Google**, press "Use the sample Google account" to import sample locations and click through everything without any Google keys. Going live needs Google's approval of Business Profile API access for your own Google Cloud project, which you request yourself and which can take a few days.
 
-[SETUP.md](SETUP.md) covers every step: ports, email, Google, backups and upgrades. The same guide is online at [opengmb.synectus.com/docs/self-hosting](https://opengmb.synectus.com/docs/self-hosting).
+[SETUP.md](SETUP.md) covers every step: ports, email, Google, backups and upgrades. The same guide is in [SETUP.md](SETUP.md).
 
 ## How it fits together
 
@@ -396,7 +396,7 @@ flowchart LR
   worker[Worker<br/>sync, publishing,<br/>reports, schedules] --> core
   core --> db[(PostgreSQL)]
   core --> google[Google Business<br/>Profile API]
-  core -. optional .-> ai[Anthropic API]
+  core -. optional .-> ai[OpenRouter API<br/>Gemini 3.8]
   core -. optional .-> dfs[DataForSEO]
 ```
 
@@ -409,31 +409,31 @@ Every surface (web, MCP, REST, worker) runs the same actions through one executo
 | `apps/worker` | Background jobs: review sync, publishing, reports, schedules, Pub/Sub push |
 | `packages/core` | Auth, tenancy, the action registry, the Google client, guardrail rules, the audit log |
 | `packages/db` | Drizzle schema and migrations |
-| `deploy/selfhost` | The self-host stack (Docker Compose). Use this to run OpenGMB |
+| `deploy/selfhost` | The self-host stack (Docker Compose). Use this to run ApexGMB |
 | `integrations/zapier` | The Zapier app source |
 
 The `docker-compose.yml` at the repository root is only a development Postgres for contributors.
 
 ## Community edition or hosted
 
-| | Community edition (this repo) | [Hosted OpenGMB](https://opengmb.synectus.com) |
+| | Community edition (this repo) | Hosted (self-managed) |
 | --- | --- | --- |
-| Price | Free, MIT | $10 a month per account, as usage credit |
-| Who runs it | You, on your server | We do |
+| Price | Free, MIT | Free (self-host) |
+| Who runs it | You, on your server | You, on your server |
 | Google Cloud project and API approval | Yours | Ours |
 | Clients and locations | Unlimited | Unlimited |
 | Reviews, posts, edits, reports, rank tracking | Yes | Yes |
 | MCP server, REST API, webhooks | Yes | Yes |
-| AI | Your Anthropic key | Included, paid from credit |
+| AI | OpenRouter / Gemini 3.8 (free tier) | OpenRouter / Gemini 3.8 (free tier) |
 | Teams and roles | One owner login | Yes |
 | Client portal with your branding | No | Yes |
 | Custom domains | No | Yes |
 
-If you would rather not run servers or wait for Google's API approval, the hosted version gives you $0.50 of trial credit with no card.
+Sign up for a free [OpenRouter](https://openrouter.ai) account to get Gemini 3.8 access with no credit card required.
 
 ## Roadmap
 
-What we are working on and what comes next is public at [opengmb.synectus.com/roadmap](https://opengmb.synectus.com/roadmap). Ideas and bug reports are welcome as GitHub issues.
+What we are working on and what comes next is tracked in [GitHub Issues](https://github.com/G0than/ApexGMB/issues). Ideas and bug reports are welcome as GitHub issues.
 
 ## Contributing
 
@@ -443,9 +443,7 @@ Pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first: commit
 
 The code is released under the [MIT license](LICENSE). Third-party notices are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-The license covers the code, not the OpenGMB name or logo, which are trademarks of Synectus Private Limited. A fork needs its own name and logo. See [TRADEMARKS.md](TRADEMARKS.md).
-
-OpenGMB is made by [Synectus](https://synectus.com). It is not affiliated with or endorsed by Google. Google Business Profile is a trademark of Google LLC.
+ApexGMB is released as free and open-source software. It is not affiliated with or endorsed by Google. Google Business Profile is a trademark of Google LLC.
 
 ## Star history
 

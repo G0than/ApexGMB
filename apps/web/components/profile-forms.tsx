@@ -1,5 +1,5 @@
 "use client";
-import type { profilePreview } from "@opengmb/core";
+import type { profilePreview } from "@apexgmb/core";
 import { useTranslations } from "next-intl";
 import { Violations } from "./reply-panel";
 import {

@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-import { workspaceAiSettings, type Tx } from "@opengmb/db";
+import { workspaceAiSettings, type Tx } from "@apexgmb/db";
 import { DEFAULT_MARKET, type MarketCode } from "../config/writing-style";
 import { styleLines } from "./style";
 

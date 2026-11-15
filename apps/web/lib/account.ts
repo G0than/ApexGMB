@@ -1,4 +1,4 @@
-// Pure decisions for /account (canvas 6, D18). Client-safe: nothing from @opengmb/core.
+// Pure decisions for /account (canvas 6, D18). Client-safe: nothing from @apexgmb/core.
 
 const ROLE_LABEL: Record<string, string> = {
   owner: "Owner",

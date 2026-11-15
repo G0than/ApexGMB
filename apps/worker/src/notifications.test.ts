@@ -12,7 +12,7 @@ import {
   organizations,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import {
   DIGEST_CRON,
   DIGEST_QUEUE,
@@ -173,7 +173,7 @@ describe("daily digest", () => {
   const deps = (org: string, sent: EmailMessage[], over: Record<string, unknown> = {}) => ({
     sendEmail: async (m: EmailMessage) => void sent.push(m),
     apiKey: "re_test",
-    from: "OpenGMB <notifications@example.test>",
+    from: "ApexGMB <notifications@example.test>",
     appUrl: "https://app.example.test",
     now: () => NOW,
     orgIds: [org],
@@ -206,8 +206,8 @@ describe("daily digest", () => {
     );
     expect(mine).toHaveLength(2);
     const m = mine.find((x) => x.to === `${w.u}@example.test`)!;
-    expect(m.subject).toBe("OpenGMB: 2 new notifications");
-    expect(m.from).toBe("OpenGMB <notifications@example.test>");
+    expect(m.subject).toBe("ApexGMB: 2 new notifications");
+    expect(m.from).toBe("ApexGMB <notifications@example.test>");
     expect(m.text).toContain("New reviews: 1");
     expect(m.text).toContain("Google suggested edits: 1");
     expect(m.text).toContain("Houston Clinic - Downtown");
@@ -341,7 +341,7 @@ describe("daily digest", () => {
     expect(sent.filter((m) => m.to.includes(u))).toHaveLength(0);
     const mv = sent.filter((m) => m.to.includes(v));
     expect(mv).toHaveLength(1);
-    expect(mv[0]!.subject).toBe("OpenGMB: 1 new notifications");
+    expect(mv[0]!.subject).toBe("ApexGMB: 1 new notifications");
     expect((await digestRows(w.org)).map((r) => r.userId)).toEqual([v]);
   });
 

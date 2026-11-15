@@ -9,7 +9,7 @@ import {
   organizations,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor } from "./actor";
 import { executeAction } from "./executor";
 import { createDriverRegistry, fixtureDataForSeoTransport, type DataForSeoTransport } from "./geogrid/drivers";

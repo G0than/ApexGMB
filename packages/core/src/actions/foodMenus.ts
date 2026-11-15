@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { locationWriteOps } from "@opengmb/db";
+import { locationWriteOps } from "@apexgmb/db";
 import { enqueueJob } from "../jobs";
 import {
   clientForLocation,

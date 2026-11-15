@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { sql } from "drizzle-orm";
-import { createDb, organizations, platformDfsSpend } from "@opengmb/db";
+import { createDb, organizations, platformDfsSpend } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { buildExport, countRows, eraseWorkspace, redactSecrets } from "./engine";
 import { seedClient, type SeededClient } from "./fixture";

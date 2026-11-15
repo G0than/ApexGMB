@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { locationGroupsList, reportsDefinitionsList, reportsRunsGet, reportsRunsList } from "@opengmb/core";
-import { PERFORMANCE_CONFIG, emailConfigured, reportPeriodLabel, roleHasPermission } from "@opengmb/core";
+import type { locationGroupsList, reportsDefinitionsList, reportsRunsGet, reportsRunsList } from "@apexgmb/core";
+import { PERFORMANCE_CONFIG, emailConfigured, reportPeriodLabel, roleHasPermission } from "@apexgmb/core";
 import { TabLinks, linkButtonClass, primaryLinkButtonClass } from "../../../components/page-parts";
 import { DefinitionsTable } from "../../../components/reports/definitions-table";
 import { DeliveryHistory } from "../../../components/reports/delivery-history";

@@ -1,6 +1,6 @@
 import { and, eq, isNull } from "drizzle-orm";
 import sharp from "sharp";
-import { storedFiles, type Db, type Tx } from "@opengmb/db";
+import { storedFiles, type Db, type Tx } from "@apexgmb/db";
 
 /** A logo ready for a report PDF or an email: small PNG bytes and their pixel size. */
 export type ReportLogo = { png: Uint8Array; width: number; height: number };

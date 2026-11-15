@@ -1,5 +1,5 @@
 import { and, desc, eq, inArray } from "drizzle-orm";
-import { competitorProfiles, gridCompetitorSnapshots, gridConfigs, type Db, type Tx } from "@opengmb/db";
+import { competitorProfiles, gridCompetitorSnapshots, gridConfigs, type Db, type Tx } from "@apexgmb/db";
 import { COMPETITOR_PROFILES } from "../config/competitor-profiles";
 
 export type CompetitorCategoryRow = {

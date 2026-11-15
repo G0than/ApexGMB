@@ -1,7 +1,7 @@
 import { and, desc, eq, exists, inArray, sql, type SQL } from "drizzle-orm";
 import type { AnyPgColumn } from "drizzle-orm/pg-core";
 import { z } from "zod";
-import { locationGroupMembers, locations, postTargets, posts, reviews } from "@opengmb/db";
+import { locationGroupMembers, locations, postTargets, posts, reviews } from "@apexgmb/db";
 import { authorize, workspaceScope } from "../actor";
 import { defineAction } from "../registry";
 import { locationScope } from "./locations";

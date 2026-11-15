@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-import { locationAutoRevert, type Tx } from "@opengmb/db";
+import { locationAutoRevert, type Tx } from "@apexgmb/db";
 import { loadLocation } from "../locationOps/access";
 import { defineAction } from "../registry";
 

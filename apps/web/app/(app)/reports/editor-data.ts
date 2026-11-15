@@ -1,8 +1,8 @@
 // apps/web/app/(app)/reports/editor-data.ts
 import "server-only";
 import { getTranslations } from "next-intl/server";
-import type { locationGroupsList, locationsList, performanceKeywords, performanceSummary, workspacesList } from "@opengmb/core";
-import { DEFAULT_COLOUR, PERFORMANCE_CONFIG, definitionPeriod, emailConfigured, reportPeriodLabel, reportSummaryOffer } from "@opengmb/core";
+import type { locationGroupsList, locationsList, performanceKeywords, performanceSummary, workspacesList } from "@apexgmb/core";
+import { DEFAULT_COLOUR, PERFORMANCE_CONFIG, definitionPeriod, emailConfigured, reportPeriodLabel, reportSummaryOffer } from "@apexgmb/core";
 import { locationLabel } from "../../../lib/locations";
 import { keywordUsers, tileDelta } from "../../../lib/performance";
 import { scheduleText } from "../../../lib/reports";

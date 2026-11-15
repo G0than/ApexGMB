@@ -8,7 +8,7 @@ import {
   reviewReplies,
   reviews,
   workspaceReplySettings,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { setAiTestOverrides, type AiModel } from "./ai/model";
 import { DRAFT_ON_ARRIVAL } from "./config/draft-on-arrival";
 import { MockGoogleClient } from "./google/mock-client";

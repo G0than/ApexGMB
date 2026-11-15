@@ -1,5 +1,5 @@
-import { backfillAuditCheckpoint } from "@opengmb/core";
-import { createDb, organizations } from "@opengmb/db";
+import { backfillAuditCheckpoint } from "@apexgmb/core";
+import { createDb, organizations } from "@apexgmb/db";
 
 const url = process.env.DATABASE_URL;
 if (!url) {

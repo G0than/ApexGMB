@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { openSharedReport } from "@opengmb/core";
+import { openSharedReport } from "@apexgmb/core";
 import { getDb } from "../../../../lib/auth";
 
 // Public: no login. Access is decided by core (valid, unexpired, unrevoked token) and audited there

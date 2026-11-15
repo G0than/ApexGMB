@@ -1,5 +1,5 @@
 import { and, asc, eq, inArray, lte } from "drizzle-orm";
-import { locationWriteOps, locations, mediaUploads, type Db } from "@opengmb/db";
+import { locationWriteOps, locations, mediaUploads, type Db } from "@apexgmb/db";
 import { deferIfBlocked, enqueueJob } from "../jobs";
 import { GoogleApiError } from "../google/errors";
 import {

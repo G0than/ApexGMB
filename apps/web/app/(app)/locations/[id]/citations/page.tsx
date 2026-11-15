@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import type { citationsList } from "@opengmb/core";
-import { CITATION_COUNTRIES, roleHasPermission } from "@opengmb/core";
+import type { citationsList } from "@apexgmb/core";
+import { CITATION_COUNTRIES, roleHasPermission } from "@apexgmb/core";
 import { CitationTracker } from "../../../../../components/citation-tracker";
 import { ErrorText } from "../../../../../components/ui";
 import { actorContextFor } from "../../../../../lib/auth";

@@ -1,6 +1,6 @@
 import { aiEnabledForOrg } from "../ai/switch";
 import { and, desc, eq, inArray, isNull } from "drizzle-orm";
-import { reviewAutoDrafts, reviews, workspaceReplySettings, type Db, type Tx } from "@opengmb/db";
+import { reviewAutoDrafts, reviews, workspaceReplySettings, type Db, type Tx } from "@apexgmb/db";
 import { loadActor } from "../actor";
 import { draftForReview, saveAndSubmitDraft } from "../actions/aiReplies";
 import { writeAudit } from "../audit";

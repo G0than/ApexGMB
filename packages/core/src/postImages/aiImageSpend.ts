@@ -1,6 +1,6 @@
 import { effectiveCapMicroUsd } from "../limits/ai-cap";
 import { assertAiEnabled } from "../ai/switch";
-import { aiUsage, type Tx } from "@opengmb/db";
+import { aiUsage, type Tx } from "@apexgmb/db";
 import { AccessError, type Actor } from "../actor";
 import { aiEnv } from "../ai/model";
 import { lockAiBudget, platformSpentMicroUsd, workspaceCapMicroUsd, workspaceSpentMicroUsd } from "../ai/usage";

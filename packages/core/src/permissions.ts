@@ -1,4 +1,4 @@
-import type { membershipRole } from "@opengmb/db";
+import type { membershipRole } from "@apexgmb/db";
 
 export type Role = (typeof membershipRole.enumValues)[number];
 

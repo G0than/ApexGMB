@@ -1,5 +1,5 @@
 import { and, inArray, lt } from "drizzle-orm";
-import { webhookDeliveries, type Db } from "@opengmb/db";
+import { webhookDeliveries, type Db } from "@apexgmb/db";
 import { WEBHOOK_DELIVERY_RETENTION_DAYS } from "../config/webhooks";
 
 /**

@@ -1,6 +1,6 @@
 // Pure logic for profile changes (the location Changes tab; plan 3G (Part B)'s Alerts reuses it).
 // Client-safe: only types come from core.
-import type { profileChangesList } from "@opengmb/core";
+import type { profileChangesList } from "@apexgmb/core";
 import { plainValue, profileFieldLabel, statusWords } from "./labels";
 import { approvalsHref, itemKey } from "./approvals";
 import type { TimeFormat } from "./time-format";

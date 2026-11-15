@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { emailConfigured, isPlatformAdmin, type mcpProposalsList, integrationEnv } from "@opengmb/core";
+import { emailConfigured, isPlatformAdmin, type mcpProposalsList, integrationEnv } from "@apexgmb/core";
 import { ConnectView } from "../../../components/agents/connect-view";
 import { ProposalsView } from "../../../components/agents/proposals-view";
 import { ResourcesView } from "../../../components/agents/resources-view";

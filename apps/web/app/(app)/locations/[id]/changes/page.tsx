@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import type { profileChangesList } from "@opengmb/core";
-import { roleHasPermission, integrationEnv } from "@opengmb/core";
+import type { profileChangesList } from "@apexgmb/core";
+import { roleHasPermission, integrationEnv } from "@apexgmb/core";
 import { ProfileChanges } from "../../../../../components/profile-changes";
 import { actorContextFor } from "../../../../../lib/auth";
 import { parseStatus, statusPills } from "../../../../../lib/changes";

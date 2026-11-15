@@ -1,6 +1,6 @@
 import { createHash, randomUUID } from "node:crypto";
 import { and, eq, isNotNull, lt, ne, sql } from "drizzle-orm";
-import { locationWriteOps, mediaUploads, mcpProposals, type Db, type Tx } from "@opengmb/db";
+import { locationWriteOps, mediaUploads, mcpProposals, type Db, type Tx } from "@apexgmb/db";
 import type { Actor } from "../actor";
 import { writeAudit } from "../audit";
 import { MEDIA_LIMITS } from "../config/media-limits";

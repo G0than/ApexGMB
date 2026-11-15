@@ -1,5 +1,5 @@
 import { and, asc, eq, inArray, lte } from "drizzle-orm";
-import { locations, postTargets, posts, type Db, type Tx } from "@opengmb/db";
+import { locations, postTargets, posts, type Db, type Tx } from "@apexgmb/db";
 import { GoogleApiError } from "../google/errors";
 import { assertPassed, guardrailSubject, runGuardrails, type GuardrailResult } from "../guardrails";
 import { deferBlockedJob, enqueueJob } from "../jobs";

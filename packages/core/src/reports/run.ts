@@ -7,7 +7,7 @@ import {
   workspaces,
   type Db,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { loadBranding } from "../branding";
 import { PERFORMANCE_CONFIG } from "../config/performance";

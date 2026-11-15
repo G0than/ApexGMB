@@ -1,7 +1,7 @@
 /** Accounts are never created through the API; the owner comes from owner-bootstrap.ts. Same exports as the full module. */
 import { eq } from "drizzle-orm";
 import { APIError } from "better-auth/api";
-import { memberships, type Tx } from "@opengmb/db";
+import { memberships, type Tx } from "@apexgmb/db";
 
 export const signupEnabled = (): boolean => false;
 

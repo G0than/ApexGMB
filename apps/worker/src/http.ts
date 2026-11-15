@@ -6,8 +6,8 @@ import {
   acceptPingback,
   acceptPubsubPush,
   type PubsubVerifyConfig,
-} from "@opengmb/core";
-import type { Db } from "@opengmb/db";
+} from "@apexgmb/core";
+import type { Db } from "@apexgmb/db";
 
 export const MAX_BODY_BYTES = PUBSUB_MAX_BODY_BYTES;
 

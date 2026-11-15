@@ -11,7 +11,7 @@ import {
   users,
   workspaces,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import type { Actor } from "./actor";
 import { CoreError } from "./errors";
 import type { GuardrailResult } from "./guardrails";

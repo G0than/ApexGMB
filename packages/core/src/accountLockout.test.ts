@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it } from "vitest";
-import { createDb } from "@opengmb/db";
+import { createDb } from "@apexgmb/db";
 import { createAuth } from "./auth";
 
 const url = process.env.DATABASE_URL_TEST;

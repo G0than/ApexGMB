@@ -7,7 +7,7 @@ import {
   searchKeywordsMonthly,
   workspaces,
   type Db,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError, workspaceScope, type Actor } from "../actor";
 import { CoreError } from "../errors";
 import { postCount } from "../posts/scope";

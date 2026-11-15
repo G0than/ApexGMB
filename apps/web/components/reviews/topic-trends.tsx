@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { reviewsTopicTrends, reviewTopicsStatus } from "@opengmb/core";
+import type { reviewsTopicTrends, reviewTopicsStatus } from "@apexgmb/core";
 import { reviewTopics_status, reviews_topicTrends } from "../../app/_generated/actions";
 import { sparkPoints } from "../../lib/review-analytics";
 import { topicRows } from "../../lib/review-topics";

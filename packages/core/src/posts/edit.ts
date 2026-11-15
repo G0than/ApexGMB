@@ -1,7 +1,7 @@
 import { and, asc, eq } from "drizzle-orm";
 import { isOrgBlocked } from "../account-state";
 import { deferBlockedJob } from "../jobs";
-import { locations, postEdits, postTargets, posts, type Db, type Tx } from "@opengmb/db";
+import { locations, postEdits, postTargets, posts, type Db, type Tx } from "@apexgmb/db";
 import { assertPassed, guardrailSubject, runGuardrails, type GuardrailResult } from "../guardrails";
 import { clientFor, googleFailure } from "../reviews/reply-jobs";
 import { workerAudit } from "../reviews/reply-state";

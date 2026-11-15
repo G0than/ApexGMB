@@ -1,5 +1,5 @@
-import type { PostLanguage } from "@opengmb/core";
-import { utcToWall, zonedWallToUtc } from "@opengmb/core/time";
+import type { PostLanguage } from "@apexgmb/core";
+import { utcToWall, zonedWallToUtc } from "@apexgmb/core/time";
 import { ctaName, statusText, type T } from "./posts-lists";
 
 // ---- views ---------------------------------------------------------------------------------

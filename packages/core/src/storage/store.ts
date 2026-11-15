@@ -8,7 +8,7 @@ import {
   workspaces,
   type Db,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError, type Actor } from "../actor";
 import {
   STORED_FILE_MAX_BYTES,

@@ -36,7 +36,7 @@ describe("review request helpers", () => {
     const withNum = buildReviewRequestEmail({ ...base, sender: { ...SENDER, companyNumber: "ABN 12 345 678 901", phone: "+61 2 5550 0100", website: null } });
     expect(withNum.text).toContain("You are receiving this from Acme Dental Pty Ltd (ABN 12 345 678 901) because you bought from Acme within the 24 months before January 2031.");
     expect(withNum.text).toContain("1 Main St, <Springfield> \u00b7 +61 2 5550 0100. Unsubscribe from Acme's review requests: https://a.test/e/T/unsubscribe (one click, no sign-in).");
-    expect(withNum.text).toContain(`Sent by OpenGMB for Acme; OpenGMB is operated by ${OPERATOR_LEGAL_ENTITY}, ${OPERATOR_REGISTERED_OFFICE}.`);
+    expect(withNum.text).toContain(`Sent by ApexGMB for Acme; ApexGMB is operated by ${OPERATOR_LEGAL_ENTITY}, ${OPERATOR_REGISTERED_OFFICE}.`);
     expect(withNum.html).toContain("1 Main St, &lt;Springfield&gt;");
     expect(withNum.html).toContain("<a href=\"https://a.test/e/T/unsubscribe\">Unsubscribe from Acme's review requests</a>");
     const without = buildReviewRequestEmail({ ...base, sender: SENDER });

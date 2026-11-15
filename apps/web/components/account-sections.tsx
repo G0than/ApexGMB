@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cookies, headers } from "next/headers";
 import { getTranslations } from "next-intl/server";
-import { BACKUP_CODE_COUNT, type workspacesList } from "@opengmb/core";
+import { BACKUP_CODE_COUNT, type workspacesList } from "@apexgmb/core";
 import { workspaces_list } from "../app/_generated/actions";
 import { actorContextFor, backupCodesLeft, getAuth, userHasPassword } from "../lib/auth";
 import { isClientRole, organizationLine } from "../lib/account";

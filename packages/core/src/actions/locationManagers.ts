@@ -7,7 +7,7 @@ const ROLES = ["PRIMARY_OWNER", "OWNER", "MANAGER", "SITE_MANAGER"] as const;
 export const locationManagersList = defineAction({
   name: "locationManagers.list",
   description:
-    "Who manages a location on Google, read live (Account Management API locations.admins.list, outside any transaction). Each manager has a display name (an invited person who has not accepted yet shows the invited email), a role (PRIMARY_OWNER, OWNER, MANAGER, SITE_MANAGER; anything else is returned as OTHER) and pendingInvitation. Read only: OpenGMB does not invite, change or remove managers. Spends a Google call, so call it only when the list is wanted. Whether Google includes managers inherited from the account is not documented.",
+    "Who manages a location on Google, read live (Account Management API locations.admins.list, outside any transaction). Each manager has a display name (an invited person who has not accepted yet shows the invited email), a role (PRIMARY_OWNER, OWNER, MANAGER, SITE_MANAGER; anything else is returned as OTHER) and pendingInvitation. Read only: ApexGMB does not invite, change or remove managers. Spends a Google call, so call it only when the list is wanted. Whether Google includes managers inherited from the account is not documented.",
   input: z.object({ locationId: z.uuid() }),
   output: z.object({
     managers: z.array(

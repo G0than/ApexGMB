@@ -4,7 +4,7 @@ import { liveStatus, liveStatusForViewer } from "./live-status";
 const LIVE_ENV = {
   GOOGLE_BUSINESS_API_MODE: "live",
   GOOGLE_BUSINESS_WRITES: "live",
-  PUBSUB_TOPIC: "projects/example-project/topics/opengmb-reviews",
+  PUBSUB_TOPIC: "projects/example-project/topics/apexgmb-reviews",
   PUBSUB_AUDIENCE: "https://app.example/webhooks/google-pubsub",
   PUBSUB_SERVICE_ACCOUNT_EMAIL: "push@example.iam.gserviceaccount.com",
 };

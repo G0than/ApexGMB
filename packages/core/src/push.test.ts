@@ -7,7 +7,7 @@ import {
   pushSubscriptions,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 
 const sendNotification = vi.fn();
 vi.mock("web-push", () => ({ default: { sendNotification: (...a: unknown[]) => sendNotification(...a) } }));

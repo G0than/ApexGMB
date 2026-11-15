@@ -1,6 +1,6 @@
 import { and, desc, eq } from "drizzle-orm";
 import { z } from "zod";
-import { postImages } from "@opengmb/db";
+import { postImages } from "@apexgmb/db";
 import { AccessError } from "../actor";
 import { CoreError } from "../errors";
 import { cleanFilename } from "../media/upload";

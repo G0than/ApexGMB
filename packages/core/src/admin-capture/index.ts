@@ -1,5 +1,5 @@
 /** Community edition: no admin panel, so nothing is recorded. Same names as the full module. */
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 
 export async function touchUserActive(_db: Db, _userId: string, _now?: Date): Promise<void> {}
 

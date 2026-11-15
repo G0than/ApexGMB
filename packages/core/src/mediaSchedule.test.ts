@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { eq } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
-import { createDb, locations, locationWriteOps, mediaUploads } from "@opengmb/db";
+import { createDb, locations, locationWriteOps, mediaUploads } from "@apexgmb/db";
 import { setSharedMockGoogleClient } from "./google/factory";
 import { MockGoogleClient } from "./google/mock-client";
 import { ThrottledGoogleClient } from "./google/throttled-client";

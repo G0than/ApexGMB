@@ -2,7 +2,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import net from "node:net";
 import { eq } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
-import { WEBHOOK_PURGE_CRON, WEBHOOK_PURGE_QUEUE, WEBHOOK_QUEUE, WEBHOOK_QUEUE_OPTIONS, encryptSecret, generateWebhookSecret } from "@opengmb/core";
+import { WEBHOOK_PURGE_CRON, WEBHOOK_PURGE_QUEUE, WEBHOOK_QUEUE, WEBHOOK_QUEUE_OPTIONS, encryptSecret, generateWebhookSecret } from "@apexgmb/core";
 import {
   createDb,
   memberships,
@@ -11,7 +11,7 @@ import {
   webhookDeliveries,
   webhookSubscriptions,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { handleWebhookJobs, registerWebhookJobs } from "./webhooks";
 
 const url = process.env.DATABASE_URL_TEST;

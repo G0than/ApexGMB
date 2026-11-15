@@ -4,9 +4,9 @@
  * anyone editing this file. Test code only.
  */
 import { getTableConfig, PgTable, type PgColumn } from "drizzle-orm/pg-core";
-import * as dbSchema from "@opengmb/db";
-import type { Db } from "@opengmb/db";
-import { users, workspaces } from "@opengmb/db";
+import * as dbSchema from "@apexgmb/db";
+import type { Db } from "@apexgmb/db";
+import { users, workspaces } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { PRIVATE_FIXTURE_OVERRIDES, PRIVATE_FIXTURE_USER_KEYS } from "./private";
 import { INCLUDED_TABLES } from "./tables";

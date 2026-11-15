@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { and, eq } from "drizzle-orm";
-import { auditLog, createDb, memberships, organizations, users, workspaces } from "@opengmb/db";
+import { auditLog, createDb, memberships, organizations, users, workspaces } from "@apexgmb/db";
 import { loadActor, type Actor } from "../actor";
 import { CoreError } from "../errors";
 import { executeAction } from "../executor";
@@ -60,7 +60,7 @@ describe("workspaces.export_data and workspaces.erase_data", () => {
       workspaceId: a.workspaceId,
     });
     expect(out.rowCount).toBeGreaterThan(40);
-    expect(out.filename).toMatch(/^opengmb-client-.*\.json$/);
+    expect(out.filename).toMatch(/^apexgmb-client-.*\.json$/);
     expect(out.content).toContain(a.mark);
     expect(out.content).not.toContain(b.mark);
     const [row] = await db

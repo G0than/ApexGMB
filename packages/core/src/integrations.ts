@@ -1,4 +1,4 @@
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 import { configureLimitEvents } from "./limits/alerts";
 
 /** Community edition: every key comes from the environment (the .env file), nothing is stored in the app. */

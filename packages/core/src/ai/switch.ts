@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-import { organizations, type Db, type Tx } from "@opengmb/db";
+import { organizations, type Db, type Tx } from "@apexgmb/db";
 import { CoreError } from "../errors";
 
 /** The one message every refused AI action shows. Plain words, no code. */

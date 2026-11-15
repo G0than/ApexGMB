@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { SYSTEM_STATUS_LOCATION_CAP, emailConfigured, isPlatformAdmin, roleHasPermission, type systemStatus, integrationEnv } from "@opengmb/core";
+import { SYSTEM_STATUS_LOCATION_CAP, emailConfigured, isPlatformAdmin, roleHasPermission, type systemStatus, integrationEnv } from "@apexgmb/core";
 import { TableWrap, tdClass, thClass } from "../../../../components/page-parts";
 import { SyncLocationButton } from "../../../../components/sync-location-button";
 import { SettingsShell } from "../../../../components/settings/settings-shell";

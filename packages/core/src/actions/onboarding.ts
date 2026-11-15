@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-import { organizations } from "@opengmb/db";
+import { organizations } from "@apexgmb/db";
 import { authorize } from "../actor";
 import { defineAction } from "../registry";
 

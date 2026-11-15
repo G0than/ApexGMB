@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { connection } from "next/server";
-import { emailConfigured } from "@opengmb/core";
+import { emailConfigured } from "@apexgmb/core";
 import { getTranslations } from "next-intl/server";
 import { ForgotPasswordForm } from "../../components/forgot-password-form";
 import { Pill } from "../../components/page-parts";

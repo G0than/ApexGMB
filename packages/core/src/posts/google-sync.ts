@@ -1,5 +1,5 @@
 import { and, eq, notInArray } from "drizzle-orm";
-import { googlePosts, type Db } from "@opengmb/db";
+import { googlePosts, type Db } from "@apexgmb/db";
 import { POST_LIMITS } from "../config/post-limits";
 import type { ListLocalPostsResponse } from "../google/client";
 

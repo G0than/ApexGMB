@@ -1,4 +1,4 @@
-# @opengmb/db
+# @apexgmb/db
 
 Drizzle schema, migrations and client.
 

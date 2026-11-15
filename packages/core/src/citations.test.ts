@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it, vi } from "vitest";
-import { createDb, citationEntries, locations } from "@opengmb/db";
+import { createDb, citationEntries, locations } from "@apexgmb/db";
 import { eq } from "drizzle-orm";
 import { MockGoogleClient } from "./google/mock-client";
 import { CITATION_CHECK } from "./config/citation-check";

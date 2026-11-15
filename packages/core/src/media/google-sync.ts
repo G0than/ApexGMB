@@ -1,5 +1,5 @@
 import { and, eq, notInArray } from "drizzle-orm";
-import { googleMedia, type Db } from "@opengmb/db";
+import { googleMedia, type Db } from "@apexgmb/db";
 import { MEDIA_LIMITS } from "../config/media-limits";
 import type { ListMediaResponse } from "../google/client";
 

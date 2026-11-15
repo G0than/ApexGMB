@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { locationGroupsList, locationsList, profileChangeSetsList, profileChangesList, workspacesList } from "@opengmb/core";
-import { PROFILE_METADATA, roleHasPermission, integrationEnv } from "@opengmb/core";
+import type { locationGroupsList, locationsList, profileChangeSetsList, profileChangesList, workspacesList } from "@apexgmb/core";
+import { PROFILE_METADATA, roleHasPermission, integrationEnv } from "@apexgmb/core";
 import { BulkProfileEdit } from "../../../../components/bulk-profile-edit";
 import { ChooseClient } from "../../../../components/choose-client";
 import { LocationsHeader } from "../../../../components/locations/locations-header";

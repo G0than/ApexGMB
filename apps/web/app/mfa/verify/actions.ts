@@ -1,6 +1,6 @@
 "use server";
 import { headers } from "next/headers";
-import { AuthError, requireAuthenticatedUser } from "@opengmb/core";
+import { AuthError, requireAuthenticatedUser } from "@apexgmb/core";
 import { backupCodesLeft, getAuth } from "../../../lib/auth";
 
 /**

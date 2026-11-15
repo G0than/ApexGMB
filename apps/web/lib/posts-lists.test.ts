@@ -401,8 +401,8 @@ describe("On Google", () => {
     expect(googleState(tEn, g({ state: "PROCESSING" }))).toEqual({ label: "processing", tone: "info" });
     expect(googleState(tEn, g({ state: "REJECTED" }))).toEqual({ label: "rejected", tone: "bad" });
     expect(googleNote(tEn, g({ state: "PROCESSING" }))).toEqual({ text: "Google is still processing this post.", tone: "muted" });
-    expect(googleNote(tEn, g({ managedHere: false }))).toEqual({ text: "Made outside OpenGMB, in Google or another tool.", tone: "muted" });
-    expect(googleNote(tEn, g({ state: "REJECTED", managedHere: false }))).toEqual({ text: "Google rejected this post. Made outside OpenGMB.", tone: "bad" });
+    expect(googleNote(tEn, g({ managedHere: false }))).toEqual({ text: "Made outside ApexGMB, in Google or another tool.", tone: "muted" });
+    expect(googleNote(tEn, g({ state: "REJECTED", managedHere: false }))).toEqual({ text: "Google rejected this post. Made outside ApexGMB.", tone: "bad" });
     expect(googleNote(tEn, g())).toBeNull();
     expect(googleHeadline(tEn, 100, "Rivermoor Main St", true)).toBe(
       "100 posts live on Google for Rivermoor Main St (showing the newest; more exist).",

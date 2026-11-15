@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { viewSharedReport } from "@opengmb/core";
+import { viewSharedReport } from "@apexgmb/core";
 import { DownloadPdf } from "../../../components/share/download-pdf";
 import { Denied, ShareFrame } from "../../../components/share/share-frame";
 import { getDb } from "../../../lib/auth";

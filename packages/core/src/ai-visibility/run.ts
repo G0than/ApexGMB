@@ -1,5 +1,5 @@
 import { and, desc, eq, inArray, ne } from "drizzle-orm";
-import { aiVisibilityResults, aiVisibilityRuns, aiVisibilitySettings, gridConfigs, gridPoints, gridRuns, locations, platformDfsSpend, type Db, type Tx } from "@opengmb/db";
+import { aiVisibilityResults, aiVisibilityRuns, aiVisibilitySettings, gridConfigs, gridPoints, gridRuns, locations, platformDfsSpend, type Db, type Tx } from "@apexgmb/db";
 import { isOrgBlocked, orgIsActive } from "../account-state";
 import { usdToMicro } from "../ai/money";
 import { deferIfBlocked } from "../jobs";

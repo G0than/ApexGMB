@@ -9,8 +9,8 @@ import {
   toErrorInfo,
   type Actor,
   type AnyAction,
-} from "@opengmb/core";
-import type { Db } from "@opengmb/db";
+} from "@apexgmb/core";
+import type { Db } from "@apexgmb/db";
 
 /**
  * REST v1: the same actions, tokens, scopes and rate limits as the MCP endpoint, over plain JSON.
@@ -109,7 +109,7 @@ export function describeAction(action: AnyAction) {
     name: action.name,
     kind: action.kind,
     approval: approvalOf(action),
-    /** True when the action changes something outside OpenGMB: a token can propose it, a person approves it in the app. */
+    /** True when the action changes something outside ApexGMB: a token can propose it, a person approves it in the app. */
     needsPerson: action.kind === "write" && isExternalEffect(action.name),
     description: action.description,
     inputSchema: inputSchemaOf(action),

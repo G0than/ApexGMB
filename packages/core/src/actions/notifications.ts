@@ -1,6 +1,6 @@
 import { and, count, desc, eq, inArray, isNull } from "drizzle-orm";
 import { z } from "zod";
-import { notifications } from "@opengmb/db";
+import { notifications } from "@apexgmb/db";
 import { defineAction } from "../registry";
 
 const itemOut = z.object({

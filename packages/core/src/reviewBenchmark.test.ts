@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it, vi } from "vitest";
-import { createDb, gridCompetitorSnapshots, reviews } from "@opengmb/db";
+import { createDb, gridCompetitorSnapshots, reviews } from "@apexgmb/db";
 import { MockGoogleClient } from "./google/mock-client";
 import { codeOf, makeKit, uniq, type Loc, type Org } from "./testkit";
 

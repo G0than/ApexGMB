@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 import { lastHeartbeat } from "./monitoring/worker";
 
 export type ServiceSignals = {

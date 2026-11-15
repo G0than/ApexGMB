@@ -1,6 +1,6 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { desc, eq, sql } from "drizzle-orm";
-import { auditCheckpoints, auditLog, createDb, organizations, type Tx } from "@opengmb/db";
+import { auditCheckpoints, auditLog, createDb, organizations, type Tx } from "@apexgmb/db";
 import {
   backfillAuditCheckpoint,
   getAuditCheckpoint,

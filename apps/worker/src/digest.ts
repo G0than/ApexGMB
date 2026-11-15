@@ -1,7 +1,7 @@
 import { and, eq, gte, inArray, isNull, lte } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 import type { PgBoss } from "pg-boss";
-import { DIGEST_CRON, DIGEST_LOCAL_HOUR, dayKey, escapeHtml, localParts, resendSendEmail, writeAudit, type SendEmail } from "@opengmb/core";
+import { DIGEST_CRON, DIGEST_LOCAL_HOUR, dayKey, escapeHtml, localParts, resendSendEmail, writeAudit, type SendEmail } from "@apexgmb/core";
 import {
   googleNotifications,
   locations,
@@ -10,8 +10,8 @@ import {
   users,
   workspaces,
   type Db,
-} from "@opengmb/db";
-import { orgIsActive } from "@opengmb/core/account-state";
+} from "@apexgmb/db";
+import { orgIsActive } from "@apexgmb/core/account-state";
 
 export { DIGEST_CRON, resendSendEmail };
 
@@ -26,7 +26,7 @@ export function digestZone(itemZones: (string | null)[], orgDefault: string | un
   const ranked = [...votes].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
   return ranked[0]?.[0] ?? orgDefault ?? "UTC";
 }
-export type { EmailMessage, SendEmail } from "@opengmb/core";
+export type { EmailMessage, SendEmail } from "@apexgmb/core";
 
 export const DIGEST_QUEUE = "notifications.digest";
 
@@ -72,21 +72,21 @@ export function renderDigest(
   const counts = [...byKind].map(([k, n]) => `${KIND_LABEL[k] ?? k}: ${n}`);
   const locations = [...locs].sort();
   const text = [
-    `You have ${items.length} new notifications in OpenGMB.`,
+    `You have ${items.length} new notifications in ApexGMB.`,
     "",
     ...counts,
     ...(locations.length ? ["", "Locations:", ...locations.map((l) => `- ${l}`)] : []),
     "",
-    `Open OpenGMB: ${appUrl}`,
+    `Open ApexGMB: ${appUrl}`,
   ].join("\n");
   const html =
-    `<p>You have ${items.length} new notifications in OpenGMB.</p>` +
+    `<p>You have ${items.length} new notifications in ApexGMB.</p>` +
     `<ul>${counts.map((c) => `<li>${escapeHtml(c)}</li>`).join("")}</ul>` +
     (locations.length
       ? `<p>Locations:</p><ul>${locations.map((l) => `<li>${escapeHtml(l)}</li>`).join("")}</ul>`
       : "") +
-    `<p><a href="${escapeHtml(appUrl)}">Open OpenGMB</a></p>`;
-  return { subject: `OpenGMB: ${items.length} new notifications`, html, text };
+    `<p><a href="${escapeHtml(appUrl)}">Open ApexGMB</a></p>`;
+  return { subject: `ApexGMB: ${items.length} new notifications`, html, text };
 }
 
 /**

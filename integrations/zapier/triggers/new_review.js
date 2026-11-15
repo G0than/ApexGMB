@@ -25,7 +25,7 @@ const perform = async (z, bundle) => {
   if (secret) {
     const raw = bundle.rawRequest || {};
     if (!verifySignature({ secret, headers: raw.headers, content: raw.content })) {
-      throw new z.errors.HaltedError('OpenGMB webhook signature did not verify; ignoring this request.');
+      throw new z.errors.HaltedError('ApexGMB webhook signature did not verify; ignoring this request.');
     }
   }
   const req = bundle.cleanedRequest || {};
@@ -97,7 +97,7 @@ module.exports = {
       reviewerName: 'Sample reviewer',
       createTime: '2026-10-24T00:00:00.000Z',
       updateTime: '2026-10-24T00:00:00.000Z',
-      appUrl: 'https://opengmb.example.com/reviews?review=5b0f6a1e-6b8e-4c1a-9a53-0d6c2c1f0a01',
+      appUrl: 'https://apexgmb.example.com/reviews?review=5b0f6a1e-6b8e-4c1a-9a53-0d6c2c1f0a01',
       test: false,
     },
     outputFields: [
@@ -108,7 +108,7 @@ module.exports = {
       { key: 'comment', label: 'Comment' },
       { key: 'reviewerName', label: 'Reviewer' },
       { key: 'createTime', label: 'Created' },
-      { key: 'appUrl', label: 'Open in OpenGMB' },
+      { key: 'appUrl', label: 'Open in ApexGMB' },
       { key: 'test', label: 'Is test event', type: 'boolean' },
     ],
   },

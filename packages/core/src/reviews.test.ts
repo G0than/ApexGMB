@@ -16,7 +16,7 @@ import {
   reviewSyncs,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { verifyAuditChain } from "./audit";
 import { CoreError } from "./errors";

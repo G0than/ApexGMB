@@ -2,8 +2,8 @@ import { readFileSync } from "node:fs";
 import { afterAll, describe, expect, it } from "vitest";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
-import { actions, approvalOf, mcpToolCatalog, type Actor, type AnyAction } from "@opengmb/core";
-import { createDb } from "@opengmb/db";
+import { actions, approvalOf, mcpToolCatalog, type Actor, type AnyAction } from "@apexgmb/core";
+import { createDb } from "@apexgmb/db";
 import { createMcpServer, toolNameFor } from "./server";
 
 const url = process.env.DATABASE_URL_TEST;

@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
-import { createDb, googlePosts } from "@opengmb/db";
+import { createDb, googlePosts } from "@apexgmb/db";
 import { eq } from "drizzle-orm";
 import { MockGoogleClient } from "./google/mock-client";
 import { googleOnlyPosts, lastPostDates, postCount } from "./posts/scope";

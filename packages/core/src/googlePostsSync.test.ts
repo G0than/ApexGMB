@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, googlePosts } from "@opengmb/db";
+import { createDb, googlePosts } from "@apexgmb/db";
 import type { GoogleLocalPost } from "./google/client";
 import { MockGoogleClient } from "./google/mock-client";
 import { syncGooglePosts } from "./posts/google-sync";

@@ -7,14 +7,14 @@ const path = require('path');
 const nock = require('nock').default;
 const zapier = require('zapier-platform-core');
 
-process.env.SYNGMB_BASE_URL = 'https://syngmb.test';
+process.env.APEXGMB_BASE_URL = 'https://syngmb.test';
 const BASE = 'https://syngmb.test';
 const App = require('../index');
 const { verifySignature } = require('../lib/signature');
 const appTester = zapier.createAppTester(App);
 zapier.tools.env.inject();
 
-const TOKEN = 'sgmb_testtoken';
+const TOKEN = 'apxgmb_testtoken';
 const authData = { apiToken: TOKEN };
 const fixture = require('./fixtures/review-created.json');
 const snapshot = JSON.parse(
@@ -24,7 +24,7 @@ const frozenReviewKeys = Object.keys(snapshot['review.created payload'].properti
 
 const api = () => nock(BASE, { reqheaders: { authorization: `Bearer ${TOKEN}` } });
 
-describe('OpenGMB Zapier integration', () => {
+describe('ApexGMB Zapier integration', () => {
   before(() => nock.disableNetConnect());
   afterEach(() => {
     assert.deepStrictEqual(nock.pendingMocks(), [], 'every mocked call must be used');
@@ -235,13 +235,13 @@ describe('OpenGMB Zapier integration', () => {
   });
 
   describe('base URL', () => {
-    it('uses SYNGMB_BASE_URL and drops trailing slashes', () => {
-      const saved = process.env.SYNGMB_BASE_URL;
-      process.env.SYNGMB_BASE_URL = 'https://opengmb.example.test//';
+    it('uses APEXGMB_BASE_URL and drops trailing slashes', () => {
+      const saved = process.env.APEXGMB_BASE_URL;
+      process.env.APEXGMB_BASE_URL = 'https://apexgmb.example.test//';
       try {
-        assert.strictEqual(require('../lib/api').baseUrl(), 'https://opengmb.example.test');
+        assert.strictEqual(require('../lib/api').baseUrl(), 'https://apexgmb.example.test');
       } finally {
-        process.env.SYNGMB_BASE_URL = saved;
+        process.env.APEXGMB_BASE_URL = saved;
       }
     });
   });

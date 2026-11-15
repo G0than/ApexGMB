@@ -1,8 +1,8 @@
 import { readFileSync } from "node:fs";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { and, eq } from "drizzle-orm";
-import { actions, createApiToken } from "@opengmb/core";
-import { auditLog, createDb, memberships, organizations, users } from "@opengmb/db";
+import { actions, createApiToken } from "@apexgmb/core";
+import { auditLog, createDb, memberships, organizations, users } from "@apexgmb/db";
 import { startServer } from "./http";
 import { inputSchemaOf } from "./rest";
 

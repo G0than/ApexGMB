@@ -1,4 +1,4 @@
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 import { recordConnectionError, recordConnectionOk } from "../admin-capture";
 import { CoreError } from "../errors";
 import type { GoogleClient } from "./client";

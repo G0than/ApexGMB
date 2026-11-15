@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { auditList, membersList } from "@opengmb/core";
+import type { auditList, membersList } from "@apexgmb/core";
 import { AuditTable, type AuditRow } from "../../../components/audit-table";
 import { AuditTools } from "../../../components/audit-tools";
 import { filterFieldClass } from "../../../components/page-parts";

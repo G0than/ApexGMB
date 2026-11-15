@@ -1,4 +1,4 @@
-import { createDb } from "@opengmb/db";
+import { createDb } from "@apexgmb/db";
 import { runMigrations } from "../../../packages/db/src/migrate";
 
 // Wipes the throwaway test database and migrates it with this tree's migration line, before the web server starts.

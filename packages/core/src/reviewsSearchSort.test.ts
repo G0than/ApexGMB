@@ -1,6 +1,6 @@
 import { randomInt } from "node:crypto";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { createDb, locations, memberships, organizations, reviews, users, workspaces } from "@opengmb/db";
+import { createDb, locations, memberships, organizations, reviews, users, workspaces } from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { executeAction } from "./executor";
 import { seedMockGoogleConnection } from "./google/dev-seed";

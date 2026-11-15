@@ -13,7 +13,7 @@ import {
   organizations,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { verifyAuditChain } from "./audit";
 import { GEOGRID_DEFAULTS } from "./config/geogrid";

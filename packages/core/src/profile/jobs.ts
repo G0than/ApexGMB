@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-import { locations, profileChangeSets, profileChangeTargets, type Db } from "@opengmb/db";
+import { locations, profileChangeSets, profileChangeTargets, type Db } from "@apexgmb/db";
 import { assertPassed, guardrailSubject } from "../guardrails";
 import { deferIfBlocked } from "../jobs";
 import { clientFor, googleFailure } from "../reviews/reply-jobs";

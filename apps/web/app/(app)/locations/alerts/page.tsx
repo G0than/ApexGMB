@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { locationGroupsList, locationsList, profileChangesList } from "@opengmb/core";
-import { roleHasPermission, integrationEnv } from "@opengmb/core";
+import type { locationGroupsList, locationsList, profileChangesList } from "@apexgmb/core";
+import { roleHasPermission, integrationEnv } from "@apexgmb/core";
 import { AlertFilters } from "../../../../components/alerts/alert-filters";
 import { AlertsInbox } from "../../../../components/alerts/alerts-inbox";
 import { LocationsHeader } from "../../../../components/locations/locations-header";

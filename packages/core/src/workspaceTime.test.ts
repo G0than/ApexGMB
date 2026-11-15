@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, locationImports, workspaces } from "@opengmb/db";
+import { createDb, locationImports, workspaces } from "@apexgmb/db";
 import { PgBoss } from "pg-boss";
 import { MockGoogleClient } from "./google/mock-client";
 import { LOCATION_IMPORT_QUEUE, processLocationImport } from "./locations/import";

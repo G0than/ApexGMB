@@ -1,5 +1,5 @@
 import { and, eq } from "drizzle-orm";
-import { posts, type Tx } from "@opengmb/db";
+import { posts, type Tx } from "@apexgmb/db";
 import type { Actor } from "../actor";
 import { CoreError } from "../errors";
 import type { GuardrailResult } from "../guardrails";

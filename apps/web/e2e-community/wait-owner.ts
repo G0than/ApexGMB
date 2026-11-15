@@ -1,4 +1,4 @@
-import { createDb } from "@opengmb/db";
+import { createDb } from "@apexgmb/db";
 
 // Waits until the web server's first start has created the owner from OWNER_EMAIL: `tsx e2e-community/wait-owner.ts`.
 async function main() {

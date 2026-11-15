@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { z } from "zod";
-import { actions, reviewCreatedPayload } from "@opengmb/core";
+import { actions, reviewCreatedPayload } from "@apexgmb/core";
 
 /**
  * The REST v1 stability promise. These actions and the review.created payload are what the Zapier

@@ -1,5 +1,5 @@
 {
-  "name": "@opengmb/mcp",
+  "name": "@apexgmb/mcp",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1",
-    "@opengmb/core": "workspace:*",
-    "@opengmb/db": "workspace:*",
+    "@apexgmb/core": "workspace:*",
+    "@apexgmb/db": "workspace:*",
     "zod": "^4.6.6"
   },
   "devDependencies": {

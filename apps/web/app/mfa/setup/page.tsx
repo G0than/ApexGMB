@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { AuthError, requireAuthenticatedUser } from "@opengmb/core";
+import { AuthError, requireAuthenticatedUser } from "@apexgmb/core";
 import { getAuth, userHasPassword } from "../../../lib/auth";
 import { MfaSetupForm } from "../../../components/mfa-setup-form";
 import { AuthCard } from "../../../components/auth-card";

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import type { aiVoiceGet, workspaceSettingsGet, workspacesList } from "@opengmb/core";
-import { roleHasPermission } from "@opengmb/core";
+import type { aiVoiceGet, workspaceSettingsGet, workspacesList } from "@apexgmb/core";
+import { roleHasPermission } from "@apexgmb/core";
 import { getTranslations } from "next-intl/server";
 import { AiUsagePanel } from "../../../../components/ai/ai-usage-panel";
 import { AiVoiceForm } from "../../../../components/ai/ai-voice-form";

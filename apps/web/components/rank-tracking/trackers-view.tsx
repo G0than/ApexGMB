@@ -5,7 +5,7 @@ import type {
   geogridRunsGet,
   geogridRunsList,
   geogridSettingsGet,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import {
   geogrid_competitors,
   geogrid_configs_list,

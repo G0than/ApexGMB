@@ -1,5 +1,5 @@
 import { and, desc, eq, isNotNull, ne, sql } from "drizzle-orm";
-import { locations, reviews, type Tx } from "@opengmb/db";
+import { locations, reviews, type Tx } from "@apexgmb/db";
 import { DUPLICATE_WINDOW_REPLIES } from "../config/google-limits";
 import type { GuardrailContext } from "../guardrails";
 import { getWorkspaceReplySettings, type WorkspaceReplySettings } from "./workspace-settings";

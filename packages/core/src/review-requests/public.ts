@@ -6,7 +6,7 @@ import {
   reviewRequestOptouts,
   reviewRequestRecipients,
   type Db,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { resolveReviewLink } from "../review-links/public";
 import { workerAudit } from "../reviews/reply-state";
 import { TOKEN_RE } from "./pure";

@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import type { geogridCompetitorChanges, geogridCompetitorProfiles, geogridConfigsList } from "@opengmb/core";
+import type { geogridCompetitorChanges, geogridCompetitorProfiles, geogridConfigsList } from "@apexgmb/core";
 import { geogrid_competitors_changes, geogrid_competitors_profiles, geogrid_configs_list } from "../../app/_generated/actions";
 import { categoryCell, daysSince } from "../../lib/competitor-profile";
 import { geogridHref, usd } from "../../lib/rank-tracking";

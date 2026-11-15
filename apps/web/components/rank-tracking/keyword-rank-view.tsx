@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import type { rankingsList } from "@opengmb/core";
+import type { rankingsList } from "@apexgmb/core";
 import { rankings_list } from "../../app/_generated/actions";
 import { Pill } from "../page-parts";
 import { EmptyState, ErrorText } from "../ui";

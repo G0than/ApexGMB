@@ -1,5 +1,5 @@
 import { and, eq, inArray, lt, sql } from "drizzle-orm";
-import { gridTasks, type Db } from "@opengmb/db";
+import { gridTasks, type Db } from "@apexgmb/db";
 import { GEOGRID_DEFAULTS } from "../config/geogrid";
 import { orgIsActive } from "../account-state";
 import { finalizeRunIfSettled, markReceivedAndCollect } from "./run";

@@ -1,6 +1,6 @@
 import type { BetterAuthPlugin } from "better-auth";
 import { APIError, createAuthMiddleware } from "better-auth/api";
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 import { recordFailedSignIn } from "./admin-capture";
 import { lockoutConfig } from "./limits/config";
 import { WindowLimiter } from "./limits/window";

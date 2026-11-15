@@ -1,7 +1,7 @@
 // packages/core/src/actions/locationPages.ts
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-import { locationPages } from "@opengmb/db";
+import { locationPages } from "@apexgmb/db";
 import { loadLocation } from "../locationOps/access";
 import { CoreError } from "../errors";
 import { defineAction } from "../registry";
@@ -13,7 +13,7 @@ const pathOf = (slug: string) => `/l/${slug}`;
 export const locationPagesGet = defineAction({
   name: "locationPages.get",
   description:
-    "The public landing page of one location: whether it is published, its slug and its path (/l/<slug> on the app's address). The page is off until someone publishes it and shows only data OpenGMB already holds. page is null when it was never published. Read only. Needs location:read.",
+    "The public landing page of one location: whether it is published, its slug and its path (/l/<slug> on the app's address). The page is off until someone publishes it and shows only data ApexGMB already holds. page is null when it was never published. Read only. Needs location:read.",
   input: z.object({ locationId: z.uuid() }),
   output: z.object({ locationId: z.string(), page: pageOut.nullable() }),
   permission: "location:read",

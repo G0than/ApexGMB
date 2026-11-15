@@ -1,5 +1,5 @@
 import { and, eq } from "drizzle-orm";
-import { locations, type Db, type Tx } from "@opengmb/db";
+import { locations, type Db, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { CoreError } from "../errors";
 import type { Permission } from "../permissions";

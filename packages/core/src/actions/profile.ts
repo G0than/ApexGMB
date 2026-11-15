@@ -8,7 +8,7 @@ import {
   workspaces,
   type Db,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { PROFILE_BATCH_MAX_LOCATIONS } from "../config/profile-limits";
 import { CoreError } from "../errors";

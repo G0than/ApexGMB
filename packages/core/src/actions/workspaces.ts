@@ -1,6 +1,6 @@
 import { and, asc, eq, inArray, ne, sql } from "drizzle-orm";
 import { z } from "zod";
-import { locations, postLanguages, reviewRequestCampaigns, workspaceReplySettings, workspaces } from "@opengmb/db";
+import { locations, postLanguages, reviewRequestCampaigns, workspaceReplySettings, workspaces } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope } from "../actor";
 import { CoreError } from "../errors";
 import { postLanguageInput } from "../posts/language";

@@ -1,6 +1,6 @@
 import { and, asc, eq } from "drizzle-orm";
 import { z } from "zod";
-import { locations, replyTemplates, type Tx } from "@opengmb/db";
+import { locations, replyTemplates, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, type Actor } from "../actor";
 import { AI_DEFAULTS } from "../config/ai-models";
 import { marketForTimeZone } from "../config/writing-style";

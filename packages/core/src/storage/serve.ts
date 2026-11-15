@@ -1,4 +1,4 @@
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 import { loadActor, type Actor } from "../actor";
 import { AuthError, requireAuthenticatedUser, type SessionResult } from "../session";
 import { getStoredFileFor } from "./store";

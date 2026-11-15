@@ -1,4 +1,4 @@
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 import { authorize, loadActor, type Actor } from "../actor";
 import { writeAudit } from "../audit";
 import { STORED_FILE_MAX_BYTES } from "../config/storage-limits";

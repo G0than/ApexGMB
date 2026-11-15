@@ -1,5 +1,5 @@
 import { sql, type SQL } from "drizzle-orm";
-import { reviewReplies, reviews, workspaceReplySettings } from "@opengmb/db";
+import { reviewReplies, reviews, workspaceReplySettings } from "@apexgmb/db";
 
 /**
  * The one definition of where a review stands on its reply. Home's "needs attention", the location

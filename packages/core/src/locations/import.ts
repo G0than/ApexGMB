@@ -1,6 +1,6 @@
 import { and, eq, inArray } from "drizzle-orm";
 import { z } from "zod";
-import { googleConnections, locationImports, locations, workspaces, type Db } from "@opengmb/db";
+import { googleConnections, locationImports, locations, workspaces, type Db } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { requestReviewSync } from "../reviews/sync";
 import { enqueueJob } from "../jobs";

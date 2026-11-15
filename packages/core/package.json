@@ -1,5 +1,5 @@
 {
-  "name": "@opengmb/core",
+  "name": "@apexgmb/core",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -32,7 +32,7 @@
     "typescript": "5.9.3"
   },
   "dependencies": {
-    "@opengmb/db": "workspace:*",
+    "@apexgmb/db": "workspace:*",
     "better-auth": "^1.7.7",
     "cron-parser": "^5.10.2",
     "drizzle-orm": "^0.45.4",

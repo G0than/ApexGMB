@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { BUSINESS_MANAGE_SCOPE, GOOGLE_OAUTH_BRAND } from "@opengmb/core";
+import { BUSINESS_MANAGE_SCOPE, GOOGLE_OAUTH_BRAND } from "@apexgmb/core";
 import { BUSINESS_SCOPE, GOOGLE_APP_NAME, connectionSummary, googleCallbackError, scopeLabels } from "./google-connection";
 
 describe("googleCallbackError", () => {

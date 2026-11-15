@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { and, eq } from "drizzle-orm";
-import { reviewReplies, type Tx } from "@opengmb/db";
+import { reviewReplies, type Tx } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import type { Actor } from "../actor";
 import { CoreError } from "../errors";

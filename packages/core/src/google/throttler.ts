@@ -1,5 +1,5 @@
 import { lt, sql } from "drizzle-orm";
-import { googleRateWindows, type Db } from "@opengmb/db";
+import { googleRateWindows, type Db } from "@apexgmb/db";
 import { GOOGLE_LIMITS } from "../config/google-limits";
 
 export const PROJECT_BUCKET = "project";

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { Pencil } from "lucide-react";
-import type { locationsList, postsGoogleList } from "@opengmb/core";
+import type { locationsList, postsGoogleList } from "@apexgmb/core";
 import { locations_list, posts_googleList, posts_syncGoogle } from "../../app/_generated/actions";
 import { locationLabel } from "../../lib/locations";
 import { getTimeFormat } from "../../lib/time-format-server";

@@ -1,6 +1,6 @@
 import { and, eq, sql } from "drizzle-orm";
 import { z } from "zod";
-import { workspaces } from "@opengmb/db";
+import { workspaces } from "@apexgmb/db";
 import { AccessError, authorize } from "../actor";
 import { CoreError } from "../errors";
 import { buildExport, countRows, eraseWorkspace } from "../privacy/engine";
@@ -20,7 +20,7 @@ const loadClient = async (tx: Tx, orgId: string, workspaceId: string) => {
 export const workspacesExportData = defineAction({
   name: "workspaces.export_data",
   description:
-    "Export everything OpenGMB stores for one client (workspace) as one JSON document: locations, reviews, replies, assignments and notes, posts and edits, profile snapshots and changes, media records, reports, templates, people, and the audit rows about the client. Never includes secrets (Google tokens, API token hashes, passwords, two-factor secrets, one-time and share-link token hashes) or anything held only on Google. Refused above 1,000,000 rows. Each export is recorded in the audit log (counts only). Needs workspace:manage (owner, admin).",
+    "Export everything ApexGMB stores for one client (workspace) as one JSON document: locations, reviews, replies, assignments and notes, posts and edits, profile snapshots and changes, media records, reports, templates, people, and the audit rows about the client. Never includes secrets (Google tokens, API token hashes, passwords, two-factor secrets, one-time and share-link token hashes) or anything held only on Google. Refused above 1,000,000 rows. Each export is recorded in the audit log (counts only). Needs workspace:manage (owner, admin).",
   input: z.object({ workspaceId: z.uuid() }),
   output: z.object({
     filename: z.string(),
@@ -44,7 +44,7 @@ export const workspacesExportData = defineAction({
       after: { rowCount: ex.rowCount, counts: ex.counts, auditRows: ex.auditRows },
     });
     return {
-      filename: `opengmb-client-${w.id}-${exportedAt.toISOString().slice(0, 10)}.json`,
+      filename: `apexgmb-client-${w.id}-${exportedAt.toISOString().slice(0, 10)}.json`,
       content: ex.content,
       rowCount: ex.rowCount,
       counts: { ...ex.counts, audit_log: ex.auditRows },
@@ -55,7 +55,7 @@ export const workspacesExportData = defineAction({
 export const workspacesEraseData = defineAction({
   name: "workspaces.erase_data",
   description:
-    "Permanently delete one client (workspace) and everything OpenGMB stores for it: locations, reviews, replies, posts, profile history, media records, reports, templates and people's access, in one transaction. confirmName must equal the client's name exactly. Does NOT delete anything on Google (posts, replies, profile edits already published stay there), does not delete people's accounts or the agency's Google connection, and keeps the audit log (append-only; it is the proof of this erasure). Leaves one tombstone audit row with the client id and row counts, no personal data. Export first: this cannot be undone. Needs workspace:erase (owner only).",
+    "Permanently delete one client (workspace) and everything ApexGMB stores for it: locations, reviews, replies, posts, profile history, media records, reports, templates and people's access, in one transaction. confirmName must equal the client's name exactly. Does NOT delete anything on Google (posts, replies, profile edits already published stay there), does not delete people's accounts or the agency's Google connection, and keeps the audit log (append-only; it is the proof of this erasure). Leaves one tombstone audit row with the client id and row counts, no personal data. Export first: this cannot be undone. Needs workspace:erase (owner only).",
   input: z.object({ workspaceId: z.uuid(), confirmName: z.string().max(200) }),
   output: z.object({ erased: z.boolean(), counts: z.record(z.string(), z.number().int()) }),
   permission: "workspace:erase",

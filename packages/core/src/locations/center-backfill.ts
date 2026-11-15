@@ -1,5 +1,5 @@
 import { and, eq, isNotNull, isNull, sql } from "drizzle-orm";
-import { locations, type Db } from "@opengmb/db";
+import { locations, type Db } from "@apexgmb/db";
 import { enqueueJob } from "../jobs";
 import { LOCATION_CENTER_QUEUE, type LocationCenterJob } from "./center";
 

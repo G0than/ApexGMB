@@ -1,6 +1,6 @@
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
-import { locations, type Tx } from "@opengmb/db";
+import { locations, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { PROFILE_LIMITS } from "../config/profile-limits";
 import { marketForTimeZone } from "../config/writing-style";

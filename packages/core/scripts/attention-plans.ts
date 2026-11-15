@@ -7,8 +7,8 @@ import { parseEnv } from "node:util";
 import { drizzle } from "drizzle-orm/postgres-js";
 import { countAttention } from "../src/attention";
 import type { Actor } from "../src/actor";
-import * as schema from "@opengmb/db";
-import { createDb } from "@opengmb/db";
+import * as schema from "@apexgmb/db";
+import { createDb } from "@apexgmb/db";
 import { dbUrlFor, findEnvFile } from "../../../scripts/gate-lib.mjs";
 
 const i = process.argv.indexOf("--db");

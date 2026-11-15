@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import type { foodMenusGet } from "@opengmb/core";
+import type { foodMenusGet } from "@apexgmb/core";
 import { foodMenus_get, foodMenus_update } from "../app/_generated/actions";
 import { runCall } from "./post-card";
 import {

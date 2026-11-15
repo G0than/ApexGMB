@@ -17,13 +17,13 @@ describe("requestHost", () => {
 });
 
 describe("isMainHost", () => {
-  const base = "https://opengmb.example.com";
+  const base = "https://apexgmb.example.com";
   it("true for the BETTER_AUTH_URL host, localhost, 127.0.0.1 and no host", () => {
-    for (const x of ["opengmb.example.com", "localhost", "127.0.0.1", null]) expect(isMainHost(x, base), String(x)).toBe(true);
+    for (const x of ["apexgmb.example.com", "localhost", "127.0.0.1", null]) expect(isMainHost(x, base), String(x)).toBe(true);
   });
   it("false for any other host", () => {
     expect(isMainHost("portal.example.com", base)).toBe(false);
-    expect(isMainHost("opengmb.example.com.evil.com", base)).toBe(false);
+    expect(isMainHost("apexgmb.example.com.evil.com", base)).toBe(false);
     expect(isMainHost("portal.example.com", undefined)).toBe(false);
   });
 });

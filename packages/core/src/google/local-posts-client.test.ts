@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createDb, organizations } from "@opengmb/db";
+import { createDb, organizations } from "@apexgmb/db";
 import type { GoogleLocalPost } from "./client";
 import { GoogleApiError } from "./errors";
 import { LiveGoogleClient, REVIEWS_BASE } from "./live-client";

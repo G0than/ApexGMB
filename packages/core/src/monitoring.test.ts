@@ -1,7 +1,7 @@
 import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { PgBoss } from "pg-boss";
 import { eq, notLike } from "drizzle-orm";
-import { createDb, errorEvents, googleApiCalls, memberships, monitorState, organizations, users } from "@opengmb/db";
+import { createDb, errorEvents, googleApiCalls, memberships, monitorState, organizations, users } from "@apexgmb/db";
 import { loadActor } from "./actor";
 import { executeAction } from "./executor";
 import { MONITORING } from "./config/monitoring";

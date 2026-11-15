@@ -1,5 +1,5 @@
 import { and, gte, inArray, lt, sql } from "drizzle-orm";
-import { reviews } from "@opengmb/db";
+import { reviews } from "@apexgmb/db";
 import { addDays, addMonths, monthOf, monthStart, monthsBetween, previousRange, type DayRange } from "../performance/dates";
 import type { Reader } from "../performance/queries";
 import { noVisibleReply } from "./reply-stage";

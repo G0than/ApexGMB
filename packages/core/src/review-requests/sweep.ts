@@ -7,7 +7,7 @@ import {
   reviewRequestRecipients,
   workspaces,
   type Db,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadBranding } from "../branding";
 import { emailFromFor } from "../custom-domains";
 import { emailConfigured, getEmailSender, type SendEmail } from "../email";

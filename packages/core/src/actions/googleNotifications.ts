@@ -1,6 +1,6 @@
 import { desc, max } from "drizzle-orm";
 import { z } from "zod";
-import { googleNotificationRegistrations, googleNotifications, type Db, type Tx } from "@opengmb/db";
+import { googleNotificationRegistrations, googleNotifications, type Db, type Tx } from "@apexgmb/db";
 import { AccessError } from "../actor";
 import { isPlatformAdmin } from "../config/platform-admin";
 import { GOOGLE_NOTIFICATIONS } from "../config/google-notifications";

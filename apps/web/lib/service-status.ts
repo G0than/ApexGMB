@@ -1,8 +1,8 @@
 // Public status page logic (H7). Pure mapping plus a short cache. Nothing here knows how the signals
-// are read (readServiceSignals in @opengmb/core), and nothing leaves it except a coarse state per part: no ids,
+// are read (readServiceSignals in @apexgmb/core), and nothing leaves it except a coarse state per part: no ids,
 // versions, host names, counts or error text.
 
-import { MONITORING, type ServiceSignals } from "@opengmb/core";
+import { MONITORING, type ServiceSignals } from "@apexgmb/core";
 
 export type PartState = "up" | "delayed" | "down" | "unknown";
 export type PublicStatus = {

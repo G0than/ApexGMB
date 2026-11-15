@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { locationWriteOps } from "@opengmb/db";
+import { locationWriteOps } from "@apexgmb/db";
 import { PLACE_ACTION_LIMITS } from "../config/media-limits";
 import { CoreError } from "../errors";
 import { PLACE_ACTION_TYPES, type GooglePlaceActionLink } from "../google/client";

@@ -1,6 +1,6 @@
 import { createHash, randomBytes } from "node:crypto";
 import { and, eq, gt, isNull, lt, sql } from "drizzle-orm";
-import { googleConnections, googleOauthStates, type Db, type Tx } from "@opengmb/db";
+import { googleConnections, googleOauthStates, type Db, type Tx } from "@apexgmb/db";
 import { authorize, loadActor } from "../actor";
 import { writeAudit } from "../audit";
 import { decryptSecret, encryptSecret } from "../crypto";

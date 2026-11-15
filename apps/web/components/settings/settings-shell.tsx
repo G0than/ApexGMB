@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { billingMode, isPlatformAdmin, roleHasPermission, type Role } from "@opengmb/core";
+import { billingMode, isPlatformAdmin, roleHasPermission, type Role } from "@apexgmb/core";
 import { getDb } from "../../lib/auth";
 import { getTranslations } from "next-intl/server";
 import { requireUser } from "../../lib/guard";

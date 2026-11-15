@@ -1,6 +1,6 @@
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
-import { apiTokens, organizations, users } from "@opengmb/db";
+import { apiTokens, organizations, users } from "@apexgmb/db";
 import {
   assertNotApiTokenCaller,
   createApiTokenFor,
@@ -38,7 +38,7 @@ export const apiTokensList = defineAction({
 export const apiTokensCreate = defineAction({
   name: "apiTokens.create",
   description:
-    'Create an API token for the caller. The plaintext token is returned once and cannot be recovered. scopes: ["read"] makes a read-only token (cannot run any write tool; resources stay readable), ["read","write"] (the default) a read and write token; client_viewer tokens are always read-only. mode: "human_in_the_loop" (the default) makes a token that cannot approve, publish or apply proposals (a person does that in the app); "full_autonomy" lets it also apply changes that stay inside OpenGMB with the owner rights. In both modes anything that changes Google or reaches outside OpenGMB (replies, posts, profile edits, photos, review request sends, payments, public links) needs a person to approve it in the app. The mode is fixed at creation. Not available to callers authenticated by an API token.',
+    'Create an API token for the caller. The plaintext token is returned once and cannot be recovered. scopes: ["read"] makes a read-only token (cannot run any write tool; resources stay readable), ["read","write"] (the default) a read and write token; client_viewer tokens are always read-only. mode: "human_in_the_loop" (the default) makes a token that cannot approve, publish or apply proposals (a person does that in the app); "full_autonomy" lets it also apply changes that stay inside ApexGMB with the owner rights. In both modes anything that changes Google or reaches outside ApexGMB (replies, posts, profile edits, photos, review request sends, payments, public links) needs a person to approve it in the app. The mode is fixed at creation. Not available to callers authenticated by an API token.',
   input: z.object({
     name: z.string().trim().min(1).max(100),
     scopes: z.array(z.enum(TOKEN_SCOPES)).min(1).optional(),

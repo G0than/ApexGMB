@@ -9,7 +9,7 @@ import {
   reportDefinitions,
   reportLanguages,
   reportRuns,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import type { Actor } from "./actor";
 import { executeAction } from "./executor";
 import { REPORT_LANGUAGES } from "./reports/labels";

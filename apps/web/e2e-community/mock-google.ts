@@ -1,5 +1,5 @@
-import { seedMockGoogleConnection } from "@opengmb/core";
-import { createDb } from "@opengmb/db";
+import { seedMockGoogleConnection } from "@apexgmb/core";
+import { createDb } from "@apexgmb/db";
 
 // The mock "Connect Google" step for the owner: `tsx e2e-community/mock-google.ts <email>`.
 // The real button needs Google OAuth credentials, which e2e never has; this is the same row the

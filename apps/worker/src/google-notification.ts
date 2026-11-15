@@ -18,16 +18,16 @@ import {
   type GoogleReview,
   type GoogleSuggestion,
   type SuggestionReader,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import {
   googleConnections,
   googleNotifications,
   locations,
   notifications,
   type Db,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 
-export { GOOGLE_NOTIFICATION_QUEUE } from "@opengmb/core";
+export { GOOGLE_NOTIFICATION_QUEUE } from "@apexgmb/core";
 
 type ReviewFetcher = { getReview(reviewName: string): Promise<GoogleReview> };
 

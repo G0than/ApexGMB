@@ -1,7 +1,7 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, memberships, organizations, users, workspaces } from "@opengmb/db";
-import type { Db } from "@opengmb/db";
+import { createDb, memberships, organizations, users, workspaces } from "@apexgmb/db";
+import type { Db } from "@apexgmb/db";
 import {
   AccessError,
   OrgSelectionRequiredError,

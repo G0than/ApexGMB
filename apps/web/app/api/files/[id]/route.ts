@@ -1,5 +1,5 @@
 import type { NextRequest } from "next/server";
-import { handleFileGet } from "@opengmb/core";
+import { handleFileGet } from "@apexgmb/core";
 import { getAuth, getDb, sessionActor } from "../../../../lib/auth";
 
 /** A stored file (a logo) for a signed-in member of its organization. Tenant checks are core's. */

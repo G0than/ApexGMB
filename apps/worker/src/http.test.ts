@@ -2,7 +2,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { eq } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
 import { SignJWT, createLocalJWKSet, exportJWK, generateKeyPair } from "jose";
-import { verifyAuditChain, type PubsubVerifyConfig } from "@opengmb/core";
+import { verifyAuditChain, type PubsubVerifyConfig } from "@apexgmb/core";
 import {
   auditLog,
   createDb,
@@ -10,7 +10,7 @@ import {
   locations,
   organizations,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import {
   googleUpdate,
   newReview,

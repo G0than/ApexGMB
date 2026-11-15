@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, googleMedia } from "@opengmb/db";
+import { createDb, googleMedia } from "@apexgmb/db";
 import type { GoogleMediaItem } from "./google/client";
 import { MockGoogleClient } from "./google/mock-client";
 import { syncGoogleMedia } from "./media/google-sync";

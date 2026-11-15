@@ -1,6 +1,6 @@
 import { afterAll, describe, expect, it, vi } from "vitest";
 import { and, eq } from "drizzle-orm";
-import { aiVisibilityResults, aiVisibilityRuns, aiVisibilitySettings, auditLog, createDb, orgGridSettings, platformDfsSpend } from "@opengmb/db";
+import { aiVisibilityResults, aiVisibilityRuns, aiVisibilitySettings, auditLog, createDb, orgGridSettings, platformDfsSpend } from "@apexgmb/db";
 import { MockGoogleClient } from "./google/mock-client";
 import { monthToDateUsd } from "./geogrid/cost";
 import { DfsAccountError } from "./geogrid/drivers/errors";

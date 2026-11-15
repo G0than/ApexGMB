@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { profileCategoriesSuggestions } from "@opengmb/core";
+import type { profileCategoriesSuggestions } from "@apexgmb/core";
 import { profile_categories_suggestions } from "../../app/_generated/actions";
 import { geogridHref } from "../../lib/rank-tracking";
 import { EmptyState, ErrorText, linkClass } from "../ui";

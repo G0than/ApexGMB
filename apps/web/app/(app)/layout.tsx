@@ -8,7 +8,7 @@ import {
   roleHasPermission,
   type Permission,
   integrationEnv,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import { ClientMessages } from "../../components/client-messages";
 import { AppShell } from "../../components/app-shell";
 import { NotificationBell } from "../../components/notification-bell";

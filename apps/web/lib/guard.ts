@@ -1,9 +1,9 @@
 import "server-only";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { AuthError, orgForHost, orgIdsOfUser, requireAuthenticatedUser } from "@opengmb/core";
-import { isUserBlocked } from "@opengmb/core/account-state";
-import { touchUserActive } from "@opengmb/core/admin-capture";
+import { AuthError, orgForHost, orgIdsOfUser, requireAuthenticatedUser } from "@apexgmb/core";
+import { isUserBlocked } from "@apexgmb/core/account-state";
+import { touchUserActive } from "@apexgmb/core/admin-capture";
 import { getAuth, getDb } from "./auth";
 import { hostAllowsOrg, isMainHost, requestHost } from "./request-host";
 

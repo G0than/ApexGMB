@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { and, eq } from "drizzle-orm";
-import { googleIdempotencyKeys, type Db } from "@opengmb/db";
+import { googleIdempotencyKeys, type Db } from "@apexgmb/db";
 import { canonicalJson } from "../audit";
 import { CoreError } from "../errors";
 import type {

@@ -1,5 +1,5 @@
-import { seedMockGoogleConnection } from "@opengmb/core";
-import { createDb } from "@opengmb/db";
+import { seedMockGoogleConnection } from "@apexgmb/core";
+import { createDb } from "@apexgmb/db";
 
 const [email] = process.argv.slice(2);
 if (!email) {

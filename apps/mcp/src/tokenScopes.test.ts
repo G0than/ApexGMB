@@ -2,8 +2,8 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { eq } from "drizzle-orm";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
-import { actions, createApiToken, sampleInput, toolNameFor } from "@opengmb/core";
-import { auditLog, createDb, mcpProposals, memberships, organizations, users } from "@opengmb/db";
+import { actions, createApiToken, sampleInput, toolNameFor } from "@apexgmb/core";
+import { auditLog, createDb, mcpProposals, memberships, organizations, users } from "@apexgmb/db";
 import { startServer } from "./http";
 
 const url = process.env.DATABASE_URL_TEST;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { notificationsList } from "@opengmb/core";
-import { emailConfigured, pushConfig } from "@opengmb/core";
+import type { notificationsList } from "@apexgmb/core";
+import { emailConfigured, pushConfig } from "@apexgmb/core";
 import { PushDevice } from "../../../../components/notifications/push-device";
 import { MarkAllRead, NotificationList } from "../../../../components/notifications/notification-list";
 import { PillLinks, Pill, TableWrap, tdClass, thClass } from "../../../../components/page-parts";

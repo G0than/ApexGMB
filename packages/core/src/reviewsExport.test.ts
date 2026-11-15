@@ -10,7 +10,7 @@ import {
   reviews,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { REVIEWS_CONFIG } from "./config/reviews";
 import { executeAction } from "./executor";

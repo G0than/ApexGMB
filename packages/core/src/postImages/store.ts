@@ -1,6 +1,6 @@
 import { createHash, randomBytes } from "node:crypto";
 import { and, desc, eq, inArray, sql } from "drizzle-orm";
-import { postImages, postTemplates, posts, users, workspaces, type Db, type Tx } from "@opengmb/db";
+import { postImages, postTemplates, posts, users, workspaces, type Db, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, type Actor } from "../actor";
 import { MEDIA_LIMITS } from "../config/media-limits";
 import { CoreError } from "../errors";

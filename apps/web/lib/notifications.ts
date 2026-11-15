@@ -1,5 +1,5 @@
 import "server-only";
-import { executeAction } from "@opengmb/core";
+import { executeAction } from "@apexgmb/core";
 import { getDb, sessionActor } from "./auth";
 
 export type BellItem = {

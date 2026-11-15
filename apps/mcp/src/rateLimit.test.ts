@@ -1,7 +1,7 @@
 import type { IncomingMessage } from "node:http";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { createApiToken } from "@opengmb/core";
-import { createDb, memberships, organizations, users } from "@opengmb/db";
+import { createApiToken } from "@apexgmb/core";
+import { createDb, memberships, organizations, users } from "@apexgmb/db";
 import { WindowLimiter, clientIp } from "./rateLimit";
 import { startServer } from "./http";
 

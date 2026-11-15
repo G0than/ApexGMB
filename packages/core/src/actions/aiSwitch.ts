@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-import { organizations, users, type Tx } from "@opengmb/db";
+import { organizations, users, type Tx } from "@apexgmb/db";
 import { assertHumanBillingCaller } from "../billing";
 import { defineAction } from "../registry";
 

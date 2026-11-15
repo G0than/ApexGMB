@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import * as core from "@opengmb/core";
+import * as core from "@apexgmb/core";
 import {
   analyseTemplate,
   notAllowedHere,

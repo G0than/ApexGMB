@@ -1,5 +1,5 @@
 import type { NextRequest } from "next/server";
-import { handleMediaUploadRequest } from "@opengmb/core";
+import { handleMediaUploadRequest } from "@apexgmb/core";
 import { getAuth, getDb, refuseWhileViewing } from "../../../../lib/auth";
 
 /**

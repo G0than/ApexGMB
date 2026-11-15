@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it } from "vitest";
-import { createDb } from "@opengmb/db";
+import { createDb } from "@apexgmb/db";
 import { EXCLUDED_TABLES, INCLUDED_NAMES, INCLUDED_TABLES, OTHER_SCHEMAS, SECRET_COLUMN } from "./tables";
 
 const url = process.env.DATABASE_URL_TEST;

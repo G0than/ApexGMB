@@ -9,8 +9,8 @@ import {
   deferOnRateLimit,
   recordJobRun,
   type PerformanceSnapshotJob,
-} from "@opengmb/core";
-import type { Db } from "@opengmb/db";
+} from "@apexgmb/core";
+import type { Db } from "@apexgmb/db";
 
 /** Create (and re-sync options of) the performance queues. Idempotent; see registerPerformanceJobs. */
 export async function createPerformanceQueues(boss: PgBoss) {

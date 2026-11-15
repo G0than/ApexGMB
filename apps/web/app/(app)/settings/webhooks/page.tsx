@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { roleHasPermission, type webhooksList, type workspacesList } from "@opengmb/core";
+import { roleHasPermission, type webhooksList, type workspacesList } from "@apexgmb/core";
 import { Pill, TableWrap, tdClass, thClass } from "../../../../components/page-parts";
 import { SettingsShell } from "../../../../components/settings/settings-shell";
 import { EmptyState, ErrorText, Panel } from "../../../../components/ui";

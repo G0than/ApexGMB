@@ -6,7 +6,7 @@ import {
   performanceDaily,
   performanceSnapshots,
   searchKeywordsMonthly,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { verifyAuditChain } from "./audit";
 import { PERFORMANCE_CONFIG } from "./config/performance";
 import { executeAction } from "./executor";

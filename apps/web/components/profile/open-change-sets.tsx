@@ -10,7 +10,7 @@ import { fieldName, reasonText } from "../../lib/profile-editor";
 import { ProvenanceChip } from "../approvals/provenance-chip";
 import { useTimeFormat } from "../time-format-provider";
 import { StatusBadge } from "../page-parts";
-import type { profileChangeSetsGet } from "@opengmb/core";
+import type { profileChangeSetsGet } from "@apexgmb/core";
 import { runCall } from "../post-card";
 import { linkClass, secondaryButtonClass } from "../ui";
 import { h2Class, sectionClass, usePhrase } from "./section";

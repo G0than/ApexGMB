@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { unsubscribeInfo, unsubscribeReviewRequest } from "@opengmb/core";
+import { unsubscribeInfo, unsubscribeReviewRequest } from "@apexgmb/core";
 import { getDb } from "../../../../lib/auth";
 
 // Public, no login. GET only shows a page with one button (mail scanners open links, so a GET must not

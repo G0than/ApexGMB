@@ -16,9 +16,9 @@ import type {
   reviewsList,
   workspaceSettingsGet,
   workspacesList,
-} from "@opengmb/core";
-import { REVIEWS_CONFIG, REVIEW_TOPIC_IDS, TOPIC_SENTIMENTS, roleHasPermission } from "@opengmb/core";
-import { dayKey } from "@opengmb/core/time";
+} from "@apexgmb/core";
+import { REVIEWS_CONFIG, REVIEW_TOPIC_IDS, TOPIC_SENTIMENTS, roleHasPermission } from "@apexgmb/core";
+import { dayKey } from "@apexgmb/core/time";
 import { AutoApproveChip } from "../../../components/auto-approve-chip";
 import { ChooseClient } from "../../../components/choose-client";
 import { AnalyticsView } from "../../../components/reviews/analytics-view";

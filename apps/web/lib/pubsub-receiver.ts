@@ -4,8 +4,8 @@ import {
   getIntegration,
   googleJwks,
   type PubsubVerifyConfig,
-} from "@opengmb/core";
-import type { Db } from "@opengmb/db";
+} from "@apexgmb/core";
+import type { Db } from "@apexgmb/db";
 
 /** Read per request, so a topic or audience saved in the app applies without a restart. */
 export function pubsubConfig(jwks: PubsubVerifyConfig["jwks"] = googleJwks()): PubsubVerifyConfig | null {

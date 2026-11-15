@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
-import { roleHasPermission } from "@opengmb/core";
+import { roleHasPermission } from "@apexgmb/core";
 import { describe, expect, it } from "vitest";
 import { MESSAGES } from "../messages";
 import { CLIENT_NAMESPACES, MESSAGE_SETS, pickMessages } from "../messages/client";

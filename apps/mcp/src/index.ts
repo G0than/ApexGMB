@@ -1,4 +1,4 @@
-import { reportStartupConfig } from "@opengmb/core";
+import { reportStartupConfig } from "@apexgmb/core";
 import { startServer } from "./http";
 
 reportStartupConfig("mcp");

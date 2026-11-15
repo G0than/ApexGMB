@@ -1,4 +1,4 @@
-import { FOOD_MENU_LIMITS } from "@opengmb/core";
+import { FOOD_MENU_LIMITS } from "@apexgmb/core";
 import { describe, expect, it } from "vitest";
 import {
   ALLERGENS,

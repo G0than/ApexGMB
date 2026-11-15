@@ -9,9 +9,9 @@ import {
   loadActor,
   viewAsActor,
   type Actor,
-} from "@opengmb/core";
-import { activeViewAs, type ActiveViewAs } from "@opengmb/core/view-as";
-import { createDb } from "@opengmb/db";
+} from "@apexgmb/core";
+import { activeViewAs, type ActiveViewAs } from "@apexgmb/core/view-as";
+import { createDb } from "@apexgmb/db";
 
 // One pool and one auth instance per server process (survives dev hot reloads).
 // Built lazily so `next build` does not need a database.

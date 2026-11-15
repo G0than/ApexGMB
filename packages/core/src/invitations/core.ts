@@ -1,4 +1,4 @@
-import type { Tx } from "@opengmb/db";
+import type { Tx } from "@apexgmb/db";
 
 /** Community edition: one owner, nobody is invited. Client roles are still recognised. */
 export const INVITE_COOKIE = "invite";

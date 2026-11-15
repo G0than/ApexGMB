@@ -1,6 +1,6 @@
 # Third-party notices
 
-OpenGMB is released under the MIT license (see [LICENSE](LICENSE)). It includes or depends on the third-party material below.
+ApexGMB is released under the MIT license (see [LICENSE](LICENSE)). It includes or depends on the third-party material below.
 
 ## Bundled font
 
@@ -25,4 +25,4 @@ pnpm licenses list --prod
 
 ## Not copied
 
-OpenGMB does not copy code from GPL or AGPL projects. Where it works with such a project, it does so through that project's public API only.
+ApexGMB does not copy code from GPL or AGPL projects. Where it works with such a project, it does so through that project's public API only.

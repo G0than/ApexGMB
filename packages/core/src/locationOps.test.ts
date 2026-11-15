@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { and, eq } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
-import { createDb, locations, locationWriteOps, notifications } from "@opengmb/db";
+import { createDb, locations, locationWriteOps, notifications } from "@apexgmb/db";
 import { GoogleApiError } from "./google/errors";
 import { setSharedMockGoogleClient } from "./google/factory";
 import { MockGoogleClient } from "./google/mock-client";

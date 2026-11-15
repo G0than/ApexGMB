@@ -3,7 +3,7 @@ import { AI_OFF_MESSAGE, aiEnabledForOrg } from "./switch";
 import { randomBytes } from "node:crypto";
 import { and, eq, inArray, isNull } from "drizzle-orm";
 import { z } from "zod";
-import { aiUsage, apiTokens, workspaces, type Db } from "@opengmb/db";
+import { aiUsage, apiTokens, workspaces, type Db } from "@apexgmb/db";
 import { AccessError, ReadOnlyViewError, authorize, authorizeAction, type Actor } from "../actor";
 import { actions } from "../actions";
 import { effectiveScopes, hashApiToken, resolveNewTokenScopes } from "../apiTokens";
@@ -60,7 +60,7 @@ export type AssistantResult = {
 
 const SYSTEM = (workspaceName: string, workspaceId: string, now: Date) =>
   [
-    "You are Ask OpenGMB, an assistant inside a Google Business Profile management app used by an agency.",
+    "You are Ask ApexGMB, an assistant inside a Google Business Profile management app used by an agency.",
     `You are working on one client: "${workspaceName}" (workspaceId ${workspaceId}). Pass that workspaceId to tools that take one. Today is ${now.toISOString().slice(0, 10)} (UTC).`,
     "Use the tools to look things up; never invent reviews, numbers or ids. Reading tools run immediately.",
     "Writing tools never run immediately: each one queues a proposal that a person must confirm on the Agents page. Say plainly that you queued proposals and that nothing is published until they confirm. You cannot confirm, publish or approve anything.",

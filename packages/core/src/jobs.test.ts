@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { PgBoss } from "pg-boss";
-import { createDb } from "@opengmb/db";
+import { createDb } from "@apexgmb/db";
 import { enqueueJob } from "./jobs";
 
 const url = process.env.DATABASE_URL_TEST!;

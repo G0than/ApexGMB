@@ -1,4 +1,4 @@
-import { profileChangeSets, profileChangeTargets, type locations, type Tx } from "@opengmb/db";
+import { profileChangeSets, profileChangeTargets, type locations, type Tx } from "@apexgmb/db";
 import type { Actor } from "../actor";
 import { notifyApprovalRequested } from "../approvals";
 import { CoreError } from "../errors";

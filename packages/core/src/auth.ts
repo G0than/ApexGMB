@@ -28,7 +28,7 @@ import {
   verifications,
   type Db,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 
 // ---------------------------------------------------------------------------
 // Session timeout policy (single source of truth).
@@ -43,7 +43,7 @@ export const SESSION_IDLE_SECONDS = 2 * 60 * 60;
 export const SESSION_UPDATE_AGE_SECONDS = 5 * 60;
 export const SESSION_ABSOLUTE_MAX_SECONDS = 12 * 60 * 60;
 
-export const TOTP_ISSUER = "OpenGMB";
+export const TOTP_ISSUER = "ApexGMB";
 
 /** Backup codes per set. Passed to the twoFactor plugin; the Account page shows "N of this left". */
 export const BACKUP_CODE_COUNT = 10;

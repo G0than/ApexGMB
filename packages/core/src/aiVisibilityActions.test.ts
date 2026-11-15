@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { PgBoss } from "pg-boss";
-import { createDb } from "@opengmb/db";
+import { createDb } from "@apexgmb/db";
 import { MockGoogleClient } from "./google/mock-client";
 import { AI_VISIBILITY_QUEUE, runAiVisibilityCheck } from "./ai-visibility/run";
 import { codeOf, makeKit } from "./testkit";

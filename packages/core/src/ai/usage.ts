@@ -1,5 +1,5 @@
 import { and, eq, gte, sql } from "drizzle-orm";
-import { aiUsage, workspaceAiSettings, type Tx } from "@opengmb/db";
+import { aiUsage, workspaceAiSettings, type Tx } from "@apexgmb/db";
 import { utcMonthStart } from "./money";
 
 /** Serialises every AI call on the platform, so two calls cannot both pass the same cap check. */

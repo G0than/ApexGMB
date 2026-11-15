@@ -9,7 +9,7 @@ import {
   reviews,
   workspaceReplySettings,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { and, eq, ne } from "drizzle-orm";
 import { byUrgency, HOME_OWNER_MAX_LOCATIONS, type AttentionKind } from "./attention";
 import { MockGoogleClient } from "./google/mock-client";
@@ -276,7 +276,7 @@ describe("attention.queue", () => {
     expect(q.items.map((i) => i.kind)).toEqual(["failed", "negative_review", "change", "review"]);
     expect(q.items[0]).toMatchObject({ subject: "reply", title: "Reply not published", code: "google_writes_disabled" });
     expect(q.items[1]).toMatchObject({ title: "1★ review, no reply", replyStatus: "draft", reviewId: neg.id, locationNames: [loc.row.name] });
-    expect(q.items[2]!.title).toBe("regularHours changed outside OpenGMB");
+    expect(q.items[2]!.title).toBe("regularHours changed outside ApexGMB");
     expect(q.counts).toEqual(await counts(org));
     expect(q.truncated).toBe(false);
   });

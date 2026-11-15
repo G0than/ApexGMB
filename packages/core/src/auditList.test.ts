@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it } from "vitest";
-import { createDb, memberships, organizations, users } from "@opengmb/db";
+import { createDb, memberships, organizations, users } from "@apexgmb/db";
 import { loadActor } from "./actor";
 import { writeAudit, type AuditEntry } from "./audit";
 import { CoreError } from "./errors";

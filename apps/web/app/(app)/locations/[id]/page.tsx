@@ -3,7 +3,7 @@ import { enumLabel, plainText } from "@/lib/labels";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
-import type { locationsOverview, performanceSummary } from "@opengmb/core";
+import type { locationsOverview, performanceSummary } from "@apexgmb/core";
 import {
   HEALTHCHECK_CONFIG,
   PERFORMANCE_CONFIG,
@@ -11,7 +11,7 @@ import {
   emailConfigured,
   roleHasPermission,
   integrationEnv,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import { AiVisibilityPanel } from "../../../../components/ai-visibility/panel";
 import { ProvenanceChip } from "../../../../components/approvals/provenance-chip";
 import { LocationPagePanel } from "../../../../components/locations/location-page-panel";

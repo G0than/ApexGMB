@@ -1,5 +1,5 @@
 {
-  "name": "@opengmb/web",
+  "name": "@apexgmb/web",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@next/env": "^16.4.1",
-    "@opengmb/core": "workspace:*",
-    "@opengmb/db": "workspace:*",
+    "@apexgmb/core": "workspace:*",
+    "@apexgmb/db": "workspace:*",
     "better-auth": "^1.7.7",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",

@@ -10,7 +10,7 @@ import {
   roleHasPermission,
   verifyApiToken,
   type Actor,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import {
   createDb,
   locations,
@@ -20,7 +20,7 @@ import {
   reviews,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { createMcpServer } from "./server";
 import { RESOURCE_URIS } from "./resources";
 
@@ -147,11 +147,11 @@ describe("MCP resources", () => {
     await client.close();
   });
 
-  it("introduces itself as opengmb", async () => {
+  it("introduces itself as apexgmb", async () => {
     const org = await makeOrg();
     const client = await connect(await org.mkToken(await org.mkUser("owner")));
-    expect(client.getServerVersion()?.name).toBe("opengmb");
-    expect(Object.values(RESOURCE_URIS).every((u) => u.startsWith("opengmb://"))).toBe(true);
+    expect(client.getServerVersion()?.name).toBe("apexgmb");
+    expect(Object.values(RESOURCE_URIS).every((u) => u.startsWith("apexgmb://"))).toBe(true);
     await client.close();
   });
 
@@ -165,7 +165,7 @@ describe("MCP resources", () => {
     expect(resourceTemplates.map((t) => t.uriTemplate)).toEqual(["syngmb://{group}/{name}"]);
     let checked = 0;
     for (const uri of Object.values(RESOURCE_URIS)) {
-      const legacy = uri.replace(/^opengmb:/, "syngmb:");
+      const legacy = uri.replace(/^apexgmb:/, "syngmb:");
       // readJson asserts contents[0].uri echoes the address that was asked for.
       expect(await readJson(client, legacy), legacy).toEqual(await readJson(client, uri));
       checked++;
@@ -332,7 +332,7 @@ describe("MCP write tools", () => {
     // Q33d: approving a reply leads to a Google write, so even a full-autonomy token is refused.
     expect(real.isError).toBe(true);
     expect(codeOfCall(real)).toBe("FORBIDDEN");
-    expect(JSON.stringify(real)).toMatch(/A person must approve this in OpenGMB/);
+    expect(JSON.stringify(real)).toMatch(/A person must approve this in ApexGMB/);
     expect(JSON.stringify(real)).toContain("/approvals");
     await client.close();
   });
@@ -349,7 +349,7 @@ describe("MCP write tools", () => {
     });
     expect(refused.isError).toBe(true);
     expect(codeOfCall(refused)).toBe("FORBIDDEN");
-    expect(JSON.stringify(refused)).toMatch(/A person must approve this in OpenGMB/);
+    expect(JSON.stringify(refused)).toMatch(/A person must approve this in ApexGMB/);
     const publish = await hitl.callTool({
       name: "reviewReplies_publish",
       arguments: { id: pending.replyId },
@@ -376,7 +376,7 @@ describe("MCP write tools", () => {
     });
     // Even full autonomy cannot approve a reply (Q33d); it can still draft and apply internal proposals.
     expect(ok.isError).toBe(true);
-    expect(JSON.stringify(ok)).toMatch(/A person must approve this in OpenGMB/);
+    expect(JSON.stringify(ok)).toMatch(/A person must approve this in ApexGMB/);
     const internal = await full.callTool({ name: "workspaces_create", arguments: { name: `Full ${uniq()}` } });
     const applied = await full.callTool({
       name: "mcp_proposals_apply",

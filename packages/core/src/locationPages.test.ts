@@ -1,6 +1,6 @@
 // packages/core/src/locationPages.test.ts
 import { afterAll, describe, expect, it, vi } from "vitest";
-import { createDb, googleMedia, googlePosts, locations, profileSnapshots, reviewLinks, reviews, workspaceReplySettings } from "@opengmb/db";
+import { createDb, googleMedia, googlePosts, locations, profileSnapshots, reviewLinks, reviews, workspaceReplySettings } from "@apexgmb/db";
 import { eq } from "drizzle-orm";
 import { MockGoogleClient } from "./google/mock-client";
 import { locationPageData } from "./location-pages/public";

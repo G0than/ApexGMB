@@ -12,7 +12,7 @@ import {
   gridTasks,
   orgGridSettings,
   platformDfsSpend,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { setSharedMockGoogleClient } from "./google/factory";
 import { MockGoogleClient } from "./google/mock-client";
 import { createDriverRegistry } from "./geogrid/drivers";

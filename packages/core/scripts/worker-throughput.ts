@@ -8,7 +8,7 @@ import { readFileSync } from "node:fs";
 import { parseEnv } from "node:util";
 import { and, eq, gte, isNotNull, lt } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
-import { createDb, googleRateWindows, locations, reviewSyncs } from "@opengmb/db";
+import { createDb, googleRateWindows, locations, reviewSyncs } from "@apexgmb/db";
 import { GOOGLE_LIMITS } from "../src/config/google-limits";
 import { REVIEWS_CONFIG } from "../src/config/reviews";
 import { PROFILE_WATCH_CONFIG } from "../src/config/profile-watch";

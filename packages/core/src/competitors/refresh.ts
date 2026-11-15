@@ -1,5 +1,5 @@
 import { and, desc, eq, gte, inArray, ne } from "drizzle-orm";
-import { competitorProfiles, competitorProfileTasks, gridConfigs, gridPoints, gridRuns, locations, platformDfsSpend, type Db } from "@opengmb/db";
+import { competitorProfiles, competitorProfileTasks, gridConfigs, gridPoints, gridRuns, locations, platformDfsSpend, type Db } from "@apexgmb/db";
 import { usdToMicro } from "../ai/money";
 import { CreditExhaustedError, assertCredit, debit } from "../billing";
 import { dfsLocationCodeFor } from "../config/dfs-locations";

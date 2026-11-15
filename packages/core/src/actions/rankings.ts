@@ -1,6 +1,6 @@
 import { and, asc, eq, gte, inArray } from "drizzle-orm";
 import { z } from "zod";
-import { gridConfigs, gridPoints, gridRuns, gridSchedules, locations, type Tx } from "@opengmb/db";
+import { gridConfigs, gridPoints, gridRuns, gridSchedules, locations, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { GEOGRID_DEFAULTS } from "../config/geogrid";
 import { CoreError } from "../errors";

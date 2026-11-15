@@ -1,5 +1,5 @@
 import { and, eq } from "drizzle-orm";
-import { googleConnections, memberships, users, type Db, type Tx } from "@opengmb/db";
+import { googleConnections, memberships, users, type Db, type Tx } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { encryptSecret } from "../crypto";
 import { CoreError } from "../errors";

@@ -12,7 +12,7 @@ import {
   workspaces,
   type Db,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError } from "../actor";
 import { writeAudit } from "../audit";
 import { AI_DEFAULTS } from "../config/ai-models";

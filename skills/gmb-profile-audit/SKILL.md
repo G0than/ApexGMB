@@ -17,7 +17,7 @@ Audit any Google Business Profile listing for maximum Local Map Pack visibility.
 ## How to run:
 
 ```bash
-python3 /Users/lucifer/.gemini/antigravity/scratch/OpenGMB/skills/scripts/gmb_ai_runner.py audit \
+python3 /Users/lucifer/.gemini/antigravity/scratch/ApexGMB/skills/scripts/gmb_ai_runner.py audit \
   --name "Apex Media Studio" \
   --category "Photography Studio" \
   --city "New Delhi" \

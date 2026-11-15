@@ -1,4 +1,4 @@
-import type { workspaceSettingsGet } from "@opengmb/core";
+import type { workspaceSettingsGet } from "@apexgmb/core";
 import { getTranslations } from "next-intl/server";
 import { workspaceSettings_get } from "../app/_generated/actions";
 import { autoApproveChipParts } from "../lib/approvals";

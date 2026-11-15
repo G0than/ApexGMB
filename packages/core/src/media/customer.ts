@@ -5,7 +5,7 @@ import {
   locations,
   notifications,
   type Db,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { MEDIA_LIMITS } from "../config/media-limits";
 import type { GoogleClient, GoogleMediaItem } from "../google/client";
 import { enqueueJob } from "../jobs";

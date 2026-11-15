@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import type { reviewsCompetitorBenchmark } from "@opengmb/core";
+import type { reviewsCompetitorBenchmark } from "@apexgmb/core";
 import { reviews_competitorBenchmark } from "../../app/_generated/actions";
 import { EmptyState, ErrorText, Panel } from "../ui";
 

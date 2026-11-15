@@ -1,6 +1,6 @@
 import { afterAll, afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { and, eq, gte, like, lt } from "drizzle-orm";
-import { createDb, googleIdempotencyKeys, googleRateWindows, organizations } from "@opengmb/db";
+import { createDb, googleIdempotencyKeys, googleRateWindows, organizations } from "@apexgmb/db";
 import { CoreError } from "../errors";
 import { GoogleApiError, GoogleRateLimitError, GoogleRetriesExhaustedError } from "./errors";
 import { createGoogleClient } from "./factory";

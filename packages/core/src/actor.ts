@@ -1,5 +1,5 @@
 import { and, eq } from "drizzle-orm";
-import { memberships, organizations, type Db } from "@opengmb/db";
+import { memberships, organizations, type Db } from "@apexgmb/db";
 import { BLOCKED_MESSAGES, isOrgBlocked } from "./account-state";
 import { CoreError } from "./errors";
 import { roleHasPermission, type Permission, type Role } from "./permissions";
@@ -201,7 +201,7 @@ export function authorizeAction(
   ) {
     throw new AccessError(
       "FORBIDDEN",
-      `This API token is in human-in-the-loop mode and cannot run ${action.name}: A person must approve this in OpenGMB. Leave the work pending for them, or ask the token's owner to create a full-autonomy token.`,
+      `This API token is in human-in-the-loop mode and cannot run ${action.name}: A person must approve this in ApexGMB. Leave the work pending for them, or ask the token's owner to create a full-autonomy token.`,
     );
   }
 }

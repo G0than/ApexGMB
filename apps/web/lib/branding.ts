@@ -1,5 +1,5 @@
 import "server-only";
-import { executeAction, type Branding } from "@opengmb/core";
+import { executeAction, type Branding } from "@apexgmb/core";
 import { getDb, sessionActor } from "./auth";
 
 type Logos = { orgLogoFileId: string | null; workspaceLogos: { workspaceId: string; fileId: string }[] };

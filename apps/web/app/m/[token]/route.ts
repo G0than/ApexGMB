@@ -1,4 +1,4 @@
-import { getPublicPostImage } from "@opengmb/core";
+import { getPublicPostImage } from "@apexgmb/core";
 import { getDb } from "../../../lib/auth";
 
 /**

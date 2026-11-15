@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import type { suspensionCasesList } from "@opengmb/core";
-import { roleHasPermission, SUSPENSION_APPEAL } from "@opengmb/core";
+import type { suspensionCasesList } from "@apexgmb/core";
+import { roleHasPermission, SUSPENSION_APPEAL } from "@apexgmb/core";
 import { SuspensionManager } from "../../../../../components/suspension-manager";
 import { actorContextFor } from "../../../../../lib/auth";
 import { requireUser } from "../../../../../lib/guard";

@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { isLikelyBot, parseSource, resolveReviewLink } from "@opengmb/core";
+import { isLikelyBot, parseSource, resolveReviewLink } from "@apexgmb/core";
 import { getDb } from "../../../lib/auth";
 
 // Public, no login, never cached: every open is counted.

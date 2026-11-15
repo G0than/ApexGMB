@@ -1,5 +1,5 @@
-import type { brandingGet, brandingLogos, storageUsage, workspacesList } from "@opengmb/core";
-import { emailConfigured, roleHasPermission } from "@opengmb/core";
+import type { brandingGet, brandingLogos, storageUsage, workspacesList } from "@apexgmb/core";
+import { emailConfigured, roleHasPermission } from "@apexgmb/core";
 import { getTranslations } from "next-intl/server";
 import { BrandingForm } from "../../../../components/branding-form";
 import { SettingsShell } from "../../../../components/settings/settings-shell";

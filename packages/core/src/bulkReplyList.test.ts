@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it } from "vitest";
-import { reviewReplies, reviews } from "@opengmb/db";
+import { reviewReplies, reviews } from "@apexgmb/db";
 import type { Actor } from "./actor";
 import { executeAction } from "./executor";
 import { codeOf, db, makeOrg, sql, uniq, type Org } from "./performance-fixture";

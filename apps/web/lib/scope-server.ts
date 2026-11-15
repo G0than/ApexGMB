@@ -2,7 +2,7 @@
 import "server-only";
 import { cache } from "react";
 import { cookies } from "next/headers";
-import type { locationGroupsList, locationsList, workspacesList } from "@opengmb/core";
+import type { locationGroupsList, locationsList, workspacesList } from "@apexgmb/core";
 import { locationGroups_list, locations_list, workspaces_list } from "../app/_generated/actions";
 import { SCOPE_COOKIE, resolveScope, type Scope, type ScopeData } from "./scope";
 

@@ -103,7 +103,7 @@ export function reviewRequestFooter(p: {
   const head = `You are receiving this from ${legal}${num ? ` (${num})` : ""} ${reason}.`;
   const addr = `${p.sender.postalAddress?.trim() ?? ""}${contact ? ` \u00b7 ${contact}` : ""}.`;
   const unsubLabel = `Unsubscribe from ${p.business}'s review requests`;
-  const tail = `Sent by OpenGMB for ${p.business}; OpenGMB is operated by ${OPERATOR_LEGAL_ENTITY}, ${OPERATOR_REGISTERED_OFFICE}.`;
+  const tail = `Sent by ApexGMB for ${p.business}; ApexGMB is operated by ${OPERATOR_LEGAL_ENTITY}, ${OPERATOR_REGISTERED_OFFICE}.`;
   return {
     text: `${head} ${addr} ${unsubLabel}: ${p.unsubscribeUrl} (one click, no sign-in). ${tail}`,
     html: `<p style="font-size:12px;color:#555">${escapeHtml(head)} ${escapeHtml(addr)} <a href="${escapeHtml(p.unsubscribeUrl)}">${escapeHtml(unsubLabel)}</a> (one click, no sign-in). ${escapeHtml(tail)}</p>`,

@@ -1,5 +1,5 @@
 import { and, desc, eq, inArray } from "drizzle-orm";
-import { aiVisibilityResults, aiVisibilityRuns, type Db, type Tx } from "@opengmb/db";
+import { aiVisibilityResults, aiVisibilityRuns, type Db, type Tx } from "@apexgmb/db";
 import { AI_ENGINES, type AiEngine } from "../config/ai-visibility";
 
 export type TrendPoint = {

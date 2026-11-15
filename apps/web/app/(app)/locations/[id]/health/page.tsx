@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import type { locationsHealthcheck } from "@opengmb/core";
-import { HEALTHCHECK_CONFIG, emailConfigured, roleHasPermission } from "@opengmb/core";
+import type { locationsHealthcheck } from "@apexgmb/core";
+import { HEALTHCHECK_CONFIG, emailConfigured, roleHasPermission } from "@apexgmb/core";
 import { CheckRow } from "../../../../../components/health/check-row";
 import { SkipCheckButton } from "../../../../../components/health/skip-check-button";
 import { RunAgainButton } from "../../../../../components/health/run-again-button";

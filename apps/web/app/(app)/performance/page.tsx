@@ -5,8 +5,8 @@ import type {
   performanceByLocation,
   performanceKeywords,
   performanceSummary,
-} from "@opengmb/core";
-import { PERFORMANCE_CONFIG, isYmd, roleHasPermission } from "@opengmb/core";
+} from "@apexgmb/core";
+import { PERFORMANCE_CONFIG, isYmd, roleHasPermission } from "@apexgmb/core";
 import { ChooseClient } from "../../../components/choose-client";
 import { LineChart } from "../../../components/line-chart";
 import { PerformanceRefresh } from "../../../components/performance-refresh";

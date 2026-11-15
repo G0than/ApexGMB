@@ -8,15 +8,15 @@ import {
   executeAction,
   type Actor,
   type AnyAction,
-} from "@opengmb/core";
-import type { Db } from "@opengmb/db";
+} from "@apexgmb/core";
+import type { Db } from "@apexgmb/db";
 
 type Ctx = { db: Db; actor: Actor; actions: readonly AnyAction[] };
 
 export const RESOURCE_URIS = {
-  reviewQueue: "opengmb://reviews/queue",
-  pendingUpdates: "opengmb://google/pending-updates",
-  auditRecent: "opengmb://audit/recent",
+  reviewQueue: "apexgmb://reviews/queue",
+  pendingUpdates: "apexgmb://google/pending-updates",
+  auditRecent: "apexgmb://audit/recent",
 } as const;
 
 /** Resources never touch tables: each one is composed from existing read actions, so core's

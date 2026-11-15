@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { and, eq } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
-import { PERFORMANCE_CONFIG, REPORT_MONTHLY_QUEUE, openSharedReport } from "@opengmb/core";
+import { PERFORMANCE_CONFIG, REPORT_MONTHLY_QUEUE, openSharedReport } from "@apexgmb/core";
 import {
   auditLog,
   createDb,
@@ -13,7 +13,7 @@ import {
   reportShareLinks,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import type { EmailMessage } from "./digest";
 import { registerReportSchedule, runMonthlyReports } from "./reports";
 
@@ -86,7 +86,7 @@ const deps = (sent: EmailMessage[], over: Record<string, unknown> = {}) => ({
     sent.push(m);
   },
   apiKey: "re_test",
-  from: "OpenGMB <notifications@ci.invalid>",
+  from: "ApexGMB <notifications@ci.invalid>",
   appUrl: "https://app.test",
   now: () => NOW,
   orgIds: [orgId],

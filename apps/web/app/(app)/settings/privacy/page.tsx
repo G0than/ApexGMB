@@ -1,5 +1,5 @@
-import type { workspacesList } from "@opengmb/core";
-import { roleHasPermission } from "@opengmb/core";
+import type { workspacesList } from "@apexgmb/core";
+import { roleHasPermission } from "@apexgmb/core";
 import { getTranslations } from "next-intl/server";
 import { ChooseClient } from "../../../../components/choose-client";
 import { PrivacyData } from "../../../../components/settings/privacy-data";

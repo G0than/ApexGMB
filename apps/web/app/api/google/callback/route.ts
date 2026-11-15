@@ -6,7 +6,7 @@ import {
   enqueueNotificationRegistration,
   GoogleOAuthError,
   requireAuthenticatedUser,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import { getAuth, getDb, refuseWhileViewing } from "../../../../lib/auth";
 
 // BETTER_AUTH_URL is the public origin; request.url may be an internal host behind a proxy.

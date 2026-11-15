@@ -36,7 +36,7 @@ const EN = {
   timeNote: "Time to reply is measured to the latest version of each reply on Google.",
   changeNote: "Change compares with the previous period of the same length. n/a: nothing to compare.",
   noteFrom: (agency: string) => `A note from ${agency}`, note: "A note for you",
-  generated: (day: string) => `Generated ${day} by OpenGMB`,
+  generated: (day: string) => `Generated ${day} by ApexGMB`,
 };
 const ES: typeof EN = {
   period: "Periodo", comparedWith: "Comparado con", locations: "Ubicaciones",
@@ -51,7 +51,7 @@ const ES: typeof EN = {
   timeNote: "El tiempo de respuesta se mide hasta la última versión de cada respuesta en Google.",
   changeNote: "El cambio se compara con el periodo anterior de la misma duración. n/d: nada con qué comparar.",
   noteFrom: (agency) => `Una nota de ${agency}`, note: "Una nota para usted",
-  generated: (day) => `Generado el ${day} por OpenGMB`,
+  generated: (day) => `Generado el ${day} por ApexGMB`,
 };
 const LABELS: Record<ReportLanguage, typeof EN> = { en: EN, es: ES };
 
@@ -63,8 +63,8 @@ export async function renderReviewReportPdf(input: ReviewPdfInput): Promise<Uint
   const s = input.stats;
   const doc = await PDFDocument.create();
   doc.setTitle(pdfSafe(input.title));
-  doc.setProducer("OpenGMB");
-  doc.setCreator("OpenGMB");
+  doc.setProducer("ApexGMB");
+  doc.setCreator("ApexGMB");
   doc.setCreationDate(input.generatedAt);
   doc.setModificationDate(input.generatedAt);
   const font = await doc.embedFont(StandardFonts.Helvetica);
@@ -95,7 +95,7 @@ export async function renderReviewReportPdf(input: ReviewPdfInput): Promise<Uint
 
   page.drawRectangle({ x: 0, y: H - 70, width: W, height: 70, color: colour });
   y = H - 42;
-  page.drawText(pdfSafe(input.branding.agencyName?.trim() || "OpenGMB"), { x: M, y, size: 18, font: bold, color: rgb(1, 1, 1) });
+  page.drawText(pdfSafe(input.branding.agencyName?.trim() || "ApexGMB"), { x: M, y, size: 18, font: bold, color: rgb(1, 1, 1) });
   await drawHeaderLogo(doc, page, input.logo, W, H);
   y = H - 100;
   text(fit(input.title, bold, 20, W - 2 * M), M, 20, bold, colour);

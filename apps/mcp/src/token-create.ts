@@ -1,5 +1,5 @@
-import { createApiToken } from "@opengmb/core";
-import { createDb } from "@opengmb/db";
+import { createApiToken } from "@apexgmb/core";
+import { createDb } from "@apexgmb/db";
 
 const args = process.argv.slice(2);
 const readOnly = args.includes("--read-only");
@@ -29,7 +29,7 @@ try {
   );
   console.log(token + "\n");
   console.log(
-    `claude mcp add --transport http opengmb http://localhost:${port}/mcp --header "Authorization: Bearer ${token}"`,
+    `claude mcp add --transport http apexgmb http://localhost:${port}/mcp --header "Authorization: Bearer ${token}"`,
   );
 } catch (e) {
   console.error(e instanceof Error ? e.message : e);

@@ -7,7 +7,7 @@
  * optionally GOOGLE_OAUTH_BRAND_SOURCE_URL to that project's branding page (https). Leave them unset
  * if your consent screen uses the default name below.
  */
-const appName = process.env.GOOGLE_OAUTH_BRAND_APP_NAME?.trim() || "OpenGMB";
+const appName = process.env.GOOGLE_OAUTH_BRAND_APP_NAME?.trim() || "ApexGMB";
 const sourceUrl = process.env.GOOGLE_OAUTH_BRAND_SOURCE_URL?.trim() || "https://console.cloud.google.com/auth/branding";
 
 export const GOOGLE_OAUTH_BRAND = {

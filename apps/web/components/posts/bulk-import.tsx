@@ -88,7 +88,7 @@ export function BulkImport({
           <a
             className={secondaryButtonClass}
             href={`data:text/csv;charset=utf-8,${encodeURIComponent(template)}`}
-            download="synectus-posts-template.csv"
+            download="ApexGMB-posts-template.csv"
           >
             {t("bulk.downloadTemplate")}
           </a>

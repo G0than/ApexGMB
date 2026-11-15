@@ -43,7 +43,7 @@ test("a second sign-in with the password and a code works, and a wrong password 
   await page.waitForURL("**/mfa/verify");
   await hydrated(page);
   // A community install never had the old product name, so the page does not mention it.
-  await expect(page.getByText("Open your authenticator app and enter the code for OpenGMB.")).toBeVisible();
+  await expect(page.getByText("Open your authenticator app and enter the code for ApexGMB.")).toBeVisible();
   await expect(page.getByText(/older setups/i)).toHaveCount(0);
   // A code is accepted once: wait for the next 30 second window after the one the set-up used.
   const secret = readTotpSecret();

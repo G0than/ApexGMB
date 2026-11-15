@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
-import { createDb, profileChanges } from "@opengmb/db";
+import { createDb, profileChanges } from "@apexgmb/db";
 import { MockGoogleClient } from "./google/mock-client";
 import { makeKit, type Loc, type Org } from "./testkit";
 

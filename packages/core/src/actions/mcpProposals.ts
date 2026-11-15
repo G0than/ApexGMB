@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { mcpProposalStatuses } from "@opengmb/db";
+import { mcpProposalStatuses } from "@apexgmb/db";
 import { applyProposal, cancelProposal, listProposals } from "../proposals";
 import { defineAction } from "../registry";
 

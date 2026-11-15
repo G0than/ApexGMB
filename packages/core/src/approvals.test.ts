@@ -12,7 +12,7 @@ import {
   reviews,
   posts,
   users,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import type { Actor } from "./actor";
 import { guardrailSummary, changeSetTitle, postTitle, replyTitle } from "./approval-queue";
 import { setEmailSender } from "./email";

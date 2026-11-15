@@ -102,8 +102,8 @@ import {
   type ProfileApplyJob,
   type ProfileSnapshotJob,
   type ReplyDeleteJob,
-} from "@opengmb/core";
-import { createDb } from "@opengmb/db";
+} from "@apexgmb/core";
+import { createDb } from "@apexgmb/db";
 import { GOOGLE_NOTIFICATION_QUEUE, handleGoogleNotificationJobs } from "./google-notification";
 import { DIGEST_QUEUE, registerDigestSchedule, resendSendEmail, runDigest } from "./digest";
 import { createPerformanceQueues, registerPerformanceJobs } from "./performance";

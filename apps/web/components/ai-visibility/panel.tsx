@@ -1,4 +1,4 @@
-import type { aiVisibilityGet } from "@opengmb/core";
+import type { aiVisibilityGet } from "@apexgmb/core";
 import { Sparkline } from "../locations/sparkline";
 import { Panel } from "../ui";
 import { aiVisibility_get } from "../../app/_generated/actions";

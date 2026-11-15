@@ -17,7 +17,7 @@ import {
   workspaces,
   type Db,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { GEOGRID_DEFAULTS, GEOGRID_PRICING, GEOGRID_SPEEDS, taskPriceUsd, GRID_SPEEDS, type GridSpeed } from "../config/geogrid";
 import { CoreError } from "../errors";

@@ -1,5 +1,5 @@
 // Client-safe: only types come from core, so the sidebar and the command palette can import it.
-import type { Permission } from "@opengmb/core";
+import type { Permission } from "@apexgmb/core";
 import { liveStatus } from "./live-status";
 import type { NavItem } from "./nav";
 import { PRIVATE_SETTINGS } from "./nav-private";

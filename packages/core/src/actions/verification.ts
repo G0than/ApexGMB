@@ -1,6 +1,6 @@
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { z } from "zod";
-import { locations, suspensionCases, type Tx } from "@opengmb/db";
+import { locations, suspensionCases, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { SUSPENSION_CHECKLIST } from "../config/suspension";
 import { CoreError } from "../errors";
@@ -12,7 +12,7 @@ import { STANDINGS, describeVoiceOfMerchant } from "../verification/state";
 export const verificationState = defineAction({
   name: "verification.state",
   description:
-    "A location's verification state live from Google (outside any transaction): Voice of Merchant (hasVoiceOfMerchant = in good standing and in control of the listing; hasBusinessAuthority = ownership), which action Google wants next (standing: good_standing, wait_for_review, verify, comply_with_guidelines = fix guideline problems, resolve_ownership_conflict = duplicate of a location in good standing, unknown) with the recommendation reason, and the location's verification attempts (method, PENDING / COMPLETED / FAILED). Read only: OpenGMB starts no verification and submits no appeal; those are manual.",
+    "A location's verification state live from Google (outside any transaction): Voice of Merchant (hasVoiceOfMerchant = in good standing and in control of the listing; hasBusinessAuthority = ownership), which action Google wants next (standing: good_standing, wait_for_review, verify, comply_with_guidelines = fix guideline problems, resolve_ownership_conflict = duplicate of a location in good standing, unknown) with the recommendation reason, and the location's verification attempts (method, PENDING / COMPLETED / FAILED). Read only: ApexGMB starts no verification and submits no appeal; those are manual.",
   input: z.object({ locationId: z.uuid() }),
   output: z.object({
     location: z.object({ id: z.string(), name: z.string(), workspaceId: z.string() }),

@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { MCP_RESOURCES, ROLE_PERMISSIONS, roleHasPermission, type Role } from "@opengmb/core";
+import { MCP_RESOURCES, ROLE_PERMISSIONS, roleHasPermission, type Role } from "@apexgmb/core";
 import { resourceAudience } from "../../lib/agents";
 import { Pill } from "../page-parts";
 import { Panel } from "../ui";

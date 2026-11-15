@@ -1,6 +1,6 @@
 /** One address per instance (BETTER_AUTH_URL). Same exports as the full module: no per-organization hosts. */
 import { eq } from "drizzle-orm";
-import { memberships, type Db, type Tx } from "@opengmb/db";
+import { memberships, type Db, type Tx } from "@apexgmb/db";
 import type { Branding } from "./branding";
 import { emailFrom } from "./email";
 

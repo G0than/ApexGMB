@@ -1,6 +1,6 @@
 import "server-only";
 import { headers } from "next/headers";
-import { CoreError, executeAction, requireAuthenticatedUser } from "@opengmb/core";
+import { CoreError, executeAction, requireAuthenticatedUser } from "@apexgmb/core";
 import { getAuth, getDb, sessionActor } from "./auth";
 
 export type ActionResult =

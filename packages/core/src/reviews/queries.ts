@@ -1,6 +1,6 @@
 import { and, asc, desc, eq, gte, inArray, lt, or, sql, type SQL } from "drizzle-orm";
 import { z } from "zod";
-import { locationGroupMembers, locations, reviewAssignments, reviews, workspaces, type Tx } from "@opengmb/db";
+import { locationGroupMembers, locations, reviewAssignments, reviews, workspaces, type Tx } from "@apexgmb/db";
 import { authorize, workspaceScope, type Actor } from "../actor";
 import { CoreError } from "../errors";
 import type { ReviewTopicId, TopicSentiment } from "../config/review-topics";

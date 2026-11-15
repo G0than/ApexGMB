@@ -5,7 +5,7 @@ import { PgBoss } from "pg-boss";
 import sharp from "sharp";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { eq } from "drizzle-orm";
-import { reportRuns, reviews } from "@opengmb/db";
+import { reportRuns, reviews } from "@apexgmb/db";
 import { executeAction } from "./executor";
 import { prepareReportLogo } from "./reports/logo";
 import { renderReviewReportPdf } from "./reports/review-pdf";

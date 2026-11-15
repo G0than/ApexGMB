@@ -1,5 +1,5 @@
 // Pure helpers for the sign-in, two-factor and invitation pages (canvas 6, approved 2026-10-18).
-// Client-safe on purpose: it imports nothing from @opengmb/core, so client forms can use it.
+// Client-safe on purpose: it imports nothing from @apexgmb/core, so client forms can use it.
 import type { TimeFormat } from "./time-format";
 
 /**
@@ -11,11 +11,11 @@ export function secretGroups(secret: string): string[] {
   return secret.match(/.{1,4}/g) ?? [];
 }
 
-export const BACKUP_CODES_FILE = "opengmb-backup-codes.txt";
+export const BACKUP_CODES_FILE = "apexgmb-backup-codes.txt";
 
 /** The body of the backup codes text file, also what "Copy codes" copies. */
 export function backupCodesText(codes: string[]): string {
-  return ["OpenGMB backup codes. Each code works once.", "", ...codes, ""].join("\n");
+  return ["ApexGMB backup codes. Each code works once.", "", ...codes, ""].join("\n");
 }
 
 /** The roles an invitation can carry (DB check invitations_role_invitable). */

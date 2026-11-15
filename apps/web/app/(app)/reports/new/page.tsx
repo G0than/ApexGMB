@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { notFound, redirect } from "next/navigation";
-import { roleHasPermission } from "@opengmb/core";
+import { roleHasPermission } from "@apexgmb/core";
 import { ReportEditor } from "../../../../components/reports/report-editor";
 import { PageHeader } from "../../../../components/ui";
 import { actorContextFor } from "../../../../lib/auth";

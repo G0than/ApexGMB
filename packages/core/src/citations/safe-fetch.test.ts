@@ -44,7 +44,7 @@ describe("safeFetch: what it fetches", () => {
   it("fetches an html page with a clear User-Agent", async () => {
     const r = await safeFetch(`${base}/ok`, { policy });
     expect(r).toMatchObject({ ok: true });
-    expect(r.ok && r.html).toContain("OpenGMB-ListingCheck");
+    expect(r.ok && r.html).toContain("ApexGMB-ListingCheck");
   });
   it("follows up to 3 redirects and reports the final url", async () => {
     const r = await safeFetch(`${base}/r2`, { policy });

@@ -1,7 +1,7 @@
 import { afterAll, afterEach, describe, expect, it } from "vitest";
 import { generate } from "otplib";
 import { eq } from "drizzle-orm";
-import { createDb, memberships, orgBranding, users, workspaces } from "@opengmb/db";
+import { createDb, memberships, orgBranding, users, workspaces } from "@apexgmb/db";
 import { createAuth } from "./auth";
 import { setEmailSender, type EmailMessage } from "./email";
 import { MAGIC_LINK_REQUESTS_PER_EMAIL_PER_HOUR } from "./magic-link";

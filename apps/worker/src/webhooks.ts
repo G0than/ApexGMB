@@ -7,8 +7,8 @@ import {
   WEBHOOK_PURGE_QUEUE,
   WEBHOOK_QUEUE,
   WEBHOOK_QUEUE_OPTIONS,
-} from "@opengmb/core";
-import type { Db } from "@opengmb/db";
+} from "@apexgmb/core";
+import type { Db } from "@apexgmb/db";
 
 export type WebhookJob = {
   id: string;

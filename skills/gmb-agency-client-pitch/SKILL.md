@@ -19,7 +19,7 @@ Turn free audits into paying local business clients on recurring retainers.
 ## How to run:
 
 ```bash
-python3 /Users/lucifer/.gemini/antigravity/scratch/OpenGMB/skills/scripts/gmb_ai_runner.py proposal \
+python3 /Users/lucifer/.gemini/antigravity/scratch/ApexGMB/skills/scripts/gmb_ai_runner.py proposal \
   --client "Apex Media Studio" \
   --category "Photography Studio" \
   --issues "Missing 4 secondary categories, no posts in 6 months, 30 unreplied reviews" \

@@ -1,4 +1,4 @@
-import { POST_IMAGE_TEXT, type PostImageLayout } from "@opengmb/core/post-image-templates";
+import { POST_IMAGE_TEXT, type PostImageLayout } from "@apexgmb/core/post-image-templates";
 
 export type BrandedForm = {
   photoImageId: string | null;

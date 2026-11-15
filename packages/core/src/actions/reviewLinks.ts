@@ -1,7 +1,7 @@
 // packages/core/src/actions/reviewLinks.ts
 import { and, eq, gte, sql } from "drizzle-orm";
 import { z } from "zod";
-import { reviewLinkClicks, reviewLinks, reviews, workspaceReplySettings } from "@opengmb/db";
+import { reviewLinkClicks, reviewLinks, reviews, workspaceReplySettings } from "@apexgmb/db";
 import { clientForLocation, googleNames, loadLocation } from "../locationOps/access";
 import { CoreError } from "../errors";
 import { defineAction } from "../registry";

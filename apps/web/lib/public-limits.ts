@@ -5,7 +5,7 @@ import {
   publicEndpointFor,
   publicLimits,
   type PublicEndpoint,
-} from "@opengmb/core/limits";
+} from "@apexgmb/core/limits";
 import { hashIp } from "./hash-ip";
 
 /**

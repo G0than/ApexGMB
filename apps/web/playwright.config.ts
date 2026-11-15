@@ -2,7 +2,7 @@ import { existsSync } from "node:fs";
 import { defineConfig, devices } from "@playwright/test";
 
 // The community edition's end-to-end suite: one owner from the environment, no sign-up, mock Google.
-// Run it with: pnpm --filter @opengmb/web test:e2e  (needs DATABASE_URL_TEST: a throwaway database that is wiped first).
+// Run it with: pnpm --filter @apexgmb/web test:e2e  (needs DATABASE_URL_TEST: a throwaway database that is wiped first).
 if (existsSync("../../.env")) process.loadEnvFile("../../.env");
 
 const dbUrl = process.env.DATABASE_URL_TEST;

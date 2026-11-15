@@ -6,7 +6,7 @@ import {
   profileChangeSets,
   profileChanges,
   profileChangeTargets,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { setSharedMockGoogleClient } from "./google/factory";
 import { MockGoogleClient } from "./google/mock-client";
 import { ThrottledGoogleClient } from "./google/throttled-client";

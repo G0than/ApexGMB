@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it } from "vitest";
-import { createDb, organizations } from "@opengmb/db";
+import { createDb, organizations } from "@apexgmb/db";
 import { CoreError } from "../errors";
 import { LiveGoogleClient } from "./live-client";
 import { MockGoogleClient } from "./mock-client";

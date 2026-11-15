@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { googleConnectionsList, locationsList } from "@opengmb/core";
-import { GOOGLE_OAUTH_BRAND, MOCK_GOOGLE_EMAIL, roleHasPermission } from "@opengmb/core";
+import type { googleConnectionsList, locationsList } from "@apexgmb/core";
+import { GOOGLE_OAUTH_BRAND, MOCK_GOOGLE_EMAIL, roleHasPermission } from "@apexgmb/core";
 import { ConnectGoogleButton } from "../../../../components/connect-google-button";
 import { ConnectSampleGoogleButton } from "../../../../components/connect-sample-google-button";
 import { DisconnectGoogleButton } from "../../../../components/disconnect-google-button";

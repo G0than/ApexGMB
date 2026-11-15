@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { and, eq } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
-import { auditLog, orgBranding, reportRuns, reportShareLinks } from "@opengmb/db";
+import { auditLog, orgBranding, reportRuns, reportShareLinks } from "@apexgmb/db";
 import type { Actor } from "./actor";
 import { verifyAuditChain } from "./audit";
 import { executeAction } from "./executor";

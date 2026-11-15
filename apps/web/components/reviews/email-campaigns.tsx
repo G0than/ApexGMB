@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { reviewRequestsList } from "@opengmb/core";
+import type { reviewRequestsList } from "@apexgmb/core";
 import { reviewRequests_list } from "../../app/_generated/actions";
 import { Badge, ErrorText, linkClass, Panel } from "../ui";
 import { CampaignActions, NewCampaignForm } from "./email-campaign-forms";

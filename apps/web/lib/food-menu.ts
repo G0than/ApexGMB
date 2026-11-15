@@ -2,7 +2,7 @@
 // The editor works on Google's own JSON and only touches the fields it shows. Everything else on a
 // menu, section or item (nutrition, ingredients, allergens, cuisines ...) is carried through
 // untouched, because saving replaces the whole menu at Google.
-import type { FoodMenuInput } from "@opengmb/core";
+import type { FoodMenuInput } from "@apexgmb/core";
 import { failureLabel } from "./failure-labels";
 import { humanise } from "./labels";
 

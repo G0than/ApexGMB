@@ -1,5 +1,5 @@
 import { and, desc, eq, gte, ilike, inArray, isNull, lt, or, sql } from "drizzle-orm";
-import { googlePosts, locations, postTargets, type Db } from "@opengmb/db";
+import { googlePosts, locations, postTargets, type Db } from "@apexgmb/db";
 
 /**
  * F6: the one definition of "the posts of a location or scope", for every consumer (All posts,

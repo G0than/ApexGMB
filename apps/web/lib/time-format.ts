@@ -1,4 +1,4 @@
-// The one place the web app turns an instant into text. Client-safe (imports only @opengmb/core/time).
+// The one place the web app turns an instant into text. Client-safe (imports only @apexgmb/core/time).
 // The server builds it with getTimeFormat() (lib/time-format-server.ts); client components read it
 // from <TimeFormatProvider> (components/time-format-provider.tsx). Both use makeTimeFormat, and
 // always pass an explicit zone, never the server's or the browser's.
@@ -10,7 +10,7 @@ import {
   formatTime,
   zoneLabel,
   type DateFormat,
-} from "@opengmb/core/time";
+} from "@apexgmb/core/time";
 import { UNKNOWN_DATE, isMissingTimestamp } from "./labels";
 
 export type ZoneInfo = { id: string; timeZone: string; dateFormat: DateFormat };

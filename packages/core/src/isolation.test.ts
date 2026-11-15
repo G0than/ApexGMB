@@ -15,7 +15,7 @@ import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { eq, inArray, getTableName, is } from "drizzle-orm";
 import { getTableConfig, PgTable, type PgColumn } from "drizzle-orm/pg-core";
 import type { z } from "zod";
-import * as dbSchema from "@opengmb/db";
+import * as dbSchema from "@apexgmb/db";
 import {
   createDb,
   locations as locationsTable,
@@ -23,8 +23,8 @@ import {
   organizations,
   users,
   workspaces,
-} from "@opengmb/db";
-import type { Db } from "@opengmb/db";
+} from "@apexgmb/db";
+import type { Db } from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { writeAudit } from "./audit";
 import { CoreError } from "./errors";

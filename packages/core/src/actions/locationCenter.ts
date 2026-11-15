@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-import { locations } from "@opengmb/db";
+import { locations } from "@apexgmb/db";
 import { loadLocation, type LocRow } from "../locationOps/access";
 import { tryEnqueueLocationCenter } from "../locations/center";
 import { defineAction } from "../registry";

@@ -1,5 +1,5 @@
 // Pure helpers for the Topics panel (Reviews > Analytics) and the Reviews topic filter.
-import { REVIEW_TOPIC_IDS, TOPIC_SENTIMENTS, type ReviewTopicId, type TopicSentiment } from "@opengmb/core/topics";
+import { REVIEW_TOPIC_IDS, TOPIC_SENTIMENTS, type ReviewTopicId, type TopicSentiment } from "@apexgmb/core/topics";
 
 type Counts = { total: number; positive: number; negative: number; mixed: number };
 export type TopicInput = Counts & { topic: ReviewTopicId; weekly: Counts[] };

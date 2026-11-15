@@ -16,7 +16,7 @@ import {
   users,
   workspaces,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { PERFORMANCE_CONFIG } from "../config/performance";
 import { CoreError } from "../errors";
@@ -497,7 +497,7 @@ export const reportsDownload = defineAction({
 
 export const reportsShare = defineAction({
   name: "reports.share",
-  description: `Create a public share link for a finished report: anyone with the URL can download the PDF without logging in until it expires (expiresInDays 1-${PERFORMANCE_CONFIG.shareLinkMaxDays}, default ${PERFORMANCE_CONFIG.shareLinkDefaultDays}) or is revoked. The link shows performance numbers that Google does not show publicly, so create it only if the business has agreed: businessAgreed must be true. Search engines are told not to index it. The URL is returned ONCE and cannot be recovered; only its hash is stored. Every access is audited. An API token cannot apply this: a person approves it in OpenGMB. Needs report:manage.`,
+  description: `Create a public share link for a finished report: anyone with the URL can download the PDF without logging in until it expires (expiresInDays 1-${PERFORMANCE_CONFIG.shareLinkMaxDays}, default ${PERFORMANCE_CONFIG.shareLinkDefaultDays}) or is revoked. The link shows performance numbers that Google does not show publicly, so create it only if the business has agreed: businessAgreed must be true. Search engines are told not to index it. The URL is returned ONCE and cannot be recovered; only its hash is stored. Every access is audited. An API token cannot apply this: a person approves it in ApexGMB. Needs report:manage.`,
   input: z.object({
     runId: z.uuid(),
     expiresInDays: z.number().int().min(1).max(PERFORMANCE_CONFIG.shareLinkMaxDays).default(PERFORMANCE_CONFIG.shareLinkDefaultDays),

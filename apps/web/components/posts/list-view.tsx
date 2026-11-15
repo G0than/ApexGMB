@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { locationsList, postsGet, postsList } from "@opengmb/core";
+import type { locationsList, postsGet, postsList } from "@apexgmb/core";
 import { locations_list, posts_get, posts_list } from "../../app/_generated/actions";
 import {
   POST_STATUSES,

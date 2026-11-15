@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { notFound, redirect } from "next/navigation";
-import type { reportsDefinitionsList } from "@opengmb/core";
-import { roleHasPermission } from "@opengmb/core";
+import type { reportsDefinitionsList } from "@apexgmb/core";
+import { roleHasPermission } from "@apexgmb/core";
 import { ReportEditor } from "../../../../../components/reports/report-editor";
 import { PageHeader, linkClass } from "../../../../../components/ui";
 import { actorContextFor } from "../../../../../lib/auth";

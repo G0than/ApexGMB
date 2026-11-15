@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { SignJWT, createLocalJWKSet, exportJWK, generateKeyPair } from "jose";
-import { GOOGLE_NOTIFICATION_QUEUE, ensureQueues } from "@opengmb/core";
-import { createDb, locations, organizations, workspaces } from "@opengmb/db";
+import { GOOGLE_NOTIFICATION_QUEUE, ensureQueues } from "@apexgmb/core";
+import { createDb, locations, organizations, workspaces } from "@apexgmb/db";
 import { handlePubsubPush } from "./pubsub-receiver";
 
 const url = process.env.DATABASE_URL_TEST;

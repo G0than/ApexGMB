@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { describe, expect, it } from "vitest";
-import { publicLimits } from "@opengmb/core/limits";
+import { publicLimits } from "@apexgmb/core/limits";
 import { createPublicLimiter } from "./public-limits";
 
 const req = (path: string, ip: string) =>

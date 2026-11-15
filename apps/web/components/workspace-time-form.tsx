@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
-import { DATE_FORMATS, formatDayKey, isValidTimeZone, timeZoneList, zoneLabel, type DateFormat } from "@opengmb/core/time";
+import { DATE_FORMATS, formatDayKey, isValidTimeZone, timeZoneList, zoneLabel, type DateFormat } from "@apexgmb/core/time";
 import { workspaces_setTimeSettings } from "../app/_generated/actions";
 import { buttonClass, ErrorText, inputClass } from "./ui";
 

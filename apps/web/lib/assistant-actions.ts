@@ -6,7 +6,7 @@ import {
   runAssistantTurn,
   type AssistantMessage,
   type AssistantResult,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import { getAuth, getDb, sessionActor } from "./auth";
 
 export type AskResponse =

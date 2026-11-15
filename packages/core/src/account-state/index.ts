@@ -1,6 +1,6 @@
 /** Community edition: no admin panel, so no account is ever suspended or deleted. Same names as the full module. */
 import { sql, type AnyColumn, type SQL } from "drizzle-orm";
-import type { Db, Tx } from "@opengmb/db";
+import type { Db, Tx } from "@apexgmb/db";
 
 export type BlockedReason = "user_disabled" | "org_suspended";
 

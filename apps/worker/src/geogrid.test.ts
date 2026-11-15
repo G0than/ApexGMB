@@ -8,7 +8,7 @@ import {
   fixtureDataForSeoTransport,
   processGridCollect,
   processGridRun,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import {
   createDb,
   gridConfigs,
@@ -19,7 +19,7 @@ import {
   organizations,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { startServer } from "./http";
 
 const url = process.env.DATABASE_URL_TEST;

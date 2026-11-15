@@ -1,7 +1,7 @@
 import { randomBytes } from "node:crypto";
 import { hashPassword } from "better-auth/crypto";
 import { sql } from "drizzle-orm";
-import { accounts, memberships, organizations, users, type Db } from "@opengmb/db";
+import { accounts, memberships, organizations, users, type Db } from "@apexgmb/db";
 import { writeAudit } from "./audit";
 
 type Env = Record<string, string | undefined>;

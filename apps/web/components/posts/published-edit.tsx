@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import type { postsEditGet } from "@opengmb/core";
+import type { postsEditGet } from "@apexgmb/core";
 import {
   posts_approveEdit,
   posts_cancelEdit,

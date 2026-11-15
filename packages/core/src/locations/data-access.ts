@@ -1,5 +1,5 @@
 import { and, eq, inArray } from "drizzle-orm";
-import { locationDataAccess, type Db } from "@opengmb/db";
+import { locationDataAccess, type Db } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { GOOGLE_ACCESS_CONFIG, type GoogleAccessResource } from "../config/google-retry";
 import { isGooglePermissionDenied } from "../google/errors";

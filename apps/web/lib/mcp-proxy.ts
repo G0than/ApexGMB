@@ -1,4 +1,4 @@
-import { clientIpFromForwardedFor, intFromEnv } from "@opengmb/core/limits";
+import { clientIpFromForwardedFor, intFromEnv } from "@apexgmb/core/limits";
 
 /** Request headers the MCP protocol uses; everything else (cookies, host, hop-by-hop) stays behind. */
 const FORWARD_REQUEST = ["authorization", "mcp-session-id", "mcp-protocol-version", "accept", "content-type", "last-event-id"];

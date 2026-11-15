@@ -1,6 +1,6 @@
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
-import { locations } from "@opengmb/db";
+import { locations } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope } from "../actor";
 import { DAILY_METRICS } from "../google/client";
 import { CoreError } from "../errors";

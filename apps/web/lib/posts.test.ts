@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { OPTIONAL_PACKS, POST_LANGUAGES, POST_LIMITS } from "@opengmb/core";
+import { OPTIONAL_PACKS, POST_LANGUAGES, POST_LIMITS } from "@apexgmb/core";
 import {
   CTA_OPTIONS,
   ctaOptionLabel,

@@ -1,6 +1,6 @@
 import type { z } from "zod";
 import { sql } from "drizzle-orm";
-import type { Db, Tx } from "@opengmb/db";
+import type { Db, Tx } from "@apexgmb/db";
 import type { Actor } from "./actor";
 import { AccessError, ReadOnlyViewError, authorizeAction } from "./actor";
 import { isExternalEffect, personMustApproveMessage } from "./external-effects";
@@ -143,7 +143,7 @@ export async function executeToolCall(
   const { dryRun = false, ...rest } = (rawInput ?? {}) as Record<string, unknown>;
   const mode = approvalOf(action);
   if (mode === "own_flow" && dryRun !== true) {
-    // Q33d: an own_flow action that changes something outside OpenGMB (publish, approve, apply) is
+    // Q33d: an own_flow action that changes something outside ApexGMB (publish, approve, apply) is
     // run by a signed-in person, whatever the token mode.
     if (isExternalEffect(name)) {
       throw new AccessError("FORBIDDEN", personMustApproveMessage("approval", name));

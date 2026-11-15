@@ -10,7 +10,7 @@ const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../
 loadEnvConfig(repoRoot, process.env.NODE_ENV === "development", console, true);
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@opengmb/core", "@opengmb/db"],
+  transpilePackages: ["@apexgmb/core", "@apexgmb/db"],
   // Dev server only: lets e2e/custom-domain.spec.ts load /_next assets through a mapped agency hostname. No effect in production.
   allowedDevOrigins: ["portal.e2e.test"],
   async headers() {

@@ -11,7 +11,7 @@ import {
   twoFactors,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { createAuth, type Auth } from "./auth";
 import { CoreError } from "./errors";

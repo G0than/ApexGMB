@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { crc32, deflateSync } from "node:zlib";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, locations, organizations, reportDefinitions, reportRuns, storedFiles, workspaces, users, type Db } from "@opengmb/db";
+import { createDb, locations, organizations, reportDefinitions, reportRuns, storedFiles, workspaces, users, type Db } from "@apexgmb/db";
 import type { EmailMessage } from "./digest";
 import { LOGO_CID, runMonthlyReports } from "./reports";
 
@@ -75,7 +75,7 @@ beforeAll(async () => {
   await runMonthlyReports(db as Db, {
     sendEmail: async (m) => { sent.push(m); },
     apiKey: "re_test",
-    from: "OpenGMB <notifications@ci.invalid>",
+    from: "ApexGMB <notifications@ci.invalid>",
     appUrl: "https://app.test",
     now: () => NOW,
     orgIds: [orgs.a.orgId, orgs.b.orgId, orgs.none.orgId],

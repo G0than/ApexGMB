@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { and, eq, gte, inArray, lt } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
-import { createDb, googleRateWindows, locations, reviewSyncs } from "@opengmb/db";
+import { createDb, googleRateWindows, locations, reviewSyncs } from "@apexgmb/db";
 import { REVIEWS_CONFIG } from "./config/reviews";
 import { GOOGLE_LIMITS } from "./config/google-limits";
 import { MockGoogleClient } from "./google/mock-client";

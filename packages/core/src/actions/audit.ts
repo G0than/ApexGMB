@@ -1,6 +1,6 @@
 import { and, asc, desc, eq, gt, gte, lt } from "drizzle-orm";
 import { z } from "zod";
-import { auditLog, auditSurface, users } from "@opengmb/db";
+import { auditLog, auditSurface, users } from "@apexgmb/db";
 import { canonicalJson, getAuditCheckpoint, verifyAuditChain } from "../audit";
 import { defineAction } from "../registry";
 

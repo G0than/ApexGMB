@@ -1,4 +1,4 @@
-import { acceptPingback } from "@opengmb/core";
+import { acceptPingback } from "@apexgmb/core";
 import { getDb } from "../../../lib/auth";
 
 export const runtime = "nodejs";

@@ -75,8 +75,8 @@ const num = (n: number) => n.toLocaleString("en-US");
 export async function renderReportPdf(input: ReportPdfInput): Promise<Uint8Array> {
   const doc = await PDFDocument.create();
   doc.setTitle(pdfSafe(input.title));
-  doc.setProducer("OpenGMB");
-  doc.setCreator("OpenGMB");
+  doc.setProducer("ApexGMB");
+  doc.setCreator("ApexGMB");
   doc.setCreationDate(input.generatedAt);
   doc.setModificationDate(input.generatedAt);
   const font = await doc.embedFont(StandardFonts.Helvetica);
@@ -106,7 +106,7 @@ export async function renderReportPdf(input: ReportPdfInput): Promise<Uint8Array
   // Header band with the agency name.
   page.drawRectangle({ x: 0, y: H - 70, width: W, height: 70, color: colour });
   y = H - 42;
-  page.drawText(pdfSafe(input.branding.agencyName?.trim() || "OpenGMB"), {
+  page.drawText(pdfSafe(input.branding.agencyName?.trim() || "ApexGMB"), {
     x: M,
     y,
     size: 18,

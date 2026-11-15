@@ -10,8 +10,8 @@ import {
   loadActor,
   requireAuthenticatedUser,
   verifyAuditChain,
-} from "@opengmb/core";
-import { apiTokens, auditLog, createDb, memberships } from "@opengmb/db";
+} from "@apexgmb/core";
+import { apiTokens, auditLog, createDb, memberships } from "@apexgmb/db";
 import { startServer } from "./http";
 
 const url = process.env.DATABASE_URL_TEST;

@@ -15,7 +15,7 @@ import {
   users,
   workspaces,
   type Db,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import type { Actor } from "../actor";
 import { scoreOf } from "../healthcheck/evaluate";
 import { loadLocation, type LocRow } from "../locationOps/access";
@@ -251,7 +251,7 @@ async function activityFor(db: Db, orgId: string, locationId: string) {
 export const locationsOverview = defineAction({
   name: "locations.overview",
   description:
-    "One location's front page: its header facts (workspace, address, status, needsRelink), review/alert/suspension counts (as locations.stats), the last post OpenGMB published, change sets waiting for approval or apply that target it, the open suspension case with evidence progress, sync state, the 5 most recent events (changes found, change sets proposed, posts and replies published) and, for an active Google-linked location, one pass of the healthcheck's Google reads (about 7 calls, outside any transaction) giving the live health score, verification standing, primary category, today's hours and whether it is open now (both read in the workspace's time zone), phone, website, photos and booking links. Each Google part is null when its read failed; google is null for inactive or unlinked locations. Read only.",
+    "One location's front page: its header facts (workspace, address, status, needsRelink), review/alert/suspension counts (as locations.stats), the last post ApexGMB published, change sets waiting for approval or apply that target it, the open suspension case with evidence progress, sync state, the 5 most recent events (changes found, change sets proposed, posts and replies published) and, for an active Google-linked location, one pass of the healthcheck's Google reads (about 7 calls, outside any transaction) giving the live health score, verification standing, primary category, today's hours and whether it is open now (both read in the workspace's time zone), phone, website, photos and booking links. Each Google part is null when its read failed; google is null for inactive or unlinked locations. Read only.",
   input: z.object({ locationId: z.uuid() }),
   output: out,
   permission: "location:read",

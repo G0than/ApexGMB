@@ -16,7 +16,7 @@ import {
   reviews,
   webhookDeliveries,
   webhookSubscriptions,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { WEBHOOK_DISABLE_AFTER_FAILURES, WEBHOOK_QUEUE } from "./config/webhooks";
 import { encryptSecret } from "./crypto";
 import { MockGoogleClient } from "./google/mock-client";
@@ -146,7 +146,7 @@ describe("processWebhookDelivery", () => {
       const h = r.seen[0]!.headers;
       expect(h["webhook-id"]).toBe(deliveryId);
       expect(h["content-type"]).toBe("application/json");
-      expect(h["user-agent"]).toBe("OpenGMB-Webhooks/1");
+      expect(h["user-agent"]).toBe("ApexGMB-Webhooks/1");
       expect(
         verifyWebhook({
           id: String(h["webhook-id"]),

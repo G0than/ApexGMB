@@ -1,6 +1,6 @@
 import { and, desc, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
-import { locations, profileSnapshots, type Tx } from "@opengmb/db";
+import { locations, profileSnapshots, type Tx } from "@apexgmb/db";
 import type { Actor } from "../actor";
 import { BULK_POST_LIMITS } from "../config/bulk-post-limits";
 import { CoreError } from "../errors";

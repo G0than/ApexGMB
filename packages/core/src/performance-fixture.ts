@@ -9,7 +9,7 @@ import {
   searchKeywordsMonthly,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor } from "./actor";
 import { CoreError } from "./errors";
 

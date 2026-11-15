@@ -2,7 +2,7 @@ import { z } from "zod";
 import { POST_LIMITS } from "../config/post-limits";
 import type { GoogleLocalPost } from "../google/client";
 import type { GuardrailResult, PostFields } from "../guardrails";
-import type { posts } from "@opengmb/db";
+import type { posts } from "@apexgmb/db";
 import { sha256 } from "../reviews/reply-state";
 
 export type PostRow = typeof posts.$inferSelect;

@@ -12,7 +12,7 @@ import {
   reviews,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { authorizeAction, loadActor, type Actor } from "./actor";
 import { createApiToken, verifyApiToken } from "./apiTokens";
 import { MCP_CONFIG } from "./config/mcp";

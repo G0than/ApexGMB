@@ -2,7 +2,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
 import { eq, inArray, sql as dsql } from "drizzle-orm";
-import { createDb, locations, organizations, workspaces } from "@opengmb/db";
+import { createDb, locations, organizations, workspaces } from "@apexgmb/db";
 import { AU_STATE_TIME_ZONE, COUNTRY_DATE_FORMAT, COUNTRY_TIME_ZONE, US_STATE_TIME_ZONE } from "../config/time-zones";
 import { uniq } from "../testkit";
 

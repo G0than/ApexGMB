@@ -1,4 +1,4 @@
-import type { Db, Tx } from "@opengmb/db";
+import type { Db, Tx } from "@apexgmb/db";
 import { PLATFORM_LIMITS, type PlatformLimitKey } from "../config/platform-limits";
 
 type Env = Record<string, string | undefined>;

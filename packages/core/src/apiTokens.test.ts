@@ -8,8 +8,8 @@ import {
   organizations,
   users,
   workspaces,
-} from "@opengmb/db";
-import type { Db } from "@opengmb/db";
+} from "@apexgmb/db";
+import type { Db } from "@apexgmb/db";
 import type { Actor } from "./actor";
 import {
   createApiToken,

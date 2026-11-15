@@ -1,6 +1,6 @@
 import { CronExpressionParser } from "cron-parser";
 import { eq } from "drizzle-orm";
-import { jobRuns, type Db } from "@opengmb/db";
+import { jobRuns, type Db } from "@apexgmb/db";
 import { DIGEST_CRON } from "./config/digest";
 import { PERFORMANCE_CONFIG } from "./config/performance";
 import { PROFILE_WATCH_CONFIG } from "./config/profile-watch";

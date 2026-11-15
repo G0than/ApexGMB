@@ -1,5 +1,5 @@
 // Pure logic for one location's header, tabs and Overview. Client-safe.
-import { dayKey } from "@opengmb/core/time";
+import { dayKey } from "@apexgmb/core/time";
 import { approvalsHref } from "./approvals";
 
 const DAY_MS = 86_400_000;

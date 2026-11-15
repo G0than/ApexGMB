@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { postLanguages } from "@opengmb/db";
+import { postLanguages } from "@apexgmb/db";
 
 export type PostLanguage = (typeof postLanguages)[number];
 

@@ -70,7 +70,7 @@ export function emailConfigured(): boolean {
 }
 
 export function emailFrom(): string {
-  return getIntegration("EMAIL_FROM") || "OpenGMB <noreply@localhost.invalid>";
+  return getIntegration("EMAIL_FROM") || "ApexGMB <noreply@localhost.invalid>";
 }
 
 /** The sender actions use: the injected fake, Resend when configured, otherwise the mock. */

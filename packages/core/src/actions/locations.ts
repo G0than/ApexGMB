@@ -9,7 +9,7 @@ import {
   locationStatus,
   workspaces,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { createGoogleClient } from "../google/factory";
 import { enqueueJob } from "../jobs";
@@ -140,7 +140,7 @@ const statsOut = z.object({
 export const locationsStats = defineAction({
   name: "locations.stats",
   description:
-    "Per-location counts from OpenGMB's own tables, no Google call: synced reviews (total, average star rating, unreplied = reviews that need you: no visible reply and none waiting for approval or publish, or a reply that is blocked or failed, with the workspace reply policy applied, any age; waitingToPublish = approved reply not yet on Google), open profile changes (the alerts the change watch raised: snapshot diffs and Google-suggested edits) and whether a suspension case is open or appealed. Same order as locations.list (by name). Filters: workspaceId, locationIds (up to 500). Inactive locations are included. Client roles only see their own workspaces; ids outside the caller's scope are left out.",
+    "Per-location counts from ApexGMB's own tables, no Google call: synced reviews (total, average star rating, unreplied = reviews that need you: no visible reply and none waiting for approval or publish, or a reply that is blocked or failed, with the workspace reply policy applied, any age; waitingToPublish = approved reply not yet on Google), open profile changes (the alerts the change watch raised: snapshot diffs and Google-suggested edits) and whether a suspension case is open or appealed. Same order as locations.list (by name). Filters: workspaceId, locationIds (up to 500). Inactive locations are included. Client roles only see their own workspaces; ids outside the caller's scope are left out.",
   input: z.object({
     workspaceId: z.uuid().optional(),
     locationIds: z.array(z.uuid()).min(1).max(500).optional(),

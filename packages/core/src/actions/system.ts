@@ -1,6 +1,6 @@
 import { and, desc, eq, inArray, max } from "drizzle-orm";
 import { z } from "zod";
-import { jobRuns, locations, performanceSnapshots, profileSnapshots, reviewSyncs } from "@opengmb/db";
+import { jobRuns, locations, performanceSnapshots, profileSnapshots, reviewSyncs } from "@apexgmb/db";
 import { roleHasPermission } from "../permissions";
 import { defineAction } from "../registry";
 import { SYSTEM_JOBS, SYSTEM_STATUS_LOCATION_CAP, jobView } from "../system-jobs";

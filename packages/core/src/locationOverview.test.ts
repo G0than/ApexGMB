@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, googleRateWindows, postTargets, reviewSyncs, reviews, suspensionCases, users } from "@opengmb/db";
+import { createDb, googleRateWindows, postTargets, reviewSyncs, reviews, suspensionCases, users } from "@apexgmb/db";
 import { writeAudit } from "./audit";
 import { localParts } from "./time/format";
 import type { Actor } from "./actor";

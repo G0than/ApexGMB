@@ -8,7 +8,7 @@ import {
   users,
   workspaces,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadBranding } from "./branding";
 import { pushToUsers } from "./push";
 import { emailFromFor, originForRole } from "./custom-domains";

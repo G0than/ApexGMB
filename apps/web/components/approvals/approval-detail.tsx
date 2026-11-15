@@ -8,7 +8,7 @@ import type {
   profileChangeSetsGet,
   reviewRepliesList,
   reviewsGet,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import {
   posts_editGet,
   posts_get,

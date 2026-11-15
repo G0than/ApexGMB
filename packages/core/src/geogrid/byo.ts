@@ -1,5 +1,5 @@
 import { and, eq, gte, lt, sql } from "drizzle-orm";
-import { gridRuns, gridTasks, orgDataforseoCredentials, type Db, type Tx } from "@opengmb/db";
+import { gridRuns, gridTasks, orgDataforseoCredentials, type Db, type Tx } from "@apexgmb/db";
 import { taskPriceUsd } from "../config/geogrid";
 import { decryptSecret } from "../crypto";
 import type { DfsCredentials } from "./drivers/fixtures";

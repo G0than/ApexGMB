@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-import { googleNotifications, locations, type Db } from "@opengmb/db";
+import { googleNotifications, locations, type Db } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { enqueueJob } from "../jobs";
 import { parseGoogleNotification, parsePushEnvelope } from "./notification";

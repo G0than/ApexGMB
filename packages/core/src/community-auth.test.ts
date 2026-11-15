@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { afterAll, describe, expect, it } from "vitest";
-import { createDb, memberships, organizations, users } from "@opengmb/db";
+import { createDb, memberships, organizations, users } from "@apexgmb/db";
 import { eq } from "drizzle-orm";
 import { createAuth } from "./auth";
 import { originForUser, orgForHost } from "./custom-domains";

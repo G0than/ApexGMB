@@ -1,6 +1,6 @@
 // apps/web/lib/review-analytics.ts
 // Pure logic for the Analytics tab. No React, no core runtime imports (types only), except the time helpers.
-import { dayKey as coreDayKey, startOfZonedDay } from "@opengmb/core/time";
+import { dayKey as coreDayKey, startOfZonedDay } from "@apexgmb/core/time";
 import { enTr, type Tr } from "./reviews-tools-t";
 import type { TimeFormat } from "./time-format";
 

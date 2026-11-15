@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import type { placeActionsList } from "@opengmb/core";
+import type { placeActionsList } from "@apexgmb/core";
 import {
   placeActions_create,
   placeActions_delete,

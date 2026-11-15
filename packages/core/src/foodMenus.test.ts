@@ -3,7 +3,7 @@ import { eq } from "drizzle-orm";
 import { GoogleApiError } from "./google/errors";
 import { isFoodMenuUnsupported } from "./foodMenus/support";
 import { PgBoss } from "pg-boss";
-import { createDb, locationWriteOps } from "@opengmb/db";
+import { createDb, locationWriteOps } from "@apexgmb/db";
 import { setSharedMockGoogleClient } from "./google/factory";
 import { MockGoogleClient } from "./google/mock-client";
 import { ReadOnlyGoogleClient } from "./google/read-only-client";

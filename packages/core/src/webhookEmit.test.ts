@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { and, eq, inArray } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
-import { createDb, reviews, webhookDeliveries, webhookSubscriptions } from "@opengmb/db";
+import { createDb, reviews, webhookDeliveries, webhookSubscriptions } from "@apexgmb/db";
 import { WEBHOOK_QUEUE } from "./config/webhooks";
 import { MockGoogleClient } from "./google/mock-client";
 import { REVIEW_SYNC_QUEUE, processReviewSync } from "./reviews/sync";

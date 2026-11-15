@@ -1,5 +1,5 @@
 import { and, eq, inArray, sql } from "drizzle-orm";
-import { profileChanges, reviews, suspensionCases, type Db, type Tx } from "@opengmb/db";
+import { profileChanges, reviews, suspensionCases, type Db, type Tx } from "@apexgmb/db";
 import { needsYouSql, waitingToPublishSql } from "../reviews/reply-stage";
 
 /** A case in one of these statuses is unresolved: the location shows "Suspension case open". */

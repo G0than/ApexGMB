@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ROLE_PERMISSIONS, roleHasPermission, type Role } from "@opengmb/core";
+import { ROLE_PERMISSIONS, roleHasPermission, type Role } from "@apexgmb/core";
 import { liveStatus } from "./live-status";
 import { googleWritesLive, settingsHome, settingsNavFor } from "./settings-nav";
 

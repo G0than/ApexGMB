@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { startOfZonedDay } from "@opengmb/core/time";
+import { startOfZonedDay } from "@apexgmb/core/time";
 import type { TimeFormat } from "../lib/time-format";
 import {
   KIND,

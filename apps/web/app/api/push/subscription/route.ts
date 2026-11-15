@@ -6,7 +6,7 @@ import {
   removePushSubscription,
   requireAuthenticatedUser,
   savePushSubscription,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import { getAuth, getDb, refuseWhileViewing, sessionActor } from "../../../../lib/auth";
 import { parseSubscriptionBody } from "../../../../lib/push-client";
 

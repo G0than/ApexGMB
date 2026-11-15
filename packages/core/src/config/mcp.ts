@@ -4,9 +4,9 @@ import type { Permission } from "../permissions";
 export const MCP_CONFIG = {
   /** How long a two-phase write proposal can be applied after it was created. */
   proposalTtlMs: 15 * 60 * 1000,
-  /** Rows the opengmb://audit/recent resource returns. */
+  /** Rows the apexgmb://audit/recent resource returns. */
   recentAuditRows: 100,
-  /** Rows per status the opengmb://reviews/queue resource returns. */
+  /** Rows per status the apexgmb://reviews/queue resource returns. */
   queueRowsPerStatus: 50,
 } as const;
 
@@ -28,7 +28,7 @@ export type McpResourceInfo = {
 export const MCP_RESOURCES: readonly McpResourceInfo[] = [
   {
     name: "review-queue",
-    uri: "opengmb://reviews/queue",
+    uri: "apexgmb://reviews/queue",
     permission: "review:approve",
     holds:
       "Replies pending approval, blocked or conflicted, and posts pending approval or blocked.",
@@ -37,15 +37,15 @@ export const MCP_RESOURCES: readonly McpResourceInfo[] = [
   },
   {
     name: "google-pending-updates",
-    uri: "opengmb://google/pending-updates",
+    uri: "apexgmb://google/pending-updates",
     permission: "location:read",
-    holds: "Open profile changes: edits made outside OpenGMB and updates Google suggested.",
+    holds: "Open profile changes: edits made outside ApexGMB and updates Google suggested.",
     description:
-      "Open profile changes: edits found outside OpenGMB and Google-suggested updates (googleSuggested true). Needs location:read.",
+      "Open profile changes: edits found outside ApexGMB and Google-suggested updates (googleSuggested true). Needs location:read.",
   },
   {
     name: "audit-recent",
-    uri: "opengmb://audit/recent",
+    uri: "apexgmb://audit/recent",
     permission: "audit:read",
     holds: `The last ${MCP_CONFIG.recentAuditRows} audit rows.`,
     description: `The last ${MCP_CONFIG.recentAuditRows} audit log rows of the organization, newest first. Needs audit:read.`,
@@ -53,14 +53,14 @@ export const MCP_RESOURCES: readonly McpResourceInfo[] = [
 ];
 
 /**
- * Resource addresses before the rename to OpenGMB (2026-10-24). Reads are still answered, as the
- * opengmb:// resource with the same path, so agents and saved prompts that name them keep working.
+ * Resource addresses before the rename to ApexGMB (2026-10-24). Reads are still answered, as the
+ * apexgmb:// resource with the same path, so agents and saved prompts that name them keep working.
  * They are not listed. Each read logs "[mcp] legacy resource address read: <uri>"; remove this only
  * after the mcp log shows no such line for 90 days.
  */
 export const MCP_LEGACY_RESOURCES = {
   scheme: "syngmb",
-  currentScheme: "opengmb",
+  currentScheme: "apexgmb",
   renamedOn: "2026-10-24",
-  description: "Addresses from before the rename to OpenGMB (syngmb://). Same data as the opengmb:// resources; use those.",
+  description: "Addresses from before the rename to ApexGMB (syngmb://). Same data as the apexgmb:// resources; use those.",
 } as const;

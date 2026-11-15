@@ -193,7 +193,7 @@ export function BrandingForm({
             {t("appDomain")}
             <input disabled placeholder="app.youragency.com" className={`${inputClass} font-normal`} />
           </label>
-          <DnsTable caption={t("dnsCaptionDomain")} head={t("dnsTypeHead")} rows={[["CNAME", "app"], ["TXT", "_opengmb"]]} />
+          <DnsTable caption={t("dnsCaptionDomain")} head={t("dnsTypeHead")} rows={[["CNAME", "app"], ["TXT", "_apexgmb"]]} />
           <div className="flex flex-wrap items-center gap-3">
             <button type="button" disabled className={secondaryButtonClass}>{t("checkDns")}</button>
             <span className="text-[13px] text-muted-foreground">

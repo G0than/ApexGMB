@@ -1,7 +1,7 @@
 import "server-only";
 import { headers } from "next/headers";
-import { hostBranding, isGoogleConfigured, type Branding } from "@opengmb/core";
-import type { Db } from "@opengmb/db";
+import { hostBranding, isGoogleConfigured, type Branding } from "@apexgmb/core";
+import type { Db } from "@apexgmb/db";
 import { getDb } from "./auth";
 import { isMainHost, requestHost } from "./request-host";
 import { brandCss, type ShellBrand } from "./theme/brand";
@@ -13,8 +13,8 @@ export type HostBrand = { branding: Branding; brand: ShellBrand; css: string | n
  * colour is set), the agency's name always shows here: the address itself says whose it is.
  */
 export function hostShellBrand(b: Branding): ShellBrand {
-  const name = b.agencyName.trim() || "OpenGMB";
-  return { name, subline: "Powered by OpenGMB", mark: name.charAt(0).toUpperCase() || "O", logoUrl: b.logoUrl };
+  const name = b.agencyName.trim() || "ApexGMB";
+  return { name, subline: "Powered by ApexGMB", mark: name.charAt(0).toUpperCase() || "O", logoUrl: b.logoUrl };
 }
 
 /** Brand for a request host, or null on the main host and unknown hosts. */

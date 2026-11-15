@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-import type { locationsHealthcheck } from "@opengmb/core";
+import type { locationsHealthcheck } from "@apexgmb/core";
 import { locations_healthcheck } from "../../app/_generated/actions";
 import { quickWins } from "../../lib/rank-tracking";
 import { ErrorText } from "../ui";

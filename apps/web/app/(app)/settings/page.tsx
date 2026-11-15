@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { roleHasPermission } from "@opengmb/core";
+import { roleHasPermission } from "@apexgmb/core";
 import { actorContextFor } from "../../../lib/auth";
 import { requireUser } from "../../../lib/guard";
 import { settingsHome } from "../../../lib/settings-nav";

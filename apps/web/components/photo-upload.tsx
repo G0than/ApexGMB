@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
-import { zonedWallToUtc } from "@opengmb/core/time";
+import { zonedWallToUtc } from "@apexgmb/core/time";
 import { failureLabel } from "../lib/failure-labels";
 import { locationLabel } from "../lib/locations";
 import {

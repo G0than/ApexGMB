@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createTranslator } from "next-intl";
 import { PAGES } from "../messages/pages";
-import { HOME_OWNER_MAX_LOCATIONS } from "@opengmb/core";
+import { HOME_OWNER_MAX_LOCATIONS } from "@apexgmb/core";
 import { COMFORTABLE_MAX_LOCATIONS } from "./preferences";
 import {
   homeHref, homeMode, inType, itemChip, itemLink, itemTitle, nextActions, parseHomeSearch, pillCount,
@@ -118,7 +118,7 @@ describe("home", () => {
     expect(itemChip(item({ kind: "proposal", subject: "proposal", expiresAt: "2026-10-19T09:11:00.000Z" }), NOW, t).text).toBe(
       "Claude via MCP · expires in 11 min",
     );
-    expect(itemTitle(item({ kind: "change", subject: "change", fields: ["regularHours"] }))).toBe("Hours changed outside OpenGMB");
+    expect(itemTitle(item({ kind: "change", subject: "change", fields: ["regularHours"] }))).toBe("Hours changed outside ApexGMB");
   });
 
   it("Do these next: reviews, approvals, changes, then a post nudge; at most 3", () => {

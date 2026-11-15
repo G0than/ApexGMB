@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { redirectClientHome } from "../../lib/client-home";
 import { getTranslations } from "next-intl/server";
-import { emailConfigured, isMockGoogleMode, roleHasPermission, type Role, integrationEnv } from "@opengmb/core";
+import { emailConfigured, isMockGoogleMode, roleHasPermission, type Role, integrationEnv } from "@apexgmb/core";
 import { actorContextFor } from "../../lib/auth";
 import { requireUser } from "../../lib/guard";
 import { resumePath } from "../../lib/sign-up-entry";

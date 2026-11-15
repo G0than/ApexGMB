@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { startOfZonedDay } from "@opengmb/core/time";
+import { startOfZonedDay } from "@apexgmb/core/time";
 import { reviewNotes_add, reviews_assign } from "../../app/_generated/actions";
 import { buttonClass, ErrorText, inputClass, secondaryButtonClass } from "../ui";
 

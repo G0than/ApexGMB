@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { and, eq } from "drizzle-orm";
 import { PgBoss } from "pg-boss";
-import { createDb, notifications, postEdits, posts } from "@opengmb/db";
+import { createDb, notifications, postEdits, posts } from "@apexgmb/db";
 import { GoogleApiError } from "./google/errors";
 import { MockGoogleClient } from "./google/mock-client";
 import { ReadOnlyGoogleClient } from "./google/read-only-client";

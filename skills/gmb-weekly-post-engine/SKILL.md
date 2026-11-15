@@ -20,7 +20,7 @@ Maintain an active, high-ranking Google Business Profile without spending hours 
 ## How to run:
 
 ```bash
-python3 /Users/lucifer/.gemini/antigravity/scratch/OpenGMB/skills/scripts/gmb_ai_runner.py posts \
+python3 /Users/lucifer/.gemini/antigravity/scratch/ApexGMB/skills/scripts/gmb_ai_runner.py posts \
   --business "Apex Media Studio" \
   --category "Photography Studio" \
   --city "New Delhi" \

@@ -4,7 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 import { buttonClass, secondaryButtonClass } from "../ui";
 
 // G6: a short tour for a brand-new account. "Seen" is a per-person convenience, so it lives in this browser only.
-const KEY = "opengmb.tour.done";
+const KEY = "apexgmb.tour.done";
 const STEPS = ["home", "reviews", "approvals", "plan"] as const;
 
 const listeners = new Set<() => void>();

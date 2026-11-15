@@ -3,7 +3,7 @@ import type { BetterAuthPlugin } from "better-auth";
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { magicLink } from "better-auth/plugins";
 import { eq } from "drizzle-orm";
-import { memberships, users, type Db } from "@opengmb/db";
+import { memberships, users, type Db } from "@apexgmb/db";
 import { loadBranding } from "./branding";
 import { emailFromForUser, originForUser } from "./custom-domains";
 import { emailConfigured, getEmailSender, renderBrandedEmail } from "./email";

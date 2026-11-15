@@ -28,7 +28,7 @@ describe("external effect classification", () => {
 
   it("the refusal says who must approve and where", () => {
     const m = personMustApproveMessage("proposal", "media.upload");
-    expect(m).toContain("A person must approve this in OpenGMB");
+    expect(m).toContain("A person must approve this in ApexGMB");
     expect(m).toContain("/agents");
     expect(personMustApproveMessage("approval", "posts.approve")).toContain("/approvals");
   });

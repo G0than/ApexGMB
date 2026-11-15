@@ -1,6 +1,6 @@
 import { afterAll, afterEach, describe, expect, it, vi } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, sessions, users } from "@opengmb/db";
+import { createDb, sessions, users } from "@apexgmb/db";
 import { createAuth } from "./auth";
 import { setEmailSender, type EmailMessage } from "./email";
 

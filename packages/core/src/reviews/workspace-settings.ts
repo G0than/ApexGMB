@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-import { workspaceReplySettings, workspaces, type Tx } from "@opengmb/db";
+import { workspaceReplySettings, workspaces, type Tx } from "@apexgmb/db";
 import type { PackId } from "../guardrails";
 import { autoApproveAllowed } from "../review-requests/identity";
 

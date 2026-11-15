@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { enumLabel, isMissingTimestamp } from "@/lib/labels";
-import type { verificationState } from "@opengmb/core";
+import type { verificationState } from "@apexgmb/core";
 import { getTimeFormat } from "../lib/time-format-server";
 import { h2Class, sectionClass } from "./profile/section";
 import { linkClass } from "./ui";

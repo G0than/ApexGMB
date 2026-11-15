@@ -1,5 +1,5 @@
 // Client-safe: only a type comes from core (erased at build), so the sidebar can import isActive.
-import type { Permission } from "@opengmb/core";
+import type { Permission } from "@apexgmb/core";
 import { settingsNavFor } from "./settings-nav";
 
 export type NavIconName =

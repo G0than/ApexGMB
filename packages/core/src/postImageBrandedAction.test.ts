@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { and, eq } from "drizzle-orm";
-import { auditLog, createDb, memberships, postImages, users } from "@opengmb/db";
+import { auditLog, createDb, memberships, postImages, users } from "@apexgmb/db";
 import { handleBrandedPreview } from "./postImages/branded-preview-request";
 import { createApiToken, verifyApiToken } from "./apiTokens";
 import { executeToolCall } from "./executor";

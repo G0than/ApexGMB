@@ -1,5 +1,5 @@
 import { and, eq, isNull, or } from "drizzle-orm";
-import { locations, memberships, type Tx } from "@opengmb/db";
+import { locations, memberships, type Tx } from "@apexgmb/db";
 import { roleHasPermission } from "./permissions";
 
 export const GOOGLE_NOTIFICATION_KINDS = {

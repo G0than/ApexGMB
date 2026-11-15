@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-import { orgDataforseoCredentials, type Tx } from "@opengmb/db";
+import { orgDataforseoCredentials, type Tx } from "@apexgmb/db";
 import type { Actor } from "../actor";
 import { encryptSecret } from "../crypto";
 import { CoreError } from "../errors";

@@ -1,5 +1,5 @@
 // Maps hard-coded Tailwind palette classes onto design tokens (lib/theme/tokens.ts) and checks
-// none come back. Usage: pnpm --filter @opengmb/web check:colors [--write]
+// none come back. Usage: pnpm --filter @apexgmb/web check:colors [--write]
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { replyTemplatesList, workspaceSettingsGet, workspacesList } from "@opengmb/core";
-import { roleHasPermission } from "@opengmb/core";
+import type { replyTemplatesList, workspaceSettingsGet, workspacesList } from "@apexgmb/core";
+import { roleHasPermission } from "@apexgmb/core";
 import { ChooseClient } from "../../../../components/choose-client";
 import { ReplyTemplatesManager } from "../../../../components/reply-templates-manager";
 import { SettingsShell } from "../../../../components/settings/settings-shell";

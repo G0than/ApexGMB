@@ -1,5 +1,5 @@
-import { customOriginFor, orgForHost } from "@opengmb/core";
-import type { Db } from "@opengmb/db";
+import { customOriginFor, orgForHost } from "@apexgmb/core";
+import type { Db } from "@apexgmb/db";
 import { requestHost } from "./request-host";
 
 /**

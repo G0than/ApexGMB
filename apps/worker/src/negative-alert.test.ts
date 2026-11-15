@@ -6,7 +6,7 @@ import {
   NEGATIVE_ALERT_MAX_AGE_DAYS,
   processReviewSync,
   recipientsForLocation,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import {
   auditLog,
   createDb,
@@ -19,7 +19,7 @@ import {
   reviews,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { renderDigest } from "./digest";
 import { processGoogleNotification } from "./google-notification";
 

@@ -1,7 +1,7 @@
 // apps/web/components/reviews/analytics-view.tsx
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { reviewsAnalytics, reviewsList } from "@opengmb/core";
+import type { reviewsAnalytics, reviewsList } from "@apexgmb/core";
 import { reviews_analytics, reviews_list } from "../../app/_generated/actions";
 import { chartLabel, headline, hoursShort, kpiCards, monthLabel, pct, resolvePeriod, scopeLabel, sparkPoints, starBars, stars, UNREPLIED_ALERT } from "../../lib/review-analytics";
 import type { Tr } from "../../lib/reviews-tools-t";

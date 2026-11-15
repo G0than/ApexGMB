@@ -1,6 +1,6 @@
 import { and, desc, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
-import { gridCompetitorSnapshots, gridConfigs, locations, reviews } from "@opengmb/db";
+import { gridCompetitorSnapshots, gridConfigs, locations, reviews } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope } from "../actor";
 import { defineAction } from "../registry";
 import { topCompetitors, velocityPer30Days } from "../reviews/competitor-benchmark";

@@ -1,6 +1,6 @@
 import { and, desc, eq } from "drizzle-orm";
 import { z } from "zod";
-import { locations, reviews, type Tx } from "@opengmb/db";
+import { locations, reviews, type Tx } from "@apexgmb/db";
 import { authorize, type Actor } from "../actor";
 import { CoreError } from "../errors";
 import { defineAction } from "../registry";

@@ -4,7 +4,7 @@ import {
   googleNotificationRegistrations,
   locations,
   type Db,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { GOOGLE_NOTIFICATIONS } from "../config/google-notifications";
 import { getIntegration } from "../integrations";
 import { enqueueJob } from "../jobs";

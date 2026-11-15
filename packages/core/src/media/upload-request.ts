@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 import { loadActor } from "../actor";
 import { MEDIA_LIMITS } from "../config/media-limits";
 import { CoreError } from "../errors";

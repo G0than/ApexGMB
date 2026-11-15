@@ -1,5 +1,5 @@
 import type { NextRequest } from "next/server";
-import { handleBrandedPreview } from "@opengmb/core";
+import { handleBrandedPreview } from "@apexgmb/core";
 import { getAuth, getDb, refuseWhileViewing } from "../../../../lib/auth";
 
 /** Branded image preview from the browser (JSON body). Returns the image, stores nothing. All checks are core's. */

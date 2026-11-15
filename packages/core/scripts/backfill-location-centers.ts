@@ -4,7 +4,7 @@
 // The worker's locations.center_resolve queue does the lookups (Google, Places if a key is set,
 // DataForSEO under the platform's daily cap, the rank tracker). Safe to run again. It prints the
 // database host first and queues nothing without --apply.
-import { createDb } from "@opengmb/db";
+import { createDb } from "@apexgmb/db";
 import { enqueueLocationCenterBackfill } from "../src/locations/center-backfill";
 
 const url = process.env.DATABASE_URL;

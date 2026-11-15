@@ -1,5 +1,5 @@
 import { and, desc, eq, inArray, isNull, or, sql } from "drizzle-orm";
-import { webhookDeliveries, webhookSubscriptions, workspaces, type Tx } from "@opengmb/db";
+import { webhookDeliveries, webhookSubscriptions, workspaces, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, type Actor } from "../actor";
 import {
   WEBHOOK_EVENTS,

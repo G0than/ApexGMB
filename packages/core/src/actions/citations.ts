@@ -1,7 +1,7 @@
 import { useAccountDaily } from "../limits/counters";
 import { and, asc, eq, sql } from "drizzle-orm";
 import { z } from "zod";
-import { citationCheckResult, citationEntries, citationStatus } from "@opengmb/db";
+import { citationCheckResult, citationEntries, citationStatus } from "@apexgmb/db";
 import { runChecks } from "../citations/check";
 import { CITATION_CHECK } from "../config/citation-check";
 import { CITATION_COUNTRIES, CITATION_SITES_VERIFIED_ON, citationCountryFor, citationSiteByKey, citationSitesFor } from "../config/citation-sites";

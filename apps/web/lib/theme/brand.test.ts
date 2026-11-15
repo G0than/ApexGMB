@@ -85,25 +85,25 @@ describe("brandTokens sweep", () => {
 });
 
 describe("shellBrand", () => {
-  it("shows OpenGMB by Synectus when the agency set no logo or colour", () => {
+  it("shows ApexGMB by Synectus when the agency set no logo or colour", () => {
     expect(
       shellBrand({ agencyName: "Synectus", logoUrl: null, primaryColor: null, accentColor: null }),
-    ).toEqual({ name: "OpenGMB", subline: "by Synectus", mark: "O", logoUrl: null });
+    ).toEqual({ name: "ApexGMB", subline: "by Synectus", mark: "O", logoUrl: null });
   });
 
   it("shows the agency once it set a colour", () => {
     expect(
       shellBrand({ agencyName: "Example Agency", logoUrl: null, primaryColor: "#1d4ed8", accentColor: null }),
-    ).toEqual({ name: "Example Agency", subline: "Powered by OpenGMB", mark: "E", logoUrl: null });
+    ).toEqual({ name: "Example Agency", subline: "Powered by ApexGMB", mark: "E", logoUrl: null });
   });
 
-  it("keeps OpenGMB when the agency only renamed itself", () => {
+  it("keeps ApexGMB when the agency only renamed itself", () => {
     expect(
       shellBrand({ agencyName: "Renamed Co", logoUrl: null, primaryColor: null, accentColor: null }).name,
-    ).toBe("OpenGMB");
+    ).toBe("ApexGMB");
   });
 
   it("handles missing branding", () => {
-    expect(shellBrand(null).name).toBe("OpenGMB");
+    expect(shellBrand(null).name).toBe("ApexGMB");
   });
 });

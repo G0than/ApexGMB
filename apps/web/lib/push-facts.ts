@@ -1,4 +1,4 @@
-import { getPushFacts } from "@opengmb/core";
+import { getPushFacts } from "@apexgmb/core";
 import { getDb } from "./auth";
 import type { PushFacts } from "./live-status";
 

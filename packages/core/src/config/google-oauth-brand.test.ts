@@ -30,6 +30,6 @@ describe("Google OAuth brand facts", () => {
   });
 
   it("the app name is the default unless GOOGLE_OAUTH_BRAND_APP_NAME is set", () => {
-    expect(GOOGLE_OAUTH_BRAND.appName.value).toBe(process.env.GOOGLE_OAUTH_BRAND_APP_NAME?.trim() || "OpenGMB");
+    expect(GOOGLE_OAUTH_BRAND.appName.value).toBe(process.env.GOOGLE_OAUTH_BRAND_APP_NAME?.trim() || "ApexGMB");
   });
 });

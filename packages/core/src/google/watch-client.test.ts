@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it, vi } from "vitest";
-import { createDb } from "@opengmb/db";
+import { createDb } from "@apexgmb/db";
 import { CoreError } from "../errors";
 import { GoogleApiError } from "./errors";
 import { LiveGoogleClient } from "./live-client";
@@ -239,7 +239,7 @@ describe("ThrottledGoogleClient: media and place action writes", () => {
     const spy = vi.spyOn(PostgresRateLimiter.prototype, "acquire");
     const org = (
       await db
-        .insert((await import("@opengmb/db")).organizations)
+        .insert((await import("@apexgmb/db")).organizations)
         .values({ name: `o-${Date.now()}` })
         .returning()
     )[0]!;

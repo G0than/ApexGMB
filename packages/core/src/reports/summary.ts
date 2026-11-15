@@ -1,6 +1,6 @@
 import { effectiveCapMicroUsd } from "../limits/ai-cap";
 import { aiEnabledForOrg } from "../ai/switch";
-import { aiUsage, type Db } from "@opengmb/db";
+import { aiUsage, type Db } from "@apexgmb/db";
 import { AccessError } from "../actor";
 import { aiEnv, aiIsOn, getAiModel } from "../ai/model";
 import { costMicroUsd, estimateMaxCostMicroUsd } from "../ai/money";

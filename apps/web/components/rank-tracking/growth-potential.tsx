@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { last30DaysRange, type performanceByLocation } from "@opengmb/core";
+import { last30DaysRange, type performanceByLocation } from "@apexgmb/core";
 import { performance_byLocation } from "../../app/_generated/actions";
 import { growthPotentialView, type GrowthPerformance } from "../../lib/growth-potential";
 import type { MapPoint } from "../../lib/rank-map";

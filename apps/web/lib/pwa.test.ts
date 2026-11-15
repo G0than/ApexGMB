@@ -9,10 +9,10 @@ const PUBLIC_DIR = path.resolve(__dirname, "../public");
 const sw = readFileSync(path.join(PUBLIC_DIR, "sw.js"), "utf8");
 
 describe("root layout metadata", () => {
-  it("names the app OpenGMB in the page title and the Apple home-screen title (read from the source: layout.tsx loads next/font)", () => {
+  it("names the app ApexGMB in the page title and the Apple home-screen title (read from the source: layout.tsx loads next/font)", () => {
     const src = readFileSync(path.resolve(__dirname, "../app/layout.tsx"), "utf8");
-    expect(src).toContain('title: "OpenGMB",');
-    expect(src).toContain('appleWebApp: { capable: true, title: "OpenGMB" }');
+    expect(src).toContain('title: "ApexGMB",');
+    expect(src).toContain('appleWebApp: { capable: true, title: "ApexGMB" }');
     expect(src).not.toContain("SynGMB");
   });
 });
@@ -20,8 +20,8 @@ describe("root layout metadata", () => {
 describe("web app manifest", () => {
   const m = manifest();
   it("is installable: name, start URL, standalone display, 192 and 512 PNG icons", () => {
-    expect(m.name).toBe("OpenGMB");
-    expect(m.short_name).toBe("OpenGMB");
+    expect(m.name).toBe("ApexGMB");
+    expect(m.short_name).toBe("ApexGMB");
     expect(m.start_url).toBe("/");
     expect(m.display).toBe("standalone");
     const icons = m.icons ?? [];

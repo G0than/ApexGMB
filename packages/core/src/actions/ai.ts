@@ -7,7 +7,7 @@ import {
   workspaceAiSettings,
   workspaces,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError, authorize, type Actor } from "../actor";
 import { AI_DEFAULTS } from "../config/ai-models";
 import { isPlatformAdmin } from "../config/platform-admin";

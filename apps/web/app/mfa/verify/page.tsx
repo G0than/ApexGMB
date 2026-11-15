@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { isCommunity } from "@opengmb/core";
+import { isCommunity } from "@apexgmb/core";
 import { MfaVerifyForm } from "../../../components/mfa-verify-form";
 import { AuthCard } from "../../../components/auth-card";
 

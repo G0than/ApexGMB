@@ -24,12 +24,12 @@ export async function workspaces_delete(input: unknown = {}) {
   return runAction("workspaces.delete", input);
 }
 
-/** Permanently delete one client (workspace) and everything OpenGMB stores for it: locations, reviews, replies, posts, profile history, media records, reports, templates and people's access, in one transaction. confirmName must equal the client's name exactly. Does NOT delete anything on Google (posts, replies, profile edits already published stay there), does not delete people's accounts or the agency's Google connection, and keeps the audit log (append-only; it is the proof of this erasure). Leaves one tombstone audit row with the client id and row counts, no personal data. Export first: this cannot be undone. Needs workspace:erase (owner only). */
+/** Permanently delete one client (workspace) and everything ApexGMB stores for it: locations, reviews, replies, posts, profile history, media records, reports, templates and people's access, in one transaction. confirmName must equal the client's name exactly. Does NOT delete anything on Google (posts, replies, profile edits already published stay there), does not delete people's accounts or the agency's Google connection, and keeps the audit log (append-only; it is the proof of this erasure). Leaves one tombstone audit row with the client id and row counts, no personal data. Export first: this cannot be undone. Needs workspace:erase (owner only). */
 export async function workspaces_erase_data(input: unknown = {}) {
   return runAction("workspaces.erase_data", input);
 }
 
-/** Export everything OpenGMB stores for one client (workspace) as one JSON document: locations, reviews, replies, assignments and notes, posts and edits, profile snapshots and changes, media records, reports, templates, people, and the audit rows about the client. Never includes secrets (Google tokens, API token hashes, passwords, two-factor secrets, one-time and share-link token hashes) or anything held only on Google. Refused above 1,000,000 rows. Each export is recorded in the audit log (counts only). Needs workspace:manage (owner, admin). */
+/** Export everything ApexGMB stores for one client (workspace) as one JSON document: locations, reviews, replies, assignments and notes, posts and edits, profile snapshots and changes, media records, reports, templates, people, and the audit rows about the client. Never includes secrets (Google tokens, API token hashes, passwords, two-factor secrets, one-time and share-link token hashes) or anything held only on Google. Refused above 1,000,000 rows. Each export is recorded in the audit log (counts only). Needs workspace:manage (owner, admin). */
 export async function workspaces_export_data(input: unknown = {}) {
   return runAction("workspaces.export_data", input);
 }
@@ -74,7 +74,7 @@ export async function apiTokens_list(input: unknown = {}) {
   return runAction("apiTokens.list", input);
 }
 
-/** Create an API token for the caller. The plaintext token is returned once and cannot be recovered. scopes: ["read"] makes a read-only token (cannot run any write tool; resources stay readable), ["read","write"] (the default) a read and write token; client_viewer tokens are always read-only. mode: "human_in_the_loop" (the default) makes a token that cannot approve, publish or apply proposals (a person does that in the app); "full_autonomy" lets it also apply changes that stay inside OpenGMB with the owner rights. In both modes anything that changes Google or reaches outside OpenGMB (replies, posts, profile edits, photos, review request sends, payments, public links) needs a person to approve it in the app. The mode is fixed at creation. Not available to callers authenticated by an API token. */
+/** Create an API token for the caller. The plaintext token is returned once and cannot be recovered. scopes: ["read"] makes a read-only token (cannot run any write tool; resources stay readable), ["read","write"] (the default) a read and write token; client_viewer tokens are always read-only. mode: "human_in_the_loop" (the default) makes a token that cannot approve, publish or apply proposals (a person does that in the app); "full_autonomy" lets it also apply changes that stay inside ApexGMB with the owner rights. In both modes anything that changes Google or reaches outside ApexGMB (replies, posts, profile edits, photos, review request sends, payments, public links) needs a person to approve it in the app. The mode is fixed at creation. Not available to callers authenticated by an API token. */
 export async function apiTokens_create(input: unknown = {}) {
   return runAction("apiTokens.create", input);
 }
@@ -124,7 +124,7 @@ export async function googleConnections_list(input: unknown = {}) {
   return runAction("googleConnections.list", input);
 }
 
-/** Start connecting a Google account. Returns an authUrl that must be opened in a browser where the SAME user is signed in to OpenGMB; it expires at expiresAt (10 minutes) and works once. The connection is created when Google redirects back to OpenGMB. */
+/** Start connecting a Google account. Returns an authUrl that must be opened in a browser where the SAME user is signed in to ApexGMB; it expires at expiresAt (10 minutes) and works once. The connection is created when Google redirects back to ApexGMB. */
 export async function googleConnections_connect(input: unknown = {}) {
   return runAction("googleConnections.connect", input);
 }
@@ -174,7 +174,7 @@ export async function locations_setStatus(input: unknown = {}) {
   return runAction("locations.setStatus", input);
 }
 
-/** Per-location counts from OpenGMB's own tables, no Google call: synced reviews (total, average star rating, unreplied = reviews that need you: no visible reply and none waiting for approval or publish, or a reply that is blocked or failed, with the workspace reply policy applied, any age; waitingToPublish = approved reply not yet on Google), open profile changes (the alerts the change watch raised: snapshot diffs and Google-suggested edits) and whether a suspension case is open or appealed. Same order as locations.list (by name). Filters: workspaceId, locationIds (up to 500). Inactive locations are included. Client roles only see their own workspaces; ids outside the caller's scope are left out. */
+/** Per-location counts from ApexGMB's own tables, no Google call: synced reviews (total, average star rating, unreplied = reviews that need you: no visible reply and none waiting for approval or publish, or a reply that is blocked or failed, with the workspace reply policy applied, any age; waitingToPublish = approved reply not yet on Google), open profile changes (the alerts the change watch raised: snapshot diffs and Google-suggested edits) and whether a suspension case is open or appealed. Same order as locations.list (by name). Filters: workspaceId, locationIds (up to 500). Inactive locations are included. Client roles only see their own workspaces; ids outside the caller's scope are left out. */
 export async function locations_stats(input: unknown = {}) {
   return runAction("locations.stats", input);
 }
@@ -324,7 +324,7 @@ export async function reviewRequests_recipients(input: unknown = {}) {
   return runAction("reviewRequests.recipients", input);
 }
 
-/** The public landing page of one location: whether it is published, its slug and its path (/l/<slug> on the app's address). The page is off until someone publishes it and shows only data OpenGMB already holds. page is null when it was never published. Read only. Needs location:read. */
+/** The public landing page of one location: whether it is published, its slug and its path (/l/<slug> on the app's address). The page is off until someone publishes it and shows only data ApexGMB already holds. page is null when it was never published. Read only. Needs location:read. */
 export async function locationPages_get(input: unknown = {}) {
   return runAction("locationPages.get", input);
 }
@@ -419,7 +419,7 @@ export async function workspaceSettings_get(input: unknown = {}) {
   return runAction("workspaceSettings.get", input);
 }
 
-/** Update a workspace's reply settings; only the fields you pass change. Changing profile first applies that profile's defaults (healthcare: hipaa pack on, skipPositiveReviews on, generic templates only; legal: legal_ethics pack on; general: none), then the other fields in the same call override them. packs may contain hipaa and legal_ethics (universal always runs); the profile's required pack cannot be removed. staffNames: up to 200 names of 2-80 characters. autoApproveMinStars: 4, 5 or null (off); autoPublish: publish automatically once approved. Turning automatic approval on is the client's express consent for OpenGMB to publish those replies, so it is per workspace, off by default, and the settings record who turned it on and when (autoApproveEnabledBy, autoApproveEnabledAt). An API token cannot apply this change: a person approves it in OpenGMB. h2Severity: block (default) or warn, for all HIPAA H2.* rules together (reviewer/provider/staff names, clinical terms, dates, echoed review text); only has an effect while the hipaa pack is on, and warnings still need acknowledgeWarnings. draftOnArrival: draft an AI reply automatically for each new review the sync finds (off by default; the draft goes through the same approval rules as a manual one; counts as AI use; the drafts are made as the person who switched it on). 1-3 star replies are always manual and never auto-published. Needs review:configure (owner, admin). */
+/** Update a workspace's reply settings; only the fields you pass change. Changing profile first applies that profile's defaults (healthcare: hipaa pack on, skipPositiveReviews on, generic templates only; legal: legal_ethics pack on; general: none), then the other fields in the same call override them. packs may contain hipaa and legal_ethics (universal always runs); the profile's required pack cannot be removed. staffNames: up to 200 names of 2-80 characters. autoApproveMinStars: 4, 5 or null (off); autoPublish: publish automatically once approved. Turning automatic approval on is the client's express consent for ApexGMB to publish those replies, so it is per workspace, off by default, and the settings record who turned it on and when (autoApproveEnabledBy, autoApproveEnabledAt). An API token cannot apply this change: a person approves it in ApexGMB. h2Severity: block (default) or warn, for all HIPAA H2.* rules together (reviewer/provider/staff names, clinical terms, dates, echoed review text); only has an effect while the hipaa pack is on, and warnings still need acknowledgeWarnings. draftOnArrival: draft an AI reply automatically for each new review the sync finds (off by default; the draft goes through the same approval rules as a manual one; counts as AI use; the drafts are made as the person who switched it on). 1-3 star replies are always manual and never auto-published. Needs review:configure (owner, admin). */
 export async function workspaceSettings_update(input: unknown = {}) {
   return runAction("workspaceSettings.update", input);
 }
@@ -519,7 +519,7 @@ export async function posts_check(input: unknown = {}) {
   return runAction("posts.check", input);
 }
 
-/** Posts the caller can see, newest first. Filters: workspaceId, status, topicType, q (case-insensitive text in the summary), locationId (posts that target it), from (inclusive) and to (exclusive) ISO datetimes applied to the scheduled time (or the creation time when unscheduled). sort oldest_submitted lists the earliest submission first (unsubmitted last) instead of newest first. limit 1-100 (default 50). Each post carries its per-location targets. Use status pending_approval for the approval queue. googleOnly lists posts that are live on Google but were made outside OpenGMB (same filters, except status: only with no status or published); an OpenGMB post that is also on Google appears in posts only. */
+/** Posts the caller can see, newest first. Filters: workspaceId, status, topicType, q (case-insensitive text in the summary), locationId (posts that target it), from (inclusive) and to (exclusive) ISO datetimes applied to the scheduled time (or the creation time when unscheduled). sort oldest_submitted lists the earliest submission first (unsubmitted last) instead of newest first. limit 1-100 (default 50). Each post carries its per-location targets. Use status pending_approval for the approval queue. googleOnly lists posts that are live on Google but were made outside ApexGMB (same filters, except status: only with no status or published); an ApexGMB post that is also on Google appears in posts only. */
 export async function posts_list(input: unknown = {}) {
   return runAction("posts.list", input);
 }
@@ -529,7 +529,7 @@ export async function posts_googleList(input: unknown = {}) {
   return runAction("posts.googleList", input);
 }
 
-/** Refresh OpenGMB's copy of one location's Google posts now, so All posts, the Calendar, Home, Performance and the Overview include posts made outside OpenGMB without waiting for the review sync (every 2 hours). Reads the posts from Google and stores them (a cache: Google is not changed, nothing is audited). Returns how many Google listed (fetched), how many stored copies of posts no longer on Google were dropped (removed), and truncated when Google had more pages than we read. Calls Google, so it runs outside any database transaction. */
+/** Refresh ApexGMB's copy of one location's Google posts now, so All posts, the Calendar, Home, Performance and the Overview include posts made outside ApexGMB without waiting for the review sync (every 2 hours). Reads the posts from Google and stores them (a cache: Google is not changed, nothing is audited). Returns how many Google listed (fetched), how many stored copies of posts no longer on Google were dropped (removed), and truncated when Google had more pages than we read. Calls Google, so it runs outside any database transaction. */
 export async function posts_syncGoogle(input: unknown = {}) {
   return runAction("posts.syncGoogle", input);
 }
@@ -539,7 +539,7 @@ export async function posts_get(input: unknown = {}) {
   return runAction("posts.get", input);
 }
 
-/** Calendar entries between from (inclusive) and to (exclusive), at most 366 days apart: scheduled sends, projected future occurrences of recurring posts (expanded only inside the window, respecting until/count), and past sends (published, failed or skipped, grouped per post and occurrence with per-status location counts), plus posts made outside OpenGMB that are live on Google (kind google, on their Google date). Optional workspaceId, and optional locationIds (up to 500) or groupId to keep only entries that touch those locations. Entry times are ISO instants. truncated is true if the entry cap (1000) was hit. */
+/** Calendar entries between from (inclusive) and to (exclusive), at most 366 days apart: scheduled sends, projected future occurrences of recurring posts (expanded only inside the window, respecting until/count), and past sends (published, failed or skipped, grouped per post and occurrence with per-status location counts), plus posts made outside ApexGMB that are live on Google (kind google, on their Google date). Optional workspaceId, and optional locationIds (up to 500) or groupId to keep only entries that touch those locations. Entry times are ISO instants. truncated is true if the entry cap (1000) was hit. */
 export async function posts_calendar(input: unknown = {}) {
   return runAction("posts.calendar", input);
 }
@@ -594,7 +594,7 @@ export async function posts_deletePublished(input: unknown = {}) {
   return runAction("posts.deletePublished", input);
 }
 
-/** Propose a change to a post that is already published on Google (post status published). Nothing is sent to Google until a person with approval rights approves it (posts.approveEdit); then the worker patches the live post at each location with Google's localPosts.patch, naming only the changed fields in the updateMask. Send only the fields to change: summary, cta, event, offer, media (a null or empty field is cleared on Google). The topic type and language cannot change; a different type is a new post. The guardrails run now for every location the post is live at (a block-severity violation stores nothing and returns outcome blocked; warnings need acknowledgeWarnings) and again per location right before the patch. One open edit per post. CONFLICT if the post is not published, has no live Google post, or already has an open edit. Posts made on Google outside OpenGMB cannot be edited here. Google writes stay off unless GOOGLE_BUSINESS_WRITES is live: the edit then fails per location with google_writes_disabled. */
+/** Propose a change to a post that is already published on Google (post status published). Nothing is sent to Google until a person with approval rights approves it (posts.approveEdit); then the worker patches the live post at each location with Google's localPosts.patch, naming only the changed fields in the updateMask. Send only the fields to change: summary, cta, event, offer, media (a null or empty field is cleared on Google). The topic type and language cannot change; a different type is a new post. The guardrails run now for every location the post is live at (a block-severity violation stores nothing and returns outcome blocked; warnings need acknowledgeWarnings) and again per location right before the patch. One open edit per post. CONFLICT if the post is not published, has no live Google post, or already has an open edit. Posts made on Google outside ApexGMB cannot be edited here. Google writes stay off unless GOOGLE_BUSINESS_WRITES is live: the edit then fails per location with google_writes_disabled. */
 export async function posts_proposeEdit(input: unknown = {}) {
   return runAction("posts.proposeEdit", input);
 }
@@ -819,7 +819,7 @@ export async function reports_download(input: unknown = {}) {
   return runAction("reports.download", input);
 }
 
-/** Create a public share link for a finished report: anyone with the URL can download the PDF without logging in until it expires (expiresInDays 1-30, default 7) or is revoked. The link shows performance numbers that Google does not show publicly, so create it only if the business has agreed: businessAgreed must be true. Search engines are told not to index it. The URL is returned ONCE and cannot be recovered; only its hash is stored. Every access is audited. An API token cannot apply this: a person approves it in OpenGMB. Needs report:manage. */
+/** Create a public share link for a finished report: anyone with the URL can download the PDF without logging in until it expires (expiresInDays 1-30, default 7) or is revoked. The link shows performance numbers that Google does not show publicly, so create it only if the business has agreed: businessAgreed must be true. Search engines are told not to index it. The URL is returned ONCE and cannot be recovered; only its hash is stored. Every access is audited. An API token cannot apply this: a person approves it in ApexGMB. Needs report:manage. */
 export async function reports_share(input: unknown = {}) {
   return runAction("reports.share", input);
 }
@@ -914,7 +914,7 @@ export async function members_remove(input: unknown = {}) {
   return runAction("members.remove", input);
 }
 
-/** Reset a member's two-factor authentication (owner only; never your own; not available to API tokens). Deletes their authenticator secret and backup codes and signs them out everywhere. Until they set up a new authenticator app at their next sign-in, their password (or Google) alone signs them in, and they cannot use OpenGMB until they do. CONFLICT when the member has not set up two-factor or also belongs to another organization. */
+/** Reset a member's two-factor authentication (owner only; never your own; not available to API tokens). Deletes their authenticator secret and backup codes and signs them out everywhere. Until they set up a new authenticator app at their next sign-in, their password (or Google) alone signs them in, and they cannot use ApexGMB until they do. CONFLICT when the member has not set up two-factor or also belongs to another organization. */
 export async function members_resetTwoFactor(input: unknown = {}) {
   return runAction("members.resetTwoFactor", input);
 }
@@ -989,7 +989,7 @@ export async function storage_usage(input: unknown = {}) {
   return runAction("storage.usage", input);
 }
 
-/** Profile changes found by the change watch, newest first: nightly snapshot diffs (someone edited the profile outside OpenGMB) and Google-suggested edits (GOOGLE_UPDATE push; googleSuggested true, `before` is the merchant value, `after` what Google shows). Without locationId it covers every location in the caller's scope (the org-wide alerts inbox). Filters: workspaceId, locationId, groupId, status (open, accepted, reverted, dismissed), googleSuggested, fields (profile field names such as regularHours or websiteUri; a change matches when it touches any of them). total counts every match, past the limit. Each change has fieldPaths, before/after values of those fields, status and can.{accept,revert,dismiss}. limit 1-200 (default 100). Each change also names who resolved it (resolvedByName) and, for a revert, where its change set was drafted (revertChangeSetSurface: ui, or mcp for an agent). */
+/** Profile changes found by the change watch, newest first: nightly snapshot diffs (someone edited the profile outside ApexGMB) and Google-suggested edits (GOOGLE_UPDATE push; googleSuggested true, `before` is the merchant value, `after` what Google shows). Without locationId it covers every location in the caller's scope (the org-wide alerts inbox). Filters: workspaceId, locationId, groupId, status (open, accepted, reverted, dismissed), googleSuggested, fields (profile field names such as regularHours or websiteUri; a change matches when it touches any of them). total counts every match, past the limit. Each change has fieldPaths, before/after values of those fields, status and can.{accept,revert,dismiss}. limit 1-200 (default 100). Each change also names who resolved it (resolvedByName) and, for a revert, where its change set was drafted (revertChangeSetSurface: ui, or mcp for an agent). */
 export async function profile_changes_list(input: unknown = {}) {
   return runAction("profile.changes.list", input);
 }
@@ -1024,7 +1024,7 @@ export async function media_list(input: unknown = {}) {
   return runAction("media.list", input);
 }
 
-/** Add a photo to a location from a public https image URL (JPG or PNG; to send the file itself use media.upload) in a category: COVER (the cover photo, one per location), PROFILE (the logo, one per location; LOGO is a deprecated alias and is not accepted), EXTERIOR, INTERIOR, PRODUCT, AT_WORK, FOOD_AND_DRINK, MENU, COMMON_AREA, ROOMS, TEAMS or ADDITIONAL. Setting the cover or logo is simply adding with category COVER or PROFILE; Google replaces the previous one. Asynchronous: records the operation and queues a worker job (returns status pending); nothing is sent to Google inside this call and the URL is never fetched by OpenGMB. Poll media.list for the outcome. Needs profile:edit. */
+/** Add a photo to a location from a public https image URL (JPG or PNG; to send the file itself use media.upload) in a category: COVER (the cover photo, one per location), PROFILE (the logo, one per location; LOGO is a deprecated alias and is not accepted), EXTERIOR, INTERIOR, PRODUCT, AT_WORK, FOOD_AND_DRINK, MENU, COMMON_AREA, ROOMS, TEAMS or ADDITIONAL. Setting the cover or logo is simply adding with category COVER or PROFILE; Google replaces the previous one. Asynchronous: records the operation and queues a worker job (returns status pending); nothing is sent to Google inside this call and the URL is never fetched by ApexGMB. Poll media.list for the outcome. Needs profile:edit. */
 export async function media_add(input: unknown = {}) {
   return runAction("media.add", input);
 }
@@ -1059,7 +1059,7 @@ export async function media_customer_list(input: unknown = {}) {
   return runAction("media.customer.list", input);
 }
 
-/** A location's verification state live from Google (outside any transaction): Voice of Merchant (hasVoiceOfMerchant = in good standing and in control of the listing; hasBusinessAuthority = ownership), which action Google wants next (standing: good_standing, wait_for_review, verify, comply_with_guidelines = fix guideline problems, resolve_ownership_conflict = duplicate of a location in good standing, unknown) with the recommendation reason, and the location's verification attempts (method, PENDING / COMPLETED / FAILED). Read only: OpenGMB starts no verification and submits no appeal; those are manual. */
+/** A location's verification state live from Google (outside any transaction): Voice of Merchant (hasVoiceOfMerchant = in good standing and in control of the listing; hasBusinessAuthority = ownership), which action Google wants next (standing: good_standing, wait_for_review, verify, comply_with_guidelines = fix guideline problems, resolve_ownership_conflict = duplicate of a location in good standing, unknown) with the recommendation reason, and the location's verification attempts (method, PENDING / COMPLETED / FAILED). Read only: ApexGMB starts no verification and submits no appeal; those are manual. */
 export async function verification_state(input: unknown = {}) {
   return runAction("verification.state", input);
 }
@@ -1109,7 +1109,7 @@ export async function foodMenus_update(input: unknown = {}) {
   return runAction("foodMenus.update", input);
 }
 
-/** Who manages a location on Google, read live (Account Management API locations.admins.list, outside any transaction). Each manager has a display name (an invited person who has not accepted yet shows the invited email), a role (PRIMARY_OWNER, OWNER, MANAGER, SITE_MANAGER; anything else is returned as OTHER) and pendingInvitation. Read only: OpenGMB does not invite, change or remove managers. Spends a Google call, so call it only when the list is wanted. Whether Google includes managers inherited from the account is not documented. */
+/** Who manages a location on Google, read live (Account Management API locations.admins.list, outside any transaction). Each manager has a display name (an invited person who has not accepted yet shows the invited email), a role (PRIMARY_OWNER, OWNER, MANAGER, SITE_MANAGER; anything else is returned as OTHER) and pendingInvitation. Read only: ApexGMB does not invite, change or remove managers. Spends a Google call, so call it only when the list is wanted. Whether Google includes managers inherited from the account is not documented. */
 export async function locationManagers_list(input: unknown = {}) {
   return runAction("locationManagers.list", input);
 }
@@ -1129,7 +1129,7 @@ export async function locations_healthcheckSkip(input: unknown = {}) {
   return runAction("locations.healthcheckSkip", input);
 }
 
-/** One location's front page: its header facts (workspace, address, status, needsRelink), review/alert/suspension counts (as locations.stats), the last post OpenGMB published, change sets waiting for approval or apply that target it, the open suspension case with evidence progress, sync state, the 5 most recent events (changes found, change sets proposed, posts and replies published) and, for an active Google-linked location, one pass of the healthcheck's Google reads (about 7 calls, outside any transaction) giving the live health score, verification standing, primary category, today's hours and whether it is open now (both read in the workspace's time zone), phone, website, photos and booking links. Each Google part is null when its read failed; google is null for inactive or unlinked locations. Read only. */
+/** One location's front page: its header facts (workspace, address, status, needsRelink), review/alert/suspension counts (as locations.stats), the last post ApexGMB published, change sets waiting for approval or apply that target it, the open suspension case with evidence progress, sync state, the 5 most recent events (changes found, change sets proposed, posts and replies published) and, for an active Google-linked location, one pass of the healthcheck's Google reads (about 7 calls, outside any transaction) giving the live health score, verification standing, primary category, today's hours and whether it is open now (both read in the workspace's time zone), phone, website, photos and booking links. Each Google part is null when its read failed; google is null for inactive or unlinked locations. Read only. */
 export async function locations_overview(input: unknown = {}) {
   return runAction("locations.overview", input);
 }

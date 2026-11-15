@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { Tx } from "@opengmb/db";
+import type { Tx } from "@apexgmb/db";
 import { AccessError, type Actor } from "../actor";
 import { AI_DEFAULTS } from "../config/ai-models";
 import { POST_MAX_CHARS } from "../config/post-limits";

@@ -1,6 +1,6 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { and, eq } from "drizzle-orm";
-import { auditLog, reviews } from "@opengmb/db";
+import { auditLog, reviews } from "@apexgmb/db";
 import { executeAction } from "./executor";
 import { codeOf, db, makeOrg, sql, uniq } from "./performance-fixture";
 

@@ -1,6 +1,6 @@
 import { and, asc, eq } from "drizzle-orm";
 import { z } from "zod";
-import { locations, replyTemplates, workspaces, type Tx } from "@opengmb/db";
+import { locations, replyTemplates, workspaces, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, type Actor } from "../actor";
 import { REPLY_MAX_BYTES } from "../config/google-limits";
 import { CoreError } from "../errors";

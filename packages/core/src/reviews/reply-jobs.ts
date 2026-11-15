@@ -1,5 +1,5 @@
 import { and, desc, eq, ne } from "drizzle-orm";
-import { googleConnections, locations, reviewReplies, reviews, type Db, type Tx } from "@opengmb/db";
+import { googleConnections, locations, reviewReplies, reviews, type Db, type Tx } from "@apexgmb/db";
 import {
   GoogleApiError,
   GoogleRateLimitError,

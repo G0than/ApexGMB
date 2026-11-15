@@ -1,7 +1,7 @@
 import { afterAll, describe, expect, it, vi } from "vitest";
 import { z } from "zod";
 import { eq } from "drizzle-orm";
-import { createDb, locationDataAccess, workspaces } from "@opengmb/db";
+import { createDb, locationDataAccess, workspaces } from "@apexgmb/db";
 import { READ_ONLY_REFUSED_READS, ReadOnlyViewError, READ_ONLY_VIEW_MESSAGE, authorizeAction, viewAsActor } from "./actor";
 import { actions } from "./actions";
 import { runAssistantTurn } from "./ai/assistant";

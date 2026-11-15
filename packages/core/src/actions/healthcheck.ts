@@ -1,6 +1,6 @@
 import { and, asc, eq, gte, inArray, isNotNull, ne, sql } from "drizzle-orm";
 import { z } from "zod";
-import { healthcheckSkips, locations, reviews, searchKeywordsMonthly, users, type Db } from "@opengmb/db";
+import { healthcheckSkips, locations, reviews, searchKeywordsMonthly, users, type Db } from "@apexgmb/db";
 import { authorize } from "../actor";
 import { narrowTo } from "../approval-queue";
 import { HEALTHCHECK_CONFIG as CFG } from "../config/healthcheck";

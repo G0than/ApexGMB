@@ -1,7 +1,7 @@
 import { PRIVATE_EXTERNAL_EFFECT_ACTIONS, PRIVATE_INTERNAL_ACTIONS } from "./external-effects-private";
 
 /**
- * Which write actions have a side effect outside OpenGMB, decided 2026-10-25 from the legal review
+ * Which write actions have a side effect outside ApexGMB, decided 2026-10-25 from the legal review
  * (Q33d, Google Business Profile policy "Automated use"): Google wants end users to sign in and a
  * person to be behind every write to Google. Anything that changes Google, sends an email or
  * message, moves money, or publishes a link or consent that reaches third parties is EXTERNAL.
@@ -45,7 +45,7 @@ export const EXTERNAL_EFFECT_ACTIONS: ReadonlySet<string> = new Set([
   "workspaceSettings.update",
 ]);
 
-/** Write actions that stay inside OpenGMB. A new write action must be added to one of the two sets. */
+/** Write actions that stay inside ApexGMB. A new write action must be added to one of the two sets. */
 export const INTERNAL_ACTIONS: ReadonlySet<string> = new Set([
   ...PRIVATE_INTERNAL_ACTIONS,
   "workspaces.setHipaa",
@@ -160,7 +160,7 @@ export const INTERNAL_ACTIONS: ReadonlySet<string> = new Set([
 export const isExternalEffect = (actionName: string): boolean => EXTERNAL_EFFECT_ACTIONS.has(actionName);
 
 /** The message an agent gets when it tries to apply or run an external action. */
-export const PERSON_MUST_APPROVE = "A person must approve this in OpenGMB";
+export const PERSON_MUST_APPROVE = "A person must approve this in ApexGMB";
 
 /** Where the person approves: proposals under /agents, everything else under /approvals. */
 export function approvalLink(kind: "proposal" | "approval", baseUrl = process.env.BETTER_AUTH_URL ?? ""): string {
@@ -168,5 +168,5 @@ export function approvalLink(kind: "proposal" | "approval", baseUrl = process.en
 }
 
 export function personMustApproveMessage(kind: "proposal" | "approval", actionName: string): string {
-  return `${PERSON_MUST_APPROVE}: ${actionName} changes something outside OpenGMB. Open ${approvalLink(kind)} and approve it there. Leave it pending; an API token cannot apply it, in any token mode.`;
+  return `${PERSON_MUST_APPROVE}: ${actionName} changes something outside ApexGMB. Open ${approvalLink(kind)} and approve it there. Leave it pending; an API token cannot apply it, in any token mode.`;
 }

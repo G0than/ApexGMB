@@ -4,8 +4,8 @@ import {
   resolveRevokeTarget,
   revokeApiTokenAsCli,
   type ActiveTokenMatch,
-} from "@opengmb/core";
-import { createDb } from "@opengmb/db";
+} from "@apexgmb/core";
+import { createDb } from "@apexgmb/db";
 
 const usage = "usage: pnpm token:revoke <name> [--email <owner email>] [--id <token uuid>]";
 const { values, positionals } = parseArgs({

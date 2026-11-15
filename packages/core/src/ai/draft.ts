@@ -1,6 +1,6 @@
 import { effectiveCapMicroUsd } from "../limits/ai-cap";
 import { z } from "zod";
-import { aiUsage, type Tx } from "@opengmb/db";
+import { aiUsage, type Tx } from "@apexgmb/db";
 import { assertCredit, debit, withMarkupMicro } from "../billing";
 import { AccessError, type Actor } from "../actor";
 import { AI_DEFAULTS } from "../config/ai-models";

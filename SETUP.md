@@ -1,6 +1,6 @@
-# Self-hosting OpenGMB
+# Self-hosting ApexGMB
 
-This runs the community edition of OpenGMB (Postgres, web app, MCP server and worker) on one machine with Docker Compose. You use your own Google Cloud project, your own email domain and your own API keys. Everything lives in `deploy/selfhost/`.
+This runs the community edition of ApexGMB (Postgres, web app, MCP server and worker) on one machine with Docker Compose. You use your own Google Cloud project, your own email domain and your own API keys. Everything lives in `deploy/selfhost/`.
 
 One owner login manages as many clients and locations as you like. There is no sign-up page and no billing. You set the owner's email and password in the env file.
 
@@ -35,7 +35,7 @@ Set `WEB_URL` to the public URL of the web app (no trailing slash) and `WORKER_P
 
 Set the owner login:
 
-- `OWNER_EMAIL` and `OWNER_PASSWORD` (8 to 128 characters). On the first start, when the database has no organization, OpenGMB creates the organization and this owner. Change the password in the app after you sign in. From then on the password in the file is ignored.
+- `OWNER_EMAIL` and `OWNER_PASSWORD` (8 to 128 characters). On the first start, when the database has no organization, ApexGMB creates the organization and this owner. Change the password in the app after you sign in. From then on the password in the file is ignored.
 - `OWNER_ORG_NAME` (optional) names the first organization. It starts as "My agency".
 
 After you change `.env`, apply it with `docker compose up -d` (it recreates the containers whose settings changed). `docker compose restart` does not work for this: it restarts the old containers with the old environment.
@@ -47,7 +47,7 @@ Your own API keys go in the same file. Each feature stays off until its key is s
 - `PIXABAY_API_KEY` for stock photos on posts, and `OPENAI_API_KEY` for AI-generated post images.
 - `RESEND_API_KEY` and `EMAIL_FROM` for email (step 4).
 
-You pay each of these providers directly. OpenGMB adds no charge and has no credits.
+You pay each of these providers directly. ApexGMB adds no charge and has no credits.
 
 ## 3. Google Cloud project, OAuth client and Business Profile API
 
@@ -74,7 +74,7 @@ With the three settings empty the webhook answers 503 and nothing else breaks.
 
 1. In Resend, add and verify your sending domain (add the DNS records Resend shows: SPF, DKIM).
 2. Create an API key and set `RESEND_API_KEY`.
-3. Set `EMAIL_FROM` to an address on that domain, for example `"OpenGMB <notifications@your-domain.com>"`.
+3. Set `EMAIL_FROM` to an address on that domain, for example `"ApexGMB <notifications@your-domain.com>"`.
 
 With `RESEND_API_KEY` empty the daily notification digest is skipped (logged, nothing sent).
 
@@ -146,7 +146,7 @@ Installed browsers can get an alert when a new review arrives or something waits
 
 1. Generate a VAPID key pair once: `npx web-push generate-vapid-keys --json`.
 2. Put the values in `.env`: `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, and `VAPID_SUBJECT` set to `mailto:you@your-domain.com`.
-3. Restart the stack. Open Settings, Notifications, and press "Turn on alerts on this device". On an iPhone, add OpenGMB to the Home Screen first (Share, Add to Home Screen) and open it from there.
+3. Restart the stack. Open Settings, Notifications, and press "Turn on alerts on this device". On an iPhone, add ApexGMB to the Home Screen first (Share, Add to Home Screen) and open it from there.
 
 Keep the key pair. Changing it later silently stops every device that subscribed with the old one.
 

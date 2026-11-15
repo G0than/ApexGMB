@@ -1,4 +1,4 @@
-import { PROFILE_BATCH_MAX_LOCATIONS } from "@opengmb/core";
+import { PROFILE_BATCH_MAX_LOCATIONS } from "@apexgmb/core";
 import { describe, expect, it } from "vitest";
 import { makeTimeFormat } from "./time-format";
 import {

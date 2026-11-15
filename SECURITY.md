@@ -5,7 +5,7 @@
 Please report security problems privately. Do not open a public issue.
 
 - Use GitHub's private vulnerability reporting: open the **Security** tab of this repository and choose **Report a vulnerability**.
-- Or email info@synectus.com with "OpenGMB security" in the subject.
+- Or email https://github.com/G0than/ApexGMB/issues with "ApexGMB security" in the subject.
 
 Include what you found, the steps to reproduce it, the version or commit, and the impact you see. Do not include other people's personal data. If you must show data, use mock mode.
 
@@ -22,7 +22,7 @@ If you make a good-faith effort to follow this policy, we consider your research
 
 ## Rules
 
-Test only with a copy of OpenGMB that you run yourself. Do not access, change or keep other people's data beyond the minimum needed to show the issue; if you reach personal data, stop, tell us, and delete it. No denial-of-service, social engineering, physical testing, or sending email through the review-request features. Give us 90 days to fix an issue before you publish it.
+Test only with a copy of ApexGMB that you run yourself. Do not access, change or keep other people's data beyond the minimum needed to show the issue; if you reach personal data, stop, tell us, and delete it. No denial-of-service, social engineering, physical testing, or sending email through the review-request features. Give us 90 days to fix an issue before you publish it.
 
 ## In scope
 
@@ -36,6 +36,6 @@ Test only with a copy of OpenGMB that you run yourself. Do not access, change or
 - Problems in a third-party service such as Google, Resend or DataForSEO. Report those to the vendor.
 - Your own server setup, such as a missing reverse proxy or an exposed database port.
 
-## Running OpenGMB yourself
+## Running ApexGMB yourself
 
 Keep your `.env` secret, put a TLS reverse proxy in front of it, keep the database private, use a strong owner password and update when we publish a fix.

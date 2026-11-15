@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, memberships, users, workspaceReplySettings, workspaces } from "@opengmb/db";
+import { createDb, memberships, users, workspaceReplySettings, workspaces } from "@apexgmb/db";
 import { MockGoogleClient } from "./google/mock-client";
 import { codeOf, makeKit, uniq, type Org } from "./testkit";
 

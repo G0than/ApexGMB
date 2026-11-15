@@ -1,5 +1,5 @@
 import { and, eq, inArray } from "drizzle-orm";
-import { pushSubscriptions, type Db, type Tx } from "@opengmb/db";
+import { pushSubscriptions, type Db, type Tx } from "@apexgmb/db";
 import { integrationEnv } from "./integrations";
 import { GOOGLE_NOTIFICATION_KINDS } from "./notifications";
 

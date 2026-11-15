@@ -20,7 +20,7 @@ import {
   workspaceReplySettings,
   workspaces,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { workspaceScope, type Actor } from "./actor";
 import {
   approvalTotals,
@@ -369,7 +369,7 @@ export async function changeItems(tx: Tx, actor: Actor, scope: Scope, ws: string
     at: r.detectedAt.toISOString(),
     title: r.googleSuggested
       ? `Google suggests a change to ${r.fieldPaths.join(", ")}`
-      : `${r.fieldPaths.join(", ")} changed outside OpenGMB`,
+      : `${r.fieldPaths.join(", ")} changed outside ApexGMB`,
     fields: r.fieldPaths,
     googleSuggested: r.googleSuggested,
   }));

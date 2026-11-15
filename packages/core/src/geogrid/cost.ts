@@ -1,5 +1,5 @@
 import { and, eq, gte, lt, sql } from "drizzle-orm";
-import { aiVisibilityRuns, competitorProfileTasks, gridRuns, orgGridSettings, platformDfsSpend, type Db, type Tx } from "@opengmb/db";
+import { aiVisibilityRuns, competitorProfileTasks, gridRuns, orgGridSettings, platformDfsSpend, type Db, type Tx } from "@apexgmb/db";
 import { meteredMarkupPercent } from "../billing";
 import { platformLimit } from "../limits/platform-limits";
 import { DEFAULT_GRID_SPEED, GEOGRID_DEFAULTS, taskPriceUsd, type GEOGRID_PRICING, type GridSpeed } from "../config/geogrid";

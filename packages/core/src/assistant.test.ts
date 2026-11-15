@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { and, eq } from "drizzle-orm";
-import { aiUsage, apiTokens, auditLog, createDb, mcpProposals, reviewReplies, reviews } from "@opengmb/db";
+import { aiUsage, apiTokens, auditLog, createDb, mcpProposals, reviewReplies, reviews } from "@apexgmb/db";
 import { MockGoogleClient } from "./google/mock-client";
 import { codeOf, makeKit, uniq, type Org } from "./testkit";
 import { setAiTestOverrides } from "./ai/model";
@@ -208,8 +208,8 @@ describe("Done when: draft replies for this week's unreplied reviews", () => {
     expect(t).toHaveLength(1);
   });
 
-  it("keeps using a hidden token created under the old name, and names new ones Ask OpenGMB assistant", async () => {
-    expect(ASSISTANT.tokenName).toBe("Ask OpenGMB assistant");
+  it("keeps using a hidden token created under the old name, and names new ones Ask ApexGMB assistant", async () => {
+    expect(ASSISTANT.tokenName).toBe("Ask ApexGMB assistant");
     expect(ASSISTANT.legacyTokenNames).toEqual(["Ask SynGMB assistant"]);
     const other = await kit.makeOrg();
     const otherLoc = await other.mkLoc(other.a);

@@ -5,7 +5,7 @@
 export async function register() {
   if (process.env.NEXT_RUNTIME !== "nodejs") return;
   if (process.env.NEXT_PHASE === "phase-production-build") return;
-  const { reportStartupConfig, MONITORING, checkWorker, startIntegrations, bootstrapOwner, isCommunity } = await import("@opengmb/core");
+  const { reportStartupConfig, MONITORING, checkWorker, startIntegrations, bootstrapOwner, isCommunity } = await import("@apexgmb/core");
   reportStartupConfig("web");
 
   // Self-hosted first start: create the organization and owner from OWNER_EMAIL / OWNER_PASSWORD (the
@@ -49,7 +49,7 @@ export async function register() {
 export async function onRequestError(err: unknown) {
   if (process.env.NEXT_RUNTIME !== "nodejs") return;
   try {
-    const { recordError, toErrorInfo } = await import("@opengmb/core");
+    const { recordError, toErrorInfo } = await import("@apexgmb/core");
     const { getDb } = await import("./lib/auth");
     await recordError(getDb(), "web", toErrorInfo(err));
   } catch {

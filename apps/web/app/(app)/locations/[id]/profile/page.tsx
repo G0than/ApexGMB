@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
-import type { locationGroupsList, locationsCenterGet, locationsList, placeActionsList, profileAutoRevertGet, profileChangeSetsList, profileGet, verificationState } from "@opengmb/core";
-import { PLACE_ACTION_TYPES, PROFILE_LIMITS, PROFILE_METADATA, roleHasPermission, integrationEnv } from "@opengmb/core";
+import type { locationGroupsList, locationsCenterGet, locationsList, placeActionsList, profileAutoRevertGet, profileChangeSetsList, profileGet, verificationState } from "@apexgmb/core";
+import { PLACE_ACTION_TYPES, PROFILE_LIMITS, PROFILE_METADATA, roleHasPermission, integrationEnv } from "@apexgmb/core";
 import { FoodMenuEditor } from "../../../../../components/food-menu-editor";
 import { PlaceActionLinks } from "../../../../../components/place-action-links";
 import { ProfileEditor } from "../../../../../components/profile-editor";

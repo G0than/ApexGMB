@@ -8,7 +8,7 @@ import {
   reviewRequestRecipients,
   workspaces,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { emailConfigured } from "../email";
 import { CoreError } from "../errors";

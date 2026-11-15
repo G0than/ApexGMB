@@ -1,6 +1,6 @@
 import { request } from "node:https";
 import { and, eq, sql } from "drizzle-orm";
-import { apiTokens, memberships, webhookDeliveries, webhookSubscriptions, type Db, type Tx } from "@opengmb/db";
+import { apiTokens, memberships, webhookDeliveries, webhookSubscriptions, type Db, type Tx } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { WEBHOOK_QUEUE } from "../config/webhooks";
 import { deferIfBlocked } from "../jobs";
@@ -185,7 +185,7 @@ export async function processWebhookDelivery(
         body,
         headers: {
           "content-type": "application/json",
-          "user-agent": "OpenGMB-Webhooks/1",
+          "user-agent": "ApexGMB-Webhooks/1",
           "webhook-id": d.id,
           "webhook-timestamp": String(timestamp),
           "webhook-signature": signWebhook({ id: d.id, timestamp, body, secret: webhookSecretOf(s) }),

@@ -1,5 +1,5 @@
 {
-  "name": "@opengmb/worker",
+  "name": "@apexgmb/worker",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -10,8 +10,8 @@
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@opengmb/core": "workspace:*",
-    "@opengmb/db": "workspace:*",
+    "@apexgmb/core": "workspace:*",
+    "@apexgmb/db": "workspace:*",
     "drizzle-orm": "^0.45.4",
     "pg-boss": "^12.37.1"
   },

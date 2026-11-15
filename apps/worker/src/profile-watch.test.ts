@@ -1,6 +1,6 @@
 import { afterAll, describe, expect, it, vi } from "vitest";
 import { and, eq } from "drizzle-orm";
-import { GoogleApiError, MockGoogleClient } from "@opengmb/core";
+import { GoogleApiError, MockGoogleClient } from "@apexgmb/core";
 import {
   auditLog,
   createDb,
@@ -12,7 +12,7 @@ import {
   profileChanges,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { processGoogleNotification } from "./google-notification";
 
 vi.setConfig({ testTimeout: 30_000, hookTimeout: 30_000 });

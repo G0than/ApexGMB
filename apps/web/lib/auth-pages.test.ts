@@ -34,13 +34,13 @@ describe("backupCodesText", () => {
     const codes = ["aB3dE-f9GhJ", "Kx2pQ-7mNbV"];
     const t = backupCodesText(codes);
     expect(t.split("\n")).toEqual([
-      "OpenGMB backup codes. Each code works once.",
+      "ApexGMB backup codes. Each code works once.",
       "",
       "aB3dE-f9GhJ",
       "Kx2pQ-7mNbV",
       "",
     ]);
-    expect(BACKUP_CODES_FILE).toBe("opengmb-backup-codes.txt");
+    expect(BACKUP_CODES_FILE).toBe("apexgmb-backup-codes.txt");
   });
 });
 

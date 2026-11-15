@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { desc, sql } from "drizzle-orm";
-import { errorEvents, type Db, type Tx } from "@opengmb/db";
+import { errorEvents, type Db, type Tx } from "@apexgmb/db";
 import { MONITORING } from "../config/monitoring";
 import { sendAlert } from "./alert";
 

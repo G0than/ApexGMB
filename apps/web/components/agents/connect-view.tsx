@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
-import { MCP_CONFIG, type apiTokensList } from "@opengmb/core";
+import { MCP_CONFIG, type apiTokensList } from "@apexgmb/core";
 import { apiTokens_list } from "../../app/_generated/actions";
 import { claudeDesktopConfig, mcpCommand, mcpUrlFrom } from "../../lib/mcp-connect";
 import { getTimeFormat } from "../../lib/time-format-server";

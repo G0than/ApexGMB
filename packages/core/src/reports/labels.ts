@@ -135,7 +135,7 @@ export const PDF_LABELS: Record<ReportLanguage, PdfLabels> = {
     thresholdNote: "Google reports small counts only as 'below a threshold'; such months are not included in the figure.",
     noteFrom: (agency) => `A note from ${agency}`,
     note: "A note for you",
-    generated: (day) => `Generated ${day} by OpenGMB`,
+    generated: (day) => `Generated ${day} by ApexGMB`,
     kpi: {
       impressionsTotal: "Profile impressions",
       impressionsMaps: "Impressions on Google Maps",
@@ -166,7 +166,7 @@ export const PDF_LABELS: Record<ReportLanguage, PdfLabels> = {
     thresholdNote: "Google solo informa las cifras pequeñas como 'por debajo de un umbral'; esos meses no se suman a la cifra.",
     noteFrom: (agency) => `Una nota de ${agency}`,
     note: "Una nota para usted",
-    generated: (day) => `Generado el ${day} por OpenGMB`,
+    generated: (day) => `Generado el ${day} por ApexGMB`,
     kpi: {
       impressionsTotal: "Impresiones del perfil",
       impressionsMaps: "Impresiones en Google Maps",

@@ -1,7 +1,7 @@
 import { randomInt } from "node:crypto";
 import { afterAll, describe, expect, it } from "vitest";
 import { and, eq } from "drizzle-orm";
-import { MockGoogleClient } from "@opengmb/core";
+import { MockGoogleClient } from "@apexgmb/core";
 import {
   auditLog,
   createDb,
@@ -13,7 +13,7 @@ import {
   reviews,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { processGoogleNotification } from "./google-notification";
 
 const url = process.env.DATABASE_URL_TEST;

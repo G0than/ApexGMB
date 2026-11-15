@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import type { postsGet } from "@opengmb/core";
+import type { postsGet } from "@apexgmb/core";
 import {
   posts_approve,
   posts_cancel,
@@ -28,7 +28,7 @@ import {
 import { useTimeFormat } from "./time-format-provider";
 import { SchedulePicker } from "./schedule-picker";
 import { PublishedEdit } from "./posts/published-edit";
-import { utcToWall } from "@opengmb/core/time";
+import { utcToWall } from "@apexgmb/core/time";
 import { sendTimeProblem } from "../lib/posts";
 
 export type PostData = Awaited<ReturnType<(typeof postsGet)["handler"]>>["post"];

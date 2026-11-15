@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import type { reviewLinksGet, reviewsList, workspacesList } from "@opengmb/core";
+import type { reviewLinksGet, reviewsList, workspacesList } from "@apexgmb/core";
 import { reviewLinks_get, reviews_list, workspaces_list } from "../../app/_generated/actions";
 import { locationLabel } from "../../lib/locations";
 import { trackedUrl } from "../../lib/review-requests";

@@ -1,5 +1,5 @@
 import { and, eq } from "drizzle-orm";
-import { reportDefinitions, reportRuns, users } from "@opengmb/db";
+import { reportDefinitions, reportRuns, users } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { CoreError } from "../errors";
 import type { Reader } from "../performance/queries";

@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import type { googleConnectionsList, workspacesList } from "@opengmb/core";
-import { IMPORT_MAX_LOCATIONS, roleHasPermission } from "@opengmb/core";
+import type { googleConnectionsList, workspacesList } from "@apexgmb/core";
+import { IMPORT_MAX_LOCATIONS, roleHasPermission } from "@apexgmb/core";
 import { ImportLocations } from "../../../../components/import-locations";
 import { LocationsHeader } from "../../../../components/locations/locations-header";
 import { ChooseClient } from "../../../../components/choose-client";

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import type { locationsList, locationsStats, workspacesList } from "@opengmb/core";
+import type { locationsList, locationsStats, workspacesList } from "@apexgmb/core";
 import { ClientMessages } from "../../../../components/client-messages";
 import { LocationTabs } from "../../../../components/location-tabs";
 import { LocationHeader } from "../../../../components/locations/location-header";

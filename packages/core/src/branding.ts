@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-import { orgBranding, organizations, type Db, type Tx } from "@opengmb/db";
+import { orgBranding, organizations, type Db, type Tx } from "@apexgmb/db";
 
 export type Branding = {
   agencyName: string;
@@ -40,7 +40,7 @@ export async function loadBranding(db: Db | Tx, orgId: string): Promise<Branding
     .where(eq(organizations.id, orgId));
   const [b] = await db.select().from(orgBranding).where(eq(orgBranding.orgId, orgId));
   return {
-    agencyName: b?.agencyName?.trim() || org?.name || "OpenGMB",
+    agencyName: b?.agencyName?.trim() || org?.name || "ApexGMB",
     logoUrl: b?.logoUrl ?? null,
     primaryColor: b?.primaryColor ?? null,
     accentColor: b?.accentColor ?? null,

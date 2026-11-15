@@ -1,5 +1,5 @@
 import { inArray, eq } from "drizzle-orm";
-import { locations, reviews, workspaces, type Tx } from "@opengmb/db";
+import { locations, reviews, workspaces, type Tx } from "@apexgmb/db";
 import { z } from "zod";
 
 /**
@@ -98,7 +98,7 @@ export function sampleReviewCreatedPayload(
         locationName: "Sample location",
         googleReviewName: "accounts/0/locations/0/reviews/sample",
         starRating: 5,
-        comment: "This is a test event from OpenGMB.",
+        comment: "This is a test event from ApexGMB.",
         reviewerName: "Sample reviewer",
         createTime: now.toISOString(),
         updateTime: now.toISOString(),

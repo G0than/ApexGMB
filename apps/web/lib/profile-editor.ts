@@ -1,6 +1,6 @@
 // Pure logic for the profile editor (/locations/[id]/profile): the form, what changed, the exact
 // `fields` sent to profile.preview / profile.propose, when Propose is allowed, the preview rows and
-// reason texts. Client-safe: nothing from @opengmb/core at runtime.
+// reason texts. Client-safe: nothing from @apexgmb/core at runtime.
 import { failureLabel } from "./failure-labels";
 import { attributeLabel, categoryLabel, humanise } from "./labels";
 import { changedAttributes } from "./profile-pickers";

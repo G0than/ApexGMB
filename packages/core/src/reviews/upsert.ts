@@ -1,5 +1,5 @@
 import { inArray, sql } from "drizzle-orm";
-import { reviews, type Tx } from "@opengmb/db";
+import { reviews, type Tx } from "@apexgmb/db";
 import type { GoogleReview } from "../google/client";
 
 const CHUNK = 200;

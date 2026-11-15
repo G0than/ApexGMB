@@ -1,6 +1,6 @@
 import { and, asc, eq, type SQL } from "drizzle-orm";
 import { z } from "zod";
-import { postImages, postTemplates, postTemplateTypes, users } from "@opengmb/db";
+import { postImages, postTemplates, postTemplateTypes, users } from "@apexgmb/db";
 import { AccessError } from "../actor";
 import { CoreError } from "../errors";
 import { ctaInput, offerInput } from "../posts/content";

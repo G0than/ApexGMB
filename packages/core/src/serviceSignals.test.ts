@@ -1,6 +1,6 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, monitorState } from "@opengmb/db";
+import { createDb, monitorState } from "@apexgmb/db";
 import { recordHeartbeat } from "./monitoring/worker";
 import { readServiceSignals } from "./service-signals";
 

@@ -1,8 +1,8 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { useState, type FormEvent } from "react";
-import type { auditExport, auditVerify } from "@opengmb/core";
-import { startOfZonedDay } from "@opengmb/core/time";
+import type { auditExport, auditVerify } from "@apexgmb/core";
+import { startOfZonedDay } from "@apexgmb/core/time";
 import { audit_export, audit_verify } from "../app/_generated/actions";
 import { useTimeFormat } from "./time-format-provider";
 import { ErrorText, Field, Panel, buttonClass, inputClass, secondaryButtonClass } from "./ui";
@@ -55,7 +55,7 @@ export function AuditTools({ orgId }: { orgId: string }) {
     const url = URL.createObjectURL(new Blob([data.content], { type }));
     const a = document.createElement("a");
     a.href = url;
-    a.download = `opengmb-audit-${orgId}-${from || "start"}-${to || "end"}${afterId === undefined ? "" : `-after${afterId}`}.${format}`;
+    a.download = `apexgmb-audit-${orgId}-${from || "start"}-${to || "end"}${afterId === undefined ? "" : `-after${afterId}`}.${format}`;
     a.click();
     URL.revokeObjectURL(url);
     setAfterId(data.truncated ? data.nextAfterId : undefined);

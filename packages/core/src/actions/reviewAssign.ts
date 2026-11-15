@@ -10,7 +10,7 @@ import {
   users,
   workspaces,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { AccessError, authorize, type Actor } from "../actor";
 import { CoreError } from "../errors";
 import { defineAction } from "../registry";

@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { counterCardPdf, qrPng, qrSvg } from "@opengmb/core";
+import { counterCardPdf, qrPng, qrSvg } from "@apexgmb/core";
 import { runAction } from "../../../../../lib/run-action";
 import { trackedUrl } from "../../../../../lib/review-requests";
 

@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { eq, sql } from "drizzle-orm";
-import { aiUsage, auditLog, createDb } from "@opengmb/db";
+import { aiUsage, auditLog, createDb } from "@apexgmb/db";
 import { MockGoogleClient } from "./google/mock-client";
 import { codeOf, makeKit, type Org } from "./testkit";
 import { setAiTestOverrides, type AiModel } from "./ai/model";

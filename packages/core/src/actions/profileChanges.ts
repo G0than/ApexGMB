@@ -1,6 +1,6 @@
 import { and, count, desc, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
-import { locationGroupMembers, locations, profileChanges, profileChangeSets, users, type Tx } from "@opengmb/db";
+import { locationGroupMembers, locations, profileChanges, profileChangeSets, users, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { CoreError } from "../errors";
 import { PROFILE_FIELDS, snapshotFromJson, touchedNames, type ProfileValues } from "../profile/fields";
@@ -122,7 +122,7 @@ async function loadChange(
 export const profileChangesList = defineAction({
   name: "profile.changes.list",
   description:
-    "Profile changes found by the change watch, newest first: nightly snapshot diffs (someone edited the profile outside OpenGMB) and Google-suggested edits (GOOGLE_UPDATE push; googleSuggested true, `before` is the merchant value, `after` what Google shows). Without locationId it covers every location in the caller's scope (the org-wide alerts inbox). Filters: workspaceId, locationId, groupId, status (open, accepted, reverted, dismissed), googleSuggested, fields (profile field names such as regularHours or websiteUri; a change matches when it touches any of them). total counts every match, past the limit. Each change has fieldPaths, before/after values of those fields, status and can.{accept,revert,dismiss}. limit 1-200 (default 100). Each change also names who resolved it (resolvedByName) and, for a revert, where its change set was drafted (revertChangeSetSurface: ui, or mcp for an agent).",
+    "Profile changes found by the change watch, newest first: nightly snapshot diffs (someone edited the profile outside ApexGMB) and Google-suggested edits (GOOGLE_UPDATE push; googleSuggested true, `before` is the merchant value, `after` what Google shows). Without locationId it covers every location in the caller's scope (the org-wide alerts inbox). Filters: workspaceId, locationId, groupId, status (open, accepted, reverted, dismissed), googleSuggested, fields (profile field names such as regularHours or websiteUri; a change matches when it touches any of them). total counts every match, past the limit. Each change has fieldPaths, before/after values of those fields, status and can.{accept,revert,dismiss}. limit 1-200 (default 100). Each change also names who resolved it (resolvedByName) and, for a revert, where its change set was drafted (revertChangeSetSurface: ui, or mcp for an agent).",
   input: z.object({
     workspaceId: z.uuid().optional(),
     locationId: z.uuid().optional(),

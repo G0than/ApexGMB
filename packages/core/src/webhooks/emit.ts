@@ -1,5 +1,5 @@
 import { and, eq, isNull, or, sql } from "drizzle-orm";
-import { webhookDeliveries, webhookSubscriptions, type Tx } from "@opengmb/db";
+import { webhookDeliveries, webhookSubscriptions, type Tx } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { WEBHOOK_QUEUE, WEBHOOK_REVIEW_MAX_AGE_DAYS } from "../config/webhooks";
 import { enqueueJob } from "../jobs";

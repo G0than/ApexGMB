@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { approvalsQueue, workspacesList } from "@opengmb/core";
+import type { approvalsQueue, workspacesList } from "@apexgmb/core";
 import { ApprovalDetail } from "../../../components/approvals/approval-detail";
 import { ApprovalKeys } from "../../../components/approvals/approval-keys";
 import { ApprovalList } from "../../../components/approvals/approval-list";

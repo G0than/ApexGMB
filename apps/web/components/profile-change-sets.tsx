@@ -4,7 +4,7 @@ import { statusLabel } from "../lib/labels";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import type { profileChangeSetsGet } from "@opengmb/core";
+import type { profileChangeSetsGet } from "@apexgmb/core";
 import { profile_apply, profile_cancel, profile_changeSets_get } from "../app/_generated/actions";
 import { approvalsHref, itemKey } from "../lib/approvals";
 import { endNote, resultRows, setMeta, setTitle, showsResults } from "../lib/bulk-edit";

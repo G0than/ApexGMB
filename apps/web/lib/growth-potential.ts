@@ -1,6 +1,6 @@
 // Pure render data for the "Growth potential" panel on a rank-tracking run. Server-side only: it reads
 // the core estimator. No React; unit tested.
-import { estimateGrowthPotential } from "@opengmb/core";
+import { estimateGrowthPotential } from "@apexgmb/core";
 import type { MapPoint } from "./rank-map";
 import { enT, type Tr } from "./rank-tracking";
 

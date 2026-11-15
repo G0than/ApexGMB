@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
-import { accounts, auditLog, createDb, type Db, memberships, organizations, users } from "@opengmb/db";
+import { accounts, auditLog, createDb, type Db, memberships, organizations, users } from "@apexgmb/db";
 import { runMigrations } from "../../db/src/migrate";
 import { eq } from "drizzle-orm";
 import { createAuth } from "./auth";

@@ -1,6 +1,6 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { eq } from "drizzle-orm";
-import { createDb, posts, workspaces } from "@opengmb/db";
+import { createDb, posts, workspaces } from "@apexgmb/db";
 import { MockGoogleClient } from "./google/mock-client";
 import { codeOf, makeKit } from "./testkit";
 import { zonedWallToUtc } from "./time";

@@ -1,8 +1,8 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import type { AddressInfo } from "node:net";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
-import { CoreError, actions as registry, recordError, startIntegrations, toErrorInfo, verifyApiToken, type AnyAction } from "@opengmb/core";
-import { createDb, type Db } from "@opengmb/db";
+import { CoreError, actions as registry, recordError, startIntegrations, toErrorInfo, verifyApiToken, type AnyAction } from "@apexgmb/core";
+import { createDb, type Db } from "@apexgmb/db";
 import { createMcpServer } from "./server";
 import { clientIp, createMcpLimiters, rateLimitsFromEnv, type McpRateLimits } from "./rateLimit";
 import { handleRest, restError } from "./rest";

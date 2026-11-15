@@ -15,10 +15,10 @@ import {
   recordJobRun,
   shareUrl,
   writeAudit,
-} from "@opengmb/core";
-import { reportDefinitions, reportRuns, reportShareLinks, workspaces, type Db } from "@opengmb/db";
+} from "@apexgmb/core";
+import { reportDefinitions, reportRuns, reportShareLinks, workspaces, type Db } from "@apexgmb/db";
 import { resendSendEmail, type DigestDeps } from "./digest";
-import { orgIsActive } from "@opengmb/core/account-state";
+import { orgIsActive } from "@apexgmb/core/account-state";
 
 const escapeHtml = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

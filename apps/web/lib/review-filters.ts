@@ -1,4 +1,4 @@
-import { startOfZonedDay } from "@opengmb/core/time";
+import { startOfZonedDay } from "@apexgmb/core/time";
 import type { TimeFormat } from "./time-format";
 import { parseSentiment, parseTopic } from "./review-topics";
 

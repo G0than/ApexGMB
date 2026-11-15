@@ -9,7 +9,7 @@ import {
   organizations,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { executeAction } from "./executor";
 import { googleNotificationContent, recipientsForLocation } from "./notifications";

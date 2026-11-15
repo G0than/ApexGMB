@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { and, eq, gte, lte } from "drizzle-orm";
-import { createDb, reviewLinkClicks, reviewRequestRecipients, workspaceReplySettings, workspaces } from "@opengmb/db";
+import { createDb, reviewLinkClicks, reviewRequestRecipients, workspaceReplySettings, workspaces } from "@apexgmb/db";
 import { actions } from "./actions";
 import { setEmailSender, type EmailMessage } from "./email";
 import { MockGoogleClient } from "./google/mock-client";
@@ -126,7 +126,7 @@ describe("sending, one reminder, clicks and opt-out (fixed clock, fake sender)",
     expect(first[0]!.idempotencyKey).toContain("initial");
     expect(first[0]!.text).toContain("You are receiving this from Whitfield Dental Pty Ltd (ABN 12 345 678 901) because you bought from");
     expect(first[0]!.text).toContain("12 George St, Sydney NSW 2000, Australia. Unsubscribe from");
-    expect(first[0]!.text).toContain("OpenGMB is operated by Synectus Private Limited, 315 Radhe Square");
+    expect(first[0]!.text).toContain("ApexGMB is operated by ApexGMB contributors");
 
     expect(await sweep(org, at(1, 12))).toMatchObject({ sent: 0, reminders: 0 });
     expect(await sweep(org, new Date(at(1).getTime() + 3 * DAY - 60_000))).toMatchObject({ reminders: 0 });

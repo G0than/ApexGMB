@@ -17,7 +17,7 @@ export const CITATION_CHECK = {
   concurrency: 4,
   /** Wall time for one run; a listing not started when it is spent is left unchecked (counted as remaining). */
   runBudgetMs: 20_000,
-  userAgent: "OpenGMB-ListingCheck/1.0 (reads one listing page the owner recorded, to compare name, address and phone)",
+  userAgent: "ApexGMB-ListingCheck/1.0 (reads one listing page the owner recorded, to compare name, address and phone)",
 } as const;
 
 export type CitationCheckLimits = {

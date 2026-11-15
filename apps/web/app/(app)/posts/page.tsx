@@ -9,7 +9,7 @@ import type {
   postTemplatesGet,
   postTemplatesList,
   workspacesList,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import {
   BULK_COLUMNS,
   BULK_POST_LIMITS,
@@ -20,7 +20,7 @@ import {
   POST_LIMITS,
   roleHasPermission,
   integrationEnv,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import { BulkImport } from "../../../components/posts/bulk-import";
 import { CalendarView } from "../../../components/posts/calendar-view";
 import { GoogleView } from "../../../components/posts/google-view";

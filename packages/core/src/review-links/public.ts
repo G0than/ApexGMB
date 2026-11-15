@@ -1,6 +1,6 @@
 // packages/core/src/review-links/public.ts
 import { and, desc, eq, gte, isNotNull, ne, sql } from "drizzle-orm";
-import { locations, reviewLinkClicks, reviewLinks, reviews, type Db } from "@opengmb/db";
+import { locations, reviewLinkClicks, reviewLinks, reviews, type Db } from "@apexgmb/db";
 import { clip, googleReviewUrl, shortName, SLUG_RE, WIDGET_MAX_REVIEWS, WIDGET_MAX_TEXT, widgetNote, type ReviewLinkLayout, type ReviewLinkSource } from "./pure";
 
 /**

@@ -1,5 +1,5 @@
 import { and, desc, eq, sql } from "drizzle-orm";
-import { gridConfigs, locations, platformDfsSpend, type Db, type Tx } from "@opengmb/db";
+import { gridConfigs, locations, platformDfsSpend, type Db, type Tx } from "@apexgmb/db";
 import { canonicalJson } from "../audit";
 import { dfsLocationCodeFor } from "../config/dfs-locations";
 import { LOCATION_CENTER } from "../config/location-center";

@@ -4,7 +4,7 @@ import {
   CoreError,
   loadReportPdf,
   requireAuthenticatedUser,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import { getAuth, getDb, sessionActor } from "../../../../../lib/auth";
 
 /** Logged-in download. core authorizes (report:read + workspace scope) before any bytes are read. */

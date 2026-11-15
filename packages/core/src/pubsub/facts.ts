@@ -1,5 +1,5 @@
 import { count, isNotNull, max } from "drizzle-orm";
-import { googleNotificationRegistrations, googleNotifications, type Db } from "@opengmb/db";
+import { googleNotificationRegistrations, googleNotifications, type Db } from "@apexgmb/db";
 import { GOOGLE_NOTIFICATIONS } from "../config/google-notifications";
 
 /** What the database says about instant review alerts, for the "Instant review alerts" status row. */

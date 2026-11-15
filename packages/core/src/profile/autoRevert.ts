@@ -5,7 +5,7 @@ import {
   profileChanges,
   type Db,
   type Tx,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor } from "../actor";
 import { assertWritable } from "../billing";
 import { CoreError } from "../errors";

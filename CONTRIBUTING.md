@@ -1,6 +1,6 @@
-# Contributing to OpenGMB
+# Contributing to ApexGMB
 
-Thank you for helping. Small, focused pull requests are the easiest to review. This repository is the community edition of OpenGMB, so a change should make sense for a self-hosted install with one owner login.
+Thank you for helping. Small, focused pull requests are the easiest to review. This repository is the community edition of ApexGMB, so a change should make sense for a self-hosted install with one owner login.
 
 ## Good first contributions
 
@@ -51,7 +51,7 @@ We use the Developer Certificate of Origin (https://developercertificate.org). A
 
 ## Do not copy code from GPL or AGPL projects
 
-Do not paste code from AGPL or GPL projects into this repository. If OpenGMB works with such a project, it does so through that project's public API only.
+Do not paste code from AGPL or GPL projects into this repository. If ApexGMB works with such a project, it does so through that project's public API only.
 
 ## Writing rules
 
@@ -60,7 +60,7 @@ Text that users read follows these rules.
 - US spelling.
 - No em dashes.
 - Plain words. Say what the button does.
-- The product name is OpenGMB.
+- The product name is ApexGMB.
 
 ## Security problems
 

@@ -2,7 +2,7 @@ import { inflateSync } from "node:zlib";
 import { PgBoss } from "pg-boss";
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { and, eq } from "drizzle-orm";
-import { aiUsage, auditLog, reportRuns } from "@opengmb/db";
+import { aiUsage, auditLog, reportRuns } from "@apexgmb/db";
 import type { Actor } from "./actor";
 import { setAiTestOverrides, type AiModel } from "./ai/model";
 import { costMicroUsd } from "./ai/money";

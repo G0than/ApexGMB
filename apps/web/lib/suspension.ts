@@ -1,5 +1,5 @@
 // Pure logic for the Suspension tab. Client-safe: only types come from core.
-import type { suspensionCasesList } from "@opengmb/core";
+import type { suspensionCasesList } from "@apexgmb/core";
 import { statusWords } from "./labels";
 import type { TimeFormat } from "./time-format";
 

@@ -2,7 +2,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { and, eq } from "drizzle-orm";
 import { inflateSync } from "node:zlib";
 import { PgBoss } from "pg-boss";
-import { auditLog, reportRuns, reportShareLinks } from "@opengmb/db";
+import { auditLog, reportRuns, reportShareLinks } from "@apexgmb/db";
 import type { Actor } from "./actor";
 import { verifyAuditChain } from "./audit";
 import { PERFORMANCE_CONFIG } from "./config/performance";

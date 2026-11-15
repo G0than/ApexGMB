@@ -1,5 +1,5 @@
 /**
- * "Ask OpenGMB" assistant limits and tool list. Our own product choices, not facts about anyone else's
+ * "Ask ApexGMB" assistant limits and tool list. Our own product choices, not facts about anyone else's
  * service. Model id and prices stay in config/ai-models.ts.
  */
 export const ASSISTANT = {
@@ -18,7 +18,7 @@ export const ASSISTANT = {
   /** Whole-turn deadline, ms, on top of the per-call timeout. */
   turnDeadlineMs: 120_000,
   /** The name of the hidden per-user token that owns the assistant's proposals. */
-  tokenName: "Ask OpenGMB assistant",
+  tokenName: "Ask ApexGMB assistant",
   /**
    * Names the hidden token had before the rename; still found so nobody gets a second hidden token.
    * Stored rows keep their name.

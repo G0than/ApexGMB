@@ -18,7 +18,7 @@ function payloadOf(event) {
 
 self.addEventListener("push", (event) => {
   const data = payloadOf(event);
-  const title = typeof data.title === "string" && data.title ? data.title : "OpenGMB";
+  const title = typeof data.title === "string" && data.title ? data.title : "ApexGMB";
   event.waitUntil(
     self.registration.showNotification(title, {
       icon: "/icons/icon-192.png",

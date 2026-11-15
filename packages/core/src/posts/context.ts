@@ -1,5 +1,5 @@
 import { and, eq, inArray } from "drizzle-orm";
-import { locations, postTargets, type Tx } from "@opengmb/db";
+import { locations, postTargets, type Tx } from "@apexgmb/db";
 import {
   runGuardrails,
   type GuardrailContext,

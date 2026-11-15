@@ -6,7 +6,7 @@ import {
   PROFILE_CHANGED_KIND,
   REVIEW_ASSIGNED_KIND,
   REVIEW_NEGATIVE_KIND,
-} from "@opengmb/core";
+} from "@apexgmb/core";
 import { linkLabel, listFooter, MAX_SHOWN, notificationsHref, PAGE, parseShow, PREFERENCE_ROWS } from "./notification-list";
 
 // approval.requested is APPROVAL_REQUESTED_KIND in packages/core/src/approvals.ts, which core's index does not export.

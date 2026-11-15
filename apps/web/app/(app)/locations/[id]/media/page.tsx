@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import type { mediaCustomerList, mediaList } from "@opengmb/core";
-import { MEDIA_LIMITS, roleHasPermission, integrationEnv } from "@opengmb/core";
+import type { mediaCustomerList, mediaList } from "@apexgmb/core";
+import { MEDIA_LIMITS, roleHasPermission, integrationEnv } from "@apexgmb/core";
 import { MediaManager } from "../../../../../components/media-manager";
 import { ErrorText } from "../../../../../components/ui";
 import { actorContextFor } from "../../../../../lib/auth";

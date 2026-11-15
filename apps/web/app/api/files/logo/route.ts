@@ -1,5 +1,5 @@
 import type { NextRequest } from "next/server";
-import { handleLogoUpload } from "@opengmb/core";
+import { handleLogoUpload } from "@apexgmb/core";
 import { getAuth, getDb, refuseWhileViewing } from "../../../../lib/auth";
 
 /** Logo upload from Settings, Branding (multipart: file, optional workspaceId). All checks are core's. */

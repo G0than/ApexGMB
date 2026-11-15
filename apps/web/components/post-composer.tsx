@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import type { PostLanguage } from "@opengmb/core";
+import type { PostLanguage } from "@apexgmb/core";
 import {
   posts_check,
   posts_createDraft,

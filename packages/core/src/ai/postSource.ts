@@ -1,5 +1,5 @@
 import { and, desc, eq, gte, isNotNull } from "drizzle-orm";
-import { locations, profileSnapshots, reviews, type Tx } from "@opengmb/db";
+import { locations, profileSnapshots, reviews, type Tx } from "@apexgmb/db";
 import type { Actor } from "../actor";
 import { marketForTimeZone } from "../config/writing-style";
 import { upcomingHolidays } from "../config/holidays";

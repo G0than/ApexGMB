@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { locationsList, replyTemplatesList, reviewsListUnreplied, workspaceSettingsGet, workspacesList } from "@opengmb/core";
+import type { locationsList, replyTemplatesList, reviewsListUnreplied, workspaceSettingsGet, workspacesList } from "@apexgmb/core";
 import { ChooseClient } from "../choose-client";
 import { EmptyState, ErrorText, secondaryButtonClass } from "../ui";
 import { filterFieldClass, linkButtonClass } from "../page-parts";

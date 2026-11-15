@@ -1,7 +1,7 @@
 import { useAccountDaily } from "../limits/counters";
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 import { and, eq, inArray, ne, sql } from "drizzle-orm";
-import { gridCompetitorSnapshots, gridConfigs, gridPoints, gridRuns, gridTasks, type Db, type Tx } from "@opengmb/db";
+import { gridCompetitorSnapshots, gridConfigs, gridPoints, gridRuns, gridTasks, type Db, type Tx } from "@apexgmb/db";
 import { usdToMicro } from "../ai/money";
 import { assertCredit, debit, CreditExhaustedError } from "../billing";
 import { deferBlockedJob, deferIfBlocked, enqueueJob } from "../jobs";

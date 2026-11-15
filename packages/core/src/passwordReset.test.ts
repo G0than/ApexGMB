@@ -1,7 +1,7 @@
 import { afterAll, afterEach, describe, expect, it } from "vitest";
 import { generate } from "otplib";
 import { and, eq } from "drizzle-orm";
-import { auditLog, createDb, memberships, sessions, users, verifications } from "@opengmb/db";
+import { auditLog, createDb, memberships, sessions, users, verifications } from "@apexgmb/db";
 import { createAuth } from "./auth";
 import { setEmailSender, type EmailMessage } from "./email";
 
@@ -60,8 +60,8 @@ describe("password reset by email", () => {
     expect(sent).toHaveLength(1);
     expect(sent[0]!.to).toBe(email);
     // The From display name is configuration (EMAIL_FROM), not code; the subject and body are ours.
-    expect(sent[0]!.subject).toBe("Reset your OpenGMB password");
-    expect(sent[0]!.html).toContain("OpenGMB");
+    expect(sent[0]!.subject).toBe("Reset your ApexGMB password");
+    expect(sent[0]!.html).toContain("ApexGMB");
     expect(sent[0]!.html).toContain("reset-password?token=");
     expect(tokenIn(sent[0]!).length).toBeGreaterThan(10);
 

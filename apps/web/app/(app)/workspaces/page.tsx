@@ -6,8 +6,8 @@ import type {
   Permission,
   workspaceSettingsGet,
   workspacesList,
-} from "@opengmb/core";
-import { POST_LANGUAGES, roleHasPermission } from "@opengmb/core";
+} from "@apexgmb/core";
+import { POST_LANGUAGES, roleHasPermission } from "@apexgmb/core";
 import { ClientRowActions } from "../../../components/client-row-actions";
 import { CreateWorkspaceForm } from "../../../components/create-workspace-form";
 import { TableWrap, tdClass, thClass } from "../../../components/page-parts";

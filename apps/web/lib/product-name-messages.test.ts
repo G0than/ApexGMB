@@ -24,9 +24,9 @@ export function brandProblems(by: Record<string, Record<string, string>>): strin
   for (const [locale, t] of Object.entries(by)) {
     for (const [k, v] of Object.entries(t)) {
       if (/SynGMB/.test(v) && !OLD_NAME_KEYS.has(k)) out.push(`${locale}: ${k} says SynGMB`);
-      if (locale === "en" && /(^|[^A-Za-z])[Aa] OpenGMB\b/.test(v)) out.push(`en: ${k} says "a OpenGMB"`);
-      if (locale !== "en" && /OpenGMB/.test(en[k] ?? "") && !/OpenGMB/.test(v) && !PARITY_EXCEPTIONS.has(k)) {
-        out.push(`${locale}: ${k} drops OpenGMB`);
+      if (locale === "en" && /(^|[^A-Za-z])[Aa] ApexGMB\b/.test(v)) out.push(`en: ${k} says "a ApexGMB"`);
+      if (locale !== "en" && /ApexGMB/.test(en[k] ?? "") && !/ApexGMB/.test(v) && !PARITY_EXCEPTIONS.has(k)) {
+        out.push(`${locale}: ${k} drops ApexGMB`);
       }
     }
   }
@@ -37,17 +37,17 @@ describe("product name in the message catalogs", () => {
   it("canary: catches the old name, a lost brand and a wrong article", () => {
     expect(
       brandProblems({
-        en: { "a.x": "Ask OpenGMB", "a.y": "a OpenGMB account", "a.z": "Hi" },
-        hi: { "a.x": "पूछें", "a.y": "OpenGMB खाता", "a.z": "SynGMB" },
+        en: { "a.x": "Ask ApexGMB", "a.y": "a ApexGMB account", "a.z": "Hi" },
+        hi: { "a.x": "पूछें", "a.y": "ApexGMB खाता", "a.z": "SynGMB" },
       }),
-    ).toEqual(["en: a.y says \"a OpenGMB\"", "hi: a.x drops OpenGMB", "hi: a.z says SynGMB"]);
+    ).toEqual(["en: a.y says \"a ApexGMB\"", "hi: a.x drops ApexGMB", "hi: a.z says SynGMB"]);
   });
 
   it("no catalog says SynGMB, and hi and es keep the name wherever English has it (prints the denominator)", () => {
     const by = Object.fromEntries(LOCALES.map((l) => [l, flatten(MESSAGES[l])]));
     const keys = Object.keys(by.en!).length;
-    const branded = Object.values(by.en!).filter((v) => v.includes("OpenGMB")).length;
-    console.log(`${keys} keys checked in ${LOCALES.length} languages; ${branded} English values name OpenGMB`);
+    const branded = Object.values(by.en!).filter((v) => v.includes("ApexGMB")).length;
+    console.log(`${keys} keys checked in ${LOCALES.length} languages; ${branded} English values name ApexGMB`);
     expect(keys).toBeGreaterThan(100);
     expect(branded).toBeGreaterThan(40); // about 57 English values named SynGMB at 99902c23
     expect(brandProblems(by)).toEqual([]);
@@ -57,7 +57,7 @@ describe("product name in the message catalogs", () => {
     for (const l of LOCALES) {
       for (const k of OLD_NAME_KEYS) {
         const v = flatten(MESSAGES[l])[k];
-        expect(v, `${l} ${k}`).toMatch(/OpenGMB/);
+        expect(v, `${l} ${k}`).toMatch(/ApexGMB/);
         expect(v, `${l} ${k}`).toMatch(/SynGMB/);
       }
     }

@@ -6,7 +6,7 @@ import {
   googleNotificationRegistrations,
   organizations,
   users,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { GOOGLE_NOTIFICATIONS } from "./config/google-notifications";
 import { encryptSecret } from "./crypto";
 import { CoreError } from "./errors";
@@ -28,7 +28,7 @@ const { db, sql } = createDb(url);
 afterAll(() => sql.end());
 
 const uniq = () => `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-const TOPIC = "projects/example-project/topics/opengmb-reviews";
+const TOPIC = "projects/example-project/topics/apexgmb-reviews";
 // Unique per run: the test database is shared and account_name is unique.
 const ACCT = `accounts/9${Date.now()}${Math.floor(Math.random() * 1000)}`;
 const ACCT2 = `${ACCT}9`;

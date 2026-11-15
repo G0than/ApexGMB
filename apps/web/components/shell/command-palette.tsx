@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import { useTranslations } from "next-intl";
-import type { searchEverything } from "@opengmb/core";
+import type { searchEverything } from "@apexgmb/core";
 import { search_everything } from "../../app/_generated/actions";
 import { labelFor } from "../../lib/i18n-labels";
 import type { NavGroup } from "../../lib/nav";

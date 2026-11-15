@@ -1,5 +1,5 @@
 import { sql, type SQL } from "drizzle-orm";
-import { reviews } from "@opengmb/db";
+import { reviews } from "@apexgmb/db";
 import type { ReviewTopicId, TopicSentiment } from "../config/review-topics";
 
 /** sha256 (hex) of the review text exactly as stored. The same value as {@link hashReviewText}. */

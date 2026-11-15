@@ -1,6 +1,6 @@
 import { desc, eq, and } from "drizzle-orm";
 import { z } from "zod";
-import { locationWriteOps, locations, mediaUploads, type Db } from "@opengmb/db";
+import { locationWriteOps, locations, mediaUploads, type Db } from "@apexgmb/db";
 import { MEDIA_LIMITS } from "../config/media-limits";
 import { authorize, workspaceScope } from "../actor";
 import { CoreError } from "../errors";
@@ -186,7 +186,7 @@ export const mediaCustomerList = defineAction({
 export const mediaAdd = defineAction({
   name: "media.add",
   description:
-    "Add a photo to a location from a public https image URL (JPG or PNG; to send the file itself use media.upload) in a category: COVER (the cover photo, one per location), PROFILE (the logo, one per location; LOGO is a deprecated alias and is not accepted), EXTERIOR, INTERIOR, PRODUCT, AT_WORK, FOOD_AND_DRINK, MENU, COMMON_AREA, ROOMS, TEAMS or ADDITIONAL. Setting the cover or logo is simply adding with category COVER or PROFILE; Google replaces the previous one. Asynchronous: records the operation and queues a worker job (returns status pending); nothing is sent to Google inside this call and the URL is never fetched by OpenGMB. Poll media.list for the outcome. Needs profile:edit.",
+    "Add a photo to a location from a public https image URL (JPG or PNG; to send the file itself use media.upload) in a category: COVER (the cover photo, one per location), PROFILE (the logo, one per location; LOGO is a deprecated alias and is not accepted), EXTERIOR, INTERIOR, PRODUCT, AT_WORK, FOOD_AND_DRINK, MENU, COMMON_AREA, ROOMS, TEAMS or ADDITIONAL. Setting the cover or logo is simply adding with category COVER or PROFILE; Google replaces the previous one. Asynchronous: records the operation and queues a worker job (returns status pending); nothing is sent to Google inside this call and the URL is never fetched by ApexGMB. Poll media.list for the outcome. Needs profile:edit.",
   input: z.object({ locationId: z.uuid(), sourceUrl, category }),
   output: z.object({ operation: opOut }),
   permission: "profile:edit",

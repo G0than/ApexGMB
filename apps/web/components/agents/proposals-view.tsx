@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { MCP_CONFIG, type mcpProposalsList } from "@opengmb/core";
+import { MCP_CONFIG, type mcpProposalsList } from "@apexgmb/core";
 import { mcp_proposals_list } from "../../app/_generated/actions";
 import {
   PROPOSAL_FILTERS,

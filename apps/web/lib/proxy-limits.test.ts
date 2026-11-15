@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 import { describe, expect, it } from "vitest";
-import { publicLimits } from "@opengmb/core/limits";
+import { publicLimits } from "@apexgmb/core/limits";
 import { proxy } from "../proxy";
 
 describe("proxy.ts applies the public endpoint limits", () => {

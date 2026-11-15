@@ -1,4 +1,4 @@
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 import { loadActor } from "../actor";
 import { brandedImageInput } from "../actions/postImages";
 import { CoreError } from "../errors";

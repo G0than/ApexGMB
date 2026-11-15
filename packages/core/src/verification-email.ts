@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 import { emailFromForUser, originForUser } from "./custom-domains";
 import { emailConfigured, getEmailSender, renderBrandedEmail } from "./email";
 
@@ -18,11 +18,11 @@ export async function sendVerificationLink(db: Db, user: { id: string; email: st
     console.log(`[email:mock] verification link for ${user.email}: ${url}`);
   }
   const { html, text } = renderBrandedEmail(
-    { agencyName: "OpenGMB", logoUrl: null, primaryColor: null },
+    { agencyName: "ApexGMB", logoUrl: null, primaryColor: null },
     {
       heading: "Confirm your email address",
       paragraphs: [
-        `Hi ${user.name}, confirm this address to finish creating your OpenGMB account.`,
+        `Hi ${user.name}, confirm this address to finish creating your ApexGMB account.`,
         "If you did not sign up, you can ignore this email.",
       ],
       cta: { label: "Confirm email", url },
@@ -31,7 +31,7 @@ export async function sendVerificationLink(db: Db, user: { id: string; email: st
   await getEmailSender()({
     from: await emailFromForUser(db, user.id),
     to: user.email,
-    subject: "Confirm your OpenGMB email address",
+    subject: "Confirm your ApexGMB email address",
     html,
     text,
     idempotencyKey: `verify-email-${createHash("sha256").update(url).digest("hex").slice(0, 32)}`,

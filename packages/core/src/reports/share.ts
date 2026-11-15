@@ -1,6 +1,6 @@
 import { createHash, randomBytes } from "node:crypto";
 import { eq } from "drizzle-orm";
-import { reportDefinitions, reportRuns, reportShareLinks, workspaces, type Db, type Tx } from "@opengmb/db";
+import { reportDefinitions, reportRuns, reportShareLinks, workspaces, type Db, type Tx } from "@apexgmb/db";
 import type { DateFormat } from "../config/time-zones";
 import { writeAudit } from "../audit";
 import { loadBranding } from "../branding";

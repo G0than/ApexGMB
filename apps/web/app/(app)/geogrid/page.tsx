@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { roleHasPermission, type locationsList, type geogridSettingsGet, integrationEnv } from "@opengmb/core";
+import { roleHasPermission, type locationsList, type geogridSettingsGet, integrationEnv } from "@apexgmb/core";
 import { BudgetPanel } from "../../../components/rank-tracking/budget-panel";
 import { TrackerSetupForm } from "../../../components/rank-tracking/tracker-setup-form";
 import { StaffMessages } from "../../../components/rank-tracking/staff-messages";

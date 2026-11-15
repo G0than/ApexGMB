@@ -15,7 +15,7 @@ Turn customer reviews into ranking signals and loyal client touchpoints.
 ## How to run:
 
 ```bash
-python3 /Users/lucifer/.gemini/antigravity/scratch/OpenGMB/skills/scripts/gmb_ai_runner.py reply \
+python3 /Users/lucifer/.gemini/antigravity/scratch/ApexGMB/skills/scripts/gmb_ai_runner.py reply \
   --business "Apex Media Studio" \
   --reviewer "Rahul Verma" \
   --stars 5 \

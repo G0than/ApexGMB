@@ -14,7 +14,7 @@ import {
   searchKeywordsMonthly,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor } from "./actor";
 import { GOOGLE_LIMITS } from "./config/google-limits";
 import { HEALTHCHECK_CONFIG } from "./config/healthcheck";

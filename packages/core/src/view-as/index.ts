@@ -1,5 +1,5 @@
 /** Community edition: no admin panel, so no session is ever viewing as an admin. Same names as the full module. */
-import type { Db } from "@opengmb/db";
+import type { Db } from "@apexgmb/db";
 
 export type ActiveViewAs = { orgId: string; orgName: string; adminUserId: string; expiresAt: Date };
 

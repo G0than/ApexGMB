@@ -11,7 +11,7 @@ module.exports = {
       type: 'password',
       required: true,
       helpText:
-        'In OpenGMB open Settings > API tokens and create an owner token. It starts with `sgmb_`. Paste it here.',
+        'In ApexGMB open Settings > API tokens and create an owner token. It starts with `apxgmb_`. Paste it here.',
     },
   ],
   test: (z) => callAction(z, 'apiTokens.current', {}),

@@ -8,7 +8,7 @@ const good = {
   ENCRYPTION_KEY: key(32),
   AUDIT_CHECKPOINT_KEY: key(32),
   BETTER_AUTH_SECRET: "b".repeat(40),
-  BETTER_AUTH_URL: "https://opengmb.example.com",
+  BETTER_AUTH_URL: "https://apexgmb.example.com",
   GOOGLE_BUSINESS_API_MODE: "live",
   GOOGLE_BUSINESS_WRITES: "off",
   GOOGLE_CLIENT_ID: "client-id",
@@ -62,7 +62,7 @@ describe("startup config report", () => {
     );
     expect(noVerify.join("\n")).toContain("email_verification=off");
     expect(noVerify.join("\n")).toContain("lockout=5_failures_per_15_min");
-    expect(text).toContain("base_url=https://opengmb.example.com");
+    expect(text).toContain("base_url=https://apexgmb.example.com");
     expect(text).toContain("database=db.internal:5432/syngmb");
     expect(text).toContain("BETTER_AUTH_SECRET=present");
     // The denominator: three services, each printed.

@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { isLikelyBot, openReviewRequestLink } from "@opengmb/core";
+import { isLikelyBot, openReviewRequestLink } from "@apexgmb/core";
 import { getDb } from "../../../lib/auth";
 
 // Public, no login, never cached. The personal link in a review request email: it counts a real click

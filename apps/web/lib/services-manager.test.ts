@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { snapshotFromGoogle, type GoogleLocation } from "@opengmb/core";
+import { snapshotFromGoogle, type GoogleLocation } from "@apexgmb/core";
 import { buildFields, changedLabels, formFromProfile, previewRows, type ProfileForm } from "./profile-editor";
 import type { CategoryMeta } from "./profile-pickers";
 import {

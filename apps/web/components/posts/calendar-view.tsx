@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import type { postsCalendar } from "@opengmb/core";
+import type { postsCalendar } from "@apexgmb/core";
 import { posts_calendar } from "../../app/_generated/actions";
 import { getTimeFormat } from "../../lib/time-format-server";
 import { PostCalendar, calendarGrid } from "../post-calendar";

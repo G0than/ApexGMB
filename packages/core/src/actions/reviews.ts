@@ -1,7 +1,7 @@
 import { useAccountDaily } from "../limits/counters";
 import { and, eq, inArray } from "drizzle-orm";
 import { z } from "zod";
-import { locations, reviewReplies, reviewSyncs, workspaces } from "@opengmb/db";
+import { locations, reviewReplies, reviewSyncs, workspaces } from "@apexgmb/db";
 import { OPEN_STATUSES } from "../reviews/reply-state";
 import { AccessError, authorize, workspaceScope } from "../actor";
 import { CoreError } from "../errors";

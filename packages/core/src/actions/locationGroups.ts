@@ -1,6 +1,6 @@
 import { and, asc, eq, inArray, sql } from "drizzle-orm";
 import { z } from "zod";
-import { locationGroupMembers, locationGroups, locations, workspaces, type Tx } from "@opengmb/db";
+import { locationGroupMembers, locationGroups, locations, workspaces, type Tx } from "@apexgmb/db";
 import { AccessError, authorize, workspaceScope, type Actor } from "../actor";
 import { CoreError } from "../errors";
 import { defineAction } from "../registry";

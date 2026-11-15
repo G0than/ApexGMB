@@ -1,6 +1,6 @@
 import { createHash, randomBytes } from "node:crypto";
 import { and, asc, desc, eq, isNull } from "drizzle-orm";
-import { apiTokens, organizations, users, type Db, type Tx } from "@opengmb/db";
+import { apiTokens, organizations, users, type Db, type Tx } from "@apexgmb/db";
 import {
   AccessError,
   DEFAULT_TOKEN_MODE,

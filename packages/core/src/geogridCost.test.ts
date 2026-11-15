@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it } from "vitest";
-import { createDb, gridRuns, locations, memberships, organizations, users, workspaces } from "@opengmb/db";
+import { createDb, gridRuns, locations, memberships, organizations, users, workspaces } from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { CoreError } from "./errors";
 import { executeAction } from "./executor";

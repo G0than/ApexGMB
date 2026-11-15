@@ -1,6 +1,6 @@
 import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 import { asc, desc, eq, sql } from "drizzle-orm";
-import { auditCheckpoints, auditLog, type auditSurface, type Db, type Tx } from "@opengmb/db";
+import { auditCheckpoints, auditLog, type auditSurface, type Db, type Tx } from "@apexgmb/db";
 
 export type AuditEntry = {
   orgId: string;

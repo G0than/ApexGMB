@@ -19,7 +19,7 @@ export function mcpUrlFrom(env: Env): string | null {
 }
 
 export function mcpCommand(url: string, token = "<token>"): string {
-  return `claude mcp add --transport http opengmb ${url} --header "Authorization: Bearer ${token}"`;
+  return `claude mcp add --transport http apexgmb ${url} --header "Authorization: Bearer ${token}"`;
 }
 
 /**
@@ -30,7 +30,7 @@ export function claudeDesktopConfig(url: string, token = "<token>"): string {
   return JSON.stringify(
     {
       mcpServers: {
-        opengmb: { command: "npx", args: ["-y", "mcp-remote", url, "--header", `Authorization: Bearer ${token}`] },
+        apexgmb: { command: "npx", args: ["-y", "mcp-remote", url, "--header", `Authorization: Bearer ${token}`] },
       },
     },
     null,

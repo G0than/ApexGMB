@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { limitCounters, type Db, type Tx } from "@opengmb/db";
+import { limitCounters, type Db, type Tx } from "@apexgmb/db";
 import { CoreError } from "../errors";
 import { ACCOUNT_DAILY_LABELS, accountDailyCaps, type AccountDailyKind } from "../config/platform-limits";
 

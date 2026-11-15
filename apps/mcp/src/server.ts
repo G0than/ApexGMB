@@ -10,8 +10,8 @@ import {
   type AnyAction,
   recordError,
   toErrorInfo,
-} from "@opengmb/core";
-import type { Db } from "@opengmb/db";
+} from "@apexgmb/core";
+import type { Db } from "@apexgmb/db";
 import { registerResources } from "./resources";
 
 export { toolNameFor };
@@ -32,12 +32,12 @@ const WRITE_NOTE: Record<"two_phase" | "own_flow", string> = {
     " [Write with its own approval flow: executes directly. Pass dryRun true to get a preview without side effects.]",
 };
 
-/** Tools that change something outside OpenGMB (Google, an email, a payment, a public link): a token can only propose them. */
+/** Tools that change something outside ApexGMB (Google, an email, a payment, a public link): a token can only propose them. */
 const EXTERNAL_NOTE: Record<"two_phase" | "own_flow", string> = {
   two_phase:
-    " [Write outside OpenGMB: this call only creates a proposal and returns { proposalId, expiresAt, preview }. You cannot apply it: mcp_proposals_apply is refused for it. A person must approve this in OpenGMB (the Agents page); tell them the proposal is waiting.]",
+    " [Write outside ApexGMB: this call only creates a proposal and returns { proposalId, expiresAt, preview }. You cannot apply it: mcp_proposals_apply is refused for it. A person must approve this in ApexGMB (the Agents page); tell them the proposal is waiting.]",
   own_flow:
-    " [Write outside OpenGMB: refused to API tokens, because a person must approve this in OpenGMB. Pass dryRun true to get a preview.]",
+    " [Write outside ApexGMB: refused to API tokens, because a person must approve this in ApexGMB. Pass dryRun true to get a preview.]",
 };
 
 const noteFor = (name: string, mode: "two_phase" | "own_flow") =>
@@ -54,7 +54,7 @@ export function createMcpServer(opts: {
   actor: Actor;
   actions: readonly AnyAction[];
 }): McpServer {
-  const server = new McpServer({ name: "opengmb", version: "0.0.0" });
+  const server = new McpServer({ name: "apexgmb", version: "0.0.0" });
   registerResources(server, opts);
   for (const action of opts.actions) {
     const mode = approvalOf(action);

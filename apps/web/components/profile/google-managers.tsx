@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import type { locationManagersList } from "@opengmb/core";
+import type { locationManagersList } from "@apexgmb/core";
 import { locationManagers_list } from "../../app/_generated/actions";
 import { runCall } from "../post-card";
 import { ErrorText, secondaryButtonClass } from "../ui";

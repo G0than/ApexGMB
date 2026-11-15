@@ -93,8 +93,8 @@ async function callOpenRouter(key: string, req: AiRequest): Promise<AiResponse> 
       headers: {
         authorization: `Bearer ${key}`,
         "content-type": "application/json",
-        "http-referer": "https://opengmb.synectus.com",
-        "x-title": "OpenGMB",
+        "http-referer": "https://github.com/G0than/ApexGMB",
+        "x-title": "ApexGMB",
       },
       body: JSON.stringify({
         model,

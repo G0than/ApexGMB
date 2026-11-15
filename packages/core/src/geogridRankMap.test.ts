@@ -11,7 +11,7 @@ import {
   organizations,
   users,
   workspaces,
-} from "@opengmb/db";
+} from "@apexgmb/db";
 import { loadActor, type Actor } from "./actor";
 import { CoreError } from "./errors";
 import { executeAction } from "./executor";

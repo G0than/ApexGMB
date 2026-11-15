@@ -5,7 +5,7 @@ export default namespace({
     confirmMake: "Make new backup codes? Your old backup codes stop working.",
     couldNotMake: "Could not make new backup codes",
     confirmReset:
-      "Reset your authenticator app? Your current app stops working now, and you will set up a new one before you can use OpenGMB again.",
+      "Reset your authenticator app? Your current app stops working now, and you will set up a new one before you can use ApexGMB again.",
     couldNotReset: "Could not reset your authenticator app",
     on: "On · authenticator app",
     lowHeadline: "{left, plural, one {# backup code} other {# backup codes}} left.",
@@ -18,13 +18,13 @@ export default namespace({
     newReady: "New backup codes are ready. The old ones no longer work.",
     resetApp: "Reset authenticator app",
     resetNote: "You will scan a new QR code. Your current app stops working.",
-    required: "Two-factor authentication is required for every OpenGMB account.",
+    required: "Two-factor authentication is required for every ApexGMB account.",
   },
   hi: {
     confirmMake: "नए बैकअप कोड बनाएँ? आपके पुराने बैकअप कोड काम करना बंद कर देंगे।",
     couldNotMake: "नए बैकअप कोड नहीं बन सके",
     confirmReset:
-      "अपना ऑथेंटिकेटर ऐप रीसेट करें? आपका मौजूदा ऐप अभी बंद हो जाएगा, और OpenGMB फिर से इस्तेमाल करने से पहले आपको नया सेट करना होगा।",
+      "अपना ऑथेंटिकेटर ऐप रीसेट करें? आपका मौजूदा ऐप अभी बंद हो जाएगा, और ApexGMB फिर से इस्तेमाल करने से पहले आपको नया सेट करना होगा।",
     couldNotReset: "आपका ऑथेंटिकेटर ऐप रीसेट नहीं हो सका",
     on: "चालू · ऑथेंटिकेटर ऐप",
     lowHeadline: "{left, plural, one {# बैकअप कोड} other {# बैकअप कोड}} बचे हैं।",
@@ -37,13 +37,13 @@ export default namespace({
     newReady: "नए बैकअप कोड तैयार हैं। पुराने अब काम नहीं करेंगे।",
     resetApp: "ऑथेंटिकेटर ऐप रीसेट करें",
     resetNote: "आप नया QR कोड स्कैन करेंगे। आपका मौजूदा ऐप बंद हो जाएगा।",
-    required: "हर OpenGMB खाते के लिए दो-चरणीय सत्यापन ज़रूरी है।",
+    required: "हर ApexGMB खाते के लिए दो-चरणीय सत्यापन ज़रूरी है।",
   },
   es: {
     confirmMake: "¿Crear códigos de respaldo nuevos? Los anteriores dejarán de funcionar.",
     couldNotMake: "No se pudieron crear códigos de respaldo nuevos",
     confirmReset:
-      "¿Restablecer tu app de autenticación? Tu app actual dejará de funcionar ahora y tendrás que configurar una nueva antes de volver a usar OpenGMB.",
+      "¿Restablecer tu app de autenticación? Tu app actual dejará de funcionar ahora y tendrás que configurar una nueva antes de volver a usar ApexGMB.",
     couldNotReset: "No se pudo restablecer tu app de autenticación",
     on: "Activada · app de autenticación",
     lowHeadline: "{left, plural, one {# código de respaldo restante} other {# códigos de respaldo restantes}}.",
@@ -56,6 +56,6 @@ export default namespace({
     newReady: "Los códigos de respaldo nuevos están listos. Los anteriores ya no funcionan.",
     resetApp: "Restablecer app de autenticación",
     resetNote: "Escanearás un código QR nuevo. Tu app actual dejará de funcionar.",
-    required: "La verificación en dos pasos es obligatoria en todas las cuentas de OpenGMB.",
+    required: "La verificación en dos pasos es obligatoria en todas las cuentas de ApexGMB.",
   },
 });

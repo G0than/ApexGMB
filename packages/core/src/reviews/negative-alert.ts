@@ -1,4 +1,4 @@
-import { notifications, type Tx } from "@opengmb/db";
+import { notifications, type Tx } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { NEGATIVE_REVIEW_MAX_STARS } from "../config/review-alerts";
 import { recipientsForLocation } from "../notifications";

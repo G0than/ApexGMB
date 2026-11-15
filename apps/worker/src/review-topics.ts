@@ -1,6 +1,6 @@
 import type { PgBoss } from "pg-boss";
-import { REVIEW_TOPIC_CONFIG, sweepReviewTopics } from "@opengmb/core";
-import type { Db } from "@opengmb/db";
+import { REVIEW_TOPIC_CONFIG, sweepReviewTopics } from "@apexgmb/core";
+import type { Db } from "@apexgmb/db";
 
 export const REVIEW_TOPICS_SWEEP_QUEUE = "review-topics-sweep";
 

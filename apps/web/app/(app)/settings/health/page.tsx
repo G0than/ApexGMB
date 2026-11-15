@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
-import type { monitoringOverview } from "@opengmb/core";
-import { isPlatformAdmin, roleHasPermission } from "@opengmb/core";
+import type { monitoringOverview } from "@apexgmb/core";
+import { isPlatformAdmin, roleHasPermission } from "@apexgmb/core";
 import { TableWrap, tdClass, thClass } from "../../../../components/page-parts";
 import { HealthLimits } from "../../../../components/settings/health-limits";
 import { SettingsShell } from "../../../../components/settings/settings-shell";

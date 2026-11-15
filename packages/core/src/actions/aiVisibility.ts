@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { z } from "zod";
-import { aiVisibilitySettings, type Db, type Tx } from "@opengmb/db";
+import { aiVisibilitySettings, type Db, type Tx } from "@apexgmb/db";
 import { AI_ENGINES, AI_VISIBILITY } from "../config/ai-visibility";
 import { CoreError } from "../errors";
 import { monthToDateUsd, getGridBilling } from "../geogrid/cost";

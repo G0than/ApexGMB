@@ -1,5 +1,5 @@
 import { afterAll, describe, expect, it } from "vitest";
-import { createDb } from "@opengmb/db";
+import { createDb } from "@apexgmb/db";
 import { GOOGLE_LIMITS } from "../config/google-limits";
 import { googleFailure } from "../reviews/reply-jobs";
 import { GoogleOrgLimitError } from "./errors";

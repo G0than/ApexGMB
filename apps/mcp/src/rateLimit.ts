@@ -1,5 +1,5 @@
 import type { IncomingMessage } from "node:http";
-import { WindowLimiter, clientIpFromForwardedFor, intFromEnv } from "@opengmb/core/limits";
+import { WindowLimiter, clientIpFromForwardedFor, intFromEnv } from "@apexgmb/core/limits";
 
 export { WindowLimiter };
 

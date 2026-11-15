@@ -1,5 +1,5 @@
 import { and, eq, inArray, isNotNull, ne } from "drizzle-orm";
-import { googleConnections, locations, reviewSyncs, type Db, type Tx } from "@opengmb/db";
+import { googleConnections, locations, reviewSyncs, type Db, type Tx } from "@apexgmb/db";
 import { writeAudit } from "../audit";
 import { GOOGLE_LIMITS } from "../config/google-limits";
 import type { GoogleReview, ListReviewsResponse } from "../google/client";
