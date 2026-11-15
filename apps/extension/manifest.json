@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ApexGMB - Local SEO & Audit Engine",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Professional Google Business Profile & Local SEO Engine: Category Inspector, Map Pack Audits, Review Analysis, Teleport, and AI Optimization directly on Google Maps.",
   "permissions": [
     "storage",
