@@ -648,6 +648,105 @@ Deliver:
     print("="*50)
     print(result)
 
+def run_site_explorer(args):
+    prompt = f"""
+You are the Free Ahrefs Site Explorer Engine for ApexGMB.
+Analyze Domain: {args.domain}
+Competitor Benchmarks: {args.competitors or 'Top niche competitors'}
+Niche / Vertical: {args.niche or 'General business'}
+
+Deliver a full Site Explorer Decomposition:
+1. Authority & Link Metrics:
+   - Estimated Domain Rating (DR: 0-100) & URL Rating (UR: 0-100)
+   - Estimated Total Backlinks & Referring Domains (RD count)
+   - DoFollow vs NoFollow equity distribution percentage
+2. Organic Search Traffic & Value:
+   - Estimated monthly organic search traffic and traffic value in USD
+   - Top 5 organic keywords driving the majority of traffic (with estimated ranking positions)
+3. Anchor Text Breakdown:
+   - Branded vs Naked URL vs Partial vs Exact Match distribution analysis
+4. Competitor Domain Comparison:
+   - Authority gap vs {args.competitors or 'competitors'} and estimated referring domains needed to close the gap.
+"""
+    result = call_llm(prompt, "You are an elite Ahrefs Site Explorer backlink and traffic intelligence analyst.")
+    print("\n" + "="*50)
+    print(f"🌐 AHREFS SITE EXPLORER: {args.domain}")
+    print("="*50)
+    print(result)
+
+def run_content_explorer(args):
+    prompt = f"""
+You are the Free Ahrefs Content Explorer Engine for ApexGMB.
+Topic / Search Query: {args.topic}
+Niche: {args.niche or 'General'}
+Market: {args.city or 'Global'}
+
+Generate high-performance content intelligence:
+1. Viral & Top Performing Content Breakdown:
+   - 3 winning content titles in this niche with highest estimated backlinks and social velocity
+   - Why they succeeded: Hook, format (Case study, data report, how-to guide, listicle), word count
+2. Unlinked Brand & Topic Mentions Strategy:
+   - How to identify and pitch high-authority sites discussing '{args.topic}' without linking to your site
+3. Content Syndication & Repurposing Blueprint:
+   - Repurposing top-performing topics into LinkedIn articles, Substack newsletters, and Reddit authority posts
+4. Backlink Outreach Targets:
+   - Types of publishers and editors actively linking to fresh content on '{args.topic}'.
+"""
+    result = call_llm(prompt, "You are an expert Ahrefs Content Explorer and viral content research strategist.")
+    print("\n" + "="*50)
+    print(f"📰 AHREFS CONTENT EXPLORER: {args.topic}")
+    print("="*50)
+    print(result)
+
+def run_rank_tracker(args):
+    prompt = f"""
+You are the Free Ahrefs Rank Tracker Engine for ApexGMB.
+Target Domain: {args.domain}
+Keyword List: {args.keywords}
+Target Location: {args.location or 'Local Market'}
+Device: {args.device or 'Desktop & Mobile'}
+
+Generate a comprehensive Rank Tracking & SERP Visibility Report:
+1. Share of Voice (SOV) & Visibility Index:
+   - Estimated overall visibility percentage (0-100%) for the keyword cluster
+   - Average ranking position across the tracked queries
+2. Keyword-by-Keyword SERP Breakdown:
+   - Target Query | Estimated Rank (1-100) | SERP Feature Won (Map Pack, Featured Snippet, AI Overview, None) | Intent
+3. Winners & Losers Velocity:
+   - Identification of keywords in 'Striking Distance' (Positions 4–15) that can jump with immediate on-page or internal link updates
+4. Competitor SERP Share Comparison:
+   - Who owns the Top 3 positions for these keywords and specific actions to take over their rankings.
+"""
+    result = call_llm(prompt, "You are a master Rank Tracking and SERP visibility analyst.")
+    print("\n" + "="*50)
+    print(f"📈 AHREFS RANK TRACKER: {args.domain}")
+    print("="*50)
+    print(result)
+
+def run_ai_brand_tracker(args):
+    prompt = f"""
+You are the Free Ahrefs AI & Brand Tracking Engine (GEO/AEO Radar) for ApexGMB.
+Brand Name: {args.brand}
+Domain / Entity: {args.domain or args.brand}
+Competitors: {args.competitors or 'Leading competitors in niche'}
+Niche: {args.niche or 'Local Service'}
+
+Analyze Brand Visibility & Citations Across the AI Search Landscape:
+1. AI Platform Presence & Sentiment:
+   - Visibility & sentiment across Perplexity AI, Google AI Overviews (SGE), ChatGPT Search, Gemini, and Claude
+2. Share of AI Citations:
+   - Estimated percentage of AI responses recommending '{args.brand}' versus '{args.competitors or 'competitors'}'
+3. AI Citability Score (0-100):
+   - Structured data completeness, Wikipedia/Wikidata grounding, authoritative directory density, and press mentions
+4. GEO / AEO Optimization Roadmap:
+   - 3 high-impact actions to make LLMs consistently cite and recommend '{args.brand}' as the top choice.
+"""
+    result = call_llm(prompt, "You are an elite AI Brand Tracking and Generative Engine Optimization (GEO/AEO) engineer.")
+    print("\n" + "="*50)
+    print(f"🤖 AHREFS AI & BRAND TRACKING (GEO/AEO): {args.brand}")
+    print("="*50)
+    print(result)
+
 def main():
     parser = argparse.ArgumentParser(description="GMB Automation Playbook CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -878,6 +977,50 @@ def main():
     p_tl.add_argument("--domain", required=True, help="Domain name")
     p_tl.add_argument("--anchors", default="", help="Sample backlink anchor texts")
     p_tl.set_defaults(func=run_toxic_link_audit)
+
+    # site-explorer (Ahrefs Pillar 1)
+    p_se = sub.add_parser("site-explorer", help="Ahrefs Site Explorer: Backlink profile, RDs, traffic, DR/UR simulator")
+    p_se.add_argument("--domain", required=True, help="Target domain (e.g. yoursite.com)")
+    p_se.add_argument("--competitors", default="", help="Comma-separated competitor domains")
+    p_se.add_argument("--niche", default="", help="Business niche / vertical")
+    p_se.set_defaults(func=run_site_explorer)
+
+    # keywords-explorer (Ahrefs Pillar 2 alias)
+    p_kwe = sub.add_parser("keywords-explorer", help="Ahrefs Keywords Explorer: Search volume, KD, intent matrix")
+    p_kwe.add_argument("--keyword", required=True, help="Seed keyword")
+    p_kwe.add_argument("--niche", required=True, help="Niche / Category")
+    p_kwe.set_defaults(func=run_keyword_explorer)
+
+    # content-explorer (Ahrefs Pillar 4)
+    p_ce = sub.add_parser("content-explorer", help="Ahrefs Content Explorer: Viral content, shares, unlinked mentions")
+    p_ce.add_argument("--topic", required=True, help="Search topic or industry trend")
+    p_ce.add_argument("--niche", default="", help="Business niche")
+    p_ce.add_argument("--city", default="Global", help="Market / Region")
+    p_ce.set_defaults(func=run_content_explorer)
+
+    # rank-tracker (Ahrefs Pillar 5)
+    p_rt = sub.add_parser("rank-tracker", help="Ahrefs Rank Tracker: Track desktop & mobile ranking positions & SOV")
+    p_rt.add_argument("--domain", required=True, help="Target domain")
+    p_rt.add_argument("--keywords", required=True, help="Comma-separated keywords to track")
+    p_rt.add_argument("--location", default="Local Area", help="Target city / geographic market")
+    p_rt.add_argument("--device", default="Desktop & Mobile", help="Device type (Desktop, Mobile, or Both)")
+    p_rt.set_defaults(func=run_rank_tracker)
+
+    # ai-brand-tracker (Ahrefs Pillar 6 - GEO/AEO Radar)
+    p_abt = sub.add_parser("ai-brand-tracker", help="Ahrefs AI & Brand Tracking: Monitor citations in Perplexity, ChatGPT, SGE")
+    p_abt.add_argument("--brand", required=True, help="Brand or Business name")
+    p_abt.add_argument("--domain", default="", help="Website domain")
+    p_abt.add_argument("--competitors", default="", help="Comma-separated competitor brands")
+    p_abt.add_argument("--niche", default="", help="Business category")
+    p_abt.set_defaults(func=run_ai_brand_tracker)
+
+    # brand-tracker (short alias)
+    p_bt = sub.add_parser("brand-tracker", help="Alias for ai-brand-tracker")
+    p_bt.add_argument("--brand", required=True, help="Brand or Business name")
+    p_bt.add_argument("--domain", default="", help="Website domain")
+    p_bt.add_argument("--competitors", default="", help="Comma-separated competitor brands")
+    p_bt.add_argument("--niche", default="", help="Business category")
+    p_bt.set_defaults(func=run_ai_brand_tracker)
 
     args = parser.parse_args()
     args.func(args)

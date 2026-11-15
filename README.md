@@ -44,7 +44,7 @@ ApexGMB manages Google Business Profiles for local businesses and the agencies t
 3. 🧠 **Autonomous Agent Skills Suite (`skills/`)**
    * `ghulam-ali-local-seo-mastery`: Ghulam Ali's 5-Hour Local SEO Masterclass covering NAP consistency audits, geo-grid proximity expansion, neighborhood geo-silos, local citation matrix, and master `LocalBusiness` JSON-LD schema.
    * `ecommerce-seo-architecture`: Ghulam Ali eCommerce 3-click silo architecture, faceted navigation defense, and Product/Offer rich snippets schema.
-   * `ahrefs-competitive-intelligence`: Ahrefs Link Intersect gap analysis, Keyword Explorer intent clustering, and Technical Site Health Audits.
+   * `ahrefs-competitive-intelligence`: Complete 6-in-1 Free Ahrefs SaaS alternative (Site Explorer, Keywords Explorer, Site Audit, Content Explorer, Rank Tracker, and AI & Brand Tracking GEO/AEO Radar).
    * `pbn-aged-domain-authority`: Aged domain evaluation, Harmonic Centrality, Common Crawl AI training ingestion, and parasite SEO market probing.
    * `gmb-orm-brand-defense`: Online Reputation Management (ORM) & Branded SERP 10-asset blanket defense.
    * `gmb-profile-audit`: Comprehensive SEO and health audit.
@@ -99,58 +99,67 @@ python3 skills/scripts/gmb_ai_runner.py parasite-probe --business "Apex Media St
 
 ---
 
-## 📊 Ahrefs Masterclass & Search Intelligence
+## 📊 Free Ahrefs Suite: 6-in-1 SEO & AI Platform
 
-> Based on **Ghulam Ali's Ahrefs Masterclass: Learn Complete SEO From This Tool** (`https://youtu.be/WjEIx9kbVY8`):
+> A 100% free open-source alternative to Ahrefs' \$199–\$999/month SaaS subscription, fully replicating all 6 core product engines:
 
-* **Content Gap / Organic Keyword Gap Analysis**: Uncovers high-converting commercial keywords where 2 or more competitors rank on Page 1 (Top 10), but your site does not rank or is trapped on Page 3+, generating immediate content briefs to steal market share.
-* **Competitor Top Pages Reverse-Engineering**: Deconstructs the 5–10 pages driving 80% of competitor search inquiries—analyzing their heading structure, semantic entity density, and lead capture mechanisms.
-* **Broken Link Building (The Dead Link Steal)**: Discovers broken 404 URLs on competitor domains that still receive high-authority backlinks, generating high-converting outreach emails to steal the backlink equity.
-* **Toxic Backlink Audit & Google Disavow Generator**: Detects negative SEO attacks, toxic scraper networks, automated PBN footprints, and foreign spam anchors—generating valid `disavow.txt` rules for Google Search Console.
-* **Link Intersect (Competitor Backlink Gap)**: Analyzes competitor domains to reveal the high-authority local directories, vendor listings, and niche blogs linking to competitors that you are missing.
-* **Keyword Explorer & Intent Clustering**: Decomposes seed keywords into high-commercial "Money" transactional queries, commercial investigation topics, and informational question modifiers, with estimated Keyword Difficulty (KD) and target SERP features.
-* **Technical Site Health Audit**: 1-click checklist covering robots.txt, XML sitemaps, canonical tags, heading hierarchy, image alt text, and Core Web Vitals (LCP/CLS/INP).
+### The 6 Core Free Ahrefs Platforms:
+1. **🌐 Site Explorer (`site-explorer`)**: Deeply analyzes domain backlink profiles, referring domain velocity, organic search traffic, ranking keywords, and authority scores (DR & UR 0–100).
+2. **🔍 Keywords Explorer (`keywords-explorer`)**: Conducts search intent classification, keyword difficulty (KD 0–100), search volume estimation, and SERP real estate targeting (Map Pack, AI Overviews, Snippets).
+3. **🏥 Site Audit (`site-audit`)**: Automated technical crawler checking status codes (404, 301, 500), canonical hygiene, robots.txt, XML sitemaps, single H1 hierarchy, and mobile Core Web Vitals (LCP/CLS/INP).
+4. **📰 Content Explorer (`content-explorer`)**: Discovers viral topics, highest-shared guides, backlink velocity, and unlinked brand mentions with automated reclamation pitches.
+5. **📈 Rank Tracker (`rank-tracker`)**: Monitors desktop & mobile search engine rankings, Share of Voice (SOV %), SERP features won, and identifies striking-distance quick wins.
+6. **🤖 AI & Brand Tracking (`ai-brand-tracker`)**: Tracks brand visibility, sentiment, and citation share across modern AI Search engines (Perplexity, Google AI Overviews, ChatGPT Search, Gemini, Claude).
+
+### Specialized Competitive Sub-Engines:
+* **🎯 Content Gap Analysis (`content-gap`)**: Reveals commercial keywords where 2+ competitors rank on Page 1, but your site is missing.
+* **🔗 Link Intersect (`link-intersect`)**: Pinpoints high-DA local directories and vendor portals linking to multiple competitors.
+* **🏆 Top Pages Teardown (`top-pages-teardown`)**: Reverse-engineers the 5–10 pages driving 80% of competitor search inquiries.
+* **⚡ Broken Link Steal (`broken-link-builder`)**: Reclaims backlinks pointing to competitor 404 pages.
+* **🛡️ Toxic Link & Disavow (`toxic-link-audit`)**: Detects negative SEO attacks and outputs Google Search Console `disavow.txt` rules.
 
 Run via CLI:
 ```bash
-# 1. Content Gap / Keyword Gap Analysis
-python3 skills/scripts/gmb_ai_runner.py content-gap \
-  --my-site "bhardwajstudio.in" \
-  --competitors "weddingwire.in, shaadisaga.com, wedmegood.com" \
-  --niche "Wedding Photography" \
-  --city "Delhi NCR"
-
-# 2. Reverse-Engineer Competitor Top Performing Page
-python3 skills/scripts/gmb_ai_runner.py top-pages-teardown \
-  --competitor "competitorstudio.com/pre-wedding-shoot-delhi" \
-  --niche "Wedding Photography"
-
-# 3. Broken Link Steal Playbook & Outreach Pitch
-python3 skills/scripts/gmb_ai_runner.py broken-link-builder \
-  --business "Apex Media Studio" \
-  --topic "Ultimate Wedding Photography Checklist" \
-  --niche "Photography Studio"
-
-# 4. Toxic Link & Negative SEO Disavow Audit
-python3 skills/scripts/gmb_ai_runner.py toxic-link-audit \
+# 1. Site Explorer (Backlinks, RDs, Traffic & DR/UR)
+python3 skills/scripts/gmb_ai_runner.py site-explorer \
   --domain "bhardwajstudio.in" \
-  --anchors "cheap casino, buy followers, best wedding photographer"
-
-# 5. Competitor Link Intersect Gap Analysis
-python3 skills/scripts/gmb_ai_runner.py link-intersect \
-  --my-site "bhardwajstudio.in" \
-  --competitors "comp1.com, comp2.com" \
+  --competitors "weddingwire.in, shaadisaga.com" \
   --niche "Wedding Photography"
 
-# 6. Keyword Explorer & Search Intent Matrix
-python3 skills/scripts/gmb_ai_runner.py keyword-explorer \
+# 2. Keywords Explorer (Search Volume, KD & Intent)
+python3 skills/scripts/gmb_ai_runner.py keywords-explorer \
   --keyword "wedding photographer Delhi" \
   --niche "Photography Studio"
 
-# 7. Technical Site Health Audit
+# 3. Site Audit (Crawl, 404s & Core Web Vitals)
 python3 skills/scripts/gmb_ai_runner.py site-audit \
   --url "https://bhardwajstudio.in" \
   --niche "Local Studio"
+
+# 4. Content Explorer (Viral Topics & Mentions)
+python3 skills/scripts/gmb_ai_runner.py content-explorer \
+  --topic "pre wedding shoot poses and locations" \
+  --niche "Wedding Photography"
+
+# 5. Rank Tracker (Track Desktop/Mobile Ranks & SOV)
+python3 skills/scripts/gmb_ai_runner.py rank-tracker \
+  --domain "bhardwajstudio.in" \
+  --keywords "wedding photographer Delhi, candid wedding shoot Noida, pre wedding studio" \
+  --location "Delhi NCR"
+
+# 6. AI & Brand Tracking (GEO/AEO Radar in Perplexity & SGE)
+python3 skills/scripts/gmb_ai_runner.py ai-brand-tracker \
+  --brand "Apex Media Studio" \
+  --domain "bhardwajstudio.in" \
+  --competitors "Studio Memory, WeddingFilmCo" \
+  --niche "Wedding Photography"
+
+# 7. Content Gap Analysis
+python3 skills/scripts/gmb_ai_runner.py content-gap \
+  --my-site "bhardwajstudio.in" \
+  --competitors "weddingwire.in, shaadisaga.com" \
+  --niche "Wedding Photography" \
+  --city "Delhi NCR"
 ```
 
 ---

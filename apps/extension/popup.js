@@ -717,6 +717,130 @@ Generate a Parasite SEO Market Probing Action Plan:
     }
   });
 
+  // Ahrefs Free Suite (6 Core Platforms)
+  document.getElementById("btn-ahrefs-site-explorer")?.addEventListener("click", async () => {
+    const site = document.getElementById("ahrefs-site").value.trim() || "bhardwajstudio.in";
+    const comps = document.getElementById("ahrefs-comps").value.trim() || "competitor.com";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Running Free Ahrefs Site Explorer for ${site}...`;
+
+    const prompt = `You are the Free Ahrefs Site Explorer Engine for ApexGMB.
+Analyze Target Domain: ${site}
+Competitor Domains: ${comps}
+
+Deliver a full Site Explorer Decomposition:
+1. Authority & Link Metrics:
+   - Estimated Domain Rating (DR 0-100) & URL Rating (UR 0-100)
+   - Estimated Total Backlinks & Referring Domains (RD count)
+   - DoFollow vs NoFollow link equity distribution
+2. Organic Search Traffic & Value:
+   - Estimated monthly organic traffic and equivalent search traffic value ($ USD)
+   - Top 5 organic search keywords driving traffic (with estimated ranking positions)
+3. Anchor Text Distribution:
+   - Percentage breakdown of Branded vs Naked URL vs Partial vs Exact Match anchors
+4. Competitor Link Gap:
+   - Estimated link deficit vs ${comps} and recommendations to reach parity.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an elite Ahrefs Site Explorer backlink and traffic intelligence analyst.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-ahrefs-content-explorer")?.addEventListener("click", async () => {
+    const topic = document.getElementById("ahrefs-keyword").value.trim() || "wedding photography";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Searching Free Ahrefs Content Explorer for '${topic}'...`;
+
+    const prompt = `You are the Free Ahrefs Content Explorer Engine for ApexGMB.
+Topic / Query: ${topic}
+
+Generate high-performance content intelligence:
+1. Viral & Top Performing Content Breakdown:
+   - 3 winning content angles/articles in this niche with highest estimated backlinks and social velocity
+   - Why they succeeded: Hook, format (Case study, listicle, comparison, data report), word count
+2. Unlinked Brand Mentions & Reclamation Strategy:
+   - How to uncover high-authority publications discussing '${topic}' and pitch them for contextual links
+3. Repurposing & Multi-Channel Syndication Blueprint:
+   - Converting top topics into LinkedIn articles, Substack newsletters, and Reddit discussions
+4. Publisher Outreach Targets:
+   - Specific types of editors and vertical blogs actively covering this topic.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an expert Ahrefs Content Explorer strategist.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-ahrefs-rank-tracker")?.addEventListener("click", async () => {
+    const site = document.getElementById("ahrefs-site").value.trim() || "bhardwajstudio.in";
+    const keywords = document.getElementById("ahrefs-keyword").value.trim() || "wedding photographer Delhi NCR, candid photoshoot, bridal photography";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Running Free Ahrefs Rank Tracker for ${site}...`;
+
+    const prompt = `You are the Free Ahrefs Rank Tracker Engine for ApexGMB.
+Target Domain: ${site}
+Tracked Keywords: ${keywords}
+
+Generate a comprehensive Rank Tracking & SERP Visibility Report:
+1. Share of Voice (SOV) & Visibility Index:
+   - Estimated visibility percentage (0-100%) for this target keyword cluster
+   - Average ranking position across all queries
+2. Keyword-by-Keyword SERP Breakdown:
+   - Keyword | Estimated Rank (1-100) | SERP Feature Won (Map Pack, Featured Snippet, AI Overview, None) | Intent
+3. Striking Distance Opportunities (Positions 4–15):
+   - Fast-win keywords that can break into the Top 3 with minor on-page or citation tweaks
+4. Competitor SERP Domination Comparison:
+   - Which competitor currently captures the highest Share of Voice and how to displace them.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are a master Rank Tracking and SERP visibility analyst.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
+  document.getElementById("btn-ahrefs-ai-brand")?.addEventListener("click", async () => {
+    const site = document.getElementById("ahrefs-site").value.trim() || "Apex Media Studio";
+    const comps = document.getElementById("ahrefs-comps").value.trim() || "competitors";
+    const resBox = document.getElementById("ahrefs-results");
+
+    resBox.style.display = "block";
+    resBox.innerText = `Running AI & Brand Tracking Radar (GEO/AEO) for ${site}...`;
+
+    const prompt = `You are the Free Ahrefs AI & Brand Tracking Engine (GEO/AEO Radar) for ApexGMB.
+Brand Name / Domain: ${site}
+Competitor Brands: ${comps}
+
+Analyze Brand Visibility & Citations Across the AI Search Landscape:
+1. AI Engine Presence & Sentiment:
+   - Visibility and sentiment across Perplexity AI, Google AI Overviews, ChatGPT Search, Gemini, and Claude
+2. Share of AI Citations:
+   - Estimated percentage of AI responses recommending '${site}' versus competitors
+3. AI Citability Score (0-100):
+   - Schema.org completeness, entity anchoring in Wikidata, and citation density
+4. GEO / AEO Action Roadmap:
+   - 3 concrete steps to ensure LLMs consistently cite and recommend '${site}'.`;
+
+    try {
+      const result = await callOpenRouter(prompt, "You are an elite AI Brand Tracking and Generative Engine Optimization (GEO/AEO) specialist.");
+      resBox.innerText = result;
+    } catch (e) {
+      resBox.innerText = "Error: " + e.message;
+    }
+  });
+
   // Ahrefs Intelligence Listeners
   document.getElementById("btn-ahrefs-intersect")?.addEventListener("click", async () => {
     const site = document.getElementById("ahrefs-site").value.trim() || "yoursite.com";
