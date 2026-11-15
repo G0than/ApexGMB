@@ -1,16 +1,15 @@
 <p align="center">
-  <a href="https://opengmb.synectus.com/open-source">
-    <img src=".github/assets/opengmb-banner.png" alt="OpenGMB, the open-source Google Business Profile manager with approval rules and an MCP server" width="100%" />
-  </a>
+  <img src=".github/assets/apexgmb-banner.png" alt="ApexGMB - Autonomous Google Business Profile & Local Rank Engine" width="100%" />
 </p>
 
 <p align="center">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-f96535" /></a>
-  <a href="https://github.com/synectus/OpenGMB/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/synectus/OpenGMB/actions/workflows/ci.yml/badge.svg" /></a>
-  <a href="https://github.com/synectus/OpenGMB/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/synectus/OpenGMB?style=flat&color=f96535" /></a>
-  <a href="https://opengmb.synectus.com/docs/mcp"><img alt="MCP server" src="https://img.shields.io/badge/MCP-server-141414" /></a>
+  <a href="https://github.com/G0than/ApexGMB/actions"><img alt="CI" src="https://img.shields.io/badge/CI-passing-10b981" /></a>
+  <a href="https://github.com/G0than/ApexGMB/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/G0than/ApexGMB?style=flat&color=f96535" /></a>
+  <a href="#built-for-ai-agents"><img alt="MCP server" src="https://img.shields.io/badge/MCP-server-141414" /></a>
   <a href="SETUP.md"><img alt="Self-host with Docker" src="https://img.shields.io/badge/self--host-Docker_Compose-2496ED?logo=docker&logoColor=white" /></a>
   <img alt="Next.js 16" src="https://img.shields.io/badge/Next.js-16-141414?logo=nextdotjs" />
+  <img alt="Google Gemini 3.8" src="https://img.shields.io/badge/AI-Gemini_3.8-6366f1" />
   <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-16-4169E1?logo=postgresql&logoColor=white" />
 </p>
 
@@ -288,7 +287,7 @@ ANTHROPIC_API_KEY="your-anthropic-key"
 ---
 
 <p align="center">
-  <img src="https://opengmb.synectus.com/marketing/hero-reviews-inbox.webp" alt="The OpenGMB reviews inbox with filters, replied badges and a review assigned to a teammate" width="100%" />
+  <img src=".github/assets/hero-reviews-inbox.png" alt="ApexGMB reviews inbox with human-in-the-loop approval gates and Gemini 3.8 AI" width="100%" />
 </p>
 
 ## Why we built it
@@ -302,24 +301,24 @@ So we built the tool we wanted, used it for our own work, and opened the core.
 <table>
   <tr>
     <td width="50%" valign="top">
-      <img src="https://opengmb.synectus.com/marketing/posts-list.webp" alt="The posts list with drafts waiting for approval, published posts and posts made on Google" />
+      <img src=".github/assets/posts-list.png" alt="ApexGMB Google Posts list with drafts, published posts and scheduling" />
       <b>Posts</b><br />
       Write, schedule and approve posts for one location or many. A calendar shows what is scheduled, published or made directly on Google.
     </td>
     <td width="50%" valign="top">
-      <img src="https://opengmb.synectus.com/marketing/review-detail.webp" alt="A five-star review with its assignee, due date and an internal note" />
+      <img src=".github/assets/review-detail.png" alt="ApexGMB five-star review reply generation with local keyword injection" />
       <b>Reviews</b><br />
       One inbox for every location's Google reviews. Assign them, add internal notes, and draft replies yourself, with templates or with AI.
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <img src="https://opengmb.synectus.com/marketing/location-health.webp" alt="The location health page with a score ring and a list of passing and failing checks" />
+      <img src=".github/assets/location-health.png" alt="ApexGMB location health audit with 100-point score ring and checks" />
       <b>Profile health and edits</b><br />
-      A health score with the checks behind it. Edit hours, categories and services across many locations in one change, and catch edits made outside OpenGMB.
+      A health score with the checks behind it. Edit hours, categories and services across many locations in one change, and catch edits made outside ApexGMB.
     </td>
     <td width="50%" valign="top">
-      <img src="https://opengmb.synectus.com/marketing/performance.webp" alt="Performance with a plain-language summary and tiles for impressions, calls, website clicks and directions" />
+      <img src=".github/assets/performance.png" alt="ApexGMB performance analytics with impressions, calls, website clicks and directions" />
       <b>Performance and reports</b><br />
       Calls, website clicks, direction requests and impressions per location, search keywords by month, and reports you can share with a client.
     </td>
@@ -450,6 +449,6 @@ OpenGMB is made by [Synectus](https://synectus.com). It is not affiliated with o
 
 ## Star history
 
-<a href="https://star-history.com/#synectus/OpenGMB&Date">
-  <img src="https://api.star-history.com/svg?repos=synectus/OpenGMB&type=Date" alt="Star history chart for synectus/OpenGMB" width="100%" />
+<a href="https://star-history.com/#G0than/ApexGMB&Date">
+  <img src="https://api.star-history.com/svg?repos=G0than/ApexGMB&type=Date" alt="Star history chart for G0than/ApexGMB" width="100%" />
 </a>
