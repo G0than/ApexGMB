@@ -29,6 +29,20 @@
 
 ApexGMB manages Google Business Profiles for local businesses and the agencies that run them. Reviews, review replies, posts, profile edits, performance, reports, and Maps rank tracking—for every location, in one place.
 
+### 🧩 Chrome Extension in Action
+
+<p align="center">
+  <img src=".github/assets/extension-popup-showcase.png" alt="ApexGMB Chrome Extension Popup on Google Maps with Gemini 3.8 and Claude Sonnet 4.6" width="100%" />
+</p>
+
+<p align="center">
+  <img src=".github/assets/extension-maps-toolbar.png" alt="ApexGMB Injected Live Inspector and Competitor Category Spy on Google Maps" width="100%" />
+</p>
+
+<p align="center">
+  <img src=".github/assets/extension-teleport-grid.png" alt="ApexGMB Geo-Grid Rank Teleport Proximity Simulation" width="100%" />
+</p>
+
 ### ✨ Key Capabilities
 
 1. 🏢 **Centralized Profile & Review Engine (`apps/web`)**
@@ -301,12 +315,12 @@ So we built the tool we wanted, used it for our own work, and opened the core.
 <table>
   <tr>
     <td width="50%" valign="top">
-      <img src=".github/assets/posts-list.png" alt="ApexGMB Google Posts list with drafts, published posts and scheduling" />
+      <img src=".github/assets/extension-popup-showcase.png" alt="ApexGMB Google Posts list with drafts, published posts and scheduling" />
       <b>Posts</b><br />
       Write, schedule and approve posts for one location or many. A calendar shows what is scheduled, published or made directly on Google.
     </td>
     <td width="50%" valign="top">
-      <img src=".github/assets/review-detail.png" alt="ApexGMB five-star review reply generation with local keyword injection" />
+      <img src=".github/assets/extension-maps-toolbar.png" alt="ApexGMB five-star review reply generation with local keyword injection" />
       <b>Reviews</b><br />
       One inbox for every location's Google reviews. Assign them, add internal notes, and draft replies yourself, with templates or with AI.
     </td>
